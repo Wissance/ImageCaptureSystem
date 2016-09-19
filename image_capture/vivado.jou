@@ -2,23 +2,24 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Mon Sep 19 12:36:29 2016
-# Process ID: 7244
+# Start of session at: Mon Sep 19 14:35:05 2016
+# Process ID: 14628
 # Current directory: C:/ThreadControlIP/ThreadControlIP/image_capture
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15096 C:\ThreadControlIP\ThreadControlIP\image_capture\image_capture.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15020 C:\ThreadControlIP\ThreadControlIP\image_capture\image_capture.xpr
 # Log file: C:/ThreadControlIP/ThreadControlIP/image_capture/vivado.log
 # Journal file: C:/ThreadControlIP/ThreadControlIP/image_capture\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/ThreadControlIP/ThreadControlIP/image_capture/image_capture.xpr
-create_bd_design "image_capture_design"
 update_compile_order -fileset sources_1
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
-endgroup
-set_property location {0.5 -85 -176} [get_bd_cells processing_system7_0]
-set_property location {1 -55 -244} [get_bd_cells processing_system7_0]
-set_property location {1 -111 -129} [get_bd_cells processing_system7_0]
-set_property location {1 -102 -224} [get_bd_cells processing_system7_0]
-delete_bd_objs [get_bd_cells processing_system7_0]
-save_bd_design
+create_peripheral xilinx.com user linescanner_image_capture_ip 1.0 -dir C:/ThreadControlIP/ThreadControlIP/ip_repo
+add_peripheral_interface S00_AXIS -interface_mode slave -axi_type stream [ipx::find_open_core xilinx.com:user:linescanner_image_capture_ip:1.0]
+add_peripheral_interface S01_AXIS -interface_mode slave -axi_type stream [ipx::find_open_core xilinx.com:user:linescanner_image_capture_ip:1.0]
+generate_peripheral [ipx::find_open_core xilinx.com:user:linescanner_image_capture_ip:1.0]
+write_peripheral [ipx::find_open_core xilinx.com:user:linescanner_image_capture_ip:1.0]
+set_property  ip_repo_paths  C:/ThreadControlIP/ThreadControlIP/ip_repo/linescanner_image_capture_ip_1.0 [current_project]
+update_ip_catalog -rebuild
+ipx::edit_ip_in_project -upgrade true -name edit_linescanner_image_capture_ip_v1_0 -directory C:/ThreadControlIP/ThreadControlIP/ip_repo c:/ThreadControlIP/ThreadControlIP/ip_repo/linescanner_image_capture_ip_1.0/component.xml
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+close_project
