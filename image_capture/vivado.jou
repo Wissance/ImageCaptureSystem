@@ -23,3 +23,8 @@ ipx::edit_ip_in_project -upgrade true -name edit_linescanner_image_capture_ip_v1
 update_compile_order -fileset sources_1
 update_compile_order -fileset sim_1
 close_project
+open_bd_design {C:/ThreadControlIP/ThreadControlIP/image_capture/image_capture.srcs/sources_1/bd/image_capture_design/image_capture_design.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
+endgroup
+save_bd_design
