@@ -22,8 +22,15 @@
 
 module memoryManagementUnit(
     input [7:0] data,
-    input clock,
-    output [7:0] out,
-    input enable
+    input loadPulse,
+    input enable,
+    output [31:0] dataOut,
+    output dataPulse,
+    input receiverDataReady,
+    output lastData,
+    output [3:0] keepData,
+    output [71:0] commandData,
+    output commandPulse,
+    input receiverCommandReady
     );
 endmodule
