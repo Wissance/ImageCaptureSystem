@@ -1,6 +1,6 @@
 # Log files
-.log
+*.log
 # Jou files
-.jou
+*.jou
 # Backups
-.backup
+*.backup
