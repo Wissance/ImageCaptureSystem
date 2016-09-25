@@ -52,7 +52,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/src/dragsterCaptureUnit.v">
+      <File Path="$PPRDIR/src/memoryManagementUnit.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -67,8 +67,21 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_mem_intercon_2/image_capture_design_axi_mem_intercon_2.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_datamover_0_2/image_capture_design_axi_datamover_0_2.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_processing_system7_0_0/image_capture_design_processing_system7_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_datamover_1_0/image_capture_design_axi_datamover_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_processing_system7_0_axi_periph_1/image_capture_design_processing_system7_0_axi_periph_1.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_quad_spi_0_0/image_capture_design_axi_quad_spi_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_xbar_1_1/image_capture_design_xbar_1.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_rst_processing_system7_0_50M_2/image_capture_design_rst_processing_system7_0_50M_2.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_dragsterCaptureUnit_1_0_1/image_capture_design_dragsterCaptureUnit_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_memoryManagementUnit_0_0_1/image_capture_design_memoryManagementUnit_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_dragsterCaptureUnit_0_0_2/image_capture_design_dragsterCaptureUnit_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_memoryManagementUnit_1_0_1/image_capture_design_memoryManagementUnit_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_xbar_0/image_capture_design_xbar_0.xci"/>
       </File>
-      <File Path="$PPRDIR/src/memoryManagementUnit.v">
+      <File Path="$PPRDIR/src/dragsterCaptureUnit.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
