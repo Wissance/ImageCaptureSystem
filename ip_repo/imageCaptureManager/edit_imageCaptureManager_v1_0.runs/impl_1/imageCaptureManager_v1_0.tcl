@@ -50,15 +50,14 @@ set rc [catch {
   create_msg_db init_design.pb
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir i:/projects/imagecapturemanager/ip/edit_imageCaptureManager_v1_0.cache/wt [current_project]
-  set_property parent.project_path i:/projects/imagecapturemanager/ip/edit_imageCaptureManager_v1_0.xpr [current_project]
+  set_property webtalk.parent_dir E:/oms/VideoControlIP/ip_repo/imageCaptureManager/edit_imageCaptureManager_v1_0.cache/wt [current_project]
+  set_property parent.project_path E:/oms/VideoControlIP/ip_repo/imageCaptureManager/edit_imageCaptureManager_v1_0.xpr [current_project]
   set_property ip_repo_paths {
-  i:/projects/imagecapturemanager/ip/edit_imageCaptureManager_v1_0.cache/ip
-  I:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0
-  I:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0
+  e:/oms/VideoControlIP/ip_repo/imageCaptureManager/edit_imageCaptureManager_v1_0.cache/ip
+  E:/oms/VideoControlIP/ip_repo/imageCaptureManager
 } [current_project]
-  set_property ip_output_repo i:/projects/imagecapturemanager/ip/edit_imageCaptureManager_v1_0.cache/ip [current_project]
-  add_files -quiet i:/projects/imagecapturemanager/ip/edit_imageCaptureManager_v1_0.runs/synth_1/imageCaptureManager_v1_0.dcp
+  set_property ip_output_repo e:/oms/VideoControlIP/ip_repo/imageCaptureManager/edit_imageCaptureManager_v1_0.cache/ip [current_project]
+  add_files -quiet E:/oms/VideoControlIP/ip_repo/imageCaptureManager/edit_imageCaptureManager_v1_0.runs/synth_1/imageCaptureManager_v1_0.dcp
   link_design -top imageCaptureManager_v1_0 -part xc7z020clg400-3
   write_hwdef -file imageCaptureManager_v1_0.hwdef
   close_msg_db -file init_design.pb

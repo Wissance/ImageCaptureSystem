@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-3" LaunchTime="1474893687">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-3" LaunchTime="1474918318">
   <File Type="OPT-DCP" Name="imageCaptureManager_v1_0_opt.dcp"/>
   <File Type="ROUTE-STATUS-PB" Name="imageCaptureManager_v1_0_route_status.pb"/>
   <File Type="PA-TCL" Name="imageCaptureManager_v1_0.tcl"/>
@@ -59,20 +59,19 @@
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../../../Projects/imageCaptureManager/IP/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0_S00_AXI.v">
+    <File Path="$PPRDIR/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0_S00_AXI.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../Projects/imageCaptureManager/IP/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v">
+    <File Path="$PPRDIR/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../../Projects/imageCaptureManager/IP/imageCaptureManager_1.0/component.xml">
-      <FileInfo SFType="IPXACT"/>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
@@ -87,9 +86,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

@@ -11,9 +11,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=F:/Xilinx/SDK/2016.2/bin;F:/Xilinx/Vivado/2016.2/ids_lite/ISE/bin/nt64;F:/Xilinx/Vivado/2016.2/ids_lite/ISE/lib/nt64:F:/Xilinx/Vivado/2016.2/bin
+  PATH=C:/XilinxTools/Vivado/2016.2/ids_lite/ISE/bin/nt64;C:/XilinxTools/Vivado/2016.2/ids_lite/ISE/lib/nt64:C:/XilinxTools/Vivado/2016.2/bin
 else
-  PATH=F:/Xilinx/SDK/2016.2/bin;F:/Xilinx/Vivado/2016.2/ids_lite/ISE/bin/nt64;F:/Xilinx/Vivado/2016.2/ids_lite/ISE/lib/nt64:F:/Xilinx/Vivado/2016.2/bin:$PATH
+  PATH=C:/XilinxTools/Vivado/2016.2/ids_lite/ISE/bin/nt64;C:/XilinxTools/Vivado/2016.2/ids_lite/ISE/lib/nt64:C:/XilinxTools/Vivado/2016.2/bin:$PATH
 fi
 export PATH
 
@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='i:/projects/imagecapturemanager/ip/edit_imageCaptureManager_v1_0.runs/synth_1'
+HD_PWD='E:/oms/VideoControlIP/ip_repo/imageCaptureManager/edit_imageCaptureManager_v1_0.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

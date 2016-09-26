@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="14" Path="I:/Projects/VideoControlIP/image_capture/image_capture.xpr">
+<Project Version="7" Minor="14" Path="E:/oms/VideoControlIP/image_capture/image_capture.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="3f5aa38eb5794db5b10b89e0e066941c"/>
@@ -20,6 +20,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/linescanner_image_capture_ip_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/imageCaptureManager/imageCaptureManager_1.0"/>
     <Option Name="EnableCoreContainer" Val="FALSE"/>
     <Option Name="XPMLibraries" Val="XPM_CDC"/>
     <Option Name="XPMLibraries" Val="XPM_MEMORY"/>

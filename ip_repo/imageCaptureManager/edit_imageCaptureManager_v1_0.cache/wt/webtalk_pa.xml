@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Mon Sep 26 17:44:05 2016">
+<application name="pa" timeStamp="Mon Sep 26 23:33:05 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="e8e85eca4fbc49938b0135c9ba665727" type="ProjectID"/>
-<property name="ProjectIteration" value="13" type="ProjectIteration"/>
+<property name="ProjectIteration" value="16" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -17,36 +17,29 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
+<property name="AddSources" value="1" type="JavaHandler"/>
 <property name="CloseProject" value="1" type="JavaHandler"/>
-<property name="EditDelete" value="1" type="JavaHandler"/>
+<property name="EditDelete" value="3" type="JavaHandler"/>
 <property name="IPPackagerHandler" value="1" type="JavaHandler"/>
 <property name="IPPackagerWizardHandler" value="1" type="JavaHandler"/>
-<property name="RunImplementation" value="12" type="JavaHandler"/>
+<property name="ProjectSettingsCmdHandler" value="2" type="JavaHandler"/>
+<property name="RunImplementation" value="15" type="JavaHandler"/>
 <property name="SaveFileProxyHandler" value="2" type="JavaHandler"/>
-<property name="ShowView" value="7" type="JavaHandler"/>
+<property name="ShowView" value="8" type="JavaHandler"/>
 <property name="ViewTaskImplementation" value="1" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
-<property name="PAResourceItoN.NetlistTreeView_NETLIST_TREE, [imageCaptureManager_v1_0, Nets (188" value="2" type="GuiResourceData"/>
-<property name="PAResourceOtoP.PAViews_DEVICE, 121539, 189493" value="1" type="GuiResourceData"/>
-<property name="PAResourceOtoP.PAViews_DEVICE, 124032, 190324, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="PAResourceOtoP.PAViews_DEVICE, 124863, 190324" value="1" type="GuiResourceData"/>
-<property name="PAResourceOtoP.PAViews_DEVICE, 156445, 267618" value="1" type="GuiResourceData"/>
-<property name="PAResourceOtoP.PAViews_DEVICE, 273632, 155418, false, false, false, false, true" value="1" type="GuiResourceData"/>
-<property name="PAResourceOtoP.PAViews_DEVICE, 274463, 155418" value="1" type="GuiResourceData"/>
-<property name="PAResourceOtoP.PAViews_DEVICE, 330979, 236036" value="1" type="GuiResourceData"/>
-<property name="PAResourceOtoP.PAViews_DEVICE, Device" value="1" type="GuiResourceData"/>
-<property name="PAResourceOtoP.PAViews_PROJECT_SUMMARY, Project Summary" value="1" type="GuiResourceData"/>
-<property name="RDIResource.BaseDialog_OK, OK" value="2" type="GuiResourceData"/>
-<property name="imageCaptureManager_v1_0.v, 325, 473" value="1" type="GuiResourceData"/>
-<property name="imageCaptureManager_v1_0.v, 402, 361" value="1" type="GuiResourceData"/>
-<property name="imageCaptureManager_v1_0.v, 414, 273" value="1" type="GuiResourceData"/>
-<property name="imageCaptureManager_v1_0.v, 680, 329" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_EDIT, Edit" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_FILE, File" value="4" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, Open Recent File" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, Open Recent Project" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_TOOLS, Tools" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_WINDOW, Window" value="2" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="3" type="GuiMode"/>
+<property name="GuiMode" value="18" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="1" type="TclMode"/>
+<property name="TclMode" value="17" type="TclMode"/>
 </item>
 </section>
 </application>

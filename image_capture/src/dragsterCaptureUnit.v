@@ -22,9 +22,9 @@
 
 module dragsterCaptureUnit(
     input enable,
-    inout [7:0] data,
+    input [7:0] data,
     output rstCvc,
-    input rstCds,
+    output rstCds,
     input sample,
     input endAdc,
     input lval,

@@ -32,6 +32,87 @@
         <spirit:busType spirit:library="interface" spirit:name="spi" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:abstractionType spirit:library="interface" spirit:name="spi_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
       </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>CLK.LINESCANNER0_PIXEL_CLOCK</spirit:name>
+        <spirit:displayName>Clk</spirit:displayName>
+        <spirit:description>Clock</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>CLK</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>LINESCANNER0_PIXEL_CLOCK</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>FREQ_HZ</spirit:name>
+            <spirit:value>50000000</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>CLK.LINESCANNER0_MAIN_CLK</spirit:name>
+        <spirit:displayName>Clk</spirit:displayName>
+        <spirit:description>Clock</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>CLK</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>LINESCANNER0_MAIN_CLK</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+        <spirit:parameters/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>CLK.LINESCANNER1_MAIN_CLOCK</spirit:name>
+        <spirit:displayName>Clk</spirit:displayName>
+        <spirit:description>Clock</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>CLK</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>LINESCANNER1_MAIN_CLOCK</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+        <spirit:parameters/>
+      </spirit:busInterface>
+      <spirit:busInterface>
+        <spirit:name>CLK.LINESCANNER1_PIXEL_CLOCK</spirit:name>
+        <spirit:displayName>Clk</spirit:displayName>
+        <spirit:description>Clock</spirit:description>
+        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:slave/>
+        <spirit:portMaps>
+          <spirit:portMap>
+            <spirit:logicalPort>
+              <spirit:name>CLK</spirit:name>
+            </spirit:logicalPort>
+            <spirit:physicalPort>
+              <spirit:name>LINESCANNER1_PIXEL_CLOCK</spirit:name>
+            </spirit:physicalPort>
+          </spirit:portMap>
+        </spirit:portMaps>
+        <spirit:parameters/>
+      </spirit:busInterface>
     </spirit:busInterfaces>
     <spirit:model>
       <spirit:views>
@@ -41,7 +122,136 @@
           <spirit:hierarchyRef spirit:library="BlockDiagram" spirit:name="image_capture_design_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
         </spirit:view>
       </spirit:views>
-      <spirit:ports/>
+      <spirit:ports>
+        <spirit:port>
+          <spirit:name>LINESCANNER0_TAP_A</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+            <spirit:vector>
+              <spirit:left>7</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER0_SAMPLE</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER0_END_ADC</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER0_LVAL</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER0_PIXEL_CLOCK</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER0_RST_CVC</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER0_RST_CDS</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER0_MAIN_CLK</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER0_N_RESET</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER0_LOAD_PULSE</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER1_RST_CVC</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER1_RST_CDS</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER1_MAIN_CLOCK</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER1_N_RESET</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER1_LOAD_PULSE</spirit:name>
+          <spirit:wire>
+            <spirit:direction>out</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER1_TAP_A</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+            <spirit:vector>
+              <spirit:left>7</spirit:left>
+              <spirit:right>0</spirit:right>
+            </spirit:vector>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER1_SAMPLE</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER1_END_ADC</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER1_LVAL</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+        <spirit:port>
+          <spirit:name>LINESCANNER1_PIXEL_CLOCK</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
+      </spirit:ports>
     </spirit:model>
   </spirit:component>
 
@@ -119,16 +329,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>dragsterCaptureUnit_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="module_ref" spirit:name="dragsterCaptureUnit" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_dragsterCaptureUnit_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">dragsterCaptureUnit</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>memoryManagementUnit_0</spirit:instanceName>
         <spirit:componentRef spirit:library="module_ref" spirit:name="memoryManagementUnit" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
@@ -139,13 +339,10 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>dragsterCaptureUnit_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="module_ref" spirit:name="dragsterCaptureUnit" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:instanceName>imageCaptureManager_v1_0_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="user" spirit:name="imageCaptureManager_v1_0" spirit:vendor="mv.ushakov" spirit:version="1.0"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_dragsterCaptureUnit_1_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">dragsterCaptureUnit</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_imageCaptureManager_v1_0_0_0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -154,6 +351,26 @@
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_memoryManagementUnit_1_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="bd:referenceName">memoryManagementUnit</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>dragsterCaptureUnit_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="module_ref" spirit:name="dragsterCaptureUnit" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_dragsterCaptureUnit_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">dragsterCaptureUnit</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>dragsterCaptureUnit_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="module_ref" spirit:name="dragsterCaptureUnit" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_dragsterCaptureUnit_1_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">dragsterCaptureUnit</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
         </spirit:configurableElementValues>
@@ -185,6 +402,11 @@
         <spirit:activeInterface spirit:busRef="M_AXI_S2MM" spirit:componentRef="axi_datamover_1"/>
         <spirit:activeInterface spirit:busRef="S00_AXI" spirit:componentRef="axi_mem_intercon"/>
       </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>processing_system7_0_axi_periph_M01_AXI</spirit:name>
+        <spirit:activeInterface spirit:busRef="M01_AXI" spirit:componentRef="processing_system7_0_axi_periph"/>
+        <spirit:activeInterface spirit:busRef="s00_axi" spirit:componentRef="imageCaptureManager_v1_0_0"/>
+      </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>
       <spirit:adHocConnection>
@@ -196,6 +418,7 @@
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="M_AXI_GP0_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_datamover_1" spirit:portRef="m_axi_s2mm_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="imageCaptureManager_v1_0_0" spirit:portRef="s00_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="M00_ACLK"/>
@@ -215,6 +438,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_datamover_0" spirit:portRef="m_axi_s2mm_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="s_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_datamover_1" spirit:portRef="m_axi_s2mm_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="imageCaptureManager_v1_0_0" spirit:portRef="s00_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S01_ARESETN"/>
@@ -326,6 +550,114 @@
         <spirit:name>memoryManagementUnit_1_commandPulse</spirit:name>
         <spirit:internalPortReference spirit:componentRef="memoryManagementUnit_1" spirit:portRef="commandPulse"/>
         <spirit:internalPortReference spirit:componentRef="axi_datamover_1" spirit:portRef="s_axis_s2mm_cmd_tvalid"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>imageCaptureManager_v1_0_0_imageCaptureEnabled</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="imageCaptureManager_v1_0_0" spirit:portRef="imageCaptureEnabled"/>
+        <spirit:internalPortReference spirit:componentRef="memoryManagementUnit_0" spirit:portRef="enable"/>
+        <spirit:internalPortReference spirit:componentRef="memoryManagementUnit_1" spirit:portRef="enable"/>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_0" spirit:portRef="enable"/>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_1" spirit:portRef="enable"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>LINESCANNER0_TAP_A_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER0_TAP_A"/>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_0" spirit:portRef="data"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>LINESCANNER0_SAMPLE_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER0_SAMPLE"/>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_0" spirit:portRef="sample"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>LINESCANNER0_END_ADC_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER0_END_ADC"/>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_0" spirit:portRef="endAdc"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>LINESCANNER0_LVAL_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER0_LVAL"/>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_0" spirit:portRef="lval"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>LINESCANNER0_PIXEL_CLOCK_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER0_PIXEL_CLOCK"/>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_0" spirit:portRef="pixelClock"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>dragsterCaptureUnit_0_rstCvc</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_0" spirit:portRef="rstCvc"/>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER0_RST_CVC"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>dragsterCaptureUnit_0_rstCds</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_0" spirit:portRef="rstCds"/>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER0_RST_CDS"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>dragsterCaptureUnit_0_mainClock</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_0" spirit:portRef="mainClock"/>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER0_MAIN_CLK"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>dragsterCaptureUnit_0_nReset</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_0" spirit:portRef="nReset"/>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER0_N_RESET"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>dragsterCaptureUnit_0_loadPulse</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_0" spirit:portRef="loadPulse"/>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER0_LOAD_PULSE"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>dragsterCaptureUnit_1_rstCvc</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_1" spirit:portRef="rstCvc"/>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER1_RST_CVC"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>dragsterCaptureUnit_1_rstCds</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_1" spirit:portRef="rstCds"/>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER1_RST_CDS"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>dragsterCaptureUnit_1_mainClock</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_1" spirit:portRef="mainClock"/>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER1_MAIN_CLOCK"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>dragsterCaptureUnit_1_nReset</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_1" spirit:portRef="nReset"/>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER1_N_RESET"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>dragsterCaptureUnit_1_loadPulse</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_1" spirit:portRef="loadPulse"/>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER1_LOAD_PULSE"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>LINESCANNER1_TAP_A_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER1_TAP_A"/>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_1" spirit:portRef="data"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>LINESCANNER1_SAMPLE_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER1_SAMPLE"/>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_1" spirit:portRef="sample"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>LINESCANNER1_END_ADC_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER1_END_ADC"/>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_1" spirit:portRef="endAdc"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>LINESCANNER1_LVAL_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER1_LVAL"/>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_1" spirit:portRef="lval"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>LINESCANNER1_PIXEL_CLOCK_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="LINESCANNER1_PIXEL_CLOCK"/>
+        <spirit:internalPortReference spirit:componentRef="dragsterCaptureUnit_1" spirit:portRef="pixelClock"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

@@ -9,17 +9,14 @@ create_project -in_memory -part xc7z020clg400-3
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir i:/projects/imagecapturemanager/ip/edit_imageCaptureManager_v1_0.cache/wt [current_project]
-set_property parent.project_path i:/projects/imagecapturemanager/ip/edit_imageCaptureManager_v1_0.xpr [current_project]
+set_property webtalk.parent_dir E:/oms/VideoControlIP/ip_repo/imageCaptureManager/edit_imageCaptureManager_v1_0.cache/wt [current_project]
+set_property parent.project_path E:/oms/VideoControlIP/ip_repo/imageCaptureManager/edit_imageCaptureManager_v1_0.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths {
-  i:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0
-  i:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0
-} [current_project]
+set_property ip_repo_paths e:/oms/VideoControlIP/ip_repo/imageCaptureManager [current_project]
 read_verilog -library xil_defaultlib {
-  i:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0_S00_AXI.v
-  i:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v
+  E:/oms/VideoControlIP/ip_repo/imageCaptureManager/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0_S00_AXI.v
+  E:/oms/VideoControlIP/ip_repo/imageCaptureManager/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v
 }
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp

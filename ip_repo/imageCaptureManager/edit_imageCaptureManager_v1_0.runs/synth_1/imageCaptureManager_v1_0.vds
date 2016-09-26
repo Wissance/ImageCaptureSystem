@@ -2,12 +2,12 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Mon Sep 26 17:41:27 2016
-# Process ID: 8176
-# Current directory: i:/Projects/imageCaptureManager/IP/edit_imageCaptureManager_v1_0.runs/synth_1
+# Start of session at: Mon Sep 26 23:14:09 2016
+# Process ID: 3800
+# Current directory: E:/oms/VideoControlIP/ip_repo/imageCaptureManager/edit_imageCaptureManager_v1_0.runs/synth_1
 # Command line: vivado.exe -log imageCaptureManager_v1_0.vds -mode batch -messageDb vivado.pb -notrace -source imageCaptureManager_v1_0.tcl
-# Log file: i:/Projects/imageCaptureManager/IP/edit_imageCaptureManager_v1_0.runs/synth_1/imageCaptureManager_v1_0.vds
-# Journal file: i:/Projects/imageCaptureManager/IP/edit_imageCaptureManager_v1_0.runs/synth_1\vivado.jou
+# Log file: E:/oms/VideoControlIP/ip_repo/imageCaptureManager/edit_imageCaptureManager_v1_0.runs/synth_1/imageCaptureManager_v1_0.vds
+# Journal file: E:/oms/VideoControlIP/ip_repo/imageCaptureManager/edit_imageCaptureManager_v1_0.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source imageCaptureManager_v1_0.tcl -notrace
 Command: synth_design -top imageCaptureManager_v1_0 -part xc7z020clg400-3
@@ -15,25 +15,25 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7712 
+INFO: Helper process launched with PID 2528 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 276.227 ; gain = 69.047
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 272.438 ; gain = 66.109
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'imageCaptureManager_v1_0' [i:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v:4]
+INFO: [Synth 8-638] synthesizing module 'imageCaptureManager_v1_0' [E:/oms/VideoControlIP/ip_repo/imageCaptureManager/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v:4]
 	Parameter START_IMAGE_CAPTURE_COMMAND bound to: 1 - type: integer 
 	Parameter STOP_IMAGE_CAPTURE_COMMAND bound to: 2 - type: integer 
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'imageCaptureManager_v1_0_S00_AXI' [i:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-638] synthesizing module 'imageCaptureManager_v1_0_S00_AXI' [E:/oms/VideoControlIP/ip_repo/imageCaptureManager/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0_S00_AXI.v:4]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
 	Parameter ADDR_LSB bound to: 2 - type: integer 
 	Parameter OPT_MEM_ADDR_BITS bound to: 1 - type: integer 
-INFO: [Synth 8-226] default block is never used [i:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0_S00_AXI.v:223]
-INFO: [Synth 8-226] default block is never used [i:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0_S00_AXI.v:364]
-INFO: [Synth 8-256] done synthesizing module 'imageCaptureManager_v1_0_S00_AXI' (1#1) [i:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0_S00_AXI.v:4]
-INFO: [Synth 8-155] case statement is not full and has no default [i:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v:80]
-INFO: [Synth 8-256] done synthesizing module 'imageCaptureManager_v1_0' (2#1) [i:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v:4]
+INFO: [Synth 8-226] default block is never used [E:/oms/VideoControlIP/ip_repo/imageCaptureManager/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0_S00_AXI.v:223]
+INFO: [Synth 8-226] default block is never used [E:/oms/VideoControlIP/ip_repo/imageCaptureManager/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0_S00_AXI.v:364]
+INFO: [Synth 8-256] done synthesizing module 'imageCaptureManager_v1_0_S00_AXI' (1#1) [E:/oms/VideoControlIP/ip_repo/imageCaptureManager/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/oms/VideoControlIP/ip_repo/imageCaptureManager/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v:80]
+INFO: [Synth 8-256] done synthesizing module 'imageCaptureManager_v1_0' (2#1) [E:/oms/VideoControlIP/ip_repo/imageCaptureManager/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v:4]
 WARNING: [Synth 8-3331] design imageCaptureManager_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
 WARNING: [Synth 8-3331] design imageCaptureManager_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
 WARNING: [Synth 8-3331] design imageCaptureManager_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
@@ -41,24 +41,24 @@ WARNING: [Synth 8-3331] design imageCaptureManager_v1_0_S00_AXI has unconnected 
 WARNING: [Synth 8-3331] design imageCaptureManager_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design imageCaptureManager_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 313.609 ; gain = 106.430
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 309.785 ; gain = 103.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 313.609 ; gain = 106.430
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 309.785 ; gain = 103.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 313.609 ; gain = 106.430
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 309.785 ; gain = 103.457
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-3
 INFO: [Synth 8-5545] ROM "imageCaptureEnabled" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-327] inferring latch for variable 'imageCaptureEnabled_reg' [i:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v:83]
-WARNING: [Synth 8-327] inferring latch for variable 'clearMemory_reg' [i:/Projects/imageCaptureManager/IP/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v:84]
+WARNING: [Synth 8-327] inferring latch for variable 'imageCaptureEnabled_reg' [E:/oms/VideoControlIP/ip_repo/imageCaptureManager/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v:83]
+WARNING: [Synth 8-327] inferring latch for variable 'clearMemory_reg' [E:/oms/VideoControlIP/ip_repo/imageCaptureManager/imageCaptureManager_1.0/hdl/imageCaptureManager_v1_0.v:84]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 320.574 ; gain = 113.395
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 316.715 ; gain = 110.387
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -116,7 +116,7 @@ BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 455.254 ; gain = 248.074
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 450.512 ; gain = 244.184
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -127,9 +127,9 @@ WARNING: [Synth 8-3331] design imageCaptureManager_v1_0_S00_AXI has unconnected 
 WARNING: [Synth 8-3331] design imageCaptureManager_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design imageCaptureManager_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 455.254 ; gain = 248.074
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 451.508 ; gain = 245.180
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 455.254 ; gain = 248.074
+Finished Parallel Reinference  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 451.508 ; gain = 245.180
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -153,9 +153,9 @@ WARNING: [Synth 8-3332] Sequential element (imageCaptureManager_v1_0_S00_AXI_ins
 WARNING: [Synth 8-3332] Sequential element (imageCaptureManager_v1_0_S00_AXI_inst/axi_rresp_reg[1]) is unused and will be removed from module imageCaptureManager_v1_0.
 WARNING: [Synth 8-3332] Sequential element (imageCaptureManager_v1_0_S00_AXI_inst/axi_rresp_reg[0]) is unused and will be removed from module imageCaptureManager_v1_0.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 475.746 ; gain = 268.566
+Finished Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 472.082 ; gain = 265.754
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 475.746 ; gain = 268.566
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 472.082 ; gain = 265.754
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -167,7 +167,7 @@ Start Timing Optimization
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 475.746 ; gain = 268.566
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 472.082 ; gain = 265.754
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -179,16 +179,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 475.773 ; gain = 268.594
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 472.109 ; gain = 265.781
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 475.773 ; gain = 268.594
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 472.109 ; gain = 265.781
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 475.773 ; gain = 268.594
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 472.109 ; gain = 265.781
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -205,7 +205,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 475.773 ; gain = 268.594
+Finished IO Insertion : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 472.109 ; gain = 265.781
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -218,7 +218,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 475.773 ; gain = 268.594
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 472.109 ; gain = 265.781
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -230,25 +230,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 475.773 ; gain = 268.594
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.109 ; gain = 265.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 475.773 ; gain = 268.594
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.109 ; gain = 265.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 475.773 ; gain = 268.594
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.109 ; gain = 265.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 475.773 ; gain = 268.594
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.109 ; gain = 265.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -284,11 +284,11 @@ Report Instance Areas:
 |2     |  imageCaptureManager_v1_0_S00_AXI_inst |imageCaptureManager_v1_0_S00_AXI |   225|
 +------+----------------------------------------+---------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 475.773 ; gain = 268.594
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.109 ; gain = 265.781
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 475.773 ; gain = 268.594
-Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 475.773 ; gain = 268.594
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 472.109 ; gain = 265.781
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.109 ; gain = 265.781
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 49 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -301,6 +301,6 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 21 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 541.512 ; gain = 334.332
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 541.512 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Sep 26 17:41:44 2016...
+synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 536.414 ; gain = 330.086
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 536.414 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 26 23:14:25 2016...

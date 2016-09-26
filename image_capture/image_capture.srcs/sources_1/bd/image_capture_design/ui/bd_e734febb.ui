@@ -1,53 +1,96 @@
 {
    guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
+preplace port LINESCANNER0_END_ADC -pg 1 -y -40 -defaultsOSRD
 preplace port DDR -pg 1 -y 170 -defaultsOSRD
+preplace port LINESCANNER1_MAIN_CLOCK -pg 1 -y 340 -defaultsOSRD -left
+preplace port LINESCANNER1_RST_CVC -pg 1 -y 380 -defaultsOSRD -left
+preplace port LINESCANNER0_LVAL -pg 1 -y -20 -defaultsOSRD
+preplace port LINESCANNER1_END_ADC -pg 1 -y 500 -defaultsOSRD
+preplace port LINESCANNER0_RST_CDS -pg 1 -y -160 -defaultsOSRD -left
+preplace port LINESCANNER1_PIXEL_CLOCK -pg 1 -y 540 -defaultsOSRD
+preplace port LINESCANNER1_LVAL -pg 1 -y 520 -defaultsOSRD
+preplace port LINESCANNER1_N_RESET -pg 1 -y 320 -defaultsOSRD -left
+preplace port LINESCANNER0_LOAD_PULSE -pg 1 -y -220 -defaultsOSRD -left
+preplace port LINESCANNER1_SAMPLE -pg 1 -y 480 -defaultsOSRD
+preplace port LINESCANNER0_N_RESET -pg 1 -y -200 -defaultsOSRD -left
+preplace port LINESCANNER0_SAMPLE -pg 1 -y -60 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 190 -defaultsOSRD
+preplace port LINESCANNER1_LOAD_PULSE -pg 1 -y 300 -defaultsOSRD -left
+preplace port LINESCANNER1_RST_CDS -pg 1 -y 360 -defaultsOSRD -left
+preplace port LINESCANNER0_RST_CVC -pg 1 -y -140 -defaultsOSRD -left
 preplace port spi_rtl -pg 1 -y 320 -defaultsOSRD
+preplace port LINESCANNER0_MAIN_CLK -pg 1 -y -180 -defaultsOSRD -left
+preplace port LINESCANNER0_PIXEL_CLOCK -pg 1 -y 0 -defaultsOSRD
+preplace portBus LINESCANNER0_TAP_A -pg 1 -y -80 -defaultsOSRD
+preplace portBus LINESCANNER1_TAP_A -pg 1 -y 460 -defaultsOSRD
 preplace inst dragsterCaptureUnit_0 -pg 1 -lvl 1 -y -50 -defaultsOSRD
 preplace inst dragsterCaptureUnit_1 -pg 1 -lvl 1 -y 490 -defaultsOSRD
-preplace inst memoryManagementUnit_0 -pg 1 -lvl 2 -y -40 -defaultsOSRD
-preplace inst memoryManagementUnit_1 -pg 1 -lvl 2 -y 510 -defaultsOSRD
-preplace inst rst_processing_system7_0_50M -pg 1 -lvl 3 -y 370 -defaultsOSRD
-preplace inst axi_datamover_0 -pg 1 -lvl 4 -y 170 -defaultsOSRD
-preplace inst axi_datamover_1 -pg 1 -lvl 4 -y 510 -defaultsOSRD
-preplace inst axi_mem_intercon -pg 1 -lvl 5 -y 200 -defaultsOSRD
-preplace inst processing_system7_0_axi_periph -pg 1 -lvl 7 -y 120 -defaultsOSRD
-preplace inst axi_quad_spi_0 -pg 1 -lvl 8 -y 370 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 6 -y 210 -defaultsOSRD
-preplace netloc axi_quad_spi_0_SPI_0 1 8 1 NJ
-preplace netloc processing_system7_0_DDR 1 6 3 NJ 260 NJ 170 NJ
-preplace netloc axi_datamover_1_M_AXI_S2MM 1 4 1 630
-preplace netloc memoryManagementUnit_1_keepData 1 2 2 -210 280 NJ
-preplace netloc dragsterCaptureUnit_1_out 1 1 1 -590
-preplace netloc dragsterCaptureUnit_0_out 1 1 1 -590
-preplace netloc processing_system7_0_axi_periph_M00_AXI 1 7 1 1660
-preplace netloc dragsterCaptureUnit_1_lineCaptured 1 1 1 -580
-preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 3 4 NJ -10 620 50 NJ 50 NJ
-preplace netloc processing_system7_0_M_AXI_GP0 1 6 1 1320
-preplace netloc memoryManagementUnit_0_commandPulse 1 2 2 N 10 NJ
-preplace netloc axi_datamover_0_M_AXI_S2MM 1 4 1 600
-preplace netloc axi_datamover_0_s_axis_s2mm_tready 1 1 3 -570 120 NJ 120 N
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 2 5 NJ -40 NJ -40 NJ -40 NJ -40 1300
-preplace netloc axi_mem_intercon_M00_AXI 1 5 1 N
-preplace netloc memoryManagementUnit_1_dataOut 1 2 2 -220 270 NJ
-preplace netloc memoryManagementUnit_0_keepData 1 2 2 NJ -30 150
-preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 3 5 170 -30 640 30 NJ 30 1340 280 NJ
-preplace netloc memoryManagementUnit_1_commandPulse 1 2 2 N 560 NJ
-preplace netloc axi_datamover_1_s_axis_s2mm_cmd_tready 1 1 3 -560 610 NJ 540 N
-preplace netloc memoryManagementUnit_1_lastData 1 2 2 N 500 NJ
-preplace netloc dragsterCaptureUnit_0_lineCaptured 1 1 1 -580
-preplace netloc processing_system7_0_FIXED_IO 1 6 3 NJ 270 NJ 190 NJ
-preplace netloc axi_datamover_0_s_axis_s2mm_cmd_tready 1 1 3 -560 200 NJ 200 N
-preplace netloc memoryManagementUnit_0_dataPulse 1 2 2 N -70 NJ
-preplace netloc memoryManagementUnit_0_dataOut 1 2 2 NJ -90 220
-preplace netloc axi_datamover_1_s_axis_s2mm_tready 1 1 3 -570 620 NJ 460 NJ
-preplace netloc memoryManagementUnit_0_commandData 1 2 2 N -10 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 2 6 -180 250 190 -20 610 350 900 300 1350 300 1640
-preplace netloc memoryManagementUnit_0_lastData 1 2 2 NJ -50 200
-preplace netloc memoryManagementUnit_1_commandData 1 2 2 -200 520 NJ
-preplace netloc memoryManagementUnit_1_dataPulse 1 2 2 N 480 NJ
-levelinfo -pg 1 -820 -700 -390 -20 410 770 1100 1510 1800 1940 -top -150 -bot 1020
+preplace inst memoryManagementUnit_0 -pg 1 -lvl 3 -y -40 -defaultsOSRD
+preplace inst memoryManagementUnit_1 -pg 1 -lvl 3 -y 510 -defaultsOSRD
+preplace inst rst_processing_system7_0_50M -pg 1 -lvl 4 -y 370 -defaultsOSRD
+preplace inst axi_datamover_0 -pg 1 -lvl 5 -y 170 -defaultsOSRD
+preplace inst axi_datamover_1 -pg 1 -lvl 5 -y 510 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 6 -y 200 -defaultsOSRD
+preplace inst imageCaptureManager_v1_0_0 -pg 1 -lvl 2 -y 290 -defaultsOSRD
+preplace inst processing_system7_0_axi_periph -pg 1 -lvl 8 -y 120 -defaultsOSRD
+preplace inst axi_quad_spi_0 -pg 1 -lvl 9 -y 370 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 7 -y 210 -defaultsOSRD
+preplace netloc axi_quad_spi_0_SPI_0 1 9 1 NJ
+preplace netloc processing_system7_0_DDR 1 7 3 NJ 260 NJ 170 NJ
+preplace netloc axi_datamover_1_M_AXI_S2MM 1 5 1 720
+preplace netloc memoryManagementUnit_1_keepData 1 3 2 -160 510 NJ
+preplace netloc LINESCANNER1_LVAL_1 1 0 1 N
+preplace netloc dragsterCaptureUnit_1_mainClock 1 0 2 NJ 340 -950
+preplace netloc dragsterCaptureUnit_1_out 1 1 2 NJ 470 N
+preplace netloc dragsterCaptureUnit_0_out 1 1 2 NJ -80 N
+preplace netloc processing_system7_0_axi_periph_M00_AXI 1 8 1 1810
+preplace netloc LINESCANNER1_END_ADC_1 1 0 1 N
+preplace netloc dragsterCaptureUnit_1_lineCaptured 1 1 2 NJ 490 N
+preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 4 4 NJ -10 680 20 NJ 20 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 7 1 1420
+preplace netloc dragsterCaptureUnit_0_rstCds 1 0 2 NJ -160 -970
+preplace netloc memoryManagementUnit_0_commandPulse 1 3 2 N 10 NJ
+preplace netloc axi_datamover_0_M_AXI_S2MM 1 5 1 690
+preplace netloc dragsterCaptureUnit_1_loadPulse 1 0 2 NJ 300 -930
+preplace netloc dragsterCaptureUnit_0_loadPulse 1 0 2 NJ -220 -930
+preplace netloc axi_datamover_0_s_axis_s2mm_tready 1 2 3 NJ 120 NJ 120 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 3 5 NJ -40 NJ -50 NJ -50 NJ -50 1380
+preplace netloc axi_mem_intercon_M00_AXI 1 6 1 N
+preplace netloc LINESCANNER1_PIXEL_CLOCK_1 1 0 1 N
+preplace netloc memoryManagementUnit_1_dataOut 1 3 2 -160 470 NJ
+preplace netloc memoryManagementUnit_0_keepData 1 3 2 NJ -30 NJ
+preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 8 -880 220 N 220 NJ 220 210 -30 710 40 NJ 40 1400 290 NJ
+preplace netloc memoryManagementUnit_1_commandPulse 1 3 2 N 560 NJ
+preplace netloc axi_datamover_1_s_axis_s2mm_cmd_tready 1 2 3 NJ 610 NJ 540 NJ
+preplace netloc LINESCANNER0_SAMPLE_1 1 0 1 N
+preplace netloc memoryManagementUnit_1_lastData 1 3 2 N 500 NJ
+preplace netloc dragsterCaptureUnit_0_lineCaptured 1 1 2 NJ -60 N
+preplace netloc processing_system7_0_FIXED_IO 1 7 3 NJ 270 NJ 190 NJ
+preplace netloc LINESCANNER1_SAMPLE_1 1 0 1 N
+preplace netloc dragsterCaptureUnit_1_rstCds 1 0 2 NJ 360 -960
+preplace netloc dragsterCaptureUnit_0_mainClock 1 0 2 NJ -210 -940
+preplace netloc LINESCANNER0_END_ADC_1 1 0 1 N
+preplace netloc axi_datamover_0_s_axis_s2mm_cmd_tready 1 2 3 NJ 200 NJ 200 NJ
+preplace netloc memoryManagementUnit_0_dataPulse 1 3 2 N -70 NJ
+preplace netloc memoryManagementUnit_0_dataOut 1 3 2 NJ -90 NJ
+preplace netloc imageCaptureManager_v1_0_0_imageCaptureEnabled 1 0 3 -1210 -170 NJ -170 -600
+preplace netloc axi_datamover_1_s_axis_s2mm_tready 1 2 3 NJ 410 NJ 460 NJ
+preplace netloc memoryManagementUnit_0_commandData 1 3 2 N -10 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 8 -890 210 N 210 -160 210 280 -20 700 50 980 60 1430 280 NJ
+preplace netloc LINESCANNER1_TAP_A_1 1 0 1 N
+preplace netloc dragsterCaptureUnit_1_nReset 1 0 2 NJ 320 -940
+preplace netloc dragsterCaptureUnit_1_rstCvc 1 0 2 NJ 380 -970
+preplace netloc dragsterCaptureUnit_0_nReset 1 0 2 NJ -200 -950
+preplace netloc LINESCANNER0_TAP_A_1 1 0 1 N
+preplace netloc memoryManagementUnit_0_lastData 1 3 2 NJ -50 NJ
+preplace netloc processing_system7_0_axi_periph_M01_AXI 1 1 8 -900 -140 NJ -140 NJ -140 NJ -140 NJ -140 NJ -140 NJ -140 1790
+preplace netloc dragsterCaptureUnit_0_rstCvc 1 0 2 NJ -190 -960
+preplace netloc LINESCANNER0_PIXEL_CLOCK_1 1 0 1 N
+preplace netloc LINESCANNER0_LVAL_1 1 0 1 N
+preplace netloc memoryManagementUnit_1_commandData 1 3 2 -150 520 NJ
+preplace netloc memoryManagementUnit_1_dataPulse 1 3 2 N 480 NJ
+levelinfo -pg 1 -1250 -1080 -740 -330 40 490 850 1180 1660 1940 2080 -top -350 -bot 1020
 ",
 }
 {
