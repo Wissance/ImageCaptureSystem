@@ -1,0 +1,74 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
+| Date         : Mon Sep 26 17:42:17 2016
+| Host         : ushakov_mv running 64-bit Service Pack 1  (build 7601)
+| Command      : report_control_sets -verbose -file imageCaptureManager_v1_0_control_sets_placed.rpt
+| Design       : imageCaptureManager_v1_0
+| Device       : xc7z020
+-----------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    21 |
+| Unused register locations in slices containing registers |    21 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               2 |            1 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               5 |            2 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             164 |           30 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++----------------------------------+------------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+
+|           Clock Signal           |                        Enable Signal                       |                      Set/Reset Signal                     | Slice Load Count | Bel Load Count |
++----------------------------------+------------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+
+|  imageCaptureEnabled_reg_i_2_n_0 |                                                            |                                                           |                1 |              2 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/axi_arready_i_1_n_0  | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              2 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready0         | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              2 |
+|  s00_axi_aclk_IBUF_BUFG          |                                                            | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                2 |              5 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/slv_reg0[15]_i_1_n_0 | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                2 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/slv_reg0[23]_i_1_n_0 | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/slv_reg0[31]_i_1_n_0 | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/slv_reg0[7]_i_1_n_0  | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/slv_reg1[15]_i_1_n_0 | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                2 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/slv_reg1[23]_i_1_n_0 | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/slv_reg1[31]_i_1_n_0 | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                2 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/slv_reg1[7]_i_1_n_0  | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/slv_reg2[15]_i_1_n_0 | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/slv_reg2[23]_i_1_n_0 | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/slv_reg2[31]_i_1_n_0 | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/slv_reg2[7]_i_1_n_0  | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/p_1_in[7]            | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/p_1_in[15]           | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/p_1_in[23]           | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/p_1_in[31]           | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG          | imageCaptureManager_v1_0_S00_AXI_inst/slv_reg_rden__0      | imageCaptureManager_v1_0_S00_AXI_inst/axi_awready_i_1_n_0 |                9 |             32 |
++----------------------------------+------------------------------------------------------------+-----------------------------------------------------------+------------------+----------------+
+
+
