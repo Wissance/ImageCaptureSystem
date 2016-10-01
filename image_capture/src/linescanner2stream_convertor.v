@@ -5,7 +5,7 @@
 // 
 // Create Date: 23.09.2016 09:44:53
 // Design Name: 
-// Module Name: memoryController
+// Module Name: linescanner2stream_convertor
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,17 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module memoryManagementUnit(
-    input [7:0] data,
-    input loadPulse,
+module linescanner2stream_convertor(
     input enable,
-    output [31:0] dataOut,
-    output dataPulse,
-    input receiverDataReady,
-    output lastData,
-    output [3:0] keepData,
-    output [71:0] commandData,
-    output commandPulse,
-    input receiverCommandReady
+    input [7:0] input_data,
+    input data_ready,
+    output [31:0] stream_data,
+    output stream_data_valid,
+    input pixel_captured,
+    output last_data,
+    output [3:0] keep_data
     );
 endmodule

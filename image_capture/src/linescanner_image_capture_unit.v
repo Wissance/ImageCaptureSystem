@@ -5,7 +5,7 @@
 // 
 // Create Date: 23.09.2016 08:48:06
 // Design Name: 
-// Module Name: dragsterCaptureUnit
+// Module Name: linescanner_image_capture_unit
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,19 +20,19 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module dragsterCaptureUnit(
+module linescanner_image_capture_unit(
     input enable,
     input [7:0] data,
-    output rstCvc,
-    output rstCds,
+    output rst_cvc,
+    output rst_cds,
     input sample,
-    input endAdc,
+    input end_adc,
     input lval,
-    input pixelClock,
-    output mainClock,
-    output nReset,
-    output loadPulse,
+    input pixel_clock,
+    output main_clock,
+    output n_reset,
+    output load_pulse,
     output [7:0] out,
-    output lineCaptured
+    output pixel_captured
     );
 endmodule
