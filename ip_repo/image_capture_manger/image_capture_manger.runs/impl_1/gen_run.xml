@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-2" LaunchTime="1475419046">
-  <File Type="OPT-DCP" Name="image_capture_manager_v1_0_opt.dcp"/>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-2" LaunchTime="1475421087">
   <File Type="ROUTE-STATUS-PB" Name="image_capture_manager_v1_0_route_status.pb"/>
   <File Type="PA-TCL" Name="image_capture_manager_v1_0.tcl"/>
+  <File Type="OPT-DCP" Name="image_capture_manager_v1_0_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="image_capture_manager_v1_0_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="image_capture_manager_v1_0_methodology_drc_opted.rpt"/>
   <File Type="RDI-RDI" Name="image_capture_manager_v1_0.vdi"/>
   <File Type="PWROPT-DRC" Name="image_capture_manager_v1_0_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="image_capture_manager_v1_0_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="image_capture_manager_v1_0_timing_summary_init.rpt"/>
   <File Type="OPT-DRC" Name="image_capture_manager_v1_0_drc_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="image_capture_manager_v1_0_pwropt.dcp"/>
   <File Type="OPT-HWDEF" Name="image_capture_manager_v1_0.hwdef"/>
@@ -31,8 +31,8 @@
   <File Type="ROUTE-DRC" Name="image_capture_manager_v1_0_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="image_capture_manager_v1_0_drc_routed.pb"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="image_capture_manager_v1_0_methodology_drc_routed.rpt"/>
-  <File Type="BG-BIT" Name="image_capture_manager_v1_0.bit"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="image_capture_manager_v1_0_methodology_drc_routed.pb"/>
+  <File Type="BG-BIT" Name="image_capture_manager_v1_0.bit"/>
   <File Type="ROUTE-PWR" Name="image_capture_manager_v1_0_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="image_capture_manager_v1_0_power_summary_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="image_capture_manager_v1_0_power_routed.rpx"/>
@@ -73,6 +73,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="image_capture_manager_v1_0"/>
@@ -81,7 +84,14 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/src/timing.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/src/timing.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

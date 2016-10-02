@@ -44,6 +44,7 @@ proc step_failed { step } {
 
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
+set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 
@@ -57,6 +58,7 @@ set rc [catch {
   set_property ip_repo_paths e:/oms/VideoControlIP/ip_repo/image_capture_manger/image_capture_manger.cache/ip [current_project]
   set_property ip_output_repo e:/oms/VideoControlIP/ip_repo/image_capture_manger/image_capture_manger.cache/ip [current_project]
   add_files -quiet E:/oms/VideoControlIP/ip_repo/image_capture_manger/image_capture_manger.runs/synth_1/image_capture_manager_v1_0.dcp
+  read_xdc E:/oms/VideoControlIP/ip_repo/image_capture_manger/src/timing.xdc
   link_design -top image_capture_manager_v1_0 -part xc7z020clg400-2
   write_hwdef -file image_capture_manager_v1_0.hwdef
   close_msg_db -file init_design.pb

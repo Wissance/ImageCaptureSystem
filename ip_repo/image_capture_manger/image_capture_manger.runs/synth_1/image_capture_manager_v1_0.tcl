@@ -4,6 +4,7 @@
 
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
+set_msg_config -id {HDL-1065} -limit 10000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7z020clg400-2
@@ -22,6 +23,9 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
 }
+read_xdc E:/oms/VideoControlIP/ip_repo/image_capture_manger/src/timing.xdc
+set_property used_in_implementation false [get_files E:/oms/VideoControlIP/ip_repo/image_capture_manger/src/timing.xdc]
+
 
 synth_design -top image_capture_manager_v1_0 -part xc7z020clg400-2
 

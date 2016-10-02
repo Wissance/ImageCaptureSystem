@@ -63,8 +63,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\image_capture_design_imageCaptureManager_v1_0_0_0\image_capture_design_imageCaptureManager_v1_0_0_0.xci" Type="IP">
-        <Instance HierarchyPath="imageCaptureManager_v1_0_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -112,6 +111,14 @@
       </File>
       <File Name="ip\image_capture_design_linescanner2stream_convertor_1_0\image_capture_design_linescanner2stream_convertor_1_0.xci" Type="IP">
         <Instance HierarchyPath="linescanner2stream_convertor_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\image_capture_design_image_capture_manager_v1_0_0_0\image_capture_design_image_capture_manager_v1_0_0_0.xci" Type="IP">
+        <Instance HierarchyPath="image_capture_manager_v1_0_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
