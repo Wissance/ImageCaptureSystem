@@ -33,7 +33,7 @@ module linescanner_image_capture_unit(
     output main_clock,
     output n_reset,
     output load_pulse,
-    output [7:0] out,
+    output [7:0] pixel_data,
     output pixel_captured
     );
 endmodule
