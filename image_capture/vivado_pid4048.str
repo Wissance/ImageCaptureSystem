@@ -1,0 +1,232 @@
+/*
+
+Vivado v2016.2 (64-bit)
+SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+Process ID: 4048
+
+Current time: 	10/4/16 11:34:53 AM MSK
+Time zone: 	Moscow Standard Time (Europe/Moscow)
+
+OS: Windows 7
+Version: 6.1
+Architecture: amd64
+Available processors (cores): 2
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Default font: family=Tahoma,name=Tahoma,style=plain,size=11
+
+Java version: 	1.8.0_66 64-bit
+Java home: 	C:/XilinxTools/Vivado/2016.2/tps/win64/jre
+
+User name: 	michael
+User home directory: C:/Users/michael
+User working directory: E:/oms/VideoControlIP/image_capture
+User country: 	RU
+User language: 	ru
+User locale: 	ru_RU
+
+RDI Base root directory: C:/XilinxTools/Vivado
+RDI Data directory: C:/XilinxTools/Vivado/2016.2/data
+RDI Bin directory: C:/XilinxTools/Vivado/2016.2/bin
+
+Vivado preferences path: C:/Users/michael/AppData/Roaming/Xilinx/Vivado/2016.2/vivado.ini
+Vivado layouts directory: C:/Users/michael/AppData/Roaming/Xilinx/Vivado/2016.2/layouts
+
+GUI allocated memory:	192 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 440 MB
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: E:\oms\VideoControlIP\image_capture\image_capture.xpr. Version: Vivado v2016.2 
+// bL:g (cv:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// [GUI Memory]: 41 MB (+40357kb) [00:00:05]
+// [Engine Memory]: 416 MB (+284797kb) [00:00:05]
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 516 MB (+83460kb) [00:00:08]
+// [GUI Memory]: 54 MB (+12011kb) [00:00:08]
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: open_project E:/oms/VideoControlIP/image_capture/image_capture.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/oms/VideoControlIP/ip_repo/linescanner_image_capture_ip_1.0'. INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/oms/VideoControlIP/ip_repo/image_capture_manger'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/XilinxTools/Vivado/2016.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 530 MB. GUI used memory: 34 MB. Current time: 10/4/16 11:34:57 AM MSK
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Project name: image_capture; location: E:/oms/VideoControlIP/image_capture; part: xc7z020clg400-2
+// Tcl Message: open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 776.145 ; gain = 157.234 
+dismissDialog("Open Project"); // bL:g (cv:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Open Block Design]", 7, false); // x:Y (w:G, cv:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_BLOCK_DESIGN
+// bL:g (cv:JFrame):  Open Block Design : addNotify
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_PROPERTY_CHANGE
+// [Engine Memory]: 598 MB (+58288kb) [00:00:18]
+// Tcl Message: open_bd_design {E:/oms/VideoControlIP/image_capture/image_capture.srcs/sources_1/bd/image_capture_design/image_capture_design.bd} 
+// Tcl Message: Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0 
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// Tcl Message: Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_processing_system7_0_50M Adding cell -- xilinx.com:ip:axi_quad_spi:3.2 - axi_quad_spi_0 
+// TclEventType: RSB_PROPERTY_CHANGE
+// Tcl Message: Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar 
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// [Engine Memory]: 659 MB (+32731kb) [00:00:21]
+// TclEventType: RSB_OPEN_DIAGRAM
+// [Engine Memory]: 707 MB (+15895kb) [00:00:23]
+// Tcl Message: Successfully read diagram <image_capture_design> from BD file <E:/oms/VideoControlIP/image_capture/image_capture.srcs/sources_1/bd/image_capture_design/image_capture_design.bd> 
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/oms/VideoControlIP/ip_repo/linescanner_image_capture_ip_1.0'. INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/oms/VideoControlIP/ip_repo/image_capture_manger'. 
+// Tcl Message: open_bd_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 921.391 ; gain = 140.457 
+// 'bs' command handler elapsed time: 7 seconds
+dismissDialog("Open Block Design"); // bL:g (cv:JFrame)
+// [GUI Memory]: 61 MB (+3760kb) [00:00:25]
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceOtoP.PlanAheadTab_REFRESH_CHANGED_MODULES, "Refresh Changed Modules"); // i:l (JPanel:JComponent, cv:JFrame)
+// Tcl Message: update_module_reference image_capture_design_linescanner_image_capture_unit_1_0 
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// bL:g (cv:JFrame):  Refresh Changed Modules : addNotify
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: INFO: [IP_Flow 19-4753] Inferred signal 'reset' from port 'n_reset' as interface 'n_reset'. INFO: [IP_Flow 19-4753] Inferred signal 'clock' from port 'pixel_clock' as interface 'pixel_clock'. INFO: [IP_Flow 19-4753] Inferred signal 'clock' from port 'main_clock' as interface 'main_clock'. 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/oms/VideoControlIP/ip_repo/linescanner_image_capture_ip_1.0'. INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/oms/VideoControlIP/ip_repo/image_capture_manger'. 
+// Tcl Message: Upgrading 'E:/oms/VideoControlIP/image_capture/image_capture.srcs/sources_1/bd/image_capture_design/image_capture_design.bd' 
+// Tcl Message: INFO: [IP_Flow 19-1972] Upgraded image_capture_design_linescanner_image_capture_unit_1_0 from linescanner_image_capture_unit_v1_0 1.0 to linescanner_image_capture_unit_v1_0 1.0 
+// Tcl Message: Wrote  : <E:/oms/VideoControlIP/image_capture/image_capture.srcs/sources_1/bd/image_capture_design/image_capture_design.bd>  
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 728 MB. GUI used memory: 37 MB. Current time: 10/4/16 11:35:15 AM MSK
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: update_module_reference image_capture_design_linescanner2stream_convertor_1_0 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/oms/VideoControlIP/ip_repo/linescanner_image_capture_ip_1.0'. INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/oms/VideoControlIP/ip_repo/image_capture_manger'. 
+// Tcl Message: Upgrading 'E:/oms/VideoControlIP/image_capture/image_capture.srcs/sources_1/bd/image_capture_design/image_capture_design.bd' 
+// Tcl Message: INFO: [IP_Flow 19-1972] Upgraded image_capture_design_linescanner2stream_convertor_1_0 from linescanner2stream_convertor_v1_0 1.0 to linescanner2stream_convertor_v1_0 1.0 
+// Tcl Message: Wrote  : <E:/oms/VideoControlIP/image_capture/image_capture.srcs/sources_1/bd/image_capture_design/image_capture_design.bd>  
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: update_module_reference {image_capture_design_clock_divider_0_1 image_capture_design_clock_divider_1_0} 
+// Tcl Message: INFO: [IP_Flow 19-4753] Inferred signal 'clock' from port 'input_clock' as interface 'input_clock'. INFO: [IP_Flow 19-4753] Inferred signal 'clock' from port 'output_clock' as interface 'output_clock'. 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/oms/VideoControlIP/ip_repo/linescanner_image_capture_ip_1.0'. INFO: [IP_Flow 19-1700] Loaded user IP repository 'e:/oms/VideoControlIP/ip_repo/image_capture_manger'. 
+// Tcl Message: Upgrading 'E:/oms/VideoControlIP/image_capture/image_capture.srcs/sources_1/bd/image_capture_design/image_capture_design.bd' 
+// Tcl Message: INFO: [IP_Flow 19-1972] Upgraded image_capture_design_clock_divider_0_1 from clock_divider_v1_0 1.0 to clock_divider_v1_0 1.0 INFO: [IP_Flow 19-1972] Upgraded image_capture_design_clock_divider_1_0 from clock_divider_v1_0 1.0 to clock_divider_v1_0 1.0 
+// Tcl Message: Wrote  : <E:/oms/VideoControlIP/image_capture/image_capture.srcs/sources_1/bd/image_capture_design/image_capture_design.bd>  
+// a:a (cv:JFrame): Critical Messages: addNotify
+// [GUI Memory]: 64 MB (+135kb) [00:00:30]
+// [Engine Memory]: 749 MB (+6477kb) [00:00:30]
+dismissDialog("Refresh Changed Modules"); // bL:g (cv:JFrame)
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_UPDATE_GRAPH
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // i:a (JPanel:JComponent, a:a)
+dismissDialog("Critical Messages"); // a:a (cv:JFrame)

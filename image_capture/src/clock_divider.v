@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 23.09.2016 08:48:06
+// Create Date: 04.10.2016 05:53:55
 // Design Name: 
-// Module Name: linescanner_image_capture_unit
+// Module Name: clock_divider
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,20 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module linescanner_image_capture_unit(
-    input enable,
-    input [7:0] data,
-    output rst_cvc,
-    output rst_cds,
-    input sample,
-    input end_adc,
-    input lval,
-    input pixel_clock,
-	input main_clock_source,
-    output main_clock,
-    output n_reset,
-    output load_pulse,
-    output [7:0] out,
-    output pixel_captured
+module clock_divider #
+    (
+        parameter clock_division = 2
+    )
+    (
+        input input_clock,
+        output output_clock
     );
 endmodule

@@ -1,7 +1,7 @@
 
 `timescale 1 ns / 1 ps
 
-	module image_capture_manager_v1_0 #
+	module image_capture_manager #
 	(
 		// Users to add parameters here
         parameter integer START_IMAGE_CAPTURE_COMMAND = 1,
@@ -47,10 +47,10 @@
 	);
 	
 // Instantiation of Axi Bus Interface S00_AXI
-	image_capture_manager_v1_0_S00_AXI # ( 
+	image_capture_manager_S00_AXI # ( 
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
-	) image_capture_manager_v1_0_S00_AXI_inst (
+	) image_capture_manager_S00_AXI_inst (
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),

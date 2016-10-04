@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Tue Oct 04 06:56:37 2016">
+<application name="pa" timeStamp="Tue Oct 04 12:34:31 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="3582839e308e40a6acc46cc9b31f2ae1" type="ProjectID"/>
-<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+<property name="ProjectIteration" value="2" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -17,79 +17,54 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
-<property name="AddSources" value="3" type="JavaHandler"/>
-<property name="CustomizeRSBBlock" value="22" type="JavaHandler"/>
-<property name="EditDelete" value="18" type="JavaHandler"/>
+<property name="AddSources" value="6" type="JavaHandler"/>
+<property name="CreateBlockDesign" value="1" type="JavaHandler"/>
+<property name="CustomizeRSBBlock" value="27" type="JavaHandler"/>
+<property name="EditDelete" value="24" type="JavaHandler"/>
 <property name="EditProperties" value="3" type="JavaHandler"/>
 <property name="EditUndo" value="3" type="JavaHandler"/>
-<property name="OpenBlockDesign" value="12" type="JavaHandler"/>
+<property name="OpenBlockDesign" value="14" type="JavaHandler"/>
 <property name="OpenFile" value="1" type="JavaHandler"/>
 <property name="OpenProject" value="1" type="JavaHandler"/>
-<property name="ProjectSettingsCmdHandler" value="2" type="JavaHandler"/>
+<property name="ProjectSettingsCmdHandler" value="3" type="JavaHandler"/>
 <property name="RefreshRSBBlock" value="2" type="JavaHandler"/>
+<property name="RegenerateRSBLayout" value="1" type="JavaHandler"/>
+<property name="ResetLayout" value="1" type="JavaHandler"/>
+<property name="RunImplementation" value="1" type="JavaHandler"/>
 <property name="SaveAllFiles" value="1" type="JavaHandler"/>
 <property name="SaveFileProxyHandler" value="1" type="JavaHandler"/>
-<property name="SaveRSBDesign" value="18" type="JavaHandler"/>
+<property name="SaveRSBDesign" value="24" type="JavaHandler"/>
 <property name="SetTopNode" value="1" type="JavaHandler"/>
 <property name="ShowView" value="1" type="JavaHandler"/>
+<property name="ValidateRSBDesign" value="1" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
-<property name="FINISH, Finish" value="2" type="GuiResourceData"/>
-<property name="NEXT, Next " value="2" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CmdMsgDialog_OK, OK" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, clock_divider" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS,  ; input ; false ; 0 ; 0, 0, (String" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, input_clock, 0, Port Name, 0" value="1" type="GuiResourceData"/>
-<property name="PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, output_clock, 1, Port Name, 0" value="1" type="GuiResourceData"/>
-<property name="PAResourceCommand.PACommandNames_ADD_SOURCES, Add Sources..." value="2" type="GuiResourceData"/>
-<property name="PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update" value="2" type="GuiResourceData"/>
+<property name="IP, IP" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CmdMsgDialog_OK, OK" value="2" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_REGENERATE_LAYOUT, Regenerate Layout" value="1" type="GuiResourceData"/>
 <property name="PAResourceCommand.PACommandNames_SAVE_RSB_DESIGN, save_rsb_design" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, clock_divider (clock_divider.v" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, image_capture_design (image_capture_design.bd" value="8" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, image_capture_manager_v1_0 (imageCaptureManager_v1_0.v" value="4" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources], 0, true" value="2" type="GuiResourceData"/>
-<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources], 0, true, false, false, false, true, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_VALIDATE_RSB_DESIGN, Validate Design" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, image_capture_design (image_capture_design.bd" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, IP Integrator, Create Block Design], 6, false" value="1" type="GuiResourceData"/>
 <property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, IP Integrator, Open Block Design], 7, false" value="1" type="GuiResourceData"/>
-<property name="PAResourceEtoH.GettingStartedView_OPEN_PROJECT, Open Project" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Project Manager, Project Settings], 1, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.HACGCIPSymbol_SHOW_DISABLED_PORTS, Show disabled ports, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.HACGCIPSymbol_SHOW_DISABLED_PORTS, Show disabled ports, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Vivado Commands, update_module_reference image_capture_design_image_capture_manager_v1_0_0_1. , [filemgmt 56-189] Failed to resolve reference. Nothing was found in the project to match the name 'image_capture_manager_v1_0'.. ], 34, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PAViews_ADDRESS_EDITOR, Address Editor" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PAViews_CODE, Code" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PAViews_SYSTEM, System" value="1" type="GuiResourceData"/>
 <property name="PAResourceOtoP.PlanAheadTab_REFRESH_CHANGED_MODULES, Refresh Changed Modules" value="1" type="GuiResourceData"/>
-<property name="PAResourceQtoS.RSBApplyAutomationBar_RUN_CONNECTION_AUTOMATION, Run Connection Automation" value="1" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, Add Directories" value="1" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, Add Files" value="1" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SrcChooserPanel_CREATE_FILE, Create File" value="2" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy" value="4" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SystemBuilderMenu_ADD_MODULE, Add Module..." value="2" type="GuiResourceData"/>
-<property name="PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, Expand/Collapse" value="2" type="GuiResourceData"/>
-<property name="RDIResource.BaseDialog_OK, OK" value="4" type="GuiResourceData"/>
-<property name="clock_divider.v, 124, 383" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 136, 313" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 138, 366" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 199, 357" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 223, 406" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 229, 312" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 243, 301" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 26, 380, false, true, false, false, false" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 26, 390, false, true, false, false, false" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 262, 351" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 28, 351" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 29, 382, false, true, false, false, false" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 294, 352" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 314, 383" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 317, 323" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 326, 142" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 38, 383" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 39, 402" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 416, 292" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 425, 417" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 47, 366" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 52, 362" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 55, 436, false, true, false, false, false" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 68, 370" value="1" type="GuiResourceData"/>
-<property name="clock_divider.v, 75, 396, false, true, false, false, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SelectMenu_HIGHLIGHT, Highlight" value="3" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemBuilderMenu_ADD_MODULE, Add Module..." value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, Expand/Collapse" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="2" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="46" type="GuiMode"/>
+<property name="GuiMode" value="48" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="42" type="TclMode"/>
+<property name="TclMode" value="44" type="TclMode"/>
 </item>
 </section>
 </application>
