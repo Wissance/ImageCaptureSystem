@@ -1,92 +1,96 @@
 {
    guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
-preplace port LINESCANNER0_END_ADC -pg 1 -y -40 -defaultsOSRD
-preplace port DDR -pg 1 -y 170 -defaultsOSRD
-preplace port LINESCANNER1_MAIN_CLOCK -pg 1 -y 340 -defaultsOSRD -left
-preplace port LINESCANNER1_RST_CVC -pg 1 -y 380 -defaultsOSRD -left
-preplace port LINESCANNER0_LVAL -pg 1 -y -20 -defaultsOSRD
-preplace port LINESCANNER1_END_ADC -pg 1 -y 500 -defaultsOSRD
-preplace port LINESCANNER0_RST_CDS -pg 1 -y -160 -defaultsOSRD -left
-preplace port LINESCANNER1_N_RESET -pg 1 -y 320 -defaultsOSRD -left
-preplace port LINESCANNER1_PIXEL_CLOCK -pg 1 -y 540 -defaultsOSRD
-preplace port LINESCANNER1_LVAL -pg 1 -y 520 -defaultsOSRD
-preplace port LINESCANNER0_LOAD_PULSE -pg 1 -y -220 -defaultsOSRD -left
-preplace port LINESCANNER1_SAMPLE -pg 1 -y 480 -defaultsOSRD
-preplace port LINESCANNER0_N_RESET -pg 1 -y -200 -defaultsOSRD -left
-preplace port LINESCANNER0_SAMPLE -pg 1 -y -60 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 190 -defaultsOSRD
-preplace port LINESCANNER1_LOAD_PULSE -pg 1 -y 300 -defaultsOSRD -left
-preplace port LINESCANNER1_RST_CDS -pg 1 -y 360 -defaultsOSRD -left
-preplace port LINESCANNER0_RST_CVC -pg 1 -y -140 -defaultsOSRD -left
-preplace port spi_rtl -pg 1 -y 320 -defaultsOSRD
-preplace port LINESCANNER0_MAIN_CLK -pg 1 -y -180 -defaultsOSRD -left
-preplace port LINESCANNER0_PIXEL_CLOCK -pg 1 -y 0 -defaultsOSRD
-preplace portBus LINESCANNER0_TAP_A -pg 1 -y -80 -defaultsOSRD
-preplace portBus LINESCANNER1_TAP_A -pg 1 -y 460 -defaultsOSRD
-preplace inst image_capture_manager_v1_0_0 -pg 1 -lvl 2 -y 240 -defaultsOSRD
-preplace inst linescanner_image_capture_unit_0 -pg 1 -lvl 1 -y -50 -defaultsOSRD
-preplace inst axi_vdma_0 -pg 1 -lvl 3 -y -30 -defaultsOSRD
-preplace inst axi_vdma_1 -pg 1 -lvl 3 -y 570 -defaultsOSRD
-preplace inst linescanner_image_capture_unit_1 -pg 1 -lvl 1 -y 490 -defaultsOSRD
-preplace inst rst_processing_system7_0_50M -pg 1 -lvl 4 -y -110 -defaultsOSRD
-preplace inst linescanner2stream_convertor_0 -pg 1 -lvl 2 -y -20 -defaultsOSRD
-preplace inst axi_mem_intercon -pg 1 -lvl 5 -y 200 -defaultsOSRD
-preplace inst linescanner2stream_convertor_1 -pg 1 -lvl 2 -y 510 -defaultsOSRD
-preplace inst processing_system7_0_axi_periph -pg 1 -lvl 7 -y 120 -defaultsOSRD
-preplace inst axi_quad_spi_0 -pg 1 -lvl 8 -y 370 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 6 -y 210 -defaultsOSRD
-preplace netloc axi_quad_spi_0_SPI_0 1 8 1 NJ
-preplace netloc processing_system7_0_DDR 1 6 3 NJ -30 NJ -30 NJ
-preplace netloc axi_mem_intercon_M01_AXI 1 2 4 -180 -230 NJ -230 NJ -230 1010
-preplace netloc linescanner_image_capture_unit_1_n_reset 1 0 2 NJ 320 -590
-preplace netloc linescanner_image_capture_unit_1_main_clock 1 0 2 NJ 340 -600
-preplace netloc axi_vdma_1_M_AXI_S2MM 1 3 2 230 90 NJ
-preplace netloc linescanner_image_capture_unit_0_out 1 1 1 -570
-preplace netloc linescanner_image_capture_unit_1_rst_cds 1 0 2 NJ 360 -610
-preplace netloc LINESCANNER1_LVAL_1 1 0 1 N
-preplace netloc linescanner_image_capture_unit_0_rst_cds 1 0 2 NJ -160 -620
-preplace netloc linescanner_image_capture_unit_0_rst_cvc 1 0 2 NJ -190 -610
-preplace netloc processing_system7_0_axi_periph_M00_AXI 1 7 1 1830
-preplace netloc LINESCANNER1_END_ADC_1 1 0 1 N
-preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 4 3 NJ -10 NJ -10 NJ
-preplace netloc processing_system7_0_M_AXI_GP0 1 6 1 1480
-preplace netloc linescanner_image_capture_unit_0_load_pulse 1 0 2 NJ -230 -580
-preplace netloc linescanner_image_capture_unit_0_main_clock 1 0 2 NJ -200 -600
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 3 4 NJ 390 NJ 390 NJ 390 1450
-preplace netloc axi_mem_intercon_M00_AXI 1 5 1 1020
-preplace netloc LINESCANNER1_PIXEL_CLOCK_1 1 0 1 N
-preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 7 -540 310 -180 130 N 130 NJ -50 NJ -50 1450 -50 NJ
-preplace netloc axi_mem_intercon_M02_AXI 1 2 4 -170 -220 NJ -220 NJ -220 1000
-preplace netloc linescanner2stream_convertor_1_stream_data_valid 1 2 1 -230
-preplace netloc linescanner2stream_convertor_1_last_data 1 2 1 -240
-preplace netloc LINESCANNER0_SAMPLE_1 1 0 1 N
-preplace netloc processing_system7_0_FIXED_IO 1 6 3 NJ -20 NJ -20 NJ
-preplace netloc linescanner_image_capture_unit_1_pixel_captured 1 1 1 -580
-preplace netloc linescanner_image_capture_unit_1_out 1 1 1 -560
-preplace netloc LINESCANNER1_SAMPLE_1 1 0 1 N
-preplace netloc axi_vdma_0_s_axis_s2mm_tready 1 1 2 -540 -100 NJ
+preplace port LINESCANNER0_END_ADC -pg 1 -y 110 -defaultsOSRD
+preplace port DDR -pg 1 -y 510 -defaultsOSRD
+preplace port LINESCANNER1_MAIN_CLOCK -pg 1 -y 500 -defaultsOSRD -left
+preplace port LINESCANNER1_RST_CVC -pg 1 -y 560 -defaultsOSRD -left
+preplace port LINESCANNER0_LVAL -pg 1 -y 130 -defaultsOSRD
+preplace port LINESCANNER1_END_ADC -pg 1 -y 410 -defaultsOSRD
+preplace port LINESCANNER0_RST_CDS -pg 1 -y 240 -defaultsOSRD -left
+preplace port LINESCANNER1_N_RESET -pg 1 -y 520 -defaultsOSRD -left
+preplace port LINESCANNER1_PIXEL_CLOCK -pg 1 -y 450 -defaultsOSRD
+preplace port LINESCANNER1_LVAL -pg 1 -y 430 -defaultsOSRD
+preplace port LINESCANNER0_LOAD_PULSE -pg 1 -y 280 -defaultsOSRD -left
+preplace port LINESCANNER1_SAMPLE -pg 1 -y 390 -defaultsOSRD
+preplace port LINESCANNER0_N_RESET -pg 1 -y 220 -defaultsOSRD -left
+preplace port LINESCANNER0_SAMPLE -pg 1 -y 90 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 530 -defaultsOSRD
+preplace port LINESCANNER1_LOAD_PULSE -pg 1 -y 580 -defaultsOSRD -left
+preplace port LINESCANNER1_RST_CDS -pg 1 -y 540 -defaultsOSRD -left
+preplace port LINESCANNER0_RST_CVC -pg 1 -y 260 -defaultsOSRD -left
+preplace port spi_rtl -pg 1 -y 150 -defaultsOSRD
+preplace port LINESCANNER0_MAIN_CLK -pg 1 -y 200 -defaultsOSRD -left
+preplace port LINESCANNER0_PIXEL_CLOCK -pg 1 -y 150 -defaultsOSRD
+preplace portBus LINESCANNER0_TAP_A -pg 1 -y 70 -defaultsOSRD
+preplace portBus LINESCANNER1_TAP_A -pg 1 -y 370 -defaultsOSRD
+preplace inst linescanner_image_capture_unit_0 -pg 1 -lvl 1 -y 110 -defaultsOSRD
+preplace inst axi_vdma_0 -pg 1 -lvl 3 -y 190 -defaultsOSRD
+preplace inst linescanner_image_capture_unit_1 -pg 1 -lvl 1 -y 410 -defaultsOSRD
+preplace inst clock_divider_0 -pg 1 -lvl 6 -y 160 -defaultsOSRD
+preplace inst axi_vdma_1 -pg 1 -lvl 3 -y 510 -defaultsOSRD
+preplace inst clock_divider_1 -pg 1 -lvl 2 -y 280 -defaultsOSRD
+preplace inst rst_processing_system7_0_50M -pg 1 -lvl 2 -y 690 -defaultsOSRD
+preplace inst image_capture_manager_0 -pg 1 -lvl 7 -y 350 -defaultsOSRD
+preplace inst linescanner2stream_convertor_0 -pg 1 -lvl 2 -y 140 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 4 -y 560 -defaultsOSRD
+preplace inst linescanner2stream_convertor_1 -pg 1 -lvl 2 -y 430 -defaultsOSRD
+preplace inst processing_system7_0_axi_periph -pg 1 -lvl 5 -y 300 -defaultsOSRD
+preplace inst axi_quad_spi_0 -pg 1 -lvl 7 -y 170 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 5 -y 550 -defaultsOSRD
+preplace netloc axi_quad_spi_0_SPI_0 1 7 1 N
+preplace netloc processing_system7_0_DDR 1 5 3 NJ 510 NJ 510 NJ
+preplace netloc axi_mem_intercon_M01_AXI 1 2 3 520 10 NJ 10 1300
+preplace netloc clock_divider_0_output_clock 1 6 1 NJ
+preplace netloc linescanner_image_capture_unit_1_n_reset 1 0 2 NJ 530 50
+preplace netloc linescanner_image_capture_unit_1_main_clock 1 0 2 NJ 520 60
+preplace netloc axi_vdma_1_M_AXI_S2MM 1 3 1 950
+preplace netloc linescanner_image_capture_unit_0_out 1 1 1 100
+preplace netloc linescanner_image_capture_unit_1_rst_cds 1 0 2 NJ 540 80
+preplace netloc LINESCANNER1_LVAL_1 1 0 1 NJ
+preplace netloc linescanner_image_capture_unit_0_rst_cds 1 0 2 NJ 240 80
+preplace netloc linescanner_image_capture_unit_0_rst_cvc 1 0 2 NJ 260 90
+preplace netloc processing_system7_0_axi_periph_M00_AXI 1 5 2 1750 110 2040
+preplace netloc clock_divider_1_output_clock 1 0 3 -250 250 NJ 230 460
+preplace netloc LINESCANNER1_END_ADC_1 1 0 1 NJ
+preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 2 3 N 710 960 260 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 4 2 1330 160 1730
+preplace netloc linescanner_image_capture_unit_0_load_pulse 1 0 2 NJ 280 70
+preplace netloc linescanner_image_capture_unit_0_main_clock 1 0 2 NJ 220 60
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 5 130 600 NJ 770 NJ 770 NJ 770 1730
+preplace netloc axi_mem_intercon_M00_AXI 1 4 1 N
+preplace netloc LINESCANNER1_PIXEL_CLOCK_1 1 0 1 NJ
+preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 2 5 500 680 980 370 NJ 80 N 80 2030
+preplace netloc axi_mem_intercon_M02_AXI 1 2 3 520 750 NJ 750 1300
+preplace netloc linescanner2stream_convertor_1_stream_data_valid 1 2 1 470
+preplace netloc linescanner2stream_convertor_1_last_data 1 2 1 460
+preplace netloc LINESCANNER0_SAMPLE_1 1 0 1 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 5 3 NJ 530 NJ 530 NJ
+preplace netloc linescanner_image_capture_unit_1_pixel_captured 1 1 1 100
+preplace netloc linescanner_image_capture_unit_1_out 1 1 1 110
+preplace netloc LINESCANNER1_SAMPLE_1 1 0 1 NJ
+preplace netloc axi_vdma_0_s_axis_s2mm_tready 1 1 2 120 60 NJ
 preplace netloc linescanner_image_capture_unit_0_pixel_captured 1 1 1 N
-preplace netloc linescanner_image_capture_unit_1_rst_cvc 1 0 2 NJ 380 -620
-preplace netloc linescanner_image_capture_unit_0_n_reset 1 0 2 NJ -220 -590
-preplace netloc LINESCANNER0_END_ADC_1 1 0 1 N
-preplace netloc image_capture_manager_v1_0_0_image_capture_enabled 1 0 3 -1190 -170 -560 160 -230
-preplace netloc linescanner2stream_convertor_1_stream_data 1 2 1 -220
-preplace netloc linescanner2stream_convertor_0_last_data 1 2 1 -210
-preplace netloc processing_system7_0_FCLK_CLK0 1 1 7 -540 170 -200 -190 240 -200 680 10 1030 10 1460 -40 NJ
-preplace netloc axi_vdma_0_M_AXI_S2MM 1 3 2 NJ -20 660
-preplace netloc linescanner2stream_convertor_0_keep_data 1 2 1 -220
-preplace netloc linescanner2stream_convertor_0_stream_data 1 2 1 -230
-preplace netloc linescanner_image_capture_unit_1_load_pulse 1 0 2 NJ 300 -580
-preplace netloc LINESCANNER1_TAP_A_1 1 0 1 N
-preplace netloc LINESCANNER0_TAP_A_1 1 0 1 N
-preplace netloc processing_system7_0_axi_periph_M01_AXI 1 1 7 -550 -210 NJ -210 NJ -210 NJ -210 NJ -210 NJ -210 1820
-preplace netloc axi_vdma_1_s_axis_s2mm_tready 1 1 2 -540 590 NJ
-preplace netloc linescanner2stream_convertor_1_keep_data 1 2 1 -190
-preplace netloc linescanner2stream_convertor_0_stream_data_valid 1 2 1 -180
-preplace netloc LINESCANNER0_PIXEL_CLOCK_1 1 0 1 N
-preplace netloc LINESCANNER0_LVAL_1 1 0 1 N
-levelinfo -pg 1 -1250 -740 -390 40 490 870 1230 1690 2010 2190 -top -240 -bot 740
+preplace netloc linescanner_image_capture_unit_1_rst_cvc 1 0 2 NJ 560 90
+preplace netloc linescanner_image_capture_unit_0_n_reset 1 0 2 NJ 230 50
+preplace netloc LINESCANNER0_END_ADC_1 1 0 1 NJ
+preplace netloc image_capture_manager_v1_0_0_image_capture_enabled 1 0 8 -260 270 110 30 NJ 30 NJ 30 NJ 30 NJ 30 NJ 30 2360
+preplace netloc linescanner2stream_convertor_1_stream_data 1 2 1 480
+preplace netloc linescanner2stream_convertor_0_last_data 1 2 1 490
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 6 120 220 490 670 990 760 1320 150 1740 100 2020
+preplace netloc axi_vdma_0_M_AXI_S2MM 1 3 1 970
+preplace netloc linescanner2stream_convertor_0_keep_data 1 2 1 460
+preplace netloc linescanner2stream_convertor_0_stream_data 1 2 1 520
+preplace netloc linescanner_image_capture_unit_1_load_pulse 1 0 2 NJ 580 70
+preplace netloc LINESCANNER1_TAP_A_1 1 0 1 NJ
+preplace netloc LINESCANNER0_TAP_A_1 1 0 1 NJ
+preplace netloc processing_system7_0_axi_periph_M01_AXI 1 5 2 N 310 2010
+preplace netloc axi_vdma_1_s_axis_s2mm_tready 1 1 2 130 510 NJ
+preplace netloc linescanner2stream_convertor_1_keep_data 1 2 1 N
+preplace netloc linescanner2stream_convertor_0_stream_data_valid 1 2 1 470
+preplace netloc LINESCANNER0_PIXEL_CLOCK_1 1 0 1 NJ
+preplace netloc LINESCANNER0_LVAL_1 1 0 1 NJ
+levelinfo -pg 1 -300 -100 300 760 1150 1530 1890 2200 2380 -top 0 -bot 780
 ",
 }
 {
