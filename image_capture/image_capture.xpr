@@ -46,8 +46,23 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/src/imageCaptureManager_v1_0_S00_AXI.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/src/imageCaptureManager_v1_0.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/src/linescanner2stream_convertor.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -60,19 +75,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_vdma_1_0/image_capture_design_axi_vdma_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner2stream_convertor_0_0/image_capture_design_linescanner2stream_convertor_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner_image_capture_unit_0_0/image_capture_design_linescanner_image_capture_unit_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_vdma_0_0_1/image_capture_design_axi_vdma_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner_image_capture_unit_1_0/image_capture_design_linescanner_image_capture_unit_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner2stream_convertor_1_0/image_capture_design_linescanner2stream_convertor_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_xbar_0/image_capture_design_xbar_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_processing_system7_0_axi_periph_1/image_capture_design_processing_system7_0_axi_periph_1.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_quad_spi_0_0/image_capture_design_axi_quad_spi_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_xbar_1_1/image_capture_design_xbar_1.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_rst_processing_system7_0_50M_2/image_capture_design_rst_processing_system7_0_50M_2.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_mem_intercon_2/image_capture_design_axi_mem_intercon_2.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_processing_system7_0_0/image_capture_design_processing_system7_0_0.xci"/>
       </File>
       <File Path="$PPRDIR/src/linescanner_image_capture_unit.v">
         <FileInfo>
@@ -82,9 +84,17 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/clock_divider.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="linescanner2stream_convertor"/>
+        <Option Name="TopModule" Val="image_capture_manager_v1_0"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
@@ -98,7 +108,7 @@
       <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="linescanner2stream_convertor"/>
+        <Option Name="TopModule" Val="image_capture_manager_v1_0"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
