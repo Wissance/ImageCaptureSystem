@@ -11,9 +11,9 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="992310000fs"></ZoomStartTime>
-      <ZoomEndTime time="1318810002fs"></ZoomEndTime>
-      <Cursor1Time time="1035310000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="653000001fs"></ZoomEndTime>
+      <Cursor1Time time="8953400000fs"></Cursor1Time>
    </zoom_setting>
    <WVObjectSize size="5" />
    <wvobject fp_name="/test_clock_divider/input_clock" type="logic">
