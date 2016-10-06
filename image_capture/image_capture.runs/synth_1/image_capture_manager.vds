@@ -2,8 +2,8 @@
 # Vivado v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Tue Oct 04 12:30:58 2016
-# Process ID: 1040
+# Start of session at: Thu Oct 06 16:48:31 2016
+# Process ID: 1836
 # Current directory: E:/oms/VideoControlIP/image_capture/image_capture.runs/synth_1
 # Command line: vivado.exe -log image_capture_manager.vds -mode batch -messageDb vivado.pb -notrace -source image_capture_manager.tcl
 # Log file: E:/oms/VideoControlIP/image_capture/image_capture.runs/synth_1/image_capture_manager.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 3756 
+INFO: Helper process launched with PID 2208 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 273.238 ; gain = 66.266
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 273.539 ; gain = 66.973
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'image_capture_manager' [E:/oms/VideoControlIP/image_capture/src/image_capture_manager.v:4]
 	Parameter START_IMAGE_CAPTURE_COMMAND bound to: 1 - type: integer 
@@ -46,22 +46,22 @@ WARNING: [Synth 8-3331] design image_capture_manager_S00_AXI has unconnected por
 WARNING: [Synth 8-3331] design image_capture_manager_S00_AXI has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design image_capture_manager_S00_AXI has unconnected port S_AXI_ARPROT[0]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 310.539 ; gain = 103.566
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 310.969 ; gain = 104.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 310.539 ; gain = 103.566
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 310.969 ; gain = 104.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-2
----------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 310.539 ; gain = 103.566
----------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 310.969 ; gain = 104.402
+---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "clear_memory" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 318.414 ; gain = 111.441
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 317.645 ; gain = 111.078
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -121,7 +121,7 @@ BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 451.168 ; gain = 244.195
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 447.637 ; gain = 241.070
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -132,9 +132,9 @@ WARNING: [Synth 8-3331] design image_capture_manager_S00_AXI has unconnected por
 WARNING: [Synth 8-3331] design image_capture_manager_S00_AXI has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design image_capture_manager_S00_AXI has unconnected port S_AXI_ARPROT[0]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 452.133 ; gain = 245.160
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 448.598 ; gain = 242.031
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 452.133 ; gain = 245.160
+Finished Parallel Reinference  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 448.598 ; gain = 242.031
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -146,9 +146,9 @@ No constraint files found.
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 472.746 ; gain = 265.773
+Finished Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 469.168 ; gain = 262.602
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 472.746 ; gain = 265.773
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 469.168 ; gain = 262.602
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -160,7 +160,7 @@ Start Timing Optimization
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 472.746 ; gain = 265.773
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 469.168 ; gain = 262.602
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -172,16 +172,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 472.906 ; gain = 265.934
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 469.293 ; gain = 262.727
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 472.906 ; gain = 265.934
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 469.293 ; gain = 262.727
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 472.906 ; gain = 265.934
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 469.293 ; gain = 262.727
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -198,7 +198,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.906 ; gain = 265.934
+Finished IO Insertion : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 469.293 ; gain = 262.727
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -211,7 +211,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.906 ; gain = 265.934
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 469.293 ; gain = 262.727
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -223,25 +223,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.906 ; gain = 265.934
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 469.293 ; gain = 262.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.906 ; gain = 265.934
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 469.293 ; gain = 262.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.906 ; gain = 265.934
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 469.293 ; gain = 262.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.906 ; gain = 265.934
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 469.293 ; gain = 262.727
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -277,11 +277,11 @@ Report Instance Areas:
 |2     |  image_capture_manager_S00_AXI_inst |image_capture_manager_S00_AXI |   238|
 +------+-------------------------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.906 ; gain = 265.934
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 469.293 ; gain = 262.727
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 472.906 ; gain = 265.934
-Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 472.906 ; gain = 265.934
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 469.293 ; gain = 262.727
+Synthesis Optimization Complete : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 469.293 ; gain = 262.727
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 51 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -293,6 +293,6 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 21 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 537.043 ; gain = 330.070
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 537.043 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Oct 04 12:31:14 2016...
+synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 535.070 ; gain = 328.504
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 535.070 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 06 16:48:46 2016...

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-2" LaunchTime="1475576327">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-2" LaunchTime="1475758110">
   <File Type="OPT-DCP" Name="image_capture_manager_opt.dcp"/>
   <File Type="ROUTE-STATUS-PB" Name="image_capture_manager_route_status.pb"/>
   <File Type="PA-TCL" Name="image_capture_manager.tcl"/>
@@ -98,6 +98,14 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/src/clock_divider.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/linescanner2stream_convertor_M00_AXIS.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>

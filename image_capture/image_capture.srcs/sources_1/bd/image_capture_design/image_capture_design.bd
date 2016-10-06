@@ -348,11 +348,42 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
+        <spirit:instanceName>clock_divider_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="module_ref" spirit:name="clock_divider" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_clock_divider_0_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="clock_division">5</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">clock_divider</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>image_capture_manager_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="module_ref" spirit:name="image_capture_manager" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_image_capture_manager_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">image_capture_manager</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
         <spirit:instanceName>linescanner_image_capture_unit_1</spirit:instanceName>
         <spirit:componentRef spirit:library="module_ref" spirit:name="linescanner_image_capture_unit" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_linescanner_image_capture_unit_1_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="bd:referenceName">linescanner_image_capture_unit</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
+        </spirit:configurableElementValues>
+      </spirit:componentInstance>
+      <spirit:componentInstance>
+        <spirit:instanceName>clock_divider_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="module_ref" spirit:name="clock_divider" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:configurableElementValues>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_clock_divider_1_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">clock_divider</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
         </spirit:configurableElementValues>
@@ -373,36 +404,6 @@
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_linescanner2stream_convertor_1_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="bd:referenceName">linescanner2stream_convertor</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>clock_divider_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="module_ref" spirit:name="clock_divider" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_clock_divider_0_1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">clock_divider</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>clock_divider_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="module_ref" spirit:name="clock_divider" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_clock_divider_1_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">clock_divider</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>image_capture_manager_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="module_ref" spirit:name="image_capture_manager" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">image_capture_design_image_capture_manager_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="bd:referenceName">image_capture_manager</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="bd:subInstancePath"></spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="bd:referenceType">hdl</spirit:configurableElementValue>
         </spirit:configurableElementValues>
@@ -454,6 +455,16 @@
         <spirit:activeInterface spirit:busRef="M00_AXI" spirit:componentRef="axi_mem_intercon_1"/>
         <spirit:activeInterface spirit:busRef="S_AXI_HP1" spirit:componentRef="processing_system7_0"/>
       </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>linescanner2stream_convertor_0_m00_axis</spirit:name>
+        <spirit:activeInterface spirit:busRef="m00_axis" spirit:componentRef="linescanner2stream_convertor_0"/>
+        <spirit:activeInterface spirit:busRef="S_AXIS_S2MM" spirit:componentRef="axi_vdma_0"/>
+      </spirit:interconnection>
+      <spirit:interconnection>
+        <spirit:name>linescanner2stream_convertor_1_m00_axis</spirit:name>
+        <spirit:activeInterface spirit:busRef="m00_axis" spirit:componentRef="linescanner2stream_convertor_1"/>
+        <spirit:activeInterface spirit:busRef="S_AXIS_S2MM" spirit:componentRef="axi_vdma_1"/>
+      </spirit:interconnection>
     </spirit:interconnections>
     <spirit:adHocConnections>
       <spirit:adHocConnection>
@@ -470,6 +481,8 @@
         <spirit:internalPortReference spirit:componentRef="axi_vdma_1" spirit:portRef="m_axi_s2mm_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_1" spirit:portRef="s_axis_s2mm_aclk"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0" spirit:portRef="S_AXI_HP1_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="clock_divider_0" spirit:portRef="input_clock"/>
+        <spirit:internalPortReference spirit:componentRef="image_capture_manager_0" spirit:portRef="s00_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M00_ACLK"/>
@@ -482,9 +495,9 @@
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon_1" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon_1" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon_1" spirit:portRef="M00_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="clock_divider_0" spirit:portRef="input_clock"/>
         <spirit:internalPortReference spirit:componentRef="clock_divider_1" spirit:portRef="input_clock"/>
-        <spirit:internalPortReference spirit:componentRef="image_capture_manager_0" spirit:portRef="s00_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_0" spirit:portRef="m00_axis_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_1" spirit:portRef="m00_axis_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>processing_system7_0_FCLK_RESET0_N</spirit:name>
@@ -497,6 +510,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_quad_spi_0" spirit:portRef="s_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_0" spirit:portRef="axi_resetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_1" spirit:portRef="axi_resetn"/>
+        <spirit:internalPortReference spirit:componentRef="image_capture_manager_0" spirit:portRef="s00_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M01_ARESETN"/>
@@ -506,7 +520,8 @@
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon_1" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon_1" spirit:portRef="M00_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="image_capture_manager_0" spirit:portRef="s00_axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_0" spirit:portRef="m00_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_1" spirit:portRef="m00_axis_aresetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rst_processing_system7_0_50M_interconnect_aresetn</spirit:name>
@@ -627,27 +642,27 @@
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>linescanner2stream_convertor_0_stream_data</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_0" spirit:portRef="stream_data"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_0" spirit:portRef="m00_axis_tdata"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_0" spirit:portRef="s_axis_s2mm_tdata"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>linescanner2stream_convertor_0_keep_data</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_0" spirit:portRef="keep_data"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_0" spirit:portRef="m00_axis_tstrb"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_0" spirit:portRef="s_axis_s2mm_tkeep"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>linescanner2stream_convertor_0_last_data</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_0" spirit:portRef="last_data"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_0" spirit:portRef="m00_axis_tlast"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_0" spirit:portRef="s_axis_s2mm_tlast"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>axi_vdma_0_s_axis_s2mm_tready</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_0" spirit:portRef="s_axis_s2mm_tready"/>
-        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_0" spirit:portRef="data_ready"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_0" spirit:portRef="m00_axis_tready"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>linescanner2stream_convertor_0_stream_data_valid</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_0" spirit:portRef="stream_data_valid"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_0" spirit:portRef="m00_axis_tvalid"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_0" spirit:portRef="s_axis_s2mm_tvalid"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -662,28 +677,28 @@
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>linescanner2stream_convertor_1_stream_data</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_1" spirit:portRef="stream_data"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_1" spirit:portRef="m00_axis_tdata"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_1" spirit:portRef="s_axis_s2mm_tdata"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>linescanner2stream_convertor_1_keep_data</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_1" spirit:portRef="keep_data"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_1" spirit:portRef="m00_axis_tstrb"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_1" spirit:portRef="s_axis_s2mm_tkeep"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>linescanner2stream_convertor_1_last_data</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_1" spirit:portRef="last_data"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_1" spirit:portRef="m00_axis_tlast"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_1" spirit:portRef="s_axis_s2mm_tlast"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>linescanner2stream_convertor_1_stream_data_valid</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_1" spirit:portRef="stream_data_valid"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_1" spirit:portRef="m00_axis_tvalid"/>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_1" spirit:portRef="s_axis_s2mm_tvalid"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>axi_vdma_1_s_axis_s2mm_tready</spirit:name>
         <spirit:internalPortReference spirit:componentRef="axi_vdma_1" spirit:portRef="s_axis_s2mm_tready"/>
-        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_1" spirit:portRef="data_ready"/>
+        <spirit:internalPortReference spirit:componentRef="linescanner2stream_convertor_1" spirit:portRef="m00_axis_tready"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>image_capture_manager_v1_0_0_image_capture_enabled</spirit:name>
