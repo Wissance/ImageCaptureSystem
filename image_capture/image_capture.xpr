@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="14" Path="C:/ThreadControlIP/ThreadControlIP/image_capture/image_capture.xpr">
+<Project Version="7" Minor="14" Path="E:/oms/VideoControlIP/image_capture/image_capture.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="3f5aa38eb5794db5b10b89e0e066941c"/>
@@ -17,7 +17,7 @@
     <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val=""/>
-    <Option Name="ActiveSimSet" Val="sim_1"/>
+    <Option Name="ActiveSimSet" Val="test_clock_divider"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/linescanner_image_capture_ip_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/image_capture_manger"/>
@@ -28,7 +28,7 @@
     <Option Name="IPUserFilesDir" Val="$PPRDIR/image_capture.ip_user_files"/>
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/image_capture.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="0"/>
+    <Option Name="WTXSimLaunchSim" Val="9"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -83,6 +83,27 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_pc_5/image_capture_design_auto_pc_5.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_us_2_1/image_capture_design_auto_us_2.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_pc_4_1/image_capture_design_auto_pc_4.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_pc_3_1/image_capture_design_auto_pc_3.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_mem_intercon_1_0_1/image_capture_design_axi_mem_intercon_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_mem_intercon_0_1/image_capture_design_axi_mem_intercon_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_clock_divider_1_0/image_capture_design_clock_divider_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_image_capture_manager_0_0/image_capture_design_image_capture_manager_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_clock_divider_0_1/image_capture_design_clock_divider_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner2stream_convertor_1_0/image_capture_design_linescanner2stream_convertor_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_vdma_1_0/image_capture_design_axi_vdma_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner2stream_convertor_0_0/image_capture_design_linescanner2stream_convertor_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner_image_capture_unit_0_0/image_capture_design_linescanner_image_capture_unit_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_xbar_0/image_capture_design_xbar_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_quad_spi_0_0/image_capture_design_axi_quad_spi_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_rst_processing_system7_0_50M_2/image_capture_design_rst_processing_system7_0_50M_2.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner_image_capture_unit_1_0/image_capture_design_linescanner_image_capture_unit_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_vdma_0_0_1/image_capture_design_axi_vdma_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_processing_system7_0_axi_periph_1/image_capture_design_processing_system7_0_axi_periph_1.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_processing_system7_0_0/image_capture_design_processing_system7_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_us_3_1/image_capture_design_auto_us_3.xci"/>
       </File>
       <File Path="$PPRDIR/src/clock_divider.v">
         <FileInfo>
@@ -115,6 +136,30 @@
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SimMode" Val="post-implementation"/>
         <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="test_clock_divider" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/test_clock_divider">
+      <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/test/test_clock_divider.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/test/test_clock_divider_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="test_clock_divider"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/test/test_clock_divider_behav.wcfg"/>
       </Config>
     </FileSet>
   </FileSets>

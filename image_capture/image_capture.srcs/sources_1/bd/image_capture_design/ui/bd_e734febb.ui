@@ -26,15 +26,15 @@ preplace portBus LINESCANNER0_TAP_A -pg 1 -y 70 -defaultsOSRD
 preplace portBus LINESCANNER1_TAP_A -pg 1 -y 370 -defaultsOSRD
 preplace inst linescanner_image_capture_unit_0 -pg 1 -lvl 1 -y 110 -defaultsOSRD
 preplace inst axi_vdma_0 -pg 1 -lvl 3 -y 190 -defaultsOSRD
-preplace inst axi_mem_intercon_1 -pg 1 -lvl 6 -y 580 -defaultsOSRD
-preplace inst linescanner_image_capture_unit_1 -pg 1 -lvl 1 -y 410 -defaultsOSRD
 preplace inst clock_divider_0 -pg 1 -lvl 6 -y 160 -defaultsOSRD
+preplace inst linescanner_image_capture_unit_1 -pg 1 -lvl 1 -y 410 -defaultsOSRD
+preplace inst axi_mem_intercon_1 -pg 1 -lvl 6 -y 580 -defaultsOSRD
 preplace inst axi_vdma_1 -pg 1 -lvl 3 -y 510 -defaultsOSRD
 preplace inst clock_divider_1 -pg 1 -lvl 2 -y 280 -defaultsOSRD
 preplace inst rst_processing_system7_0_50M -pg 1 -lvl 2 -y 690 -defaultsOSRD
 preplace inst image_capture_manager_0 -pg 1 -lvl 7 -y 350 -defaultsOSRD
-preplace inst axi_mem_intercon -pg 1 -lvl 6 -y 310 -defaultsOSRD
 preplace inst linescanner2stream_convertor_0 -pg 1 -lvl 2 -y 140 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 6 -y 310 -defaultsOSRD
 preplace inst linescanner2stream_convertor_1 -pg 1 -lvl 2 -y 430 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 5 -y 300 -defaultsOSRD
 preplace inst axi_quad_spi_0 -pg 1 -lvl 7 -y 170 -defaultsOSRD
