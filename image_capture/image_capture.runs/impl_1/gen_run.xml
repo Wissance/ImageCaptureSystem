@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7z020clg400-2" LaunchTime="1475576327">
-  <File Type="OPT-DCP" Name="image_capture_manager_opt.dcp"/>
   <File Type="ROUTE-STATUS-PB" Name="image_capture_manager_route_status.pb"/>
   <File Type="PA-TCL" Name="image_capture_manager.tcl"/>
+  <File Type="OPT-DCP" Name="image_capture_manager_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="image_capture_manager_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="image_capture_manager_methodology_drc_opted.rpt"/>
   <File Type="RDI-RDI" Name="image_capture_manager.vdi"/>
   <File Type="PWROPT-DRC" Name="image_capture_manager_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="image_capture_manager_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="image_capture_manager_timing_summary_init.rpt"/>
   <File Type="OPT-DRC" Name="image_capture_manager_drc_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="image_capture_manager_pwropt.dcp"/>
   <File Type="OPT-HWDEF" Name="image_capture_manager.hwdef"/>
@@ -31,8 +31,8 @@
   <File Type="ROUTE-DRC" Name="image_capture_manager_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="image_capture_manager_drc_routed.pb"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="image_capture_manager_methodology_drc_routed.rpt"/>
-  <File Type="BG-BIT" Name="image_capture_manager.bit"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="image_capture_manager_methodology_drc_routed.pb"/>
+  <File Type="BG-BIT" Name="image_capture_manager.bit"/>
   <File Type="ROUTE-PWR" Name="image_capture_manager_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="image_capture_manager_power_summary_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="image_capture_manager_power_routed.rpx"/>
