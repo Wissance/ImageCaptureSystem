@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Tue Oct 04 14:20:29 2016">
+<application name="pa" timeStamp="Thu Oct 06 10:57:24 2016">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="3582839e308e40a6acc46cc9b31f2ae1" type="ProjectID"/>
 <property name="ProjectIteration" value="4" type="ProjectIteration"/>
@@ -20,8 +20,8 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="AddSources" value="6" type="JavaHandler"/>
 <property name="AutoAssignAddress" value="1" type="JavaHandler"/>
 <property name="CreateBlockDesign" value="1" type="JavaHandler"/>
-<property name="CustomizeRSBBlock" value="28" type="JavaHandler"/>
-<property name="EditDelete" value="24" type="JavaHandler"/>
+<property name="CustomizeRSBBlock" value="29" type="JavaHandler"/>
+<property name="EditDelete" value="27" type="JavaHandler"/>
 <property name="EditProperties" value="7" type="JavaHandler"/>
 <property name="EditUndo" value="10" type="JavaHandler"/>
 <property name="ExcludeFromAddrSpace" value="10" type="JavaHandler"/>
@@ -36,21 +36,46 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="RunImplementation" value="3" type="JavaHandler"/>
 <property name="SaveAllFiles" value="1" type="JavaHandler"/>
 <property name="SaveFileProxyHandler" value="1" type="JavaHandler"/>
-<property name="SaveRSBDesign" value="38" type="JavaHandler"/>
+<property name="SaveRSBDesign" value="41" type="JavaHandler"/>
 <property name="SetTopNode" value="1" type="JavaHandler"/>
 <property name="ShowView" value="1" type="JavaHandler"/>
-<property name="UnmapAddressSegment" value="2" type="JavaHandler"/>
-<property name="ValidateRSBDesign" value="14" type="JavaHandler"/>
+<property name="UnmapAddressSegment" value="4" type="JavaHandler"/>
+<property name="ValidateRSBDesign" value="16" type="JavaHandler"/>
 <property name="ViewTaskImplementation" value="1" type="JavaHandler"/>
+<property name="ZoomIn" value="3" type="JavaHandler"/>
+<property name="ZoomOut" value="1" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
+<property name="PAResourceAtoD.AddressTreeTablePanel_ADDRESS_TREE_TABLE, axi_vdma_0 ; S_AXI_LITE ; Reg ; 0x14A0_0000 ; 64K ; 0x14A0_FFFF, 11, axi_vdma_0, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddressTreeTablePanel_ADDRESS_TREE_TABLE, axi_vdma_0 ; S_AXI_LITE ; Reg ; 0x14A0_0000 ; 64K ; 0x14A0_FFFF, 11, axi_vdma_0, 0, false, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddressTreeTablePanel_ADDRESS_TREE_TABLE, axi_vdma_0 ; S_AXI_LITE ; Reg ; 0x14A0_0000 ; 64K ; 0x14A0_FFFF, 8, axi_vdma_0, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddressTreeTablePanel_ADDRESS_TREE_TABLE, axi_vdma_0 ; S_AXI_LITE ; Reg ; 0x14A0_0000 ; 64K ; 0x14A0_FFFF, 8, axi_vdma_0, 0, false, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddressTreeTablePanel_ADDRESS_TREE_TABLE, processing_system7_0 ; S_AXI_HP0 ; HP0_DDR_LOWOCM ; 0x0000_0000 ; 256M ; 0x0FFF_FFFF, 8, HP0_DDR_LOWOCM, 2, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddressTreeTablePanel_ADDRESS_TREE_TABLE, processing_system7_0 ; S_AXI_HP0 ; HP0_DDR_LOWOCM ; 0x0000_0000 ; 256M ; 0x0FFF_FFFF, 8, S_AXI_HP0, 1, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddressTreeTablePanel_ADDRESS_TREE_TABLE, processing_system7_0 ; S_AXI_HP0 ; HP0_DDR_LOWOCM ; 0x0000_0000 ; 256M ; 0x0FFF_FFFF, 8, processing_system7_0, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddressTreeTablePanel_ADDRESS_TREE_TABLE, processing_system7_0 ; S_AXI_HP1 ; HP1_DDR_LOWOCM ; 0x0000_0000 ; 256M ; 0x0FFF_FFFF, 11, 0x0000_0000, 3, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddressTreeTablePanel_ADDRESS_TREE_TABLE, processing_system7_0 ; S_AXI_HP1 ; HP1_DDR_LOWOCM ; 0x1000_0000 ; 256M ; 0x1FFF_FFFF, 11, processing_system7_0, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, [All Automation (2 out of 2 selected" value="6" type="GuiResourceData"/>
 <property name="PAResourceAtoD.CmdMsgDialog_OK, OK" value="1" type="GuiResourceData"/>
-<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Synthesis, [Netlist 29-17] Analyzing 51 Unisim elements for replacement. ], 36, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_UNMAP_SEGMENT, Unmap Segment" value="2" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_VALIDATE_RSB_DESIGN, Validate Design" value="2" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_ZOOM_IN, System_zoom_in" value="3" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_ZOOM_OUT, System_zoom_out" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, image_capture_design (image_capture_design.bd" value="3" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GenSettingTreeTablePanel_GEN_SETTING_TREE_TABLE, HP Slave AXI Interface ; HP Slave AXI Interface ; HP Slave AXI Interface, 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GenSettingTreeTablePanel_GEN_SETTING_TREE_TABLE, S AXI HP1 interface ; 0 ; Enables AXI high performance slave interface 1, 5, 0, 1, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, C:/ThreadControlIP/ThreadControlIP/image_capture/image_capture.xpr, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PlanAheadTab_REFRESH_CHANGED_MODULES, Refresh Changed Modules" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.RSBApplyAutomationBar_RUN_CONNECTION_AUTOMATION, Run Connection Automation" value="2" type="GuiResourceData"/>
+<property name="PS-PL Configuration, PS-PL Configuration" value="2" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="3" type="GuiResourceData"/>
+<property name="Zynq Block Design, Zynq Block Design" value="1" type="GuiResourceData"/>
+<property name="pa.OptGroup_xilinx.com_bd_rule_axi4_Master, /axi_vdma_1/M_AXI_S2MM, 1" value="1" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="50" type="GuiMode"/>
+<property name="GuiMode" value="7" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="46" type="TclMode"/>
+<property name="TclMode" value="6" type="TclMode"/>
 </item>
 </section>
 </application>

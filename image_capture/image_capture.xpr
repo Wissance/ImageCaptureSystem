@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="14" Path="E:/oms/VideoControlIP/image_capture/image_capture.xpr">
+<Project Version="7" Minor="14" Path="C:/ThreadControlIP/ThreadControlIP/image_capture/image_capture.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="3f5aa38eb5794db5b10b89e0e066941c"/>
