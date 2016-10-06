@@ -113,7 +113,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c0c78afa</spirit:value>
+            <spirit:value>e5625364</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -126,7 +126,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>c0c78afa</spirit:value>
+            <spirit:value>e5625364</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -232,7 +232,7 @@
           </spirit:vector>
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
-              <spirit:typeName>wire</spirit:typeName>
+              <spirit:typeName>reg</spirit:typeName>
               <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
@@ -346,7 +346,7 @@
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2016-10-06T12:46:20Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2016-10-06T15:07:20Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2016.2</xilinx:xilinxVersion>

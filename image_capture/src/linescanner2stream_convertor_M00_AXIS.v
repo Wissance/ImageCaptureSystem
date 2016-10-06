@@ -34,7 +34,6 @@
 		// TREADY indicates that the slave can accept a transfer in the current cycle.
 		input wire  M_AXIS_TREADY
 	);
-	//Total number of output data.
 	// Total number of output data                                                 
 	localparam NUMBER_OF_OUTPUT_WORDS = 8;                                               
 	                                                                                     
