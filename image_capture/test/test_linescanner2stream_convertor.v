@@ -37,7 +37,7 @@ module test_linescanner2stream_convertor #
     output wire [(AXI_BUS_WIDTH / 8)-1 : 0] axi_tstrb
 );
     
-    linescanner2stream_convertor (.enable(enable), .input_data(pixel_data), pixel_captured(pixel_captured),
-                                  .m00_axis_aclk(axi_aclk), .m00_axis_aresetn(axi_aresetn), .m00_axis_tvalid(axi_tvalid),
-                                  .m00_axis_tdata(axi_tdata), .m00_axis_tstrb(axi_tstrb), . m00_axis_tlast(axi_tlast), .m00_axis_tready(axi_tready));
+    linescanner2stream_convertor test_convertor (.enable(enable), .input_data(pixel_data), .pixel_captured(pixel_captured),
+                                                 .m00_axis_aclk(axi_aclk), .m00_axis_aresetn(axi_aresetn), .m00_axis_tvalid(axi_tvalid),
+                                                 .m00_axis_tdata(axi_tdata), .m00_axis_tstrb(axi_tstrb), . m00_axis_tlast(axi_tlast), .m00_axis_tready(axi_tready));
 endmodule
