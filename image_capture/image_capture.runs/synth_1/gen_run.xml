@@ -2,8 +2,8 @@
 <GenRun Id="synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1475758110">
   <File Type="VDS-TIMING-PB" Name="image_capture_manager_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="image_capture_manager_timing_summary_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="image_capture_manager_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="image_capture_manager.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="image_capture_manager_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="image_capture_manager.vds"/>
   <File Type="RDS-UTIL" Name="image_capture_manager_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="image_capture_manager_utilization_synth.pb"/>

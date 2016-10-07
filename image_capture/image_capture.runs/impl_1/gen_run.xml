@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7z020clg400-2" LaunchTime="1475831659">
+  <File Type="BITSTR-RBT" Name="image_capture_manager.rbt"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BITSTR-NKY" Name="image_capture_manager.nky"/>
+  <File Type="PWROPT-DRC" Name="image_capture_manager_drc_pwropted.rpt"/>
   <File Type="RDI-RDI" Name="image_capture_manager.vdi"/>
+  <File Type="BITSTR-SYSDEF" Name="image_capture_manager.sysdef"/>
   <File Type="BG-DRC" Name="image_capture_manager.drc"/>
   <File Type="BG-BGN" Name="image_capture_manager.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="image_capture_manager.sysdef"/>
   <File Type="BITSTR-MMI" Name="image_capture_manager.mmi"/>
   <File Type="BITSTR-BMM" Name="image_capture_manager_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="image_capture_manager.nky"/>
-  <File Type="BITSTR-RBT" Name="image_capture_manager.rbt"/>
   <File Type="BITSTR-MSK" Name="image_capture_manager.msk"/>
   <File Type="BG-BIN" Name="image_capture_manager.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="image_capture_manager_methodology_drc_routed.pb"/>
   <File Type="BG-BIT" Name="image_capture_manager.bit"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="image_capture_manager_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="image_capture_manager_timing_summary_postroute_physopted.pb"/>
@@ -21,12 +23,12 @@
   <File Type="ROUTE-TIMING-RPX" Name="image_capture_manager_timing_summary_routed.rpx"/>
   <File Type="ROUTE-TIMING-PB" Name="image_capture_manager_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="image_capture_manager_timing_summary_routed.rpt"/>
+  <File Type="PA-TCL" Name="image_capture_manager.tcl"/>
   <File Type="ROUTE-STATUS-PB" Name="image_capture_manager_route_status.pb"/>
   <File Type="ROUTE-STATUS" Name="image_capture_manager_route_status.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="image_capture_manager_power_routed.rpx"/>
   <File Type="ROUTE-PWR-SUM" Name="image_capture_manager_power_summary_routed.pb"/>
   <File Type="ROUTE-PWR" Name="image_capture_manager_power_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="image_capture_manager_methodology_drc_routed.pb"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="image_capture_manager_methodology_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="image_capture_manager_drc_routed.pb"/>
   <File Type="ROUTE-DRC" Name="image_capture_manager_drc_routed.rpt"/>
@@ -47,7 +49,6 @@
   <File Type="PLACE-IO" Name="image_capture_manager_io_placed.rpt"/>
   <File Type="PLACE-DCP" Name="image_capture_manager_placed.dcp"/>
   <File Type="PWROPT-TIMING" Name="image_capture_manager_timing_summary_pwropted.rpt"/>
-  <File Type="PWROPT-DRC" Name="image_capture_manager_drc_pwropted.rpt"/>
   <File Type="PWROPT-DCP" Name="image_capture_manager_pwropt.dcp"/>
   <File Type="OPT-TIMING" Name="image_capture_manager_timing_summary_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="image_capture_manager.hwdef"/>
@@ -56,7 +57,6 @@
   <File Type="OPT-DCP" Name="image_capture_manager_opt.dcp"/>
   <File Type="INIT-TIMING" Name="image_capture_manager_timing_summary_init.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="image_capture_manager_postroute_physopt.dcp"/>
-  <File Type="PA-TCL" Name="image_capture_manager.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/src/image_capture_manager_S00_AXI.v">

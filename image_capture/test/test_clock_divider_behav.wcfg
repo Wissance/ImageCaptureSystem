@@ -3,37 +3,57 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="test_clock_divider_behav.wdb" id="1">
+      <db_ref path="test_linescanner2stream_convertor_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="test_clock_divider" />
+            <top_module name="test_linescanner2stream_convertor" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="653000001fs"></ZoomEndTime>
-      <Cursor1Time time="8953400000fs"></Cursor1Time>
+      <ZoomEndTime time="32100000001fs"></ZoomEndTime>
+      <Cursor1Time time="1000000000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="5" />
-   <wvobject fp_name="/test_clock_divider/input_clock" type="logic">
-      <obj_property name="ElementShortName">input_clock</obj_property>
-      <obj_property name="ObjectShortName">input_clock</obj_property>
+   <WVObjectSize size="10" />
+   <wvobject fp_name="/test_linescanner2stream_convertor/enable" type="logic">
+      <obj_property name="ElementShortName">enable</obj_property>
+      <obj_property name="ObjectShortName">enable</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_clock_divider/output_clock_1" type="logic">
-      <obj_property name="ElementShortName">output_clock_1</obj_property>
-      <obj_property name="ObjectShortName">output_clock_1</obj_property>
+   <wvobject fp_name="/test_linescanner2stream_convertor/pixel_data" type="array">
+      <obj_property name="ElementShortName">pixel_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_data[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_clock_divider/output_clock_2" type="logic">
-      <obj_property name="ElementShortName">output_clock_2</obj_property>
-      <obj_property name="ObjectShortName">output_clock_2</obj_property>
+   <wvobject fp_name="/test_linescanner2stream_convertor/pixel_captured" type="logic">
+      <obj_property name="ElementShortName">pixel_captured</obj_property>
+      <obj_property name="ObjectShortName">pixel_captured</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_clock_divider/output_clock_3" type="logic">
-      <obj_property name="ElementShortName">output_clock_3</obj_property>
-      <obj_property name="ObjectShortName">output_clock_3</obj_property>
+   <wvobject fp_name="/test_linescanner2stream_convertor/axi_aclk" type="logic">
+      <obj_property name="ElementShortName">axi_aclk</obj_property>
+      <obj_property name="ObjectShortName">axi_aclk</obj_property>
    </wvobject>
-   <wvobject fp_name="/test_clock_divider/output_clock_4" type="logic">
-      <obj_property name="ElementShortName">output_clock_4</obj_property>
-      <obj_property name="ObjectShortName">output_clock_4</obj_property>
+   <wvobject fp_name="/test_linescanner2stream_convertor/axi_aresetn" type="logic">
+      <obj_property name="ElementShortName">axi_aresetn</obj_property>
+      <obj_property name="ObjectShortName">axi_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_linescanner2stream_convertor/axi_tready" type="logic">
+      <obj_property name="ElementShortName">axi_tready</obj_property>
+      <obj_property name="ObjectShortName">axi_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_linescanner2stream_convertor/axi_tvalid" type="logic">
+      <obj_property name="ElementShortName">axi_tvalid</obj_property>
+      <obj_property name="ObjectShortName">axi_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_linescanner2stream_convertor/axi_tdata" type="array">
+      <obj_property name="ElementShortName">axi_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">axi_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_linescanner2stream_convertor/axi_tstrb" type="array">
+      <obj_property name="ElementShortName">axi_tstrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">axi_tstrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test_linescanner2stream_convertor/axi_tlast" type="logic">
+      <obj_property name="ElementShortName">axi_tlast</obj_property>
+      <obj_property name="ObjectShortName">axi_tlast</obj_property>
    </wvobject>
 </wave_config>
