@@ -72,7 +72,6 @@ module linescanner2stream_convertor #
 	integer int_buffer;
 	
 	initial pixel_counter = 8'b00000000;
-	initial output_data = 0;
 	 	
 	assign m00_axis_tdata = output_data;
 	
@@ -82,7 +81,7 @@ module linescanner2stream_convertor #
 	   begin
 	       pixel_counter = pixel_counter + 1;
 	       int_buffer = input_data;
-	       output_data = output_data + (int_buffer << `BYTE_SIZE * pixel_counter);
+	       output_data = m00_axis_tdata + int_buffer << `BYTE_SIZE * pixel_counter;
 	       if (pixel_counter == `PIXELS_BUFFER_SIZE)
 	       begin
 	           pixel_counter = 0;

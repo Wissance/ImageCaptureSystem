@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sun Oct 09 17:06:04 2016
-| Host         : XilinxDev running 64-bit Service Pack 1  (build 7601)
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Fri Oct  7 14:16:04 2016
+| Host         : michael-LaptopDev running 64-bit Linux Mint 18 Sarah
 | Command      : report_control_sets -verbose -file image_capture_manager_control_sets_placed.rpt
 | Design       : image_capture_manager
 | Device       : xc7z020
@@ -53,6 +53,10 @@ Table of Contents
 |  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/axi_arready_i_1_n_0  | image_capture_manager_S00_AXI_inst/p_0_in__0 |                1 |              2 |
 |  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/axi_awready0         | image_capture_manager_S00_AXI_inst/p_0_in__0 |                1 |              2 |
 |  s00_axi_aclk_IBUF_BUFG     |                                                         | image_capture_manager_S00_AXI_inst/p_0_in__0 |                3 |              5 |
+|  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/p_1_in[7]            | image_capture_manager_S00_AXI_inst/p_0_in__0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/p_1_in[15]           | image_capture_manager_S00_AXI_inst/p_0_in__0 |                1 |              8 |
+|  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/p_1_in[23]           | image_capture_manager_S00_AXI_inst/p_0_in__0 |                2 |              8 |
+|  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/p_1_in[31]           | image_capture_manager_S00_AXI_inst/p_0_in__0 |                2 |              8 |
 |  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/slv_reg0[15]_i_1_n_0 | image_capture_manager_S00_AXI_inst/p_0_in__0 |                1 |              8 |
 |  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/slv_reg0[23]_i_1_n_0 | image_capture_manager_S00_AXI_inst/p_0_in__0 |                1 |              8 |
 |  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/slv_reg0[31]_i_1_n_0 | image_capture_manager_S00_AXI_inst/p_0_in__0 |                2 |              8 |
@@ -65,10 +69,6 @@ Table of Contents
 |  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/slv_reg2[23]_i_1_n_0 | image_capture_manager_S00_AXI_inst/p_0_in__0 |                2 |              8 |
 |  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/slv_reg2[31]_i_1_n_0 | image_capture_manager_S00_AXI_inst/p_0_in__0 |                1 |              8 |
 |  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/slv_reg2[7]_i_1_n_0  | image_capture_manager_S00_AXI_inst/p_0_in__0 |                1 |              8 |
-|  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/p_1_in[7]            | image_capture_manager_S00_AXI_inst/p_0_in__0 |                1 |              8 |
-|  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/p_1_in[15]           | image_capture_manager_S00_AXI_inst/p_0_in__0 |                1 |              8 |
-|  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/p_1_in[23]           | image_capture_manager_S00_AXI_inst/p_0_in__0 |                2 |              8 |
-|  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/p_1_in[31]           | image_capture_manager_S00_AXI_inst/p_0_in__0 |                2 |              8 |
 |  s00_axi_aclk_IBUF_BUFG     | image_capture_manager_S00_AXI_inst/slv_reg_rden         | image_capture_manager_S00_AXI_inst/p_0_in__0 |                9 |             32 |
 +-----------------------------+---------------------------------------------------------+----------------------------------------------+------------------+----------------+
 

@@ -51,16 +51,16 @@ set rc [catch {
   create_msg_db init_design.pb
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir E:/oms/VideoControlIP/image_capture/image_capture.cache/wt [current_project]
-  set_property parent.project_path E:/oms/VideoControlIP/image_capture/image_capture.xpr [current_project]
+  set_property webtalk.parent_dir /home/michael/Projects/Xilinx/VideoControlIP/image_capture/image_capture.cache/wt [current_project]
+  set_property parent.project_path /home/michael/Projects/Xilinx/VideoControlIP/image_capture/image_capture.xpr [current_project]
   set_property ip_repo_paths {
-  e:/oms/VideoControlIP/image_capture/image_capture.cache/ip
-  E:/oms/VideoControlIP/ip_repo/linescanner_image_capture_ip_1.0
-  E:/oms/VideoControlIP/ip_repo/image_capture_manger
+  /home/michael/Projects/Xilinx/VideoControlIP/image_capture/image_capture.cache/ip
+  /home/michael/Projects/Xilinx/VideoControlIP/ip_repo/linescanner_image_capture_ip_1.0
+  /home/michael/Projects/Xilinx/VideoControlIP/ip_repo/image_capture_manger
 } [current_project]
-  set_property ip_output_repo e:/oms/VideoControlIP/image_capture/image_capture.cache/ip [current_project]
+  set_property ip_output_repo /home/michael/Projects/Xilinx/VideoControlIP/image_capture/image_capture.cache/ip [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet E:/oms/VideoControlIP/image_capture/image_capture.runs/synth_1/image_capture_manager.dcp
+  add_files -quiet /home/michael/Projects/Xilinx/VideoControlIP/image_capture/image_capture.runs/synth_1/image_capture_manager.dcp
   link_design -top image_capture_manager -part xc7z020clg400-2
   write_hwdef -file image_capture_manager.hwdef
   close_msg_db -file init_design.pb

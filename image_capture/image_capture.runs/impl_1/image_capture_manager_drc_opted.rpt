@@ -1,8 +1,8 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sun Oct 09 17:06:02 2016
-| Host         : XilinxDev running 64-bit Service Pack 1  (build 7601)
+| Tool Version : Vivado v.2016.2 (lin64) Build 1577090 Thu Jun  2 16:32:35 MDT 2016
+| Date         : Fri Oct  7 14:15:53 2016
+| Host         : michael-LaptopDev running 64-bit Linux Mint 18 Sarah
 | Command      : report_drc -file image_capture_manager_drc_opted.rpt
 | Design       : image_capture_manager
 | Device       : xc7z020clg400-2
