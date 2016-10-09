@@ -1,0 +1,17 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  "C:/XilinxTools/Vivado/2016.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv"
+sv xil_defaultlib  "C:/XilinxTools/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_base.sv"
+sv xil_defaultlib  "C:/XilinxTools/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_dpdistram.sv"
+sv xil_defaultlib  "C:/XilinxTools/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_dprom.sv"
+sv xil_defaultlib  "C:/XilinxTools/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_sdpram.sv"
+sv xil_defaultlib  "C:/XilinxTools/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_spram.sv"
+sv xil_defaultlib  "C:/XilinxTools/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_sprom.sv"
+sv xil_defaultlib  "C:/XilinxTools/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_tdpram.sv"
+verilog xil_defaultlib  "../../../src/fifo.v"
+verilog xil_defaultlib  "../../../tests/fifo_tests/fifo_testbench.v"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
