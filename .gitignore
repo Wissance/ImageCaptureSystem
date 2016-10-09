@@ -4,3 +4,9 @@
 *.jou
 # Backups
 *.backup
+# Generated shit
+*.hw
+*.cache
+*.runs
+*.sims
+*.ip_user_files
