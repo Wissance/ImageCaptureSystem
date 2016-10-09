@@ -16,8 +16,8 @@ module linescanner2stream_convertor_M00_AXIS #
 )
 (
     // Users to add ports here
-    input wire [C_M_AXIS_TDATA_WIDTH-1 : 0] DATA_SOURCE,
-    inout wire DATA_READY,
+    //input wire [C_M_AXIS_TDATA_WIDTH-1 : 0] DATA_SOURCE,
+    //inout wire DATA_READY,
     // User ports ends
    
     // Global ports
@@ -36,7 +36,7 @@ module linescanner2stream_convertor_M00_AXIS #
     input wire  M_AXIS_TREADY
 );
 
-    always@ (posedge M_AXIS_ACLK)
+/*    always@ (posedge M_AXIS_ACLK)
     begin
     end
     
@@ -44,8 +44,8 @@ module linescanner2stream_convertor_M00_AXIS #
     begin
     end
 
-endmodule
-/*
+endmodule*/
+
 	// Total number of output data                                                 
 	localparam NUMBER_OF_OUTPUT_WORDS = 8;                                               
 	                                                                                     
@@ -238,4 +238,3 @@ endmodule
 	// User logic ends
 
 	endmodule
-*/

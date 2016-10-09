@@ -17,7 +17,7 @@
     <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val=""/>
-    <Option Name="ActiveSimSet" Val="test_linescanner2stream_convertor"/>
+    <Option Name="ActiveSimSet" Val="linescanner2stream_convertor_tests"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/linescanner_image_capture_ip_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/image_capture_manger"/>
@@ -28,7 +28,7 @@
     <Option Name="IPUserFilesDir" Val="$PPRDIR/image_capture.ip_user_files"/>
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/image_capture.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="24"/>
+    <Option Name="WTXSimLaunchSim" Val="31"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -55,22 +55,6 @@
       </File>
       <File Path="$PPRDIR/src/image_capture_manager.v">
         <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/src/linescanner_image_capture_unit.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/src/linescanner2stream_convertor.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -113,6 +97,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/src/linescanner_image_capture_unit.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/src/linescanner2stream_convertor_M00_AXIS.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -121,7 +113,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/src/FIFO.v">
+      <File Path="$PPRDIR/src/linescanner2stream_convertor.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -141,65 +133,63 @@
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
-    <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
+    <FileSet Name="clock_divider_tests" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/clock_divider_tests">
       <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/tests/clock_divider_tests/clock_divider_testbench.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/tests/clock_divider_tests/clock_divider_testbench_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="image_capture_manager"/>
+        <Option Name="TopModule" Val="clock_divider_testbench"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SimMode" Val="post-implementation"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/tests/clock_divider_tests/clock_divider_testbench_behav.wcfg"/>
+        <Option Name="xsim.compile.xvhdl.more_options" Val="-v 1"/>
       </Config>
     </FileSet>
-    <FileSet Name="test_clock_divider" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/test_clock_divider">
+    <FileSet Name="linescanner2stream_convertor_tests" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/linescanner2stream_convertor_tests">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/test/test_clock_divider.v">
+      <File Path="$PPRDIR/tests/linescanner2stream_convertor_tests/linescanner2stream_convertor_testbench.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/test/test_clock_divider_behav.wcfg">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="test_clock_divider"/>
-        <Option Name="TopLib" Val="xil_defaultlib"/>
-        <Option Name="TransportPathDelay" Val="0"/>
-        <Option Name="TransportIntDelay" Val="0"/>
-        <Option Name="SimMode" Val="post-implementation"/>
-        <Option Name="SrcSet" Val="sources_1"/>
-        <Option Name="XSimWcfgFile" Val="$PPRDIR/test/test_clock_divider_behav.wcfg"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="test_linescanner2stream_convertor" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/test_linescanner2stream_convertor">
-      <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/test/test_linescanner2stream_convertor.v">
+      <File Path="$PPRDIR/tests/linescanner2stream_convertor_tests/linescanner2stream_convertor_testbench.tcl">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/test/test_clock_divider_behav.wcfg">
+      <File Path="$PPRDIR/tests/linescanner2stream_convertor_tests/linescanner2stream_convertor_behav.wcfg">
         <FileInfo>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="test_linescanner2stream_convertor"/>
+        <Option Name="TopModule" Val="linescanner2stream_convertor_testbench"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/tests/linescanner2stream_convertor_tests/linescanner2stream_convertor_behav.wcfg"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/tests/linescanner2stream_convertor_tests/linescanner2stream_convertor_behav.wcfg"/>
         <Option Name="xsim.compile.xvhdl.more_options" Val="-v 1"/>
       </Config>
     </FileSet>

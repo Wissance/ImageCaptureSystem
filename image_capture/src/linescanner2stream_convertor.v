@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+//`include ".\src\linescanner2stream_convertor_M00_AXIS.v"
 `define PIXELS_BUFFER_SIZE 4
 `define BYTE_SIZE 8
 //////////////////////////////////////////////////////////////////////////////////
