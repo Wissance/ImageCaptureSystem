@@ -1,4 +1,3 @@
-
 `timescale 1 ns / 1 ps
 
 module linescanner2stream_convertor_M00_AXIS #
@@ -12,12 +11,13 @@ module linescanner2stream_convertor_M00_AXIS #
      parameter integer C_M_AXIS_TDATA_WIDTH	= 32,
      // Start count is the numeber of clock cycles the master will wait before initiating/issuing any transaction.
      parameter integer C_M_START_COUNT	= 32,
+     // Number of words in burst
      parameter integer C_M_NUMBER_OF_WORDS = 8
 )
 (
     // Users to add ports here
-    //input wire [C_M_AXIS_TDATA_WIDTH-1 : 0] DATA_SOURCE,
-    //inout wire DATA_READY,
+    input wire [C_M_AXIS_TDATA_WIDTH-1 : 0] DATA_SOURCE,
+    input wire DATA_READY,
     // User ports ends
    
     // Global ports
@@ -35,17 +35,96 @@ module linescanner2stream_convertor_M00_AXIS #
     // TREADY indicates that the slave can accept a transfer in the current cycle.
     input wire  M_AXIS_TREADY
 );
-
-/*    always@ (posedge M_AXIS_ACLK)
+    
+    parameter [1:0] IDLE = 0;
+    parameter [1:0] INIT = 1;
+    parameter [1:0] READY = 2;
+    
+    supply1 vcc;
+    reg clear_fifo;
+    reg pop_clock;
+    reg [7:0] clk_counter;
+    reg [1:0] state;
+    reg [3:0] data_counter;
+    reg tvalid_value;
+    wire fifo_ready;
+    
+    initial clear_fifo = 0;
+    initial pop_clock = 0;
+    initial clk_counter = 0;
+    initial data_counter = 0;
+    initial state = IDLE;
+    initial tvalid_value = 0;
+    
+    assign M_AXIS_TVALID = tvalid_value;
+    
+    fifo #(.FIFO_SIZE(C_M_NUMBER_OF_WORDS), .DATA_WIDTH(C_M_AXIS_TDATA_WIDTH)) axi_stream_fifo(.enable(vcc), .clear(clear_fifo), .in_data(DATA_SOURCE), .fifo_ready(fifo_ready),
+                                                                                               .push_clock(DATA_READY), .pop_clock(pop_clock), .out_data(M_AXIS_TDATA));
+    always@ (posedge M_AXIS_ACLK)
     begin
+        if (!M_AXIS_ARESETN)
+        begin
+            clear_fifo <= 1;
+            state <= IDLE;
+            data_counter <= 0;
+            clear_fifo <= 0;
+            tvalid_value <= 0;
+        end
+        else
+        begin
+            case (state)
+            
+            IDLE :
+            begin
+               clk_counter <= 0;
+               state <= INIT;
+            end
+            
+            INIT :
+            begin
+               clk_counter <= clk_counter + 1;
+               if(clk_counter == C_M_START_COUNT)
+                   state <= READY;
+            end
+            
+            READY :
+            begin
+                if(M_AXIS_TREADY)
+                begin
+                    if(data_counter > 0)
+                    begin
+                        tvalid_value <= 1;
+                        pop_clock <= 1;
+                        data_counter = data_counter - 1;
+                    end
+                    else
+                    begin
+                        pop_clock <= 0;
+                        tvalid_value <= 0;
+                    end
+                end
+                else
+                   tvalid_value <= 0;
+            end
+            
+            default :
+            begin
+                state <= IDLE;
+            end
+            
+            endcase
+        end
     end
     
     always@ (posedge DATA_READY)
     begin
+        if(fifo_ready && state == READY)
+            data_counter <= data_counter + 1;
     end
 
-endmodule*/
 
+endmodule
+/*
 	// Total number of output data                                                 
 	localparam NUMBER_OF_OUTPUT_WORDS = 8;                                               
 	                                                                                     
@@ -238,3 +317,4 @@ endmodule*/
 	// User logic ends
 
 	endmodule
+*/
