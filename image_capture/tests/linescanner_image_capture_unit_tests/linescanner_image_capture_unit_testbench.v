@@ -1,4 +1,4 @@
-`timescale 1ns / 1ns
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -20,14 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module dragsterCaptureUnit_tb;
+module linescanner_image_capture_unit_testbench;
     reg main_clock_source, n_reset, lval, end_adc, enable;
     reg[7:0] data;
     
     wire[7:0] pixel_data;
     wire main_clock, rst_cvc, rst_cds, sample, load_pulse, pixel_captured, pixel_clock;
 
-    dragsterCaptureUnit d(
+    linescanner_image_capture_unit l(
     .enable,
     .data,
     .rst_cvc,
