@@ -28,7 +28,7 @@
     <Option Name="IPUserFilesDir" Val="$PPRDIR/image_capture.ip_user_files"/>
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/image_capture.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="127"/>
+    <Option Name="WTXSimLaunchSim" Val="137"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
