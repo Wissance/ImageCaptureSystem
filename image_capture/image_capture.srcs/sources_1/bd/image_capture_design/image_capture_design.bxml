@@ -2,11 +2,11 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="image_capture_design" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1476041351"/>
-    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1476041351"/>
-    <Generation Name="SIMULATION" State="RESET" Timestamp="1476041351"/>
+    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1476186136"/>
+    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1476186136"/>
+    <Generation Name="SIMULATION" State="RESET" Timestamp="1476186136"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
-      <File Name="ip\image_capture_design_processing_system7_0_0\image_capture_design_processing_system7_0_0.xci" Type="IP">
+      <File Name="ip/image_capture_design_processing_system7_0_0/image_capture_design_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -14,7 +14,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_rst_processing_system7_0_50M_2\image_capture_design_rst_processing_system7_0_50M_2.xci" Type="IP">
+      <File Name="ip/image_capture_design_rst_processing_system7_0_50M_2/image_capture_design_rst_processing_system7_0_50M_2.xci" Type="IP">
         <Instance HierarchyPath="rst_processing_system7_0_50M"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -22,7 +22,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_axi_quad_spi_0_0\image_capture_design_axi_quad_spi_0_0.xci" Type="IP">
+      <File Name="ip/image_capture_design_axi_quad_spi_0_0/image_capture_design_axi_quad_spi_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_quad_spi_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -30,7 +30,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_processing_system7_0_axi_periph_1\image_capture_design_processing_system7_0_axi_periph_1.xci" Type="IP">
+      <File Name="ip/image_capture_design_processing_system7_0_axi_periph_1/image_capture_design_processing_system7_0_axi_periph_1.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0_axi_periph"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -38,7 +38,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_xbar_0\image_capture_design_xbar_0.xci" Type="IP">
+      <File Name="ip/image_capture_design_xbar_0/image_capture_design_xbar_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0_axi_periph/xbar"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -46,7 +46,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_axi_vdma_0_0_1\image_capture_design_axi_vdma_0_0.xci" Type="IP">
+      <File Name="ip/image_capture_design_axi_vdma_0_0_1/image_capture_design_axi_vdma_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_vdma_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -54,7 +54,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_linescanner_image_capture_unit_0_0\image_capture_design_linescanner_image_capture_unit_0_0.xci" Type="IP">
+      <File Name="ip/image_capture_design_linescanner_image_capture_unit_0_0/image_capture_design_linescanner_image_capture_unit_0_0.xci" Type="IP">
         <Instance HierarchyPath="linescanner_image_capture_unit_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -62,7 +62,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_linescanner_image_capture_unit_1_0\image_capture_design_linescanner_image_capture_unit_1_0.xci" Type="IP">
+      <File Name="ip/image_capture_design_linescanner_image_capture_unit_1_0/image_capture_design_linescanner_image_capture_unit_1_0.xci" Type="IP">
         <Instance HierarchyPath="linescanner_image_capture_unit_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -70,7 +70,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_linescanner2stream_convertor_0_0\image_capture_design_linescanner2stream_convertor_0_0.xci" Type="IP">
+      <File Name="ip/image_capture_design_linescanner2stream_convertor_0_0/image_capture_design_linescanner2stream_convertor_0_0.xci" Type="IP">
         <Instance HierarchyPath="linescanner2stream_convertor_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -78,7 +78,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_axi_vdma_1_0\image_capture_design_axi_vdma_1_0.xci" Type="IP">
+      <File Name="ip/image_capture_design_axi_vdma_1_0/image_capture_design_axi_vdma_1_0.xci" Type="IP">
         <Instance HierarchyPath="axi_vdma_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -86,7 +86,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_linescanner2stream_convertor_1_0\image_capture_design_linescanner2stream_convertor_1_0.xci" Type="IP">
+      <File Name="ip/image_capture_design_linescanner2stream_convertor_1_0/image_capture_design_linescanner2stream_convertor_1_0.xci" Type="IP">
         <Instance HierarchyPath="linescanner2stream_convertor_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -94,7 +94,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_clock_divider_0_1\image_capture_design_clock_divider_0_1.xci" Type="IP">
+      <File Name="ip/image_capture_design_clock_divider_0_1/image_capture_design_clock_divider_0_1.xci" Type="IP">
         <Instance HierarchyPath="clock_divider_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -102,7 +102,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_image_capture_manager_0_0\image_capture_design_image_capture_manager_0_0.xci" Type="IP">
+      <File Name="ip/image_capture_design_image_capture_manager_0_0/image_capture_design_image_capture_manager_0_0.xci" Type="IP">
         <Instance HierarchyPath="image_capture_manager_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -110,7 +110,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_clock_divider_1_0\image_capture_design_clock_divider_1_0.xci" Type="IP">
+      <File Name="ip/image_capture_design_clock_divider_1_0/image_capture_design_clock_divider_1_0.xci" Type="IP">
         <Instance HierarchyPath="clock_divider_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -118,7 +118,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_axi_mem_intercon_0_1\image_capture_design_axi_mem_intercon_0.xci" Type="IP">
+      <File Name="ip/image_capture_design_axi_mem_intercon_0_1/image_capture_design_axi_mem_intercon_0.xci" Type="IP">
         <Instance HierarchyPath="axi_mem_intercon"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -126,7 +126,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_axi_mem_intercon_1_0_1\image_capture_design_axi_mem_intercon_1_0.xci" Type="IP">
+      <File Name="ip/image_capture_design_axi_mem_intercon_1_0_1/image_capture_design_axi_mem_intercon_1_0.xci" Type="IP">
         <Instance HierarchyPath="axi_mem_intercon_1"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -134,7 +134,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_auto_pc_3_1\image_capture_design_auto_pc_3.xci" Type="IP">
+      <File Name="ip/image_capture_design_auto_pc_3_1/image_capture_design_auto_pc_3.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0_axi_periph/s00_couplers/auto_pc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -142,7 +142,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_auto_pc_4_1\image_capture_design_auto_pc_4.xci" Type="IP">
+      <File Name="ip/image_capture_design_auto_pc_4_1/image_capture_design_auto_pc_4.xci" Type="IP">
         <Instance HierarchyPath="axi_mem_intercon/s00_couplers/auto_pc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -150,7 +150,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_auto_us_2_1\image_capture_design_auto_us_2.xci" Type="IP">
+      <File Name="ip/image_capture_design_auto_us_2_1/image_capture_design_auto_us_2.xci" Type="IP">
         <Instance HierarchyPath="axi_mem_intercon/s00_couplers/auto_us"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -158,7 +158,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_auto_pc_5\image_capture_design_auto_pc_5.xci" Type="IP">
+      <File Name="ip/image_capture_design_auto_pc_5/image_capture_design_auto_pc_5.xci" Type="IP">
         <Instance HierarchyPath="axi_mem_intercon_1/s00_couplers/auto_pc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -166,7 +166,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_auto_us_3_1\image_capture_design_auto_us_3.xci" Type="IP">
+      <File Name="ip/image_capture_design_auto_us_3_1/image_capture_design_auto_us_3.xci" Type="IP">
         <Instance HierarchyPath="axi_mem_intercon_1/s00_couplers/auto_us"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>

@@ -30,10 +30,10 @@ preplace inst linescanner_image_capture_unit_1 -pg 1 -lvl 1 -y 410 -defaultsOSRD
 preplace inst clock_divider_0 -pg 1 -lvl 6 -y 160 -defaultsOSRD
 preplace inst axi_mem_intercon_1 -pg 1 -lvl 6 -y 580 -defaultsOSRD
 preplace inst axi_vdma_1 -pg 1 -lvl 3 -y 510 -defaultsOSRD
-preplace inst clock_divider_1 -pg 1 -lvl 2 -y 300 -defaultsOSRD
+preplace inst clock_divider_1 -pg 1 -lvl 2 -y 290 -defaultsOSRD
 preplace inst rst_processing_system7_0_50M -pg 1 -lvl 2 -y 730 -defaultsOSRD
 preplace inst image_capture_manager_0 -pg 1 -lvl 7 -y 350 -defaultsOSRD
-preplace inst linescanner2stream_convertor_0 -pg 1 -lvl 2 -y 140 -defaultsOSRD
+preplace inst linescanner2stream_convertor_0 -pg 1 -lvl 2 -y 120 -defaultsOSRD
 preplace inst axi_mem_intercon -pg 1 -lvl 6 -y 310 -defaultsOSRD
 preplace inst linescanner2stream_convertor_1 -pg 1 -lvl 2 -y 460 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 5 -y 300 -defaultsOSRD
@@ -42,59 +42,59 @@ preplace inst processing_system7_0 -pg 1 -lvl 5 -y 600 -defaultsOSRD
 preplace netloc axi_quad_spi_0_SPI_0 1 7 3 NJ 150 NJ 150 N
 preplace netloc processing_system7_0_DDR 1 5 5 NJ 440 NJ 440 NJ 440 NJ 440 NJ
 preplace netloc clock_divider_0_output_clock 1 6 1 NJ
-preplace netloc linescanner_image_capture_unit_1_n_reset 1 0 2 NJ 530 340
-preplace netloc linescanner_image_capture_unit_1_main_clock 1 0 2 NJ 520 350
-preplace netloc axi_vdma_1_M_AXI_S2MM 1 3 3 NJ 490 NJ 490 1760
-preplace netloc linescanner_image_capture_unit_0_out 1 1 1 390
-preplace netloc linescanner_image_capture_unit_1_rst_cds 1 0 2 NJ 540 370
+preplace netloc linescanner_image_capture_unit_1_n_reset 1 0 2 NJ 530 350
+preplace netloc linescanner_image_capture_unit_1_main_clock 1 0 2 NJ 520 360
+preplace netloc axi_vdma_1_M_AXI_S2MM 1 3 3 NJ 490 NJ 490 1910
+preplace netloc linescanner_image_capture_unit_0_out 1 1 1 400
+preplace netloc linescanner_image_capture_unit_1_rst_cds 1 0 2 NJ 540 380
 preplace netloc LINESCANNER1_LVAL_1 1 0 1 NJ
-preplace netloc linescanner_image_capture_unit_0_rst_cds 1 0 2 NJ 240 370
-preplace netloc linescanner_image_capture_unit_0_rst_cvc 1 0 2 NJ 260 380
-preplace netloc processing_system7_0_axi_periph_M03_AXI 1 2 4 830 20 NJ 20 NJ 20 1760
-preplace netloc processing_system7_0_axi_periph_M00_AXI 1 5 2 1790 110 NJ
-preplace netloc clock_divider_1_output_clock 1 0 3 30 250 NJ 250 780
+preplace netloc linescanner_image_capture_unit_0_rst_cds 1 0 2 NJ 240 380
+preplace netloc linescanner_image_capture_unit_0_rst_cvc 1 0 2 NJ 260 390
+preplace netloc processing_system7_0_axi_periph_M03_AXI 1 2 4 890 20 NJ 20 NJ 20 1910
+preplace netloc processing_system7_0_axi_periph_M00_AXI 1 5 2 1940 110 NJ
+preplace netloc clock_divider_1_output_clock 1 0 3 20 250 NJ 240 830
 preplace netloc LINESCANNER1_END_ADC_1 1 0 1 NJ
-preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 2 4 NJ 350 NJ 220 NJ 90 1770
-preplace netloc linescanner2stream_convertor_1_m00_axis 1 2 1 780
-preplace netloc axi_mem_intercon_1_M00_AXI 1 4 3 1320 50 NJ 50 2120
-preplace netloc processing_system7_0_M_AXI_GP0 1 4 2 1330 120 1750
-preplace netloc linescanner_image_capture_unit_0_load_pulse 1 0 2 NJ 280 360
-preplace netloc linescanner_image_capture_unit_0_main_clock 1 0 2 NJ 230 350
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 5 430 640 NJ 690 NJ 690 NJ 710 1750
-preplace netloc axi_mem_intercon_M00_AXI 1 4 3 1310 40 NJ 40 2130
+preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 2 4 NJ 350 NJ 220 NJ 90 1920
+preplace netloc linescanner2stream_convertor_1_m00_axis 1 2 1 850
+preplace netloc axi_mem_intercon_1_M00_AXI 1 4 3 1450 50 NJ 50 2260
+preplace netloc processing_system7_0_M_AXI_GP0 1 4 2 1460 120 1900
+preplace netloc linescanner_image_capture_unit_0_load_pulse 1 0 2 NJ 280 370
+preplace netloc linescanner_image_capture_unit_0_main_clock 1 0 2 NJ 230 360
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 5 450 640 NJ 690 NJ 690 NJ 710 1900
+preplace netloc axi_mem_intercon_M00_AXI 1 4 3 1440 40 NJ 40 2270
 preplace netloc LINESCANNER1_PIXEL_CLOCK_1 1 0 1 NJ
-preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 6 430 360 790 680 NJ 420 NJ 80 1800 80 2140
-preplace netloc processing_system7_0_axi_periph_M02_AXI 1 2 4 840 30 NJ 30 NJ 30 1740
-preplace netloc linescanner2stream_convertor_1_stream_data_valid 1 2 1 780
-preplace netloc linescanner2stream_convertor_1_last_data 1 2 1 780
+preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 1 6 450 230 840 680 NJ 420 NJ 80 1950 80 2280
+preplace netloc processing_system7_0_axi_periph_M02_AXI 1 2 4 900 30 NJ 30 NJ 30 1890
+preplace netloc linescanner2stream_convertor_1_stream_data_valid 1 2 1 830
+preplace netloc linescanner2stream_convertor_1_last_data 1 2 1 830
 preplace netloc LINESCANNER0_SAMPLE_1 1 0 1 NJ
 preplace netloc processing_system7_0_FIXED_IO 1 5 5 NJ 460 NJ 460 NJ 460 NJ 460 NJ
-preplace netloc linescanner_image_capture_unit_1_pixel_captured 1 1 1 400
-preplace netloc linescanner_image_capture_unit_1_out 1 1 1 400
+preplace netloc linescanner_image_capture_unit_1_pixel_captured 1 1 1 420
+preplace netloc linescanner_image_capture_unit_1_out 1 1 1 410
 preplace netloc LINESCANNER1_SAMPLE_1 1 0 1 NJ
-preplace netloc linescanner2stream_convertor_0_m00_axis 1 2 1 820
+preplace netloc linescanner2stream_convertor_0_m00_axis 1 2 1 880
 preplace netloc axi_vdma_0_s_axis_s2mm_tready 1 2 1 NJ
-preplace netloc linescanner_image_capture_unit_0_pixel_captured 1 1 1 400
-preplace netloc linescanner_image_capture_unit_1_rst_cvc 1 0 2 NJ 560 380
-preplace netloc linescanner_image_capture_unit_0_n_reset 1 0 2 NJ 220 340
+preplace netloc linescanner_image_capture_unit_0_pixel_captured 1 1 1 410
+preplace netloc linescanner_image_capture_unit_1_rst_cvc 1 0 2 NJ 560 390
+preplace netloc linescanner_image_capture_unit_0_n_reset 1 0 2 NJ 220 350
 preplace netloc LINESCANNER0_END_ADC_1 1 0 1 NJ
-preplace netloc image_capture_manager_v1_0_0_image_capture_enabled 1 0 8 20 270 410 10 NJ 10 NJ 10 NJ 10 NJ 10 NJ 10 2490
-preplace netloc linescanner2stream_convertor_1_stream_data 1 2 1 780
-preplace netloc linescanner2stream_convertor_0_last_data 1 2 1 820
-preplace netloc processing_system7_0_FCLK_CLK0 1 1 6 420 240 820 670 NJ 660 1280 60 1810 60 2170
-preplace netloc axi_vdma_0_M_AXI_S2MM 1 3 3 NJ 110 NJ 110 1730
-preplace netloc linescanner2stream_convertor_0_keep_data 1 2 1 820
-preplace netloc linescanner2stream_convertor_0_stream_data 1 2 1 820
-preplace netloc linescanner_image_capture_unit_1_load_pulse 1 0 2 NJ 580 360
+preplace netloc image_capture_manager_v1_0_0_image_capture_enabled 1 0 8 10 270 420 10 NJ 10 NJ 10 NJ 10 NJ 10 NJ 10 2670
+preplace netloc linescanner2stream_convertor_1_stream_data 1 2 1 850
+preplace netloc linescanner2stream_convertor_0_last_data 1 2 1 850
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 6 440 220 880 670 NJ 660 1410 60 1960 60 2310
+preplace netloc axi_vdma_0_M_AXI_S2MM 1 3 3 NJ 110 NJ 110 1880
+preplace netloc linescanner2stream_convertor_0_keep_data 1 2 1 860
+preplace netloc linescanner2stream_convertor_0_stream_data 1 2 1 870
+preplace netloc linescanner_image_capture_unit_1_load_pulse 1 0 2 NJ 580 370
 preplace netloc LINESCANNER1_TAP_A_1 1 0 1 NJ
 preplace netloc LINESCANNER0_TAP_A_1 1 0 1 NJ
-preplace netloc processing_system7_0_axi_periph_M01_AXI 1 5 2 NJ 90 2160
+preplace netloc processing_system7_0_axi_periph_M01_AXI 1 5 2 NJ 90 2300
 preplace netloc axi_vdma_1_s_axis_s2mm_tready 1 2 1 NJ
-preplace netloc linescanner2stream_convertor_1_keep_data 1 2 1 780
-preplace netloc linescanner2stream_convertor_0_stream_data_valid 1 2 1 820
+preplace netloc linescanner2stream_convertor_1_keep_data 1 2 1 850
+preplace netloc linescanner2stream_convertor_0_stream_data_valid 1 2 1 840
 preplace netloc LINESCANNER0_PIXEL_CLOCK_1 1 0 1 NJ
 preplace netloc LINESCANNER0_LVAL_1 1 0 1 NJ
-levelinfo -pg 1 -10 190 610 1040 1260 1530 1970 2330 2510 2560 2610 -top 0 -bot 820
+levelinfo -pg 1 -20 190 640 1150 1390 1670 2110 2490 2690 2740 2790 -top 0 -bot 820
 ",
 }
 {
