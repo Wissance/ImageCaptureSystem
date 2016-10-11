@@ -7,7 +7,7 @@
   <spirit:componentInstances>
     <spirit:componentInstance>
       <spirit:instanceName>image_capture_design_linescanner_image_capture_unit_1_0</spirit:instanceName>
-      <spirit:componentRef spirit:vendor="xilinx.com" spirit:library="module_ref" spirit:name="linescanner_image_capture_unit" spirit:version="1.0"/>
+      <spirit:componentRef spirit:vendor="user.org" spirit:library="module_ref" spirit:name="linescanner_image_capture_unit" spirit:version="1.0"/>
       <spirit:configurableElementValues>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.MAIN_CLOCK.ASSOCIATED_BUSIF"/>
         <spirit:configurableElementValue spirit:referenceId="BUSIFPARAM_VALUE.MAIN_CLOCK.ASSOCIATED_RESET"/>
