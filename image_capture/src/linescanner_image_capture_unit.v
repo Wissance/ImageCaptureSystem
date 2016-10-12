@@ -41,13 +41,12 @@ module linescanner_image_capture_unit(
     assign pixel_data = data;
     
     reg[7:0] clock_counter, clock_count_end_adc_re, sm_state;
-    reg just_enabled, send_load_pulse;
+    reg send_load_pulse;
     
     always @ (posedge pixel_clock) begin
         if(!n_reset) begin
             clock_counter = 0;
-            sm_state = 5;
-            just_enabled = 1'b1;
+            sm_state = 0;
             rst_cvc = 1'b1;
             rst_cds = 1'b1;
             sample = 1'b0;
@@ -56,8 +55,10 @@ module linescanner_image_capture_unit(
         else begin
           case (sm_state)
             0: begin
-              rst_cvc = 1'b0;
-              sm_state = 1;
+                if(enable) begin
+                rst_cvc = 1'b0;
+                sm_state = 1;
+                end
             end
             
             1: if(clock_counter < 49) // 50 - 1
@@ -94,17 +95,7 @@ module linescanner_image_capture_unit(
             5: begin
                 rst_cvc = 1'b1;
                 rst_cds = 1'b1;
-                
-                if(enable) begin
-                    if(just_enabled) begin
-                        just_enabled = 1'b0;
-                        sm_state = 0;
-                    end
-                    else
-                        sm_state = 6;
-                end
-                else
-                    just_enabled = 1'b1;
+                sm_state = 6;
             end
             
             6: if(clock_counter < 48) // 50 - 2
