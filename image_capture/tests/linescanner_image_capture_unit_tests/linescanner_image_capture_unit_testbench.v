@@ -21,11 +21,25 @@
 
 
 module linescanner_image_capture_unit_testbench;
-    reg main_clock_source, n_reset, lval, end_adc, enable;
+    reg
+    main_clock_source,
+    n_reset,
+    lval,
+    end_adc,
+    enable;
+    
     reg[7:0] data;
     
+    wire
+    main_clock,
+    rst_cvc,
+    rst_cds,
+    sample,
+    load_pulse,
+    pixel_captured,
+    pixel_clock;
+
     wire[7:0] pixel_data;
-    wire main_clock, rst_cvc, rst_cds, sample, load_pulse, pixel_captured, pixel_clock;
 
     linescanner_image_capture_unit l(
     .enable,
@@ -44,32 +58,34 @@ module linescanner_image_capture_unit_testbench;
     .pixel_captured);
 
     initial begin
-        enable = 1'b1;
-        main_clock_source = 1'b0;
+        enable <= 1'b1;
+        main_clock_source <= 1'b0;
         
-        lval = 1'b0;
-        data = 8'b00000000;
-        end_adc = 1'b0;
+        lval <= 1'b0;
+        data <= 0;
+        end_adc <= 1'b0;
 
-        n_reset = 1'b1;
-        #10 n_reset = 1'b0;
-        #10 n_reset = 1'b1;
-    end
-    
-    assign pixel_clock = main_clock;
-    always #10 main_clock_source = ~main_clock_source;
-    
-    always @ (negedge rst_cds)
-        #160 end_adc = 1'b1;
-    always @ (negedge sample)
-        #140 end_adc = 1'b0;
-    always @ (posedge load_pulse) begin
-        #1000 lval = 1'b1;
-        data = 8'b11111111;
-    end
+        n_reset <= 1'b1;
+        #10 n_reset <= 1'b0;
+        #10 n_reset <= 1'b1;
         
+        #920 enable <= 1'b0;
+        #4000 enable <= 1'b1;
+    end
+    
+    always #10 main_clock_source <= ~main_clock_source;
+    assign pixel_clock = main_clock;
+    
+    always @ (negedge rst_cds) #160 end_adc <= 1'b1;
+    always @ (negedge sample) #120 end_adc <= 1'b0;
+        
+    always @ (posedge load_pulse) begin
+        #1000 lval <= 1'b1;
+        data <= 255;
+    end
+    
     always @ (posedge lval) begin
-        #5010 lval = 1'b0;
-        data = 8'b00000000;
+        #2000 lval <= 1'b0;
+        data <= 0;
     end
 endmodule

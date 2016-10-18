@@ -40,69 +40,74 @@ module linescanner_image_capture_unit(
     assign pixel_captured = lval;
     assign pixel_data = data;
       
-    reg[7:0] sm1_state, sm2_state,
-    sm1_clock_count, sm2_clock_count,
-    sm1_num_clocks_to_wait, sm2_num_clocks_to_wait,
-    sm1_state_to_go_to_after_waiting, sm2_state_to_go_to_after_waiting;
+    localparam
+    SM1_SEND_FE_OF_RST_CVC = 0,
+    SM1_SEND_FE_OF_RST_CDS = 1,
+    SM1_SEND_RE_OF_SAMPLE = 2,
+    SM1_SEND_FE_OF_SAMPLE = 3,
+    SM1_SEND_RE_OF_RST_CVC_AND_RST_CDS = 4,
+    SM1_WAIT_NUM_CLOCKS = 5;
+      
+    reg[2:0] sm1_state, sm1_state_to_go_to_after_waiting;
+    reg[5:0] sm1_num_clocks_to_wait, sm1_clock_count;
     
     always @ (posedge pixel_clock) begin
         if(!n_reset) begin
-            sm1_clock_count <= 0;
-            sm1_state <= 0;
             rst_cvc <= 1'b1;
             rst_cds <= 1'b1;
             sample <= 1'b0;
+            
+            sm1_state <= SM1_SEND_FE_OF_RST_CVC;
+            sm1_clock_count <= 0;
         end
         
         else
             case (sm1_state)
-                0:
+                SM1_SEND_FE_OF_RST_CVC:
                 if(enable) begin
                     rst_cvc <= 1'b0;
-                    sm1_state <= 5;
-                        
+                    
+                    sm1_state <= SM1_WAIT_NUM_CLOCKS;
+                    sm1_state_to_go_to_after_waiting <= 1;    
                     sm1_num_clocks_to_wait <= 48;
-                    sm1_state_to_go_to_after_waiting <= 1;
                 end
                 
-                1:
+                SM1_SEND_FE_OF_RST_CDS:
                 begin
                     rst_cds <= 1'b0;
-                    sm1_clock_count <= 0;
-                    sm1_state <= 5;
-                    
-                    sm1_num_clocks_to_wait <= 7;
+                     
+                    sm1_state <= SM1_WAIT_NUM_CLOCKS;
                     sm1_state_to_go_to_after_waiting <= 2;
+                    sm1_num_clocks_to_wait <= 7;
                 end
                   
-                2:
+                SM1_SEND_RE_OF_SAMPLE:
                 begin
                     sample <= 1'b1;
-                    sm1_clock_count <= 0;
-                    sm1_state <= 5;
                     
-                    sm1_num_clocks_to_wait <= 48;
+                    sm1_state <= SM1_WAIT_NUM_CLOCKS;
                     sm1_state_to_go_to_after_waiting <= 3;
+                    sm1_num_clocks_to_wait <= 48;
                 end
                    
-                3:
+                SM1_SEND_FE_OF_SAMPLE:
                 begin
                     sample <= 1'b0;
-                    sm1_clock_count <= 0;
-                    sm1_state <= 5;
                     
-                    sm1_num_clocks_to_wait <= 6;
+                    sm1_state <= SM1_WAIT_NUM_CLOCKS;
                     sm1_state_to_go_to_after_waiting <= 4;
+                    sm1_num_clocks_to_wait <= 6;
                 end
                 
-                4:
+                SM1_SEND_RE_OF_RST_CVC_AND_RST_CDS:
                 begin
                     rst_cvc <= 1'b1;
                     rst_cds <= 1'b1;
-                    sm1_state <= 0;
+                    
+                    sm1_state <= SM1_SEND_FE_OF_RST_CVC;
                 end
                 
-                5:
+                SM1_WAIT_NUM_CLOCKS:
                 if(sm1_clock_count < sm1_num_clocks_to_wait)
                     sm1_clock_count <= sm1_clock_count + 1;
                 else begin
@@ -112,38 +117,49 @@ module linescanner_image_capture_unit(
             endcase
     end
 
+    localparam
+    SM2_START_WAITING = 0,
+    SM2_SEND_RE_OF_LOAD_PULSE = 1,
+    SM2_SEND_FE_OF_LOAD_PULSE = 2,
+    SM2_RETURN_TO_INITIAL_STATE = 3,
+    SM2_WAIT_NUM_CLOCKS = 4;
+
+    reg[2:0] sm2_state, sm2_state_to_go_to_after_waiting;
+    reg[1:0] sm2_clock_count;
+
     always @ (posedge pixel_clock) begin
       if(!n_reset) begin
-        sm2_clock_count <= 0;
-        sm2_state <= 0;
         load_pulse <= 1'b0;
+        
+        sm2_state <= 0;
+        sm2_clock_count <= 0;
       end
       
       else
         case(sm2_state)
-            0:
+            SM2_START_WAITING:
             if(end_adc) begin
-                sm2_state <= 4;
-                sm2_state_to_go_to_after_waiting <= 1;
+                sm2_state <= SM2_WAIT_NUM_CLOCKS;
+                sm2_state_to_go_to_after_waiting <= SM2_SEND_RE_OF_LOAD_PULSE;
             end
             
-            1:
+            SM2_SEND_RE_OF_LOAD_PULSE:
             begin
                 load_pulse <= 1'b1;
-                sm2_state <= 2;
+                sm2_state <= SM2_SEND_FE_OF_LOAD_PULSE;
             end
             
-            2:
+            SM2_SEND_FE_OF_LOAD_PULSE:
             begin
                 load_pulse <= 1'b0;
                 sm2_state <= 3;
             end
             
-            3:
+            SM2_RETURN_TO_INITIAL_STATE:
             if(!end_adc)
                 sm2_state <= 0;
             
-            4:
+            SM2_WAIT_NUM_CLOCKS:
             if(sm2_clock_count < 3)
                 sm2_clock_count <= sm2_clock_count + 1;
             else begin
