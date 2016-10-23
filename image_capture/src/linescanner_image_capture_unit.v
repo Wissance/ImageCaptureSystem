@@ -68,7 +68,7 @@ module linescanner_image_capture_unit(
                     rst_cvc <= 1'b0;
                     
                     sm1_state <= SM1_WAIT_NUM_CLOCKS;
-                    sm1_state_to_go_to_after_waiting <= 1;    
+                    sm1_state_to_go_to_after_waiting <= SM1_SEND_FE_OF_RST_CDS;    
                     sm1_num_clocks_to_wait <= 48;
                 end
                 
@@ -77,7 +77,7 @@ module linescanner_image_capture_unit(
                     rst_cds <= 1'b0;
                      
                     sm1_state <= SM1_WAIT_NUM_CLOCKS;
-                    sm1_state_to_go_to_after_waiting <= 2;
+                    sm1_state_to_go_to_after_waiting <= SM1_SEND_RE_OF_SAMPLE;
                     sm1_num_clocks_to_wait <= 7;
                 end
                   
@@ -86,7 +86,7 @@ module linescanner_image_capture_unit(
                     sample <= 1'b1;
                     
                     sm1_state <= SM1_WAIT_NUM_CLOCKS;
-                    sm1_state_to_go_to_after_waiting <= 3;
+                    sm1_state_to_go_to_after_waiting <= SM1_SEND_FE_OF_SAMPLE;
                     sm1_num_clocks_to_wait <= 48;
                 end
                    
@@ -95,7 +95,7 @@ module linescanner_image_capture_unit(
                     sample <= 1'b0;
                     
                     sm1_state <= SM1_WAIT_NUM_CLOCKS;
-                    sm1_state_to_go_to_after_waiting <= 4;
+                    sm1_state_to_go_to_after_waiting <= SM1_SEND_RE_OF_RST_CVC_AND_RST_CDS;
                     sm1_num_clocks_to_wait <= 6;
                 end
                 
@@ -118,11 +118,12 @@ module linescanner_image_capture_unit(
     end
 
     localparam
-    SM2_START_WAITING = 0,
-    SM2_SEND_RE_OF_LOAD_PULSE = 1,
-    SM2_SEND_FE_OF_LOAD_PULSE = 2,
-    SM2_RETURN_TO_INITIAL_STATE = 3,
-    SM2_WAIT_NUM_CLOCKS = 4;
+    SM2_WAIT_FOR_RE_OF_END_ADC = 0,
+    SM2_WAIT_FOR_FE_OF_LVAL = 1,
+    SM2_SEND_RE_OF_LOAD_PULSE = 2,
+    SM2_SEND_FE_OF_LOAD_PULSE = 3,
+    SM2_WAIT_FOR_FE_OF_END_ADC = 4,
+    SM2_WAIT_NUM_CLOCKS = 5;
 
     reg[2:0] sm2_state, sm2_state_to_go_to_after_waiting;
     reg[1:0] sm2_clock_count;
@@ -137,8 +138,19 @@ module linescanner_image_capture_unit(
       
       else
         case(sm2_state)
-            SM2_START_WAITING:
+            SM2_WAIT_FOR_RE_OF_END_ADC:
             if(end_adc) begin
+                if(!lval) begin
+                    sm2_state <= SM2_WAIT_NUM_CLOCKS;
+                    sm2_state_to_go_to_after_waiting <= SM2_SEND_RE_OF_LOAD_PULSE;
+                end
+                
+                else
+                    sm2_state <= SM2_WAIT_FOR_FE_OF_LVAL;
+            end
+            
+            SM2_WAIT_FOR_FE_OF_LVAL:
+            if(!lval) begin
                 sm2_state <= SM2_WAIT_NUM_CLOCKS;
                 sm2_state_to_go_to_after_waiting <= SM2_SEND_RE_OF_LOAD_PULSE;
             end
@@ -152,12 +164,12 @@ module linescanner_image_capture_unit(
             SM2_SEND_FE_OF_LOAD_PULSE:
             begin
                 load_pulse <= 1'b0;
-                sm2_state <= 3;
+                sm2_state <= SM2_WAIT_FOR_FE_OF_END_ADC;
             end
             
-            SM2_RETURN_TO_INITIAL_STATE:
+            SM2_WAIT_FOR_FE_OF_END_ADC:
             if(!end_adc)
-                sm2_state <= 0;
+                sm2_state <= SM2_WAIT_FOR_RE_OF_END_ADC;
             
             SM2_WAIT_NUM_CLOCKS:
             if(sm2_clock_count < 3)
