@@ -65,9 +65,8 @@ module linescanner_image_capture_unit_testbench;
         data <= 0;
         end_adc <= 1'b0;
 
-        n_reset <= 1'b1;
-        #10 n_reset <= 1'b0;
-        #10 n_reset <= 1'b1;
+        n_reset <= 1'b0;
+        #25 n_reset <= 1'b1;
         
         #920 enable <= 1'b0;
         #4000 enable <= 1'b1;
