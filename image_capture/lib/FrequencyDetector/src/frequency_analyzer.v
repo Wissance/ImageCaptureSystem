@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module FrequencyComparator #
+module frequency_analyzer #
 (
     // FREQUENCY_2 MUST ALWAYS BE GREATER THAN FREQUENCY_1
     parameter FREQUENCY_1 = 9000,    // i.e. 9  kHz
