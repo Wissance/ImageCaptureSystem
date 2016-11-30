@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="14" Path="C:/ThreadControlIP/ThreadControlIP/image_capture/image_capture.xpr">
+<Project Version="7" Minor="14" Path="C:/Users/Admin/Desktop/OMS/project/VideoControlIP/image_capture/image_capture.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="3f5aa38eb5794db5b10b89e0e066941c"/>
@@ -17,7 +17,7 @@
     <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val=""/>
-    <Option Name="ActiveSimSet" Val="linescanner_image_capture_unit_tests"/>
+    <Option Name="ActiveSimSet" Val="image_capture_manager_tests"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/linescanner_image_capture_ip_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/image_capture_manger"/>
@@ -28,7 +28,7 @@
     <Option Name="IPUserFilesDir" Val="$PPRDIR/image_capture.ip_user_files"/>
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/image_capture.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="142"/>
+    <Option Name="WTXSimLaunchSim" Val="146"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -67,28 +67,27 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_vdma_1_0/image_capture_design_axi_vdma_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner2stream_convertor_0_0/image_capture_design_linescanner2stream_convertor_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_image_capture_manager_0_0/image_capture_design_image_capture_manager_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_clock_divider_0_1/image_capture_design_clock_divider_0_1.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner2stream_convertor_1_0/image_capture_design_linescanner2stream_convertor_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_vdma_0_0_1/image_capture_design_axi_vdma_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_us_1_2/image_capture_design_auto_us_1.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_pc_0_2/image_capture_design_auto_pc_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner_image_capture_unit_1_1_1/image_capture_design_linescanner_image_capture_unit_1_1.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner_image_capture_unit_0_1_1/image_capture_design_linescanner_image_capture_unit_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_mem_intercon_1_0_1/image_capture_design_axi_mem_intercon_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_mem_intercon_0_1/image_capture_design_axi_mem_intercon_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_clock_divider_1_0/image_capture_design_clock_divider_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_pc_2_2/image_capture_design_auto_pc_2.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_us_0_2/image_capture_design_auto_us_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_pc_1_2/image_capture_design_auto_pc_1.xci"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_xbar_0/image_capture_design_xbar_0.xci"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_processing_system7_0_axi_periph_1/image_capture_design_processing_system7_0_axi_periph_1.xci"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_quad_spi_0_0/image_capture_design_axi_quad_spi_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_rst_processing_system7_0_50M_2/image_capture_design_rst_processing_system7_0_50M_2.xci"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_processing_system7_0_0/image_capture_design_processing_system7_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner_image_capture_unit_0_1_1/image_capture_design_linescanner_image_capture_unit_0_1.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_us_1_2/image_capture_design_auto_us_1.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_pc_2_2/image_capture_design_auto_pc_2.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_pc_1_2/image_capture_design_auto_pc_1.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_pc_0_2/image_capture_design_auto_pc_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_us_0_2/image_capture_design_auto_us_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner_image_capture_unit_1_1_1/image_capture_design_linescanner_image_capture_unit_1_1.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_mem_intercon_1_0_1/image_capture_design_axi_mem_intercon_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_mem_intercon_0_1/image_capture_design_axi_mem_intercon_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_clock_divider_1_0/image_capture_design_clock_divider_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="image_capture_design_linescanner_image_capture_unit_0_1.xml"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_clock_divider_0_1/image_capture_design_clock_divider_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner2stream_convertor_1_0/image_capture_design_linescanner2stream_convertor_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_vdma_1_0/image_capture_design_axi_vdma_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_image_capture_manager_0_0/image_capture_design_image_capture_manager_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_linescanner2stream_convertor_0_0/image_capture_design_linescanner2stream_convertor_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_axi_vdma_0_0_1/image_capture_design_axi_vdma_0_0.xci"/>
       </File>
       <File Path="$PPRDIR/src/clock_divider.v">
         <FileInfo>
@@ -249,6 +248,32 @@
         <Option Name="xsim.compile.xvhdl.more_options" Val="-v 1"/>
       </Config>
     </FileSet>
+    <FileSet Name="image_capture_manager_tests" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/image_capture_manager_tests">
+      <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/tests/image_capture_manager_tests/image_capture_manager_testbench.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/tests/image_capture_manager_tests/image_capture_manager_testbench_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="image_capture_manager_testbench"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TopAutoSet" Val="TRUE"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/tests/image_capture_manager_tests/image_capture_manager_testbench_behav.wcfg"/>
+        <Option Name="xsim.compile.xvhdl.more_options" Val="-v 1"/>
+      </Config>
+    </FileSet>
   </FileSets>
   <Simulators>
     <Simulator Name="XSim">
@@ -275,14 +300,13 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg400-2" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg400-2" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-2" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -297,7 +321,6 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
   </Runs>
 </Project>
