@@ -24,7 +24,7 @@ module frequency_analyzer_testbench #
 (
     // FREQUENCY_2 MUST ALWAYS BE GREATER THAN FREQUENCY_1
     parameter FREQUENCY_1 = 9000,    // i.e. 9  kHz
-    parameter FREQUENCY_2 = 11000,   // i.e. 11 kHz
+    parameter FREQUENCY_2 = 20000,   // i.e. 11 kHz
     parameter CLOCK = 50000000       // i.e. 50 MHz
 )
 (

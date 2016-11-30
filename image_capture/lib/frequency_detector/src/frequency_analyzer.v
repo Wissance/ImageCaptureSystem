@@ -16,8 +16,8 @@ module frequency_analyzer #
     output wire[31:0] f2_value
 );
 
-integer frequency1_ticks = CLOCK / FREQUENCY_1;
-integer frequency2_ticks = CLOCK / FREQUENCY_2;
+integer frequency1_ticks = CLOCK / (2 * FREQUENCY_1);
+integer frequency2_ticks = CLOCK / (2 * FREQUENCY_2);
 integer frequency_counter = 0;
 integer frequency1_counter = 0;
 integer frequency2_counter = 0;
@@ -37,8 +37,10 @@ begin
     begin
         if(clear)
         begin
-            // todo: clear
             start_sample_value = 0;
+            frequency1_counter = 0;
+            frequency2_counter = 0;
+            frequency_counter = 0;
         end
         else
         begin
@@ -52,12 +54,12 @@ begin
                 begin
                     start_sample_value = sample_data;
                     if(check_frequency(frequency_counter))
-                        frequency2_counter <= frequency2_counter +  frequency_counter;
-                    else frequency1_counter <= frequency1_counter +  frequency_counter;
-                frequency_counter <= 0;
+                        frequency2_counter = frequency2_counter +  frequency_counter;
+                    else frequency1_counter = frequency1_counter +  frequency_counter;
+                frequency_counter = 0;
                 end
             end
-            frequency_counter <= frequency_counter + 1;
+            frequency_counter = frequency_counter + 1;
         end
     end
 end
@@ -67,8 +69,8 @@ input integer frequency;
 reg result;
 begin
     //todo: umv: first approach frequency could have deviation
-    result = ~(frequency < frequency2_ticks);  
-    check_frequency = result;
+    result = frequency >= frequency1_ticks - 300 && frequency <= frequency1_ticks + 300;
+    check_frequency = ~result;
 end
 endfunction
 endmodule
