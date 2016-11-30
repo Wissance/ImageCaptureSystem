@@ -1,9 +1,9 @@
 0.4
 2016.2
-C:/Users/Admin/Desktop/OMS/project/VideoControlIP/image_capture/image_capture.sim/image_capture_manager_tests/behav/glbl.v,1464879896,verilog,,,,,,,,,,,
-C:/Users/Admin/Desktop/OMS/project/VideoControlIP/image_capture/src/image_capture_manager.v,1479214035,verilog,,,,,,,,,,,
-C:/Users/Admin/Desktop/OMS/project/VideoControlIP/image_capture/src/image_capture_manager_S00_AXI.v,1479214035,verilog,,,,,,,,,,,
-C:/Users/Admin/Desktop/OMS/project/VideoControlIP/image_capture/tests/image_capture_manager_tests/image_capture_manager_testbench.v,1479214173,verilog,,,,,,,,,,,
+C:/Users/Ваня/VideoControlIP/image_capture/image_capture.sim/image_capture_manager_tests/behav/glbl.v,1464879896,verilog,,,,,,,,,,,
+C:/Users/Ваня/VideoControlIP/image_capture/src/image_capture_manager.v,1479817788,verilog,,,,,,,,,,,
+C:/Users/Ваня/VideoControlIP/image_capture/src/image_capture_manager_S00_AXI.v,1476724131,verilog,,,,,,,,,,,
+C:/Users/Ваня/VideoControlIP/image_capture/tests/image_capture_manager_tests/image_capture_manager_testbench.v,1479750447,verilog,,,,,,,,,,,
 C:/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,1465086321,verilog,,,,,,,,,,,
 C:/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_base.sv,1465086321,verilog,,,,,,,,,,,
 C:/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_memory/hdl/xpm_memory_dpdistram.sv,1465086322,verilog,,,,,,,,,,,
