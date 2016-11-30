@@ -39,16 +39,16 @@ end
 
 always @(posedge clock or posedge clear)
 begin
-    if(enable)
+    if(clear)
     begin
-        if(clear)
-        begin
-            start_sample_value = 0;
-            frequency1_counter = 0;
-            frequency2_counter = 0;
-            frequency_counter = 0;
-        end
-        else
+        start_sample_value = 0;
+        frequency1_counter = 0;
+        frequency2_counter = 0;
+        frequency_counter = 0;
+    end
+    else
+    begin
+        if(enable)
         begin
             if(frequency_counter == 0)
             begin
