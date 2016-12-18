@@ -60,7 +60,71 @@ module fifo #
     assign pushed_last = pushed_last_value;
     assign popped_last = popped_last_value;
     
-    always@ (posedge clear)
+    always@ (posedge push_clock, posedge pop_clock, posedge clear)
+    begin
+        if(push_clock && ~pop_clock && ~clear)
+        begin
+            if(enable)
+            begin
+                if(mutex == `MUTEX_FREE)
+                begin
+                    if(data_count < FIFO_SIZE)
+                    begin
+                        popped_last_value <= 0;
+                        fifo_data[position] <= in_data;
+                        position <= position + 1;
+                        data_count <= data_count + 1;
+                        if(position == FIFO_SIZE - 1)
+                        begin
+                            position <= 0;
+                            pushed_last_value <= 1;
+                        end
+                        else pushed_last_value <= 0;
+                    end
+                end
+            end     
+        end
+        
+        if(pop_clock && ~push_clock && ~clear)
+        begin
+            if(mutex == `MUTEX_FREE)
+            begin
+                if(enable)
+                begin
+                    buffer <= data_count >= 1 ? fifo_data[0] : 0;
+                    if (data_count >= 1)
+                    begin
+                        mutex <= `MUTEX_BUSY;
+                        data_count <= data_count - 1;
+                        pushed_last_value <= 0;
+                        for(counter = 0; counter < FIFO_SIZE - 1; counter = counter + 1)
+                            fifo_data[counter] <= fifo_data[counter + 1];
+                       fifo_data[FIFO_SIZE - 1] <= 0;
+                       position <= position - 1;
+                       popped_last_value <= position == 1;
+                       if(data_count == 1)
+                           popped_last_value <= 1;
+                       mutex <= `MUTEX_FREE;
+                    end
+                end
+            end
+        end
+        
+        if(clear)
+        begin
+            mutex <= `MUTEX_BUSY;
+            for(counter = 0; counter < FIFO_SIZE; counter = counter + 1)
+                fifo_data[counter] <= 0;
+            position <= 0;
+            data_count <= 0;    
+            popped_last_value <= 0;
+            pushed_last_value <= 0;
+            buffer <= 0; 
+            mutex <= `MUTEX_FREE;
+        end
+    end
+    
+    /*always@ (posedge clear)
     begin
         mutex <= `MUTEX_BUSY;
         for(counter = 0; counter < FIFO_SIZE; counter = counter + 1)
@@ -123,6 +187,6 @@ module fifo #
                    //buffer = 0;
            end
        end
-    end
+    end*/
     
 endmodule
