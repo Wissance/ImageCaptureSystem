@@ -37,7 +37,7 @@ module linescanner_image_capture_unit(
     output wire pixel_captured);
     
     assign main_clock = main_clock_source;
-    assign pixel_captured = lval;
+    assign pixel_captured = lval ? pixel_clock : 0;
     assign pixel_data = data;
       
     localparam
@@ -128,7 +128,7 @@ module linescanner_image_capture_unit(
     reg[2:0] sm2_state, sm2_state_to_go_to_after_waiting;
     reg[1:0] sm2_clock_count;
 
-    always @ (posedge pixel_clock) begin
+    always @ (posedge pixel_clock or negedge n_reset) begin
       if(!n_reset) begin
         load_pulse <= 1'b0;
         
