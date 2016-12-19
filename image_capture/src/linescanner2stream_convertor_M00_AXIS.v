@@ -36,9 +36,9 @@ module linescanner2stream_convertor_M00_AXIS #
     input wire  M_AXIS_TREADY
 );
     
-    parameter [1:0] IDLE = 0;
-    parameter [1:0] INIT = 1;
-    parameter [1:0] READY = 2;
+    parameter [1:0] IDLE = 1;
+    parameter [1:0] INIT = 2;
+    parameter [1:0] READY = 3;
     
     supply1 vcc;
     reg clear_fifo;
@@ -47,6 +47,8 @@ module linescanner2stream_convertor_M00_AXIS #
     reg [1:0] state;
     reg [3:0] data_counter;
     reg [15:0] tvalid_counter;
+    reg [7:0] reset_counter;
+    reg [(C_M_AXIS_TDATA_WIDTH/8)-1 : 0] tstrb_value;
     reg tvalid_value;
     reg tlast_value;
     wire fifo_ready;
@@ -59,35 +61,38 @@ module linescanner2stream_convertor_M00_AXIS #
     initial state = IDLE;
     initial tvalid_value = 0;
     initial tvalid_counter = 0;
+    initial reset_counter = 0;
     
     assign M_AXIS_TVALID = tvalid_value;
     assign M_AXIS_TLAST = tlast_value;
     assign fifo_reset = clear_fifo | ~ M_AXIS_ARESETN;
+    assign M_AXIS_TSTRB = tstrb_value;
     
-    fifo #(.FIFO_SIZE(C_M_NUMBER_OF_WORDS), .DATA_WIDTH(C_M_AXIS_TDATA_WIDTH)) axi_stream_fifo(.enable(vcc), .clear(fifo_reset), .in_data(DATA_SOURCE), .fifo_ready(fifo_ready),
+    fifo #(.FIFO_SIZE(C_M_NUMBER_OF_WORDS), .DATA_WIDTH(C_M_AXIS_TDATA_WIDTH)) axi_stream_fifo(.enable(M_AXIS_ARESETN), .clear(fifo_reset), .in_data(DATA_SOURCE), .fifo_ready(fifo_ready),
                                                                                                .push_clock(DATA_READY), .pop_clock(pop_clock), .out_data(M_AXIS_TDATA));
     always@ (posedge M_AXIS_ACLK)
     begin
         if (!M_AXIS_ARESETN)
         begin
+            reset_counter <= reset_counter + 1;
+            if(reset_counter == C_M_START_COUNT)
+                state <= IDLE;
+            //data_counter <= 0;
             clear_fifo <= 1;
-            state <= IDLE;
-            data_counter <= 0;
-            clear_fifo <= 0;
             tvalid_value <= 0;
             tvalid_counter <= 0;
             tlast_value <= 0;
-            
+            tstrb_value <= 0;
         end
         else
         begin
-            case (state)
-            
+            case (state)          
             IDLE :
             begin
                clk_counter <= 0;
                state <= INIT;
                clear_fifo <= 0;
+               reset_counter <= 0;
             end
             
             INIT :
@@ -103,9 +108,10 @@ module linescanner2stream_convertor_M00_AXIS #
                 begin
                     if(data_counter >= 1)
                     begin
+                        // delay?
                         tvalid_value <= 1;
                         pop_clock <= 1;
-                        data_counter = data_counter - 1;
+                        //data_counter <= data_counter - 1;
                         tvalid_counter <= 0;
                         if(data_counter == 0)
                            tlast_value <= 1;
@@ -114,10 +120,12 @@ module linescanner2stream_convertor_M00_AXIS #
                     begin
                         tvalid_counter <= tvalid_counter + 1;
                         pop_clock <= 0;
+                        tstrb_value <= 15;
                         if(tvalid_counter == HOLD_VALUE_TIME)
                         begin
                             tvalid_value <= 0;
                             tlast_value <= 0;
+                            tstrb_value <= 0;
                         end
                     end
                 end
@@ -137,10 +145,15 @@ module linescanner2stream_convertor_M00_AXIS #
         end
     end
     
-    always@ (posedge DATA_READY)
+    always@ (negedge DATA_READY, negedge pop_clock)
     begin
         if(fifo_ready && state == READY)
-            data_counter <= data_counter + 1;
+        begin
+            if(~DATA_READY)
+                data_counter <= data_counter + 1;
+            else if(~pop_clock)
+                data_counter <= data_counter - 1;
+        end
     end
 
 
