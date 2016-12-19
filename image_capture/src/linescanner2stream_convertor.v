@@ -58,6 +58,7 @@ module linescanner2stream_convertor #
 	reg data_ready_value;
 	reg[7:0] pixel_counter;
 	reg[C_M00_AXIS_TDATA_WIDTH - 1 : 0] output_data;
+	reg[7:0] pixel_data_ready_delay;
 	integer int_buffer;
 	
 	initial data_ready_value = 0;
