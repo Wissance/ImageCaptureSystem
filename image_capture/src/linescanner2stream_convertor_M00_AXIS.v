@@ -70,7 +70,7 @@ module linescanner2stream_convertor_M00_AXIS #
     
     fifo #(.FIFO_SIZE(C_M_NUMBER_OF_WORDS), .DATA_WIDTH(C_M_AXIS_TDATA_WIDTH)) axi_stream_fifo(.enable(M_AXIS_ARESETN), .clear(fifo_reset), .in_data(DATA_SOURCE), .fifo_ready(fifo_ready),
                                                                                                .push_clock(DATA_READY), .pop_clock(pop_clock), .out_data(M_AXIS_TDATA));
-    always@ (posedge M_AXIS_ACLK)
+    always@ (posedge M_AXIS_ACLK, negedge DATA_READY)
     begin
         if (!M_AXIS_ARESETN)
         begin
@@ -108,9 +108,10 @@ module linescanner2stream_convertor_M00_AXIS #
                 begin
                     if(data_counter >= 1)
                     begin
+                        // delay?
                         tvalid_value <= 1;
                         pop_clock <= 1;
-                        data_counter = data_counter - 1;
+                        data_counter <= data_counter - 1;
                         tvalid_counter <= 0;
                         if(data_counter == 0)
                            tlast_value <= 1;
@@ -144,10 +145,13 @@ module linescanner2stream_convertor_M00_AXIS #
         end
     end
     
-    always@ (posedge DATA_READY)
+    always@ (DATA_READY)
     begin
         if(fifo_ready && state == READY)
-            data_counter <= data_counter + 1;
+        begin
+            if(~DATA_READY)
+                data_counter <= data_counter + 1;
+        end
     end
 
 
