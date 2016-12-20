@@ -76,9 +76,9 @@
 
 	// Add user logic here
 	// 1. Manage enable and clear signals
-	always @(posedge s00_axi_wstrb[0], posedge s00_axi_wvalid, posedge s00_axi_aclk)
+	always @(posedge s00_axi_wstrb[0], negedge s00_axi_awvalid)
 	begin
-	    if (~s00_axi_wvalid)
+	    if (~s00_axi_awvalid)
 	    begin
             clear_memory <= 0;
         end
