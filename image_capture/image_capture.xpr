@@ -116,12 +116,12 @@
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_clock_divider_1_0/image_capture_design_clock_divider_1_0.xci"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_image_capture_manager_0_0/image_capture_design_image_capture_manager_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="hdl/image_capture_design.v"/>
+        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="image_capture_design_ooc.xdc"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_us_0_2/image_capture_design_auto_us_0.xci"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_pc_2_2/image_capture_design_auto_pc_2.xci"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_pc_0_2/image_capture_design_auto_pc_0.xci"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_pc_1_2/image_capture_design_auto_pc_1.xci"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="ip/image_capture_design_auto_us_1_2/image_capture_design_auto_us_1.xci"/>
-        <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="image_capture_design_ooc.xdc"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="hdl/image_capture_design.hwdef"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="hw_handoff/image_capture_design_bd.tcl"/>
         <CompFileExtendedInfo CompFileName="image_capture_design.bd" FileRelPathName="hw_handoff/image_capture_design.hwh"/>

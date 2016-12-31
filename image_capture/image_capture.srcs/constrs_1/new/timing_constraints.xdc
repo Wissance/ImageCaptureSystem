@@ -21,6 +21,12 @@ set_input_delay -clock [get_clocks LINESCANNER1_PIXEL_CLOCK] -min -add_delay 2.0
 set_input_delay -clock [get_clocks LINESCANNER1_PIXEL_CLOCK] -max -add_delay 4.000 [get_ports LINESCANNER1_LVAL]
 
 # output delays
+set_output_delay -clock [get_clocks clock_divider_1_clock] -min -add_delay 0.000 [get_ports LINESCANNER0_MAIN_CLK]
+set_output_delay -clock [get_clocks clock_divider_1_clock] -max -add_delay 3.000 [get_ports LINESCANNER0_MAIN_CLK]
+
+set_output_delay -clock [get_clocks clock_divider_1_clock] -min -add_delay 0.000 [get_ports LINESCANNER1_MAIN_CLOCK]
+set_output_delay -clock [get_clocks clock_divider_1_clock] -max -add_delay 3.000 [get_ports LINESCANNER1_MAIN_CLOCK]
+
 set_output_delay -clock [get_clocks LINESCANNER0_PIXEL_CLOCK] -min -add_delay 0.000 [get_ports LINESCANNER0_LOAD_PULSE]
 set_output_delay -clock [get_clocks LINESCANNER0_PIXEL_CLOCK] -max -add_delay 3.000 [get_ports LINESCANNER0_LOAD_PULSE]
 
