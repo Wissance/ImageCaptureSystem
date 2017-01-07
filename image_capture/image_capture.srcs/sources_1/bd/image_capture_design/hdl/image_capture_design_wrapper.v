@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Sat Dec 31 18:21:30 2016
+//Date        : Sat Jan 07 05:20:07 2017
 //Host        : otheman-laptop running 64-bit major release  (build 9200)
 //Command     : generate_target image_capture_design_wrapper.bd
 //Design      : image_capture_design_wrapper
@@ -34,7 +34,7 @@ module image_capture_design_wrapper
     LINESCANNER0_END_ADC,
     LINESCANNER0_LOAD_PULSE,
     LINESCANNER0_LVAL,
-    LINESCANNER0_MAIN_CLK,
+    LINESCANNER0_MAIN_CLOCK,
     LINESCANNER0_N_RESET,
     LINESCANNER0_PIXEL_CLOCK,
     LINESCANNER0_RST_CDS,
@@ -78,7 +78,7 @@ module image_capture_design_wrapper
   input LINESCANNER0_END_ADC;
   output LINESCANNER0_LOAD_PULSE;
   input LINESCANNER0_LVAL;
-  output LINESCANNER0_MAIN_CLK;
+  output LINESCANNER0_MAIN_CLOCK;
   output [0:0]LINESCANNER0_N_RESET;
   input LINESCANNER0_PIXEL_CLOCK;
   output LINESCANNER0_RST_CDS;
@@ -123,7 +123,7 @@ module image_capture_design_wrapper
   wire LINESCANNER0_END_ADC;
   wire LINESCANNER0_LOAD_PULSE;
   wire LINESCANNER0_LVAL;
-  wire LINESCANNER0_MAIN_CLK;
+  wire LINESCANNER0_MAIN_CLOCK;
   wire [0:0]LINESCANNER0_N_RESET;
   wire LINESCANNER0_PIXEL_CLOCK;
   wire LINESCANNER0_RST_CDS;
@@ -181,7 +181,7 @@ module image_capture_design_wrapper
         .LINESCANNER0_END_ADC(LINESCANNER0_END_ADC),
         .LINESCANNER0_LOAD_PULSE(LINESCANNER0_LOAD_PULSE),
         .LINESCANNER0_LVAL(LINESCANNER0_LVAL),
-        .LINESCANNER0_MAIN_CLK(LINESCANNER0_MAIN_CLK),
+        .LINESCANNER0_MAIN_CLOCK(LINESCANNER0_MAIN_CLOCK),
         .LINESCANNER0_N_RESET(LINESCANNER0_N_RESET),
         .LINESCANNER0_PIXEL_CLOCK(LINESCANNER0_PIXEL_CLOCK),
         .LINESCANNER0_RST_CDS(LINESCANNER0_RST_CDS),

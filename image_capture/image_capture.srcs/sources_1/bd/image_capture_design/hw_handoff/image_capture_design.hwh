@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Dec 31 18:21:36 2016" VIVADOVERSION="2016.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jan 07 05:20:14 2017" VIVADOVERSION="2016.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="image_capture_design" PACKAGE="clg400" SPEEDGRADE="-2"/>
 
@@ -79,7 +79,7 @@
         <CONNECTION INSTANCE="linescanner_image_capture_unit_1" PORT="sample"/>
       </CONNECTIONS>
     </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="LINESCANNER0_MAIN_CLK" SIGIS="clk" SIGNAME="linescanner_image_capture_unit_0_main_clock">
+    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="LINESCANNER0_MAIN_CLOCK" SIGIS="clk" SIGNAME="linescanner_image_capture_unit_0_main_clock">
       <CONNECTIONS>
         <CONNECTION INSTANCE="linescanner_image_capture_unit_0" PORT="main_clock"/>
       </CONNECTIONS>
@@ -6185,7 +6185,7 @@
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="main_clock" SIGIS="clk" SIGNAME="linescanner_image_capture_unit_0_main_clock">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="LINESCANNER0_MAIN_CLK"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="LINESCANNER0_MAIN_CLOCK"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="n_reset" SIGIS="rst" SIGNAME="rst_processing_system7_0_50M_peripheral_aresetn">

@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Sat Dec 31 18:21:30 2016
+//Date        : Sat Jan 07 05:20:07 2017
 //Host        : otheman-laptop running 64-bit major release  (build 9200)
 //Command     : generate_target image_capture_design.bd
 //Design      : image_capture_design
@@ -35,7 +35,7 @@ module image_capture_design
     LINESCANNER0_END_ADC,
     LINESCANNER0_LOAD_PULSE,
     LINESCANNER0_LVAL,
-    LINESCANNER0_MAIN_CLK,
+    LINESCANNER0_MAIN_CLOCK,
     LINESCANNER0_N_RESET,
     LINESCANNER0_PIXEL_CLOCK,
     LINESCANNER0_RST_CDS,
@@ -85,7 +85,7 @@ module image_capture_design
   input LINESCANNER0_END_ADC;
   output LINESCANNER0_LOAD_PULSE;
   input LINESCANNER0_LVAL;
-  output LINESCANNER0_MAIN_CLK;
+  output LINESCANNER0_MAIN_CLOCK;
   output [0:0]LINESCANNER0_N_RESET;
   input LINESCANNER0_PIXEL_CLOCK;
   output LINESCANNER0_RST_CDS;
@@ -359,7 +359,7 @@ module image_capture_design
   assign LINESCANNER0_END_ADC_1 = LINESCANNER0_END_ADC;
   assign LINESCANNER0_LOAD_PULSE = linescanner_image_capture_unit_0_load_pulse;
   assign LINESCANNER0_LVAL_1 = LINESCANNER0_LVAL;
-  assign LINESCANNER0_MAIN_CLK = linescanner_image_capture_unit_0_main_clock;
+  assign LINESCANNER0_MAIN_CLOCK = linescanner_image_capture_unit_0_main_clock;
   assign LINESCANNER0_N_RESET[0] = rst_processing_system7_0_50M_peripheral_aresetn;
   assign LINESCANNER0_PIXEL_CLOCK_1 = LINESCANNER0_PIXEL_CLOCK;
   assign LINESCANNER0_RST_CDS = linescanner_image_capture_unit_0_rst_cds;

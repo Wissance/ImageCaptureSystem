@@ -18,8 +18,8 @@ preplace port LINESCANNER1_LOAD_PULSE -pg 1 -y 580 -defaultsOSRD -left
 preplace port LINESCANNER1_RST_CDS -pg 1 -y 540 -defaultsOSRD -left
 preplace port LINESCANNER0_RST_CVC -pg 1 -y 260 -defaultsOSRD -left
 preplace port spi_rtl -pg 1 -y 150 -defaultsOSRD
+preplace port LINESCANNER0_MAIN_CLOCK -pg 1 -y 200 -defaultsOSRD -left
 preplace port LINESCANNER0_PIXEL_CLOCK -pg 1 -y 150 -defaultsOSRD
-preplace port LINESCANNER0_MAIN_CLK -pg 1 -y 200 -defaultsOSRD -left
 preplace portBus LINESCANNER1_N_RESET -pg 1 -y 600 -defaultsOSRD -left
 preplace portBus LINESCANNER0_N_RESET -pg 1 -y 300 -defaultsOSRD -left
 preplace portBus LINESCANNER0_TAP_A -pg 1 -y 90 -defaultsOSRD

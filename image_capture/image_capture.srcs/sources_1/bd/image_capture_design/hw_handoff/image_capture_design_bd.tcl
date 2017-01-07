@@ -168,7 +168,7 @@ proc create_root_design { parentCell } {
   set LINESCANNER0_END_ADC [ create_bd_port -dir I LINESCANNER0_END_ADC ]
   set LINESCANNER0_LOAD_PULSE [ create_bd_port -dir O LINESCANNER0_LOAD_PULSE ]
   set LINESCANNER0_LVAL [ create_bd_port -dir I LINESCANNER0_LVAL ]
-  set LINESCANNER0_MAIN_CLK [ create_bd_port -dir O -type clk LINESCANNER0_MAIN_CLK ]
+  set LINESCANNER0_MAIN_CLOCK [ create_bd_port -dir O -type clk LINESCANNER0_MAIN_CLOCK ]
   set LINESCANNER0_N_RESET [ create_bd_port -dir O -from 0 -to 0 LINESCANNER0_N_RESET ]
   set LINESCANNER0_PIXEL_CLOCK [ create_bd_port -dir I -type clk LINESCANNER0_PIXEL_CLOCK ]
   set_property -dict [ list \
@@ -1627,7 +1627,7 @@ CONFIG.NUM_SI {1} \
   connect_bd_net -net linescanner2stream_convertor_1_stream_data [get_bd_pins axi_vdma_1/s_axis_s2mm_tdata] [get_bd_pins linescanner2stream_convertor_1/m00_axis_tdata]
   connect_bd_net -net linescanner2stream_convertor_1_stream_data_valid [get_bd_pins axi_vdma_1/s_axis_s2mm_tvalid] [get_bd_pins linescanner2stream_convertor_1/m00_axis_tvalid]
   connect_bd_net -net linescanner_image_capture_unit_0_load_pulse [get_bd_ports LINESCANNER0_LOAD_PULSE] [get_bd_pins linescanner_image_capture_unit_0/load_pulse]
-  connect_bd_net -net linescanner_image_capture_unit_0_main_clock [get_bd_ports LINESCANNER0_MAIN_CLK] [get_bd_pins linescanner_image_capture_unit_0/main_clock]
+  connect_bd_net -net linescanner_image_capture_unit_0_main_clock [get_bd_ports LINESCANNER0_MAIN_CLOCK] [get_bd_pins linescanner_image_capture_unit_0/main_clock]
   connect_bd_net -net linescanner_image_capture_unit_0_pixel_captured [get_bd_pins linescanner2stream_convertor_0/pixel_captured] [get_bd_pins linescanner_image_capture_unit_0/pixel_captured]
   connect_bd_net -net linescanner_image_capture_unit_0_pixel_data [get_bd_pins linescanner2stream_convertor_0/input_data] [get_bd_pins linescanner_image_capture_unit_0/pixel_data]
   connect_bd_net -net linescanner_image_capture_unit_0_rst_cds [get_bd_ports LINESCANNER0_RST_CDS] [get_bd_pins linescanner_image_capture_unit_0/rst_cds]
@@ -1674,8 +1674,8 @@ preplace port LINESCANNER1_LOAD_PULSE -pg 1 -y 580 -defaultsOSRD -left
 preplace port LINESCANNER1_RST_CDS -pg 1 -y 540 -defaultsOSRD -left
 preplace port LINESCANNER0_RST_CVC -pg 1 -y 260 -defaultsOSRD -left
 preplace port spi_rtl -pg 1 -y 150 -defaultsOSRD
+preplace port LINESCANNER0_MAIN_CLOCK -pg 1 -y 200 -defaultsOSRD -left
 preplace port LINESCANNER0_PIXEL_CLOCK -pg 1 -y 150 -defaultsOSRD
-preplace port LINESCANNER0_MAIN_CLK -pg 1 -y 200 -defaultsOSRD -left
 preplace portBus LINESCANNER1_N_RESET -pg 1 -y 600 -defaultsOSRD -left
 preplace portBus LINESCANNER0_N_RESET -pg 1 -y 300 -defaultsOSRD -left
 preplace portBus LINESCANNER0_TAP_A -pg 1 -y 90 -defaultsOSRD
