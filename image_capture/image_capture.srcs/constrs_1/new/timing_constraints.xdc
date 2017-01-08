@@ -5,7 +5,7 @@ set_clock_groups -name async_clk_fpga_0_LINESCANNER0_PIXEL_CLOCK -asynchronous -
 set_clock_groups -name async_clk_fpga_0_LINESCANNER1_PIXEL_CLOCK -asynchronous -group clk_fpga_0 -group LINESCANNER1_PIXEL_CLOCK
 
 create_generated_clock -name clock_divider_0_clock -source [get_pins image_capture_design_i/clock_divider_0/input_clock] -divide_by 2 [get_pins image_capture_design_i/clock_divider_0/output_clock]
-create_generated_clock -name clock_divider_1_clock -source [get_pins image_capture_design_i/clock_divider_1/input_clock] -divide_by 2 [get_pins image_capture_design_i/clock_divider_1/output_clock]
+create_generated_clock -name clock_divider_1_clock -source [get_pins image_capture_design_i/clock_divider_1/input_clock] -divide_by 5 [get_pins image_capture_design_i/clock_divider_1/output_clock]
 
 # input delays
 set_input_delay -clock [get_clocks LINESCANNER0_PIXEL_CLOCK] -min -add_delay 2.000 [get_ports LINESCANNER0_END_ADC]
@@ -69,8 +69,9 @@ set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000
 set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports spi_rtl_io1_io]
 set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports spi_rtl_io1_io]
 
-set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports spi_rtl_ss_io[0]]
-set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports spi_rtl_ss_io[0]]
+set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports {spi_rtl_ss_io[0]}]
+set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports {spi_rtl_ss_io[0]}]
 
-set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports spi_rtl_ss_io[1]]
-set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports spi_rtl_ss_io[1]]
+set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports {spi_rtl_ss_io[1]}]
+set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports {spi_rtl_ss_io[1]}]
+

@@ -36,9 +36,9 @@ module linescanner2stream_convertor_M00_AXIS #
     input wire  M_AXIS_TREADY
 );
     
-    parameter [1:0] IDLE = 1;
-    parameter [1:0] INIT = 2;
-    parameter [1:0] READY = 3;
+    localparam [1:0] IDLE = 1;
+    localparam [1:0] INIT = 2;
+    localparam [1:0] READY = 3;
     
     supply1 vcc;
     reg clear_fifo;
