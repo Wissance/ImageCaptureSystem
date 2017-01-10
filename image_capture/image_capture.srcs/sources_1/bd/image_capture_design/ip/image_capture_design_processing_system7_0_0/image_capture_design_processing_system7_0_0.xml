@@ -9955,7 +9955,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Dec 24 21:57:34 UTC 2016</spirit:value>
+            <spirit:value>Tue Jan 10 15:05:46 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -9967,7 +9967,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>5cf06bae</spirit:value>
+            <spirit:value>1263ff2e</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -9986,7 +9986,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Dec 24 21:57:34 UTC 2016</spirit:value>
+            <spirit:value>Tue Jan 10 15:05:46 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -9998,7 +9998,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>5cf06bae</spirit:value>
+            <spirit:value>1263ff2e</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -10024,7 +10024,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>cacc7338</spirit:value>
+            <spirit:value>da10c2d7</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -10042,7 +10042,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Dec 24 21:57:37 UTC 2016</spirit:value>
+            <spirit:value>Tue Jan 10 15:05:47 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -10054,7 +10054,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>cacc7338</spirit:value>
+            <spirit:value>da10c2d7</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -25890,7 +25890,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="STRING">
         <spirit:name>C_PACKAGE_NAME</spirit:name>
-        <spirit:value spirit:resolve="dependent" spirit:id="MODELPARAM_VALUE.C_PACKAGE_NAME" spirit:dependency="spirit:decode(id(PARAM_VALUE.PCW_PACKAGE_NAME))">clg400</spirit:value>
+        <spirit:value spirit:resolve="dependent" spirit:id="MODELPARAM_VALUE.C_PACKAGE_NAME" spirit:dependency="spirit:decode(id(PARAM_VALUE.PCW_PACKAGE_NAME))">clg484</spirit:value>
       </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
@@ -28162,7 +28162,7 @@
     <spirit:parameter>
       <spirit:name>PCW_CPU_CPU_6X4X_MAX_RANGE</spirit:name>
       <spirit:displayName>PCW CPU CPU 6X4X MAX RANGE</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CPU_CPU_6X4X_MAX_RANGE" spirit:order="234000" spirit:minimum="-9999.990000" spirit:maximum="9999.990000">767</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CPU_CPU_6X4X_MAX_RANGE" spirit:order="234000" spirit:minimum="-9999.990000" spirit:maximum="9999.990000">867</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_CRYSTAL_PERIPHERAL_FREQMHZ</spirit:name>
@@ -28172,7 +28172,7 @@
     <spirit:parameter>
       <spirit:name>PCW_APU_PERIPHERAL_FREQMHZ</spirit:name>
       <spirit:displayName>PCW APU PERIPHERAL FREQMHZ</spirit:displayName>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_APU_PERIPHERAL_FREQMHZ" spirit:order="23300" spirit:minimum="50.000000" spirit:maximum="767.000000">666.666666</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_APU_PERIPHERAL_FREQMHZ" spirit:order="23300" spirit:minimum="50.000000" spirit:maximum="867.000000">666.666666</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_DCI_PERIPHERAL_FREQMHZ</spirit:name>
@@ -28622,7 +28622,7 @@
     <spirit:parameter>
       <spirit:name>PCW_CPU_PERIPHERAL_DIVISOR0</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CPU_PERIPHERAL_DIVISOR0" spirit:order="62900">2</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CPU_PERIPHERAL_DIVISOR0" spirit:order="62900">3</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -28730,7 +28730,7 @@
     <spirit:parameter>
       <spirit:name>PCW_FCLK0_PERIPHERAL_DIVISOR0</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_FCLK0_PERIPHERAL_DIVISOR0" spirit:order="62900">6</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_FCLK0_PERIPHERAL_DIVISOR0" spirit:order="62900">5</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -28778,7 +28778,7 @@
     <spirit:parameter>
       <spirit:name>PCW_FCLK0_PERIPHERAL_DIVISOR1</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_FCLK0_PERIPHERAL_DIVISOR1" spirit:order="62900">3</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_FCLK0_PERIPHERAL_DIVISOR1" spirit:order="62900">4</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -28910,7 +28910,7 @@
     <spirit:parameter>
       <spirit:name>PCW_PCAP_PERIPHERAL_DIVISOR0</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PCAP_PERIPHERAL_DIVISOR0" spirit:order="62900">9</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PCAP_PERIPHERAL_DIVISOR0" spirit:order="62900">10</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -28957,7 +28957,7 @@
     <spirit:parameter>
       <spirit:name>PCW_ARMPLL_CTRL_FBDIV</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ARMPLL_CTRL_FBDIV" spirit:order="62900">40</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_ARMPLL_CTRL_FBDIV" spirit:order="62900">60</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -28969,7 +28969,7 @@
     <spirit:parameter>
       <spirit:name>PCW_IOPLL_CTRL_FBDIV</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_IOPLL_CTRL_FBDIV" spirit:order="62900">54</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_IOPLL_CTRL_FBDIV" spirit:order="62900">60</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -28993,7 +28993,7 @@
     <spirit:parameter>
       <spirit:name>PCW_CPU_CPU_PLL_FREQMHZ</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CPU_CPU_PLL_FREQMHZ" spirit:order="62900">1333.333</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_CPU_CPU_PLL_FREQMHZ" spirit:order="62900">2000.000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -29005,7 +29005,7 @@
     <spirit:parameter>
       <spirit:name>PCW_IO_IO_PLL_FREQMHZ</spirit:name>
       <spirit:displayName>CLKPARAM</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_IO_IO_PLL_FREQMHZ" spirit:order="62900">1800.000</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_IO_IO_PLL_FREQMHZ" spirit:order="62900">2000.000</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -35422,7 +35422,7 @@
     <spirit:parameter>
       <spirit:name>PCW_PACKAGE_NAME</spirit:name>
       <spirit:displayName>PCW PACKAGE NAME</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_NAME" spirit:choiceRef="choice_list_a0c775a9" spirit:order="11">clg400</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.PCW_PACKAGE_NAME" spirit:choiceRef="choice_list_a0c775a9" spirit:order="11">clg484</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>PCW_PLL_BYPASSMODE_ENABLE</spirit:name>

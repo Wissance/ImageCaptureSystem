@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jan 07 06:01:49 2017" VIVADOVERSION="2016.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jan 10 19:58:46 2017" VIVADOVERSION="2016.2">
 
-  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="image_capture_design" PACKAGE="clg400" SPEEDGRADE="-2"/>
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="image_capture_design" PACKAGE="clg484" SPEEDGRADE="-3"/>
 
   <EXTERNALPORTS>
     <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef"/>
@@ -3663,8 +3663,8 @@
           <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
           <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
           <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
-          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
-          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="2"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="2"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="image_capture_design_processing_system7_0_0_FCLK_CLK0"/>
@@ -5625,8 +5625,8 @@
           <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
           <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
           <PARAMETER NAME="SUPPORTS_NARROW_BURST" VALUE="0"/>
-          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="1"/>
-          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
+          <PARAMETER NAME="NUM_READ_OUTSTANDING" VALUE="2"/>
+          <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="2"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
           <PARAMETER NAME="CLK_DOMAIN" VALUE="image_capture_design_processing_system7_0_0_FCLK_CLK0"/>
@@ -6348,7 +6348,7 @@
         <PARAMETER NAME="C_FCLK_CLK1_BUF" VALUE="false"/>
         <PARAMETER NAME="C_FCLK_CLK2_BUF" VALUE="false"/>
         <PARAMETER NAME="C_FCLK_CLK3_BUF" VALUE="false"/>
-        <PARAMETER NAME="C_PACKAGE_NAME" VALUE="clg400"/>
+        <PARAMETER NAME="C_PACKAGE_NAME" VALUE="clg484"/>
         <PARAMETER NAME="PCW_DDR_RAM_BASEADDR" VALUE="0x00100000"/>
         <PARAMETER NAME="PCW_DDR_RAM_HIGHADDR" VALUE="0x0FFFFFFF"/>
         <PARAMETER NAME="PCW_UART0_BASEADDR" VALUE="0xE0000000"/>
@@ -6453,7 +6453,7 @@
         <PARAMETER NAME="PCW_PACKAGE_DDR_BOARD_DELAY1" VALUE="0.070"/>
         <PARAMETER NAME="PCW_PACKAGE_DDR_BOARD_DELAY2" VALUE="0.318"/>
         <PARAMETER NAME="PCW_PACKAGE_DDR_BOARD_DELAY3" VALUE="0.433"/>
-        <PARAMETER NAME="PCW_CPU_CPU_6X4X_MAX_RANGE" VALUE="767"/>
+        <PARAMETER NAME="PCW_CPU_CPU_6X4X_MAX_RANGE" VALUE="867"/>
         <PARAMETER NAME="PCW_CRYSTAL_PERIPHERAL_FREQMHZ" VALUE="33.333333"/>
         <PARAMETER NAME="PCW_APU_PERIPHERAL_FREQMHZ" VALUE="666.666666"/>
         <PARAMETER NAME="PCW_DCI_PERIPHERAL_FREQMHZ" VALUE="10.159"/>
@@ -6517,7 +6517,7 @@
         <PARAMETER NAME="PCW_CLK2_FREQ" VALUE="10000000"/>
         <PARAMETER NAME="PCW_CLK3_FREQ" VALUE="10000000"/>
         <PARAMETER NAME="PCW_OVERRIDE_BASIC_CLOCK" VALUE="0"/>
-        <PARAMETER NAME="PCW_CPU_PERIPHERAL_DIVISOR0" VALUE="2"/>
+        <PARAMETER NAME="PCW_CPU_PERIPHERAL_DIVISOR0" VALUE="3"/>
         <PARAMETER NAME="PCW_DDR_PERIPHERAL_DIVISOR0" VALUE="2"/>
         <PARAMETER NAME="PCW_SMC_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_QSPI_PERIPHERAL_DIVISOR0" VALUE="1"/>
@@ -6526,11 +6526,11 @@
         <PARAMETER NAME="PCW_SPI_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_CAN_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_CAN_PERIPHERAL_DIVISOR1" VALUE="1"/>
-        <PARAMETER NAME="PCW_FCLK0_PERIPHERAL_DIVISOR0" VALUE="6"/>
+        <PARAMETER NAME="PCW_FCLK0_PERIPHERAL_DIVISOR0" VALUE="5"/>
         <PARAMETER NAME="PCW_FCLK1_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_FCLK2_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_FCLK3_PERIPHERAL_DIVISOR0" VALUE="1"/>
-        <PARAMETER NAME="PCW_FCLK0_PERIPHERAL_DIVISOR1" VALUE="3"/>
+        <PARAMETER NAME="PCW_FCLK0_PERIPHERAL_DIVISOR1" VALUE="4"/>
         <PARAMETER NAME="PCW_FCLK1_PERIPHERAL_DIVISOR1" VALUE="1"/>
         <PARAMETER NAME="PCW_FCLK2_PERIPHERAL_DIVISOR1" VALUE="1"/>
         <PARAMETER NAME="PCW_FCLK3_PERIPHERAL_DIVISOR1" VALUE="1"/>
@@ -6541,7 +6541,7 @@
         <PARAMETER NAME="PCW_TPIU_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_DCI_PERIPHERAL_DIVISOR0" VALUE="15"/>
         <PARAMETER NAME="PCW_DCI_PERIPHERAL_DIVISOR1" VALUE="7"/>
-        <PARAMETER NAME="PCW_PCAP_PERIPHERAL_DIVISOR0" VALUE="9"/>
+        <PARAMETER NAME="PCW_PCAP_PERIPHERAL_DIVISOR0" VALUE="10"/>
         <PARAMETER NAME="PCW_TTC0_CLK0_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_TTC0_CLK1_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_TTC0_CLK2_PERIPHERAL_DIVISOR0" VALUE="1"/>
@@ -6549,11 +6549,11 @@
         <PARAMETER NAME="PCW_TTC1_CLK1_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_TTC1_CLK2_PERIPHERAL_DIVISOR0" VALUE="1"/>
         <PARAMETER NAME="PCW_WDT_PERIPHERAL_DIVISOR0" VALUE="1"/>
-        <PARAMETER NAME="PCW_ARMPLL_CTRL_FBDIV" VALUE="40"/>
-        <PARAMETER NAME="PCW_IOPLL_CTRL_FBDIV" VALUE="54"/>
+        <PARAMETER NAME="PCW_ARMPLL_CTRL_FBDIV" VALUE="60"/>
+        <PARAMETER NAME="PCW_IOPLL_CTRL_FBDIV" VALUE="60"/>
         <PARAMETER NAME="PCW_DDRPLL_CTRL_FBDIV" VALUE="32"/>
-        <PARAMETER NAME="PCW_CPU_CPU_PLL_FREQMHZ" VALUE="1333.333"/>
-        <PARAMETER NAME="PCW_IO_IO_PLL_FREQMHZ" VALUE="1800.000"/>
+        <PARAMETER NAME="PCW_CPU_CPU_PLL_FREQMHZ" VALUE="2000.000"/>
+        <PARAMETER NAME="PCW_IO_IO_PLL_FREQMHZ" VALUE="2000.000"/>
         <PARAMETER NAME="PCW_DDR_DDR_PLL_FREQMHZ" VALUE="1066.667"/>
         <PARAMETER NAME="PCW_SMC_PERIPHERAL_VALID" VALUE="0"/>
         <PARAMETER NAME="PCW_SDIO_PERIPHERAL_VALID" VALUE="0"/>
@@ -7215,7 +7215,7 @@
         <PARAMETER NAME="PCW_SMC_CYCLE_T4" VALUE="NA"/>
         <PARAMETER NAME="PCW_SMC_CYCLE_T5" VALUE="NA"/>
         <PARAMETER NAME="PCW_SMC_CYCLE_T6" VALUE="NA"/>
-        <PARAMETER NAME="PCW_PACKAGE_NAME" VALUE="clg400"/>
+        <PARAMETER NAME="PCW_PACKAGE_NAME" VALUE="clg484"/>
         <PARAMETER NAME="PCW_PLL_BYPASSMODE_ENABLE" VALUE="0"/>
         <PARAMETER NAME="Component_Name" VALUE="image_capture_design_processing_system7_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
@@ -7822,9 +7822,9 @@
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="FCLK_CLK0" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
+            <CONNECTION INSTANCE="clock_divider_0" PORT="input_clock"/>
+            <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_aclk"/>
+            <CONNECTION INSTANCE="linescanner2stream_convertor_0" PORT="m00_axis_aclk"/>
             <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_aclk"/>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="m_axi_s2mm_aclk"/>
@@ -7832,22 +7832,22 @@
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_aclk"/>
             <CONNECTION INSTANCE="axi_vdma_1" PORT="m_axi_s2mm_aclk"/>
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axis_s2mm_aclk"/>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP1_ACLK"/>
-            <CONNECTION INSTANCE="clock_divider_0" PORT="input_clock"/>
-            <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_aclk"/>
-            <CONNECTION INSTANCE="linescanner2stream_convertor_0" PORT="m00_axis_aclk"/>
-            <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
+            <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="slowest_sync_clk"/>
+            <CONNECTION INSTANCE="axi_mem_intercon" PORT="ACLK"/>
+            <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ACLK"/>
+            <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ACLK"/>
+            <CONNECTION INSTANCE="axi_mem_intercon_1" PORT="ACLK"/>
+            <CONNECTION INSTANCE="axi_mem_intercon_1" PORT="S00_ACLK"/>
+            <CONNECTION INSTANCE="axi_mem_intercon_1" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="ACLK"/>
+            <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M02_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M03_ACLK"/>
-            <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ACLK"/>
-            <CONNECTION INSTANCE="axi_mem_intercon" PORT="ACLK"/>
-            <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ACLK"/>
-            <CONNECTION INSTANCE="axi_mem_intercon_1" PORT="S00_ACLK"/>
-            <CONNECTION INSTANCE="axi_mem_intercon_1" PORT="ACLK"/>
-            <CONNECTION INSTANCE="axi_mem_intercon_1" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="linescanner2stream_convertor_1" PORT="m00_axis_aclk"/>
             <CONNECTION INSTANCE="clock_divider_1" PORT="input_clock"/>
           </CONNECTIONS>
@@ -8828,12 +8828,12 @@
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_awvalid">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_awready">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_awready"/>
           </CONNECTIONS>
@@ -8848,12 +8848,12 @@
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_wvalid">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_wready">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_wready"/>
           </CONNECTIONS>
@@ -8863,12 +8863,12 @@
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_bvalid">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_bready">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_bready"/>
           </CONNECTIONS>
@@ -8883,12 +8883,12 @@
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_arprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_arvalid">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_arready">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_arready"/>
           </CONNECTIONS>
@@ -8903,12 +8903,12 @@
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_rvalid">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_rready">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="image_capture_manager_0_s00_axi_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_rready"/>
           </CONNECTIONS>
@@ -8918,12 +8918,12 @@
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_arready">
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_arvalid">
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_arvalid"/>
           </CONNECTIONS>
@@ -8933,17 +8933,17 @@
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_awready">
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_awvalid">
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_bready">
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_bready"/>
           </CONNECTIONS>
@@ -8953,7 +8953,7 @@
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_bvalid" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_bvalid">
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_bvalid"/>
           </CONNECTIONS>
@@ -8963,7 +8963,7 @@
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_rready">
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_rready"/>
           </CONNECTIONS>
@@ -8973,7 +8973,7 @@
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_rvalid" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_rvalid">
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_rvalid"/>
           </CONNECTIONS>
@@ -8983,12 +8983,12 @@
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_wready">
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_wvalid">
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_0_s_axi_lite_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="s_axi_lite_wvalid"/>
           </CONNECTIONS>
@@ -8998,12 +8998,12 @@
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_arready" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_arready">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_arready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_arvalid" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_arvalid">
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_arvalid"/>
           </CONNECTIONS>
@@ -9013,17 +9013,17 @@
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_awready" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_awready">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_awvalid" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_awvalid">
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_bready" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_bready">
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_bready"/>
           </CONNECTIONS>
@@ -9033,7 +9033,7 @@
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_bvalid" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_bvalid">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_bvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_bvalid"/>
           </CONNECTIONS>
@@ -9043,7 +9043,7 @@
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_rready" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_rready">
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_rready"/>
           </CONNECTIONS>
@@ -9053,7 +9053,7 @@
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_rvalid" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_rvalid">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_rvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_rvalid"/>
           </CONNECTIONS>
@@ -9063,12 +9063,12 @@
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M03_AXI_wready" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_wready">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_wready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M03_AXI_wvalid" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_wvalid">
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_vdma_1_s_axi_lite_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_vdma_1" PORT="s_axi_lite_wvalid"/>
           </CONNECTIONS>
@@ -9241,30 +9241,30 @@
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" RIGHT="0" SIGIS="rst"/>
         <PORT DIR="O" LEFT="0" NAME="interconnect_aresetn" RIGHT="0" SIGIS="rst" SIGNAME="rst_processing_system7_0_50M_interconnect_aresetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon_1" PORT="ARESETN"/>
+            <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="ARESETN"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" RIGHT="0" SIGIS="rst" SIGNAME="rst_processing_system7_0_50M_peripheral_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="LINESCANNER0_N_RESET"/>
             <CONNECTION INSTANCE="External_Ports" PORT="LINESCANNER1_N_RESET"/>
-            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aresetn"/>
-            <CONNECTION INSTANCE="axi_vdma_0" PORT="axi_resetn"/>
-            <CONNECTION INSTANCE="axi_vdma_1" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="image_capture_manager_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="linescanner_image_capture_unit_0" PORT="n_reset"/>
             <CONNECTION INSTANCE="linescanner2stream_convertor_0" PORT="m00_axis_aresetn"/>
+            <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="axi_vdma_0" PORT="axi_resetn"/>
+            <CONNECTION INSTANCE="axi_vdma_1" PORT="axi_resetn"/>
+            <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ARESETN"/>
+            <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ARESETN"/>
+            <CONNECTION INSTANCE="axi_mem_intercon_1" PORT="S00_ARESETN"/>
+            <CONNECTION INSTANCE="axi_mem_intercon_1" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M02_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M03_ARESETN"/>
-            <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ARESETN"/>
-            <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ARESETN"/>
-            <CONNECTION INSTANCE="axi_mem_intercon_1" PORT="S00_ARESETN"/>
-            <CONNECTION INSTANCE="axi_mem_intercon_1" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="linescanner2stream_convertor_1" PORT="m00_axis_aresetn"/>
             <CONNECTION INSTANCE="linescanner_image_capture_unit_1" PORT="n_reset"/>
           </CONNECTIONS>

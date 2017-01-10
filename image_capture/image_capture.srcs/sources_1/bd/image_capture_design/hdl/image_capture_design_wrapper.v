@@ -1,8 +1,8 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Sat Jan 07 06:01:43 2017
-//Host        : otheman-laptop running 64-bit major release  (build 9200)
+//Date        : Tue Jan 10 19:58:43 2017
+//Host        : XilinxDev running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target image_capture_design_wrapper.bd
 //Design      : image_capture_design_wrapper
 //Purpose     : IP block netlist
