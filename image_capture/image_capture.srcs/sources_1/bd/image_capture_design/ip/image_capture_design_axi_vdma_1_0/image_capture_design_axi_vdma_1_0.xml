@@ -727,7 +727,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_S2MM.NUM_READ_OUTSTANDING">2</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI_S2MM.NUM_READ_OUTSTANDING">8</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>MAX_BURST_LENGTH</spirit:name>
@@ -4540,11 +4540,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jan 10 15:15:08 UTC 2017</spirit:value>
+            <spirit:value>Tue Jan 10 11:43:06 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>23e03852</spirit:value>
+            <spirit:value>5d7edcb1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -4571,11 +4571,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jan 11 03:09:13 UTC 2017</spirit:value>
+            <spirit:value>Wed Jan 11 17:59:26 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>23e03852</spirit:value>
+            <spirit:value>5d7edcb1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -4625,11 +4625,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Tue Jan 10 15:15:08 UTC 2017</spirit:value>
+            <spirit:value>Tue Jan 10 11:43:06 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>23e03852</spirit:value>
+            <spirit:value>5d7edcb1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -4656,11 +4656,11 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Jan 11 03:09:13 UTC 2017</spirit:value>
+            <spirit:value>Wed Jan 11 17:59:26 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
-            <spirit:value>23e03852</spirit:value>
+            <spirit:value>5d7edcb1</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRCversion</spirit:name>
@@ -9396,6 +9396,7 @@ Note: Frame Delay must be less than or equal to Frame Buffers or an undefined re
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.HAS_WSTRB" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.ID_WIDTH" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.MAX_BURST_LENGTH" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.NUM_READ_OUTSTANDING" xilinx:valueSource="constant_prop"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.PROTOCOL" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.READ_WRITE_MODE" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI_S2MM.RUSER_WIDTH" xilinx:valueSource="constant"/>

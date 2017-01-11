@@ -20,8 +20,8 @@ set_input_delay -clock [get_clocks LINESCANNER1_PIXEL_CLOCK] -max -add_delay 4.0
 set_input_delay -clock [get_clocks LINESCANNER1_PIXEL_CLOCK] -min -add_delay 2.000 [get_ports LINESCANNER1_LVAL]
 set_input_delay -clock [get_clocks LINESCANNER1_PIXEL_CLOCK] -max -add_delay 4.000 [get_ports LINESCANNER1_LVAL]
 
-set_input_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 2.000 [get_ports LINESCANNER_MOSI]
-set_input_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 4.000 [get_ports LINESCANNER_MOSI]
+#set_input_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 2.000 [get_ports LINESCANNER_MOSI]
+#set_input_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 4.000 [get_ports LINESCANNER_MOSI]
 
 set_input_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 2.000 [get_ports LINESCANNER_MISO]
 set_input_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 4.000 [get_ports LINESCANNER_MISO]
@@ -66,8 +66,8 @@ set_output_delay -clock [get_clocks LINESCANNER1_PIXEL_CLOCK] -max -add_delay 3.
 set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports LINESCANNER_MOSI]
 set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports LINESCANNER_MOSI]
 
-set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports LINESCANNER_MISO]
-set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports LINESCANNER_MISO]
+#set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports LINESCANNER_MISO]
+#set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports LINESCANNER_MISO]
 
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets {LINESCANNER1_PIXEL_CLOCK_IBUF}]
 set_property PACKAGE_PIN K18 [get_ports {LINESCANNER0_TAP_A[6]}]
