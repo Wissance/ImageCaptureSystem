@@ -57,13 +57,13 @@ preplace netloc axi_quad_spi_0_ss_o 1 6 1 2430
 preplace netloc clock_divider_1_output_clock 1 1 1 370
 preplace netloc LINESCANNER1_END_ADC_1 1 0 2 NJ 220 NJ
 preplace netloc rst_processing_system7_0_50M_interconnect_aresetn 1 1 4 NJ 520 750 590 NJ 680 1630
-preplace netloc axi_mem_intercon_1_M00_AXI 1 5 1 1980
+preplace netloc axi_mem_intercon_1_M00_AXI 1 5 1 1970
 preplace netloc processing_system7_0_M_AXI_GP0 1 2 5 790 10 NJ 10 NJ 10 NJ 10 2430
 preplace netloc LINESCANNER_MISO_1 1 6 1 N
 preplace netloc linescanner_image_capture_unit_0_load_pulse 1 0 3 NJ 810 NJ 810 700
 preplace netloc linescanner_image_capture_unit_0_main_clock 1 0 3 NJ 790 NJ 790 710
 preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 7 -20 320 NJ 420 NJ 360 NJ 360 NJ 380 NJ 380 2430
-preplace netloc axi_mem_intercon_M00_AXI 1 5 1 1970
+preplace netloc axi_mem_intercon_M00_AXI 1 5 1 1990
 preplace netloc LINESCANNER1_PIXEL_CLOCK_1 1 0 2 NJ 310 NJ
 preplace netloc rst_processing_system7_0_50M_peripheral_aresetn 1 0 6 NJ 240 330 440 760 280 1160 690 1670 770 NJ
 preplace netloc processing_system7_0_axi_periph_M02_AXI 1 3 1 1210
