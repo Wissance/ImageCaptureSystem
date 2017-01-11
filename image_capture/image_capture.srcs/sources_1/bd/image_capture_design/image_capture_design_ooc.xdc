@@ -9,5 +9,6 @@
 create_clock -name LINESCANNER1_PIXEL_CLOCK -period 10 [get_ports LINESCANNER1_PIXEL_CLOCK]
 create_clock -name LINESCANNER0_PIXEL_CLOCK -period 20 [get_ports LINESCANNER0_PIXEL_CLOCK]
 create_clock -name processing_system7_0_FCLK_CLK0 -period 10 [get_pins processing_system7_0/FCLK_CLK0]
+create_clock -name processing_system7_0_FCLK_CLK1 -period 5 [get_pins processing_system7_0/FCLK_CLK1]
 
 ################################################################################
