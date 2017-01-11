@@ -84,13 +84,12 @@ ENTITY image_capture_design_axi_quad_spi_0_0 IS
     io1_i : IN STD_LOGIC;
     io1_o : OUT STD_LOGIC;
     io1_t : OUT STD_LOGIC;
+    sck_i : IN STD_LOGIC;
+    sck_o : OUT STD_LOGIC;
+    sck_t : OUT STD_LOGIC;
     ss_i : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
     ss_o : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     ss_t : OUT STD_LOGIC;
-    cfgclk : OUT STD_LOGIC;
-    cfgmclk : OUT STD_LOGIC;
-    eos : OUT STD_LOGIC;
-    preq : OUT STD_LOGIC;
     ip2intc_irpt : OUT STD_LOGIC
   );
 END image_capture_design_axi_quad_spi_0_0;
@@ -223,7 +222,7 @@ ARCHITECTURE image_capture_design_axi_quad_spi_0_0_arch OF image_capture_design_
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF image_capture_design_axi_quad_spi_0_0_arch : ARCHITECTURE IS "image_capture_design_axi_quad_spi_0_0,axi_quad_spi,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF image_capture_design_axi_quad_spi_0_0_arch: ARCHITECTURE IS "image_capture_design_axi_quad_spi_0_0,axi_quad_spi,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_quad_spi,x_ipVersion=3.2,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,Async_Clk=1,C_FAMILY=zynq,C_SELECT_XPM=0,C_SUB_FAMILY=zynq,C_INSTANCE=axi_quad_spi_inst,C_SPI_MEM_ADDR_BITS=24,C_TYPE_OF_AXI4_INTERFACE=0,C_XIP_MODE=0,C_UC_FAMILY=0,C_FIFO_DEPTH=16,C_SCK_RATIO=16,C_NUM_SS_BITS=2,C_NUM_TRANSFER_BITS=8,C_SPI_MODE=0,C_USE_STARTUP=1,C_SPI_MEMORY=1,C_S_AXI" & 
+  ATTRIBUTE CORE_GENERATION_INFO OF image_capture_design_axi_quad_spi_0_0_arch: ARCHITECTURE IS "image_capture_design_axi_quad_spi_0_0,axi_quad_spi,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_quad_spi,x_ipVersion=3.2,x_ipCoreRevision=8,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,Async_Clk=1,C_FAMILY=zynq,C_SELECT_XPM=0,C_SUB_FAMILY=zynq,C_INSTANCE=axi_quad_spi_inst,C_SPI_MEM_ADDR_BITS=24,C_TYPE_OF_AXI4_INTERFACE=0,C_XIP_MODE=0,C_UC_FAMILY=0,C_FIFO_DEPTH=16,C_SCK_RATIO=16,C_NUM_SS_BITS=2,C_NUM_TRANSFER_BITS=8,C_SPI_MODE=0,C_USE_STARTUP=0,C_SPI_MEMORY=1,C_S_AXI" & 
 "_ADDR_WIDTH=7,C_S_AXI_DATA_WIDTH=32,C_S_AXI4_ADDR_WIDTH=24,C_S_AXI4_DATA_WIDTH=32,C_S_AXI4_ID_WIDTH=1,C_SHARED_STARTUP=0,C_S_AXI4_BASEADDR=0xFFFFFFFF,C_S_AXI4_HIGHADDR=0x00000000,C_LSB_STUP=0}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF ext_spi_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 spi_clk CLK";
@@ -252,13 +251,12 @@ ARCHITECTURE image_capture_design_axi_quad_spi_0_0_arch OF image_capture_design_
   ATTRIBUTE X_INTERFACE_INFO OF io1_i: SIGNAL IS "xilinx.com:interface:spi:1.0 SPI_0 IO1_I";
   ATTRIBUTE X_INTERFACE_INFO OF io1_o: SIGNAL IS "xilinx.com:interface:spi:1.0 SPI_0 IO1_O";
   ATTRIBUTE X_INTERFACE_INFO OF io1_t: SIGNAL IS "xilinx.com:interface:spi:1.0 SPI_0 IO1_T";
+  ATTRIBUTE X_INTERFACE_INFO OF sck_i: SIGNAL IS "xilinx.com:interface:spi:1.0 SPI_0 SCK_I";
+  ATTRIBUTE X_INTERFACE_INFO OF sck_o: SIGNAL IS "xilinx.com:interface:spi:1.0 SPI_0 SCK_O";
+  ATTRIBUTE X_INTERFACE_INFO OF sck_t: SIGNAL IS "xilinx.com:interface:spi:1.0 SPI_0 SCK_T";
   ATTRIBUTE X_INTERFACE_INFO OF ss_i: SIGNAL IS "xilinx.com:interface:spi:1.0 SPI_0 SS_I";
   ATTRIBUTE X_INTERFACE_INFO OF ss_o: SIGNAL IS "xilinx.com:interface:spi:1.0 SPI_0 SS_O";
   ATTRIBUTE X_INTERFACE_INFO OF ss_t: SIGNAL IS "xilinx.com:interface:spi:1.0 SPI_0 SS_T";
-  ATTRIBUTE X_INTERFACE_INFO OF cfgclk: SIGNAL IS "xilinx.com:display_startup_io:startup_io:1.0 STARTUP_IO cfgclk";
-  ATTRIBUTE X_INTERFACE_INFO OF cfgmclk: SIGNAL IS "xilinx.com:display_startup_io:startup_io:1.0 STARTUP_IO cfgmclk";
-  ATTRIBUTE X_INTERFACE_INFO OF eos: SIGNAL IS "xilinx.com:display_startup_io:startup_io:1.0 STARTUP_IO eos";
-  ATTRIBUTE X_INTERFACE_INFO OF preq: SIGNAL IS "xilinx.com:display_startup_io:startup_io:1.0 STARTUP_IO preq";
   ATTRIBUTE X_INTERFACE_INFO OF ip2intc_irpt: SIGNAL IS "xilinx.com:signal:interrupt:1.0 interrupt INTERRUPT";
 BEGIN
   U0 : axi_quad_spi
@@ -277,7 +275,7 @@ BEGIN
       C_NUM_SS_BITS => 2,
       C_NUM_TRANSFER_BITS => 8,
       C_SPI_MODE => 0,
-      C_USE_STARTUP => 1,
+      C_USE_STARTUP => 0,
       C_SPI_MEMORY => 1,
       C_S_AXI_ADDR_WIDTH => 7,
       C_S_AXI_DATA_WIDTH => 32,
@@ -345,14 +343,12 @@ BEGIN
       io2_i => '0',
       io3_i => '0',
       spisel => '1',
-      sck_i => '0',
+      sck_i => sck_i,
+      sck_o => sck_o,
+      sck_t => sck_t,
       ss_i => ss_i,
       ss_o => ss_o,
       ss_t => ss_t,
-      cfgclk => cfgclk,
-      cfgmclk => cfgmclk,
-      eos => eos,
-      preq => preq,
       clk => '0',
       gsr => '0',
       gts => '0',

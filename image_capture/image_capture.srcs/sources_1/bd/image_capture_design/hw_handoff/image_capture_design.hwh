@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jan 11 07:09:14 2017" VIVADOVERSION="2016.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jan 11 10:26:19 2017" VIVADOVERSION="2016.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="image_capture_design" PACKAGE="clg484" SPEEDGRADE="-3"/>
 
@@ -31,9 +31,14 @@
     <PORT DIR="I" NAME="spi_rtl_io1_i" SIGIS="undef"/>
     <PORT DIR="O" NAME="spi_rtl_io1_o" SIGIS="undef"/>
     <PORT DIR="O" NAME="spi_rtl_io1_t" SIGIS="undef"/>
+    <PORT DIR="I" NAME="spi_rtl_sck_i" SIGIS="undef"/>
+    <PORT DIR="O" NAME="spi_rtl_sck_o" SIGIS="undef"/>
+    <PORT DIR="O" NAME="spi_rtl_sck_t" SIGIS="undef"/>
     <PORT DIR="I" LEFT="1" NAME="spi_rtl_ss_i" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="O" LEFT="1" NAME="spi_rtl_ss_o" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="O" NAME="spi_rtl_ss_t" SIGIS="undef"/>
+    <PORT DIR="O" NAME="LINESCANNER0_CS" SIGIS="undef"/>
+    <PORT DIR="O" NAME="LINESCANNER1_CS" SIGIS="undef"/>
     <PORT DIR="O" LEFT="0" NAME="LINESCANNER1_N_RESET" RIGHT="0" SIGIS="undef" SIGNAME="rst_processing_system7_0_50M_peripheral_aresetn">
       <CONNECTIONS>
         <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="peripheral_aresetn"/>
@@ -134,6 +139,26 @@
         <CONNECTION INSTANCE="linescanner_image_capture_unit_1" PORT="data"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="O" NAME="LINESCANNER_MOSI" SIGIS="undef" SIGNAME="axi_quad_spi_0_io0_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io0_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="LINESCANNER_SCK" SIGIS="undef" SIGNAME="axi_quad_spi_0_sck_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="sck_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="1" NAME="LINESCANNER_CS" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_0_ss_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ss_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="LINESCANNER_MISO" SIGIS="undef" SIGNAME="External_Ports_LINESCANNER_MISO">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_quad_spi_0" PORT="io0_i"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -187,6 +212,9 @@
         <PORTMAP LOGICAL="IO1_I" PHYSICAL="spi_rtl_io1_i"/>
         <PORTMAP LOGICAL="IO1_O" PHYSICAL="spi_rtl_io1_o"/>
         <PORTMAP LOGICAL="IO1_T" PHYSICAL="spi_rtl_io1_t"/>
+        <PORTMAP LOGICAL="SCK_I" PHYSICAL="spi_rtl_sck_i"/>
+        <PORTMAP LOGICAL="SCK_O" PHYSICAL="spi_rtl_sck_o"/>
+        <PORTMAP LOGICAL="SCK_T" PHYSICAL="spi_rtl_sck_t"/>
         <PORTMAP LOGICAL="SS_I" PHYSICAL="spi_rtl_ss_i"/>
         <PORTMAP LOGICAL="SS_O" PHYSICAL="spi_rtl_ss_o"/>
         <PORTMAP LOGICAL="SS_T" PHYSICAL="spi_rtl_ss_t"/>
@@ -1318,23 +1346,21 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M00_AXI_awaddr" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_awlen" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_awsize" SIGIS="undef"/>
         <PORT DIR="O" NAME="M00_AXI_awburst" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_awlock" SIGIS="undef"/>
         <PORT DIR="O" NAME="M00_AXI_awcache" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_awlen" SIGIS="undef"/>
         <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_awqos" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef"/>
         <PORT DIR="I" NAME="M00_AXI_awready" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_wdata" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_wstrb" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_wlast" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_awsize" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_awvalid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef"/>
         <PORT DIR="I" NAME="M00_AXI_bresp" SIGIS="undef"/>
         <PORT DIR="I" NAME="M00_AXI_bvalid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M00_AXI_bready" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_wdata" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_wlast" SIGIS="undef"/>
+        <PORT DIR="I" NAME="M00_AXI_wready" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_wstrb" SIGIS="undef"/>
+        <PORT DIR="O" NAME="M00_AXI_wvalid" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="axi_vdma_1_M_AXI_S2MM" DATAWIDTH="32" NAME="S00_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
@@ -1360,23 +1386,21 @@
         <BUSINTERFACE BUSNAME="__NOC__" NAME="M00_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M00_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M00_AXI_awlen"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M00_AXI_awsize"/>
             <PORTMAP LOGICAL="AWBURST" PHYSICAL="M00_AXI_awburst"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="M00_AXI_awlock"/>
             <PORTMAP LOGICAL="AWCACHE" PHYSICAL="M00_AXI_awcache"/>
+            <PORTMAP LOGICAL="AWLEN" PHYSICAL="M00_AXI_awlen"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="M00_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWQOS" PHYSICAL="M00_AXI_awqos"/>
-            <PORTMAP LOGICAL="AWVALID" PHYSICAL="M00_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M00_AXI_awready"/>
-            <PORTMAP LOGICAL="WDATA" PHYSICAL="M00_AXI_wdata"/>
-            <PORTMAP LOGICAL="WSTRB" PHYSICAL="M00_AXI_wstrb"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="M00_AXI_wlast"/>
-            <PORTMAP LOGICAL="WVALID" PHYSICAL="M00_AXI_wvalid"/>
-            <PORTMAP LOGICAL="WREADY" PHYSICAL="M00_AXI_wready"/>
+            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="M00_AXI_awsize"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="M00_AXI_awvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="M00_AXI_bready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M00_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M00_AXI_bvalid"/>
-            <PORTMAP LOGICAL="BREADY" PHYSICAL="M00_AXI_bready"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="M00_AXI_wdata"/>
+            <PORTMAP LOGICAL="WLAST" PHYSICAL="M00_AXI_wlast"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="M00_AXI_wready"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="M00_AXI_wstrb"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="M00_AXI_wvalid"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -1400,7 +1424,7 @@
         <PARAMETER NAME="C_NUM_SS_BITS" VALUE="2"/>
         <PARAMETER NAME="C_NUM_TRANSFER_BITS" VALUE="8"/>
         <PARAMETER NAME="C_SPI_MODE" VALUE="0"/>
-        <PARAMETER NAME="C_USE_STARTUP" VALUE="1"/>
+        <PARAMETER NAME="C_USE_STARTUP" VALUE="0"/>
         <PARAMETER NAME="C_SPI_MEMORY" VALUE="1"/>
         <PARAMETER NAME="C_S_AXI_ADDR_WIDTH" VALUE="7"/>
         <PARAMETER NAME="C_S_AXI_DATA_WIDTH" VALUE="32"/>
@@ -1409,7 +1433,7 @@
         <PARAMETER NAME="C_S_AXI4_ID_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SHARED_STARTUP" VALUE="0"/>
         <PARAMETER NAME="C_LSB_STUP" VALUE="0"/>
-        <PARAMETER NAME="C_USE_STARTUP_INT" VALUE="1"/>
+        <PARAMETER NAME="C_USE_STARTUP_INT" VALUE="0"/>
         <PARAMETER NAME="UC_FAMILY" VALUE="0"/>
         <PARAMETER NAME="Component_Name" VALUE="image_capture_design_axi_quad_spi_0_0"/>
         <PARAMETER NAME="Master_mode" VALUE="1"/>
@@ -1523,19 +1547,34 @@
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M00_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="io0_i" SIGIS="undef"/>
-        <PORT DIR="O" NAME="io0_o" SIGIS="undef"/>
+        <PORT DIR="I" NAME="io0_i" SIGIS="undef" SIGNAME="External_Ports_LINESCANNER_MISO">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LINESCANNER_MISO"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="io0_o" SIGIS="undef" SIGNAME="axi_quad_spi_0_io0_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LINESCANNER_MOSI"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="io0_t" SIGIS="undef"/>
         <PORT DIR="I" NAME="io1_i" SIGIS="undef"/>
         <PORT DIR="O" NAME="io1_o" SIGIS="undef"/>
         <PORT DIR="O" NAME="io1_t" SIGIS="undef"/>
+        <PORT DIR="I" NAME="sck_i" SIGIS="undef"/>
+        <PORT DIR="O" NAME="sck_o" SIGIS="undef" SIGNAME="axi_quad_spi_0_sck_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LINESCANNER_SCK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="sck_t" SIGIS="undef"/>
         <PORT DIR="I" LEFT="1" NAME="ss_i" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="1" NAME="ss_o" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="1" NAME="ss_o" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_0_ss_o">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LINESCANNER_CS"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="O" NAME="ss_t" SIGIS="undef"/>
-        <PORT DIR="O" NAME="cfgclk" SIGIS="undef"/>
-        <PORT DIR="O" NAME="cfgmclk" SIGIS="undef"/>
-        <PORT DIR="O" NAME="eos" SIGIS="undef"/>
-        <PORT DIR="O" NAME="preq" SIGIS="undef"/>
         <PORT DIR="O" NAME="ip2intc_irpt" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT"/>
       </PORTS>
       <BUSINTERFACES>
@@ -1547,17 +1586,12 @@
             <PORTMAP LOGICAL="IO1_I" PHYSICAL="io1_i"/>
             <PORTMAP LOGICAL="IO1_O" PHYSICAL="io1_o"/>
             <PORTMAP LOGICAL="IO1_T" PHYSICAL="io1_t"/>
+            <PORTMAP LOGICAL="SCK_I" PHYSICAL="sck_i"/>
+            <PORTMAP LOGICAL="SCK_O" PHYSICAL="sck_o"/>
+            <PORTMAP LOGICAL="SCK_T" PHYSICAL="sck_t"/>
             <PORTMAP LOGICAL="SS_I" PHYSICAL="ss_i"/>
             <PORTMAP LOGICAL="SS_O" PHYSICAL="ss_o"/>
             <PORTMAP LOGICAL="SS_T" PHYSICAL="ss_t"/>
-          </PORTMAPS>
-        </BUSINTERFACE>
-        <BUSINTERFACE BUSNAME="__NOC__" NAME="STARTUP_IO" TYPE="INITIATOR" VLNV="xilinx.com:display_startup_io:startup_io:1.0">
-          <PORTMAPS>
-            <PORTMAP LOGICAL="cfgclk" PHYSICAL="cfgclk"/>
-            <PORTMAP LOGICAL="cfgmclk" PHYSICAL="cfgmclk"/>
-            <PORTMAP LOGICAL="eos" PHYSICAL="eos"/>
-            <PORTMAP LOGICAL="preq" PHYSICAL="preq"/>
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="processing_system7_0_axi_periph_M00_AXI" DATAWIDTH="32" NAME="AXI_LITE" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
@@ -7445,8 +7479,6 @@
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
             <CONNECTION INSTANCE="rst_processing_system7_0_50M" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="linescanner2stream_convertor_1" PORT="m00_axis_aclk"/>
-            <CONNECTION INSTANCE="clock_divider_1" PORT="input_clock"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="ACLK"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ACLK"/>
@@ -7459,6 +7491,8 @@
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M02_ACLK"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M03_ACLK"/>
+            <CONNECTION INSTANCE="linescanner2stream_convertor_1" PORT="m00_axis_aclk"/>
+            <CONNECTION INSTANCE="clock_divider_1" PORT="input_clock"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="200000000" DIR="O" NAME="FCLK_CLK1" SIGIS="clk"/>
@@ -8796,8 +8830,6 @@
             <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_vdma_0" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="axi_vdma_1" PORT="axi_resetn"/>
-            <CONNECTION INSTANCE="linescanner2stream_convertor_1" PORT="m00_axis_aresetn"/>
-            <CONNECTION INSTANCE="linescanner_image_capture_unit_1" PORT="n_reset"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon_1" PORT="S00_ARESETN"/>
@@ -8807,6 +8839,8 @@
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M01_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M02_ARESETN"/>
             <CONNECTION INSTANCE="processing_system7_0_axi_periph" PORT="M03_ARESETN"/>
+            <CONNECTION INSTANCE="linescanner2stream_convertor_1" PORT="m00_axis_aresetn"/>
+            <CONNECTION INSTANCE="linescanner_image_capture_unit_1" PORT="n_reset"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

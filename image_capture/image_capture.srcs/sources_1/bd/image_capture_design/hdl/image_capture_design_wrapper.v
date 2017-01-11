@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Wed Jan 11 07:08:53 2017
+//Date        : Wed Jan 11 10:26:17 2017
 //Host        : XilinxDev running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target image_capture_design_wrapper.bd
 //Design      : image_capture_design_wrapper
@@ -31,6 +31,7 @@ module image_capture_design_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
+    LINESCANNER0_CS,
     LINESCANNER0_END_ADC,
     LINESCANNER0_LOAD_PULSE,
     LINESCANNER0_LVAL,
@@ -41,6 +42,7 @@ module image_capture_design_wrapper
     LINESCANNER0_RST_CVC,
     LINESCANNER0_SAMPLE,
     LINESCANNER0_TAP_A,
+    LINESCANNER1_CS,
     LINESCANNER1_END_ADC,
     LINESCANNER1_LOAD_PULSE,
     LINESCANNER1_LVAL,
@@ -51,9 +53,16 @@ module image_capture_design_wrapper
     LINESCANNER1_RST_CVC,
     LINESCANNER1_SAMPLE,
     LINESCANNER1_TAP_A,
-    spi_rtl_io0_io,
+    LINESCANNER_CS,
+    LINESCANNER_MISO,
+    LINESCANNER_MOSI,
+    LINESCANNER_SCK,
+    spi_rtl_io0_t,
     spi_rtl_io1_io,
-    spi_rtl_ss_io);
+    spi_rtl_sck_i,
+    spi_rtl_sck_t,
+    spi_rtl_ss_i,
+    spi_rtl_ss_t);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -75,6 +84,7 @@ module image_capture_design_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
+  output LINESCANNER0_CS;
   input LINESCANNER0_END_ADC;
   output LINESCANNER0_LOAD_PULSE;
   input LINESCANNER0_LVAL;
@@ -85,6 +95,7 @@ module image_capture_design_wrapper
   output LINESCANNER0_RST_CVC;
   output LINESCANNER0_SAMPLE;
   input [7:0]LINESCANNER0_TAP_A;
+  output LINESCANNER1_CS;
   input LINESCANNER1_END_ADC;
   output LINESCANNER1_LOAD_PULSE;
   input LINESCANNER1_LVAL;
@@ -95,9 +106,16 @@ module image_capture_design_wrapper
   output LINESCANNER1_RST_CVC;
   output LINESCANNER1_SAMPLE;
   input [7:0]LINESCANNER1_TAP_A;
-  inout spi_rtl_io0_io;
+  output [1:0]LINESCANNER_CS;
+  input LINESCANNER_MISO;
+  output LINESCANNER_MOSI;
+  output LINESCANNER_SCK;
+  output spi_rtl_io0_t;
   inout spi_rtl_io1_io;
-  inout [1:0]spi_rtl_ss_io;
+  input spi_rtl_sck_i;
+  output spi_rtl_sck_t;
+  input [1:0]spi_rtl_ss_i;
+  output spi_rtl_ss_t;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -120,6 +138,7 @@ module image_capture_design_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
+  wire LINESCANNER0_CS;
   wire LINESCANNER0_END_ADC;
   wire LINESCANNER0_LOAD_PULSE;
   wire LINESCANNER0_LVAL;
@@ -130,6 +149,7 @@ module image_capture_design_wrapper
   wire LINESCANNER0_RST_CVC;
   wire LINESCANNER0_SAMPLE;
   wire [7:0]LINESCANNER0_TAP_A;
+  wire LINESCANNER1_CS;
   wire LINESCANNER1_END_ADC;
   wire LINESCANNER1_LOAD_PULSE;
   wire LINESCANNER1_LVAL;
@@ -140,20 +160,18 @@ module image_capture_design_wrapper
   wire LINESCANNER1_RST_CVC;
   wire LINESCANNER1_SAMPLE;
   wire [7:0]LINESCANNER1_TAP_A;
-  wire spi_rtl_io0_i;
-  wire spi_rtl_io0_io;
-  wire spi_rtl_io0_o;
+  wire [1:0]LINESCANNER_CS;
+  wire LINESCANNER_MISO;
+  wire LINESCANNER_MOSI;
+  wire LINESCANNER_SCK;
   wire spi_rtl_io0_t;
   wire spi_rtl_io1_i;
   wire spi_rtl_io1_io;
   wire spi_rtl_io1_o;
   wire spi_rtl_io1_t;
-  wire [0:0]spi_rtl_ss_i_0;
-  wire [1:1]spi_rtl_ss_i_1;
-  wire [0:0]spi_rtl_ss_io_0;
-  wire [1:1]spi_rtl_ss_io_1;
-  wire [0:0]spi_rtl_ss_o_0;
-  wire [1:1]spi_rtl_ss_o_1;
+  wire spi_rtl_sck_i;
+  wire spi_rtl_sck_t;
+  wire [1:0]spi_rtl_ss_i;
   wire spi_rtl_ss_t;
 
   image_capture_design image_capture_design_i
@@ -178,6 +196,7 @@ module image_capture_design_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+        .LINESCANNER0_CS(LINESCANNER0_CS),
         .LINESCANNER0_END_ADC(LINESCANNER0_END_ADC),
         .LINESCANNER0_LOAD_PULSE(LINESCANNER0_LOAD_PULSE),
         .LINESCANNER0_LVAL(LINESCANNER0_LVAL),
@@ -188,6 +207,7 @@ module image_capture_design_wrapper
         .LINESCANNER0_RST_CVC(LINESCANNER0_RST_CVC),
         .LINESCANNER0_SAMPLE(LINESCANNER0_SAMPLE),
         .LINESCANNER0_TAP_A(LINESCANNER0_TAP_A),
+        .LINESCANNER1_CS(LINESCANNER1_CS),
         .LINESCANNER1_END_ADC(LINESCANNER1_END_ADC),
         .LINESCANNER1_LOAD_PULSE(LINESCANNER1_LOAD_PULSE),
         .LINESCANNER1_LVAL(LINESCANNER1_LVAL),
@@ -198,33 +218,21 @@ module image_capture_design_wrapper
         .LINESCANNER1_RST_CVC(LINESCANNER1_RST_CVC),
         .LINESCANNER1_SAMPLE(LINESCANNER1_SAMPLE),
         .LINESCANNER1_TAP_A(LINESCANNER1_TAP_A),
-        .spi_rtl_io0_i(spi_rtl_io0_i),
-        .spi_rtl_io0_o(spi_rtl_io0_o),
+        .LINESCANNER_CS(LINESCANNER_CS),
+        .LINESCANNER_MISO(LINESCANNER_MISO),
+        .LINESCANNER_MOSI(LINESCANNER_MOSI),
+        .LINESCANNER_SCK(LINESCANNER_SCK),
         .spi_rtl_io0_t(spi_rtl_io0_t),
         .spi_rtl_io1_i(spi_rtl_io1_i),
         .spi_rtl_io1_o(spi_rtl_io1_o),
         .spi_rtl_io1_t(spi_rtl_io1_t),
-        .spi_rtl_ss_i({spi_rtl_ss_i_1,spi_rtl_ss_i_0}),
-        .spi_rtl_ss_o({spi_rtl_ss_o_1,spi_rtl_ss_o_0}),
+        .spi_rtl_sck_i(spi_rtl_sck_i),
+        .spi_rtl_sck_t(spi_rtl_sck_t),
+        .spi_rtl_ss_i(spi_rtl_ss_i),
         .spi_rtl_ss_t(spi_rtl_ss_t));
-  IOBUF spi_rtl_io0_iobuf
-       (.I(spi_rtl_io0_o),
-        .IO(spi_rtl_io0_io),
-        .O(spi_rtl_io0_i),
-        .T(spi_rtl_io0_t));
   IOBUF spi_rtl_io1_iobuf
        (.I(spi_rtl_io1_o),
         .IO(spi_rtl_io1_io),
         .O(spi_rtl_io1_i),
         .T(spi_rtl_io1_t));
-  IOBUF spi_rtl_ss_iobuf_0
-       (.I(spi_rtl_ss_o_0),
-        .IO(spi_rtl_ss_io[0]),
-        .O(spi_rtl_ss_i_0),
-        .T(spi_rtl_ss_t));
-  IOBUF spi_rtl_ss_iobuf_1
-       (.I(spi_rtl_ss_o_1),
-        .IO(spi_rtl_ss_io[1]),
-        .O(spi_rtl_ss_i_1),
-        .T(spi_rtl_ss_t));
 endmodule

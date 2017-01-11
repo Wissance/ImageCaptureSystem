@@ -2,9 +2,9 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="image_capture_design" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1484104158"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1484104158"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1484104158"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1484115983"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1484115983"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1484115983"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\image_capture_design_processing_system7_0_0\image_capture_design_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -31,6 +31,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\image_capture_design_processing_system7_0_axi_periph_1\image_capture_design_processing_system7_0_axi_periph_1.xci" Type="IP">
+        <Instance HierarchyPath="processing_system7_0_axi_periph"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -94,6 +95,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\image_capture_design_axi_mem_intercon_0_1\image_capture_design_axi_mem_intercon_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_mem_intercon"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -101,6 +103,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\image_capture_design_axi_mem_intercon_1_0_1\image_capture_design_axi_mem_intercon_1_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_mem_intercon_1"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
