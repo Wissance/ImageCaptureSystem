@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Wed Jan 11 23:08:17 2017
+//Date        : Thu Jan 12 08:50:10 2017
 //Host        : otheman-laptop running 64-bit major release  (build 9200)
 //Command     : generate_target image_capture_design_wrapper.bd
 //Design      : image_capture_design_wrapper

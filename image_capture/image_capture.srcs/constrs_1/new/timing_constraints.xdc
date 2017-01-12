@@ -69,6 +69,15 @@ set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000
 #set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports LINESCANNER_MISO]
 #set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports LINESCANNER_MISO]
 
+set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports LINESCANNER_CS[0]]
+set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports LINESCANNER_CS[0]]
+
+set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports LINESCANNER_CS[1]]
+set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports LINESCANNER_CS[1]]
+
+set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports LINESCANNER_SCK]
+set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports LINESCANNER_SCK]
+
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets {LINESCANNER1_PIXEL_CLOCK_IBUF}]
 set_property PACKAGE_PIN K18 [get_ports {LINESCANNER0_TAP_A[6]}]
 set_property PACKAGE_PIN K15 [get_ports {LINESCANNER0_TAP_A[3]}]
