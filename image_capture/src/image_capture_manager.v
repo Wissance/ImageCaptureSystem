@@ -76,7 +76,7 @@
 
 	// Add user logic here
 	// 1. Manage enable and clear signals
-	always @(posedge s00_axi_wstrb[0], posedge s00_axi_wvalid, posedge s00_axi_aclk)
+	always @(posedge s00_axi_wstrb[0], posedge s00_axi_wvalid)
 	begin
 	    if (~s00_axi_wvalid)
 	    begin

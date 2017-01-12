@@ -8,7 +8,7 @@
 *.hw
 *.cache
 *.runs
-*.sims
+*.sim
 *.ip_user_files
 *.str
 *.Xil
