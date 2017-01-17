@@ -106,56 +106,5 @@ module fifo #
             end
             end
         end
-        /*if(push_clock && ~pop_clock && ~clear)
-        begin
-            if(enable)
-            begin
-                if(data_count < FIFO_SIZE)
-                begin
-                    popped_last_value <= 0;
-                    fifo_data[position] <= in_data;
-                    position <= position + 1;
-                    data_count <= data_count + 1;
-                    if(position == FIFO_SIZE - 1)
-                    begin
-                        position <= 0;
-                        pushed_last_value <= 1;
-                    end
-                    else pushed_last_value <= 0;
-                end
-            end     
-        end
-        
-        else if(pop_clock && ~push_clock && ~clear)
-        begin
-            if(enable)
-            begin
-                if (data_count >= 1)
-                begin
-                    buffer <= fifo_data[0];
-                    data_count <= data_count - 1;
-                    pushed_last_value <= 0;
-                    for(counter = 0; counter < FIFO_SIZE - 1; counter = counter + 1)
-                        fifo_data[counter] <= fifo_data[counter + 1];
-                    fifo_data[FIFO_SIZE - 1] <= 0;
-                    position <= position - 1;
-                    popped_last_value <= position == 1;
-                    if(data_count == 1)
-                        popped_last_value <= 1;
-                end
-                else buffer <= 0;
-            end
-        end
-        
-        else if(clear)
-        begin
-            for(counter = 0; counter < FIFO_SIZE; counter = counter + 1)
-                fifo_data[counter] <= 0;
-            position <= 0;
-            data_count <= 0;    
-            popped_last_value <= 0;
-            pushed_last_value <= 0;
-            buffer <= 0;
-        end*/
     end   
 endmodule

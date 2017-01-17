@@ -28,11 +28,9 @@ module linescanner2stream_convertor #
     // Users to add parameters here
 
     // User parameters ends
-    // Do not modify the parameters beyond this line
-    
+    // Do not modify the parameters beyond this line   
     parameter integer C_M00_AXIS_TDATA_WIDTH = 32,
-    parameter integer C_M00_AXIS_START_COUNT = 32
-    
+    parameter integer C_M00_AXIS_START_COUNT = 32 
     // Parameters of Axi Master Bus Interface M00_AXIS
 )
 (
@@ -81,8 +79,40 @@ module linescanner2stream_convertor #
             .M_AXIS_TREADY(m00_axis_tready)
         );   
 	
-    always@(pixel_captured)
+    always@(pixel_captured or m00_axis_aresetn)
     begin
+        if(!m00_axis_aresetn)
+        begin
+            data_ready_value <= 0;
+            pixel_counter <= 0;
+            output_data <= 0;
+        end
+        else
+        begin
+            if(enable)
+            begin
+                if(pixel_captured)
+                begin
+                    int_buffer = input_data;
+                    //int_buffer <= int_buffer + (int_buffer << `BYTE_SIZE * pixel_counter);     
+                    output_data <= pack_pixel_data(pixel_counter, input_data);
+                    //$display("value, %h", output_data);
+                    if(pixel_counter == `PIXELS_BUFFER_SIZE - 1)
+                    begin
+                        data_ready_value <= 1;
+                        pixel_counter <= 0;
+                        //output_data <= int_buffer;
+                    end
+                end
+                else
+                begin
+                    data_ready_value <= 0;
+                    pixel_counter <= pixel_counter + 1;
+                end
+            end
+        end
+    end
+    /*begin
        if(!m00_axis_aresetn)
        begin
            data_ready_value <= 0;
@@ -115,7 +145,7 @@ module linescanner2stream_convertor #
            if(data_ready_value == 1)
                data_ready_value <= 0;
        end
-    end
+    end*/
 	
 	function [31:0] pack_pixel_data;
 	
