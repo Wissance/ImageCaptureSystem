@@ -98,54 +98,25 @@ module linescanner2stream_convertor #
                     output_data <= pack_pixel_data(pixel_counter, input_data);
                     //$display("value, %h", output_data);
                     if(pixel_counter == `PIXELS_BUFFER_SIZE - 1)
-                    begin
                         data_ready_value <= 1;
-                        pixel_counter <= 0;
-                        //output_data <= int_buffer;
-                    end
                 end
                 else
                 begin
                     data_ready_value <= 0;
                     pixel_counter <= pixel_counter + 1;
+                    if(pixel_counter == `PIXELS_BUFFER_SIZE - 1)
+                        pixel_counter <= 0;
                 end
             end
+            /*else
+            begin
+                // this should not occur in normal logic
+                data_ready_value <= 0;
+                pixel_counter <= 0;
+                output_data <= 0;
+            end*/
         end
     end
-    /*begin
-       if(!m00_axis_aresetn)
-       begin
-           data_ready_value <= 0;
-           pixel_counter <= 0;
-           output_data <= 0;
-       end
-       if(pixel_captured)
-       begin
-           if(enable)
-	       begin       
-	           int_buffer = input_data;
-	           //int_buffer <= int_buffer + (int_buffer << `BYTE_SIZE * pixel_counter);	 
-	           output_data <= pack_pixel_data(pixel_counter, input_data);
-	           //$display("value, %h", output_data);
-	           if (pixel_counter == `PIXELS_BUFFER_SIZE - 1)
-	           begin
-	               data_ready_value <= 1;
-	               pixel_counter <= 0;
-	               //output_data <= int_buffer;
-	           end	       
-	           else
-	           begin
-	               data_ready_value <= 0;
-	               pixel_counter <= pixel_counter + 1;
-	           end	       
-           end
-       end
-       else
-       begin
-           if(data_ready_value == 1)
-               data_ready_value <= 0;
-       end
-    end*/
 	
 	function [31:0] pack_pixel_data;
 	
