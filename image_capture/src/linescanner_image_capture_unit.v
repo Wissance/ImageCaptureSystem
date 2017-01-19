@@ -37,7 +37,7 @@ module linescanner_image_capture_unit(
     output wire pixel_captured);
     
     assign main_clock = main_clock_source;
-    assign pixel_captured = lval;
+    assign pixel_captured = lval ? pixel_clock : 0;
     assign pixel_data = data;
       
     localparam
@@ -58,6 +58,8 @@ module linescanner_image_capture_unit(
             sample <= 1'b0;
             
             sm1_state <= SM1_SEND_FE_OF_RST_CVC;
+            sm1_state_to_go_to_after_waiting <= 0;
+            sm1_num_clocks_to_wait <= 0;
             sm1_clock_count <= 0;
         end
         
@@ -128,11 +130,12 @@ module linescanner_image_capture_unit(
     reg[2:0] sm2_state, sm2_state_to_go_to_after_waiting;
     reg[1:0] sm2_clock_count;
 
-    always @ (posedge pixel_clock) begin
+    always @ (posedge pixel_clock or negedge n_reset) begin
       if(!n_reset) begin
         load_pulse <= 1'b0;
         
         sm2_state <= 0;
+        sm2_state_to_go_to_after_waiting <= 0;
         sm2_clock_count <= 0;
       end
       
