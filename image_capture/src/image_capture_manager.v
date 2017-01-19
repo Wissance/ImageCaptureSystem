@@ -75,31 +75,31 @@
 	);
 
 	// Add user logic here
-	// 1. Manage enable and clear signals
-	always @(posedge s00_axi_wstrb[0], posedge s00_axi_wvalid)
-	begin
-	    if (~s00_axi_wvalid)
-	    begin
+    always @(posedge s00_axi_aclk)
+    begin
+        if(~s00_axi_aresetn)
+        begin
             clear_memory <= 0;
+            image_capture_enabled <= 0;
         end
-	    else
-	    begin
-	    case(s00_axi_wdata)
-            START_IMAGE_CAPTURE_COMMAND : 
+        else
+        begin
+            if(s00_axi_wstrb[0] || s00_axi_wvalid)
             begin
-                clear_memory <= 1'b0;
-                image_capture_enabled <= 1'b1;
-                
+                if(s00_axi_wdata == START_IMAGE_CAPTURE_COMMAND)
+                begin
+                    clear_memory <= 0;
+                    image_capture_enabled <= 1;
+                end
+                else if(s00_axi_wdata == STOP_IMAGE_CAPTURE_COMMAND)
+                begin
+                     clear_memory <= 1;
+                     image_capture_enabled <= 0;
+                end
             end
-            
-            STOP_IMAGE_CAPTURE_COMMAND : 
-            begin
-                clear_memory <= 1'b1;
-                image_capture_enabled <= 1'b0;
-                
-            end
-        endcase
+            else
+                clear_memory <= 0;
         end
-	end
+    end
 	// User logic ends
 	endmodule
