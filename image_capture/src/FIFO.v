@@ -56,9 +56,22 @@ module fifo #
     
     always@ (posedge push_clock, posedge pop_clock, posedge clear)
     begin
-        if(push_clock && ~pop_clock && ~clear)
+        if(clear)
+        begin
+            for(counter = 0; counter < FIFO_SIZE; counter = counter + 1)
+                fifo_data[counter] <= 0;
+            position <= 0;
+            data_count <= 0;    
+            popped_last_value <= 0;
+            pushed_last_value <= 0;
+            buffer <= 0;
+        end
+        else
         begin
             if(enable)
+            begin
+            //todo: umv: think about smart event separation for push and pop
+            if(push_clock && ~pop_clock)
             begin
                 if(data_count < FIFO_SIZE)
                 begin
@@ -73,12 +86,8 @@ module fifo #
                     end
                     else pushed_last_value <= 0;
                 end
-            end     
-        end
-        
-        else if(pop_clock && ~push_clock && ~clear)
-        begin
-            if(enable)
+            end
+            else if(pop_clock && ~push_clock)        
             begin
                 if (data_count >= 1)
                 begin
@@ -95,17 +104,7 @@ module fifo #
                 end
                 else buffer <= 0;
             end
-        end
-        
-        else if(clear)
-        begin
-            for(counter = 0; counter < FIFO_SIZE; counter = counter + 1)
-                fifo_data[counter] <= 0;
-            position <= 0;
-            data_count <= 0;    
-            popped_last_value <= 0;
-            pushed_last_value <= 0;
-            buffer <= 0;
+            end
         end
     end   
 endmodule
