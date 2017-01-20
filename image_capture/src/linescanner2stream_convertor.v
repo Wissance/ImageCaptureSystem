@@ -53,23 +53,26 @@ module linescanner2stream_convertor #
 );
 
 	// Add user logic here
-	reg data_ready_value;
-	reg[7:0] pixel_counter;
+	wire data_ready_net;
+	reg log1_rised = 0;
+	reg data_ready_value = 0;
+	reg[7:0] pixel_counter = 0;
 	reg[C_M00_AXIS_TDATA_WIDTH - 1 : 0] output_data;
 	reg[7:0] pixel_data_ready_delay;
+	
 	integer int_buffer;
 	
 	initial data_ready_value = 0;
 	initial pixel_counter = 0;
 	initial output_data = 0;
 	 	
-	//assign data_ready = data_ready_value;
+	assign data_ready_net = data_ready_value;
 	
     // Instantiation of Axi Bus Interface M00_AXIS
     linescanner2stream_convertor_M00_AXIS # (.C_M_AXIS_TDATA_WIDTH(C_M00_AXIS_TDATA_WIDTH), .C_M_START_COUNT(C_M00_AXIS_START_COUNT)) 
          linescanner2stream_convertor_M00_AXIS_inst (
             .DATA_SOURCE(output_data),
-            .DATA_READY(data_ready_value),
+            .DATA_READY(data_ready_net),
             .M_AXIS_ACLK(m00_axis_aclk),
             .M_AXIS_ARESETN(m00_axis_aresetn),
             .M_AXIS_TVALID(m00_axis_tvalid),
@@ -78,45 +81,44 @@ module linescanner2stream_convertor #
             .M_AXIS_TLAST(m00_axis_tlast),
             .M_AXIS_TREADY(m00_axis_tready)
         );   
-	
-    always@(pixel_captured or m00_axis_aresetn)
-    begin
-        if(!m00_axis_aresetn)
+	always @(posedge m00_axis_aclk)
+	begin
+	    if(!m00_axis_aresetn)
         begin
-            data_ready_value <= 0;
-            pixel_counter <= 0;
-            output_data <= 0;
+           data_ready_value <= 0;
+           pixel_counter <= 0;
+           output_data <= 0;
+           log1_rised <= 0;
         end
         else
         begin
-            if(enable)
-            begin
-                if(pixel_captured)
-                begin
-                    int_buffer = input_data;
-                    //int_buffer <= int_buffer + (int_buffer << `BYTE_SIZE * pixel_counter);     
-                    output_data <= pack_pixel_data(pixel_counter, input_data);
-                    //$display("value, %h", output_data);
-                    if(pixel_counter == `PIXELS_BUFFER_SIZE - 1)
-                        data_ready_value <= 1;
-                end
-                else
-                begin
-                    data_ready_value <= 0;
-                    pixel_counter <= pixel_counter + 1;
-                    if(pixel_counter == `PIXELS_BUFFER_SIZE - 1)
-                        pixel_counter <= 0;
-                end
-            end
-            /*else
-            begin
-                // this should not occur in normal logic
-                data_ready_value <= 0;
-                pixel_counter <= 0;
-                output_data <= 0;
-            end*/
+           if(enable)
+           begin
+               if(pixel_captured)
+               begin
+                   if(~log1_rised)
+                   begin
+                       log1_rised <= 1;
+                       int_buffer = input_data;
+                       output_data <= pack_pixel_data(pixel_counter, input_data);
+                       if(pixel_counter == `PIXELS_BUFFER_SIZE - 1)
+                           data_ready_value <= 1;
+                   end
+               end
+               else if(~pixel_captured)
+               begin
+                   if(log1_rised)
+                   begin
+                       log1_rised <= 0;
+                       data_ready_value <= 0;
+                       pixel_counter <= pixel_counter + 1;
+                       if(pixel_counter == `PIXELS_BUFFER_SIZE - 1)
+                          pixel_counter <= 0;
+                   end
+               end
+           end
         end
-    end
+	end
 	
 	function [31:0] pack_pixel_data;
 	
