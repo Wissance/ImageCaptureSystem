@@ -1,12 +1,19 @@
+#LINESCANNER PIXEL_CLOCK (INPUT)
 create_clock -period 20.000 -name LINESCANNER0_PIXEL_CLOCK -waveform {0.000 10.000} [get_ports LINESCANNER0_PIXEL_CLOCK]
 create_clock -period 20.000 -name LINESCANNER1_PIXEL_CLOCK -waveform {0.000 10.000} [get_ports LINESCANNER1_PIXEL_CLOCK]
-
 set_clock_groups -name async_clk_fpga_0_LINESCANNER0_PIXEL_CLOCK -asynchronous -group clk_fpga_0 -group LINESCANNER0_PIXEL_CLOCK
 set_clock_groups -name async_clk_fpga_0_LINESCANNER1_PIXEL_CLOCK -asynchronous -group clk_fpga_0 -group LINESCANNER1_PIXEL_CLOCK
-
+#CLOCK DIVIDER FOR LINESCANNERS
 create_generated_clock -name clock_divider_0_clock -source [get_pins image_capture_design_i/clock_divider_0/input_clock] -divide_by 2 [get_pins image_capture_design_i/clock_divider_0/output_clock]
+#CLOCK DIVIDER FOR AXI_QUAD_SPI
 create_generated_clock -name clock_divider_1_clock -source [get_pins image_capture_design_i/clock_divider_1/input_clock] -divide_by 5 [get_pins image_capture_design_i/clock_divider_1/output_clock]
-
+#LINESCANNERS MAIN CLOCK (OUTPUT)
+create_generated_clock -name image_capture_unit_0_main_clock_source -source [get_pins image_capture_design_i/clock_divider_0/output_clock] -divide_by 1 [get_pins image_capture_design_i/linescanner_image_capture_unit_0/main_clock_source]
+create_generated_clock -name image_capture_unit_1_main_clock_source -source [get_pins image_capture_design_i/clock_divider_0/output_clock] -divide_by 1 [get_pins image_capture_design_i/linescanner_image_capture_unit_1/main_clock_source]
+#STREAMCONVERTOR CLOCKS
+#create_clock -period 20.000 -name AXI_STREAM_FIFO0_PUSH_CLOCK -waveform {0.000 20.000} [get_pins image_capture_design_i/linescanner2stream_convertor_0/inst/linescanner2stream_convertor_M00_AXIS_inst/axi_stream_fifo/push_clock]
+create_clock -period 40.000 -name AXI_STREAM_CONVERTOR_1_FIFO_POP_CLOCK -waveform {0.000 20.000} [get_pins image_capture_design_i/linescanner2stream_convertor_1/inst/linescanner2stream_convertor_M00_AXIS_inst/axi_stream_fifo/CLK]
+#[get_pins image_capture_design_i/linescanner2stream_convertor_0/inst/linescanner2stream_convertor_M00_AXIS_inst/axi_stream_fifo/pop_clock]
 # input delays
 set_input_delay -clock [get_clocks LINESCANNER0_PIXEL_CLOCK] -min -add_delay 2.000 [get_ports LINESCANNER0_END_ADC]
 set_input_delay -clock [get_clocks LINESCANNER0_PIXEL_CLOCK] -max -add_delay 4.000 [get_ports LINESCANNER0_END_ADC]
@@ -63,16 +70,15 @@ set_output_delay -clock [get_clocks LINESCANNER1_PIXEL_CLOCK] -max -add_delay 3.
 set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports LINESCANNER_MOSI]
 set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports LINESCANNER_MOSI]
 
-set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports LINESCANNER_CS[0]]
-set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports LINESCANNER_CS[0]]
+set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports {LINESCANNER_CS[0]}]
+set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports {LINESCANNER_CS[0]}]
 
-set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports LINESCANNER_CS[1]]
-set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports LINESCANNER_CS[1]]
+set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports {LINESCANNER_CS[1]}]
+set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports {LINESCANNER_CS[1]}]
 
 set_output_delay -clock [get_clocks clock_divider_0_clock] -min -add_delay 0.000 [get_ports LINESCANNER_SCK]
 set_output_delay -clock [get_clocks clock_divider_0_clock] -max -add_delay 3.000 [get_ports LINESCANNER_SCK]
 
-set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets {LINESCANNER1_PIXEL_CLOCK_IBUF}]
 set_property PACKAGE_PIN K18 [get_ports {LINESCANNER0_TAP_A[6]}]
 set_property PACKAGE_PIN K15 [get_ports {LINESCANNER0_TAP_A[3]}]
 set_property PACKAGE_PIN R20 [get_ports {LINESCANNER0_TAP_A[0]}]
@@ -81,7 +87,6 @@ set_property PACKAGE_PIN B19 [get_ports LINESCANNER1_MAIN_CLOCK]
 set_property PACKAGE_PIN L18 [get_ports LINESCANNER0_PIXEL_CLOCK]
 set_property PACKAGE_PIN A16 [get_ports LINESCANNER1_RST_CDS]
 set_property PACKAGE_PIN R15 [get_ports LINESCANNER0_RST_CVC]
-set_property PACKAGE_PIN D20 [get_ports LINESCANNER1_END_ADC]
 set_property PACKAGE_PIN H15 [get_ports {LINESCANNER0_TAP_A[5]}]
 set_property PACKAGE_PIN M15 [get_ports {LINESCANNER0_N_RESET[0]}]
 set_property PACKAGE_PIN P17 [get_ports LINESCANNER0_LOAD_PULSE]
@@ -94,7 +99,7 @@ set_property PACKAGE_PIN J18 [get_ports LINESCANNER0_LVAL]
 set_property PACKAGE_PIN J20 [get_ports LINESCANNER0_RST_CDS]
 set_property PACKAGE_PIN H22 [get_ports {LINESCANNER1_TAP_A[0]}]
 set_property PACKAGE_PIN H17 [get_ports {LINESCANNER1_TAP_A[3]}]
-set_property PACKAGE_PIN C20 [get_ports LINESCANNER1_PIXEL_CLOCK]
+set_property PACKAGE_PIN D20 [get_ports LINESCANNER1_PIXEL_CLOCK]
 set_property PACKAGE_PIN E19 [get_ports {LINESCANNER1_TAP_A[6]}]
 set_property PACKAGE_PIN K19 [get_ports LINESCANNER0_END_ADC]
 set_property PACKAGE_PIN J16 [get_ports {LINESCANNER0_TAP_A[1]}]
@@ -113,3 +118,6 @@ set_property PACKAGE_PIN N19 [get_ports LINESCANNER_SCK]
 set_property PACKAGE_PIN G19 [get_ports {LINESCANNER_CS[1]}]
 set_property PACKAGE_PIN N22 [get_ports {LINESCANNER_CS[0]}]
 set_property PACKAGE_PIN N17 [get_ports LINESCANNER_MISO]
+
+set_property PACKAGE_PIN C20 [get_ports LINESCANNER1_END_ADC]
+set_property PACKAGE_PIN L17 [get_ports LINESCANNER_MOSI]
