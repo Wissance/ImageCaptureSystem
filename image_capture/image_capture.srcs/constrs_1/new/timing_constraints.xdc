@@ -8,8 +8,8 @@ create_generated_clock -name clock_divider_0_clock -source [get_pins image_captu
 #CLOCK DIVIDER FOR AXI_QUAD_SPI
 create_generated_clock -name clock_divider_1_clock -source [get_pins image_capture_design_i/clock_divider_1/input_clock] -divide_by 5 [get_pins image_capture_design_i/clock_divider_1/output_clock]
 #LINESCANNERS MAIN CLOCK (OUTPUT)
-create_generated_clock -name image_capture_unit_0_main_clock_source -source [get_pins image_capture_design_i/clock_divider_0/output_clock] -divide_by 1 [get_pins image_capture_design_i/linescanner_image_capture_unit_0/main_clock_source]
-create_generated_clock -name image_capture_unit_1_main_clock_source -source [get_pins image_capture_design_i/clock_divider_0/output_clock] -divide_by 1 [get_pins image_capture_design_i/linescanner_image_capture_unit_1/main_clock_source]
+#create_generated_clock -name image_capture_unit_0_main_clock_source -source [get_pins image_capture_design_i/clock_divider_0/output_clock] -divide_by 1 [get_pins image_capture_design_i/linescanner_image_capture_unit_0/main_clock_source]
+#create_generated_clock -name image_capture_unit_1_main_clock_source -source [get_pins image_capture_design_i/clock_divider_0/output_clock] -divide_by 1 [get_pins image_capture_design_i/linescanner_image_capture_unit_1/main_clock_source]
 #STREAMCONVERTOR CLOCKS
 #create_clock -period 20.000 -name AXI_STREAM_FIFO0_PUSH_CLOCK -waveform {0.000 20.000} [get_pins image_capture_design_i/linescanner2stream_convertor_0/inst/linescanner2stream_convertor_M00_AXIS_inst/axi_stream_fifo/push_clock]
 create_clock -period 40.000 -name AXI_STREAM_CONVERTOR_1_FIFO_POP_CLOCK -waveform {0.000 20.000} [get_pins image_capture_design_i/linescanner2stream_convertor_1/inst/linescanner2stream_convertor_M00_AXIS_inst/axi_stream_fifo/CLK]
