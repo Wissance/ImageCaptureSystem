@@ -11,11 +11,11 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1356000000001fs"></ZoomEndTime>
-      <Cursor1Time time="572000000000fs"></Cursor1Time>
+      <ZoomStartTime time="16899999999fs"></ZoomStartTime>
+      <ZoomEndTime time="2341900000000fs"></ZoomEndTime>
+      <Cursor1Time time="371000100000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="14" />
    <wvobject fp_name="/linescanner2stream_convertor_testbench/enable" type="logic">
       <obj_property name="ElementShortName">enable</obj_property>
       <obj_property name="ObjectShortName">enable</obj_property>
@@ -56,16 +56,20 @@
       <obj_property name="ElementShortName">axi_tstrb[3:0]</obj_property>
       <obj_property name="ObjectShortName">axi_tstrb[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/linescanner2stream_convertor_testbench/AXI_BUS_WIDTH" type="array">
-      <obj_property name="ElementShortName">AXI_BUS_WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">AXI_BUS_WIDTH[31:0]</obj_property>
+   <wvobject fp_name="/linescanner2stream_convertor_testbench/test_convertor/linescanner2stream_convertor_M00_AXIS_inst/DATA_READY" type="logic">
+      <obj_property name="ElementShortName">DATA_READY</obj_property>
+      <obj_property name="ObjectShortName">DATA_READY</obj_property>
    </wvobject>
    <wvobject fp_name="/linescanner2stream_convertor_testbench/test_convertor/linescanner2stream_convertor_M00_AXIS_inst/pop_clock" type="logic">
       <obj_property name="ElementShortName">pop_clock</obj_property>
       <obj_property name="ObjectShortName">pop_clock</obj_property>
    </wvobject>
-   <wvobject fp_name="/linescanner2stream_convertor_testbench/test_convertor/linescanner2stream_convertor_M00_AXIS_inst/DATA_READY" type="logic">
-      <obj_property name="ElementShortName">DATA_READY</obj_property>
-      <obj_property name="ObjectShortName">DATA_READY</obj_property>
+   <wvobject fp_name="/linescanner2stream_convertor_testbench/test_convertor/linescanner2stream_convertor_M00_AXIS_inst/clear_fifo" type="logic">
+      <obj_property name="ElementShortName">clear_fifo</obj_property>
+      <obj_property name="ObjectShortName">clear_fifo</obj_property>
+   </wvobject>
+   <wvobject fp_name="/linescanner2stream_convertor_testbench/test_convertor/output_data" type="array">
+      <obj_property name="ElementShortName">output_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">output_data[31:0]</obj_property>
    </wvobject>
 </wave_config>
