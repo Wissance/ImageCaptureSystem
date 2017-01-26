@@ -11,11 +11,11 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="16899999999fs"></ZoomStartTime>
-      <ZoomEndTime time="2341900000000fs"></ZoomEndTime>
-      <Cursor1Time time="371000100000fs"></Cursor1Time>
+      <ZoomStartTime time="62499999999fs"></ZoomStartTime>
+      <ZoomEndTime time="2387500000001fs"></ZoomEndTime>
+      <Cursor1Time time="380000100000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="14" />
+   <WVObjectSize size="16" />
    <wvobject fp_name="/linescanner2stream_convertor_testbench/enable" type="logic">
       <obj_property name="ElementShortName">enable</obj_property>
       <obj_property name="ObjectShortName">enable</obj_property>
@@ -71,5 +71,13 @@
    <wvobject fp_name="/linescanner2stream_convertor_testbench/test_convertor/output_data" type="array">
       <obj_property name="ElementShortName">output_data[31:0]</obj_property>
       <obj_property name="ObjectShortName">output_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/linescanner2stream_convertor_testbench/test_convertor/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/linescanner2stream_convertor_testbench/test_convertor/data_ready" type="logic">
+      <obj_property name="ElementShortName">data_ready</obj_property>
+      <obj_property name="ObjectShortName">data_ready</obj_property>
    </wvobject>
 </wave_config>
