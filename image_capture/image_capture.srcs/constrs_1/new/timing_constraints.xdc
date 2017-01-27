@@ -163,5 +163,5 @@ set_property IOSTANDARD LVCMOS33 [get_ports {LINESCANNER1_TAP_A[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports LINESCANNER1_SAMPLE]
 
 
-create_generated_clock -name data_ready_0_clock -source [get_pins image_capture_design_i/linescanner2stream_convertor_0/pixel_captured] -divide_by 4 [get_pins image_capture_design_i/linescanner2stream_convertor_0/inst/data_ready_trigger/C]
-create_generated_clock -name data_ready_1_clock -source [get_pins image_capture_design_i/linescanner2stream_convertor_1/pixel_captured] -divide_by 4 [get_pins image_capture_design_i/linescanner2stream_convertor_1/inst/data_ready_trigger/C]
+#create_generated_clock -name data_ready_0_clock -source [get_pins image_capture_design_i/linescanner2stream_convertor_0/pixel_captured] -divide_by 4 [get_pins image_capture_design_i/linescanner2stream_convertor_0/inst/data_ready_trigger/C]
+#create_generated_clock -name data_ready_1_clock -source [get_pins image_capture_design_i/linescanner2stream_convertor_1/pixel_captured] -divide_by 4 [get_pins image_capture_design_i/linescanner2stream_convertor_1/inst/data_ready_trigger/C]

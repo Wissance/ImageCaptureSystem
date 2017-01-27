@@ -11,11 +11,11 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="62499999999fs"></ZoomStartTime>
+      <ZoomStartTime time="62499999998fs"></ZoomStartTime>
       <ZoomEndTime time="2387500000001fs"></ZoomEndTime>
-      <Cursor1Time time="380000100000fs"></Cursor1Time>
+      <Cursor1Time time="2000000000000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="16" />
+   <WVObjectSize size="18" />
    <wvobject fp_name="/linescanner2stream_convertor_testbench/enable" type="logic">
       <obj_property name="ElementShortName">enable</obj_property>
       <obj_property name="ObjectShortName">enable</obj_property>
@@ -79,5 +79,13 @@
    <wvobject fp_name="/linescanner2stream_convertor_testbench/test_convertor/data_ready" type="logic">
       <obj_property name="ElementShortName">data_ready</obj_property>
       <obj_property name="ObjectShortName">data_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/linescanner2stream_convertor_testbench/test_convertor/linescanner2stream_convertor_M00_AXIS_inst/tvalid_value" type="logic">
+      <obj_property name="ElementShortName">tvalid_value</obj_property>
+      <obj_property name="ObjectShortName">tvalid_value</obj_property>
+   </wvobject>
+   <wvobject fp_name="/linescanner2stream_convertor_testbench/test_convertor/linescanner2stream_convertor_M00_AXIS_inst/tlast_value" type="logic">
+      <obj_property name="ElementShortName">tlast_value</obj_property>
+      <obj_property name="ObjectShortName">tlast_value</obj_property>
    </wvobject>
 </wave_config>

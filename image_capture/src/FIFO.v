@@ -62,7 +62,7 @@ module fifo #
                 fifo_data[counter] <= 0;
             position <= 0;
             data_count <= 0;    
-            popped_last_value <= 0;
+            popped_last_value <= 1;
             pushed_last_value <= 0;
             buffer <= 0;
         end
