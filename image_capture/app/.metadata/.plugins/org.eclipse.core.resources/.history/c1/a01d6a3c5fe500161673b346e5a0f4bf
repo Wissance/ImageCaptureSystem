@@ -1,0 +1,9 @@
+#ifndef SRC_HELPERS_AXIIOHELPER_H_
+#define SRC_HELPERS_AXIIOHELPER_H_
+
+void write();
+int read();
+
+
+
+#endif /* SRC_HELPERS_AXIIOHELPER_H_ */

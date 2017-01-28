@@ -1,0 +1,15 @@
+#include "axiIoHelper.h"
+
+void write(int baseAddress, int offset, int value)
+{
+
+}
+
+int read(int baseAddress, int offset)
+{
+    return 0;
+}
+
+
+
+

@@ -1,0 +1,20 @@
+#ifndef SRC_MANAGERS_IMAGECAPTUREMANAGER_H_
+#define SRC_MANAGERS_IMAGECAPTUREMANAGER_H_
+
+#include "data/ImageCaptureState.h"
+#include "data/dragsterConfig.h"
+
+struct ImageCaptureManager
+{
+public:
+	void initialize();
+	void startImageCapture();
+	void stopImageCapture();
+private:
+	ImageCaptureState _imageCaptureState();
+
+};
+
+
+
+#endif /* SRC_MANAGERS_IMAGECAPTUREMANAGER_H_ */

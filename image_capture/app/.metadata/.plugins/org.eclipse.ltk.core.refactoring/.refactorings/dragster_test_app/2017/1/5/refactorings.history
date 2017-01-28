@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;dragster_test_app/src/managers/ImageCaptureManager.h&apos; to &apos;imageCaptureManager.h&apos;" description="Rename resource &apos;ImageCaptureManager.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/managers/ImageCaptureManager.h" name="imageCaptureManager.h" stamp="1485615972853" updateReferences="true"/>
+</session>

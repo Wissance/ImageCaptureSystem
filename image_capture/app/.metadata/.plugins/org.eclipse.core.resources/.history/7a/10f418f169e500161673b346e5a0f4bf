@@ -1,0 +1,89 @@
+#ifndef SRC_DATA_DRAGSTERCONFIG_H_
+#define SRC_DATA_DRAGSTERCONFIG_H_
+
+struct DragsterControlRegister1
+{
+    union
+	{
+    	struct
+		{
+    		unsigned char _updateRequest : 1;     // bit 0
+    		unsigned char _mainClockDivider : 2;  // bit 1, 2
+    		unsigned char _dithering : 1;         // bit 3
+    		unsigned char _offsetSubtraction : 1; // bit 4
+    		unsigned char _saturationEnabled : 1; // bit 5
+    		unsigned char _adcMode : 1;           // bit 6
+    		unsigned char _vThreshold : 1;        // bit 7
+		};
+    	unsigned char _registerValue;
+	};
+};
+
+struct DragsterControlRegister2
+{
+    union
+	{
+    	struct
+		{
+    		unsigned char _autoGenerateLoadPulse : 1; // bit 0
+    		unsigned char _enableControlOffset : 1;   // bit 1
+    		unsigned char _writeOffset : 1;           // bit 2
+    		unsigned char _enableAntiblooming : 1;    // bit 3
+    		unsigned char _enableWhiteClamping : 1;   // bit 4
+    		unsigned char _analogGain : 1;            // bit 5
+    		unsigned char : 2;                        // bit 6, 7
+		};
+    	unsigned char _registerValue;
+	};
+};
+
+struct DragsterControlRegister3
+{
+    union
+	{
+    	struct
+		{
+    		unsigned char _pixelClockEnablede : 1; // bit 0
+    		unsigned char _reLinearization : 1;    // bit 1
+    		unsigned char _enableOffsetSram : 1;   // bit 2
+    		unsigned char _bandgapSwitch : 3;      // bit 3, 4, 5
+    		unsigned char : 2;                     // bit 6, 7
+		};
+    	unsigned char _registerValue;
+	};
+};
+
+struct DragsterConfig
+{
+public:
+    DragsterControlRegister1 getControlRegister1() {return _controlRegister1;}
+    void setControlRegister1(unsigned char value) {_controlRegister1._registerValue = value;}
+    DragsterControlRegister2 getControlRegister2() {return _controlRegister2;}
+    void setControlRegister2(unsigned char value) {_controlRegister2._registerValue = value;}
+    DragsterControlRegister3 getControlRegister3() {return _controlRegister3;}
+    void setControlRegister3(unsigned char value) {_controlRegister3._registerValue = value;}
+    unsigned char getAdcGainRegister() {return _adcGainRegister;}
+    void setAdcGainRegister(unsigned char value){_adcGainRegister = value;}
+    unsigned char getOffsetRegister() {return _offsetRegister;}
+    unsigned char getThresholdRegister1() {return _thresholdRegister1;}
+    unsigned char getThresholdRegister2() {return _thresholdRegister2;}
+    unsigned char getThresholdRegister3() {return _thresholdRegister3;}
+    unsigned char getEnfOfRangeRegister3() {return _endOfRangeRegister;}
+    unsigned char getTestMultiplexorRegister3() {return _testMultiplexorRegister;}
+private:
+    DragsterControlRegister1 _controlRegister1;
+    DragsterControlRegister2 _controlRegister2;
+    DragsterControlRegister3 _controlRegister3;
+    unsigned char _adcGainRegister;
+    unsigned char _offsetRegister;
+    unsigned char _thresholdRegister1;
+    unsigned char _thresholdRegister2;
+    unsigned char _thresholdRegister3;
+    unsigned char _endOfRangeRegister;
+    unsigned char _testMultiplexorRegister;
+};
+
+
+
+
+#endif /* SRC_DATA_DRAGSTERCONFIG_H_ */

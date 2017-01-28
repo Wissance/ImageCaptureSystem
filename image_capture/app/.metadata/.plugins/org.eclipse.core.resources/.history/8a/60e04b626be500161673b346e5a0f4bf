@@ -1,0 +1,7 @@
+#include "imageCaptureManager.h"
+
+
+ImageCaptureManager::initialize()
+{
+
+}

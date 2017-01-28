@@ -1,0 +1,13 @@
+#ifndef SRC_MANAGERS_IMAGECAPTUREMANAGER_H_
+#define SRC_MANAGERS_IMAGECAPTUREMANAGER_H_
+
+#include "data/ImageCaptureState.h"
+
+struct ImageCaptureManager
+{
+
+};
+
+
+
+#endif /* SRC_MANAGERS_IMAGECAPTUREMANAGER_H_ */

@@ -1,0 +1,11 @@
+#ifndef SRC_MANAGERS_IMAGECAPTUREMANAGER_H_
+#define SRC_MANAGERS_IMAGECAPTUREMANAGER_H_
+
+struct ImageCaptureManager
+{
+
+};
+
+
+
+#endif /* SRC_MANAGERS_IMAGECAPTUREMANAGER_H_ */
