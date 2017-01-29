@@ -13,7 +13,9 @@ public:
 	void stopImageCapture();
 private:
 	void initializeSpi();
-
+	void initializeDragsters();
+	void initializeDragsterImpl();
+private:
 	XSpi _spi;
 	ImageCaptureState _imageCaptureState;
     DragsterConfig _linescanner0Config;
