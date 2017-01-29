@@ -13,8 +13,8 @@ public:
 	void stopImageCapture();
 private:
 	void initializeSpi();
-	XSpi _spi;
 
+	XSpi _spi;
 	ImageCaptureState _imageCaptureState;
     DragsterConfig _linescanner0Config;
     DragsterConfig _linescanner1Config;

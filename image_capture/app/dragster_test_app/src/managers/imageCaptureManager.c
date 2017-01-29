@@ -1,6 +1,7 @@
 #include "imageCaptureManager.h"
 
 #define SPI_DEVICE_ID XPAR_SPI_0_DEVICE_ID
+#define IMAGE_CAPTURE_MANAGER_BASE_ADDRESS 0x43C00000
 
 void ImageCaptureManager::initialize()
 {
@@ -9,12 +10,14 @@ void ImageCaptureManager::initialize()
 
 void ImageCaptureManager::startImageCapture()
 {
-
+	Xil_Out32(IMAGE_CAPTURE_MANAGER_BASE_ADDRESS, 1);
+	xil_printf("\n Image Capture Manager has been started\n\r");
 }
 
 void ImageCaptureManager::stopImageCapture()
 {
-
+	Xil_Out32(IMAGE_CAPTURE_MANAGER_BASE_ADDRESS, 2);
+	xil_printf("\n Image Capture Manager has been stopped\n\r");
 }
 
 /* Инициализация SPI в блокирующем режиме (polling mode)*/
@@ -43,5 +46,4 @@ void ImageCaptureManager::initializeSpi()
 	/* Деактивируем SPI прерывания */
 	XSpi_IntrGlobalDisable(&_spi);
 }
-
 
