@@ -8,16 +8,18 @@
 struct ImageCaptureManager
 {
 public:
-	void initialize();
-	void startImageCapture();
-	void stopImageCapture();
+    void initialize();
+    void startImageCapture();
+    void stopImageCapture();
 private:
-	void initializeSpi();
-	void initializeDragsters();
-	void initializeDragsterImpl(int dragsterSlaveSelectMask);
+    void initializeSpi();
+    void initializeDragsters();
+    void initializeDragsterImpl(int dragsterSlaveSelectMask);
+    void sendDragsterRegisterValue(unsigned char address, unsigned char value);
+    void endDragsterTransaction();
 private:
-	XSpi _spi;
-	ImageCaptureState _imageCaptureState;
+    XSpi _spi;
+    ImageCaptureState _imageCaptureState;
     DragsterConfig _linescanner0Config;
     DragsterConfig _linescanner1Config;
 };

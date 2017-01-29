@@ -1,6 +1,20 @@
 #ifndef SRC_DATA_DRAGSTERCONFIG_H_
 #define SRC_DATA_DRAGSTERCONFIG_H_
 
+#define CONTROL_REGISTER_1_ADDRESS        0x01
+#define CONTROL_REGISTER_2_ADDRESS        0x02
+#define ADC_GAIN_REGISTER_ADDRESS         0x03
+#define OFFSET_REGISTER_1_ADDRESS         0x04
+#define CONTROL_REGISTER_3_ADDRESS        0x05
+#define THRESHOLD_REGISTER_1_ADDRESS      0x06
+#define THRESHOLD_REGISTER_2_ADDRESS      0x07
+#define THRESHOLD_REGISTER_3_ADDRESS      0x08
+#define END_OF_RANGE_REGISTER_ADDRESS     0x09
+#define TEST_MULTIPLEXOR_REGISTER_ADDRESS 0x0A
+
+unsigned char convertFromMsbToLsbFirst(unsigned char byte);
+unsigned char convertFromLsbToMsbFirst(unsigned char byte);
+
 struct DragsterControlRegister1
 {
     union

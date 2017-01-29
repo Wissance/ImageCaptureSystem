@@ -8,6 +8,8 @@
 #define LINESCANNER0_SLAVE_SELECT 1
 #define LINESCANNER1_SLAVE_SELECT 2
 
+u8 readBuffer[2];
+u8 writeBuffer[2];
 
 void ImageCaptureManager::initialize()
 {
@@ -63,6 +65,8 @@ void ImageCaptureManager::initializeDragsters()
 {
 	initializeDragsterImpl(LINESCANNER0_SLAVE_SELECT);
 	initializeDragsterImpl(LINESCANNER1_SLAVE_SELECT);
+	// deselecting any slave
+    XSpi_SetSlaveSelect(&_spi, 0);
 }
 
 void ImageCaptureManager::initializeDragsterImpl(int dragsterSlaveSelectMask)
@@ -70,6 +74,29 @@ void ImageCaptureManager::initializeDragsterImpl(int dragsterSlaveSelectMask)
     int status = XSpi_SetSlaveSelect(&_spi, dragsterSlaveSelectMask);
     if(status == XST_SUCCESS)
     {
-        // write dragster config
+        // Запись конфигурации регистров Dragster
+        // CONTROL Register 2
+    	sendDragsterRegisterValue(CONTROL_REGISTER_2_ADDRESS, 0x32);
+        // CONTROL Register 3
+    	sendDragsterRegisterValue(CONTROL_REGISTER_3_ADDRESS, 0x13);
+        // End of Data Register
+    	sendDragsterRegisterValue(END_OF_RANGE_REGISTER_ADDRESS, 0x08);  // 8 bit pixels value
+        // CONTROL Register 1
+    	sendDragsterRegisterValue(CONTROL_REGISTER_1_ADDRESS, 0xA9);
+        // 0 byte (must generate at least 3 clk before SS is disabled)
+        endDragsterTransaction();
 	}
+}
+
+void ImageCaptureManager::sendDragsterRegisterValue(unsigned char address, unsigned char value)
+{
+    writeBuffer[0] = convertFromMsbToLsbFirst(address);
+    writeBuffer[1] = convertFromMsbToLsbFirst(value);
+    XSpi_Transfer(&_spi, writeBuffer, NULL, 2);
+}
+
+void ImageCaptureManager::endDragsterTransaction()
+{
+	writeBuffer[0] = 0;
+	XSpi_Transfer(&_spi, writeBuffer, NULL, 1);
 }
