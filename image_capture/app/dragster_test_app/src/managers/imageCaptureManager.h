@@ -14,7 +14,7 @@ public:
 private:
 	void initializeSpi();
 	void initializeDragsters();
-	void initializeDragsterImpl();
+	void initializeDragsterImpl(int dragsterSlaveSelectMask);
 private:
 	XSpi _spi;
 	ImageCaptureState _imageCaptureState;
