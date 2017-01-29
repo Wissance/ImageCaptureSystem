@@ -3,6 +3,7 @@
 
 #include "imageCaptureState.h"
 #include "dragsterConfig.h"
+#include "xspi.h"
 
 struct ImageCaptureManager
 {
@@ -11,6 +12,9 @@ public:
 	void startImageCapture();
 	void stopImageCapture();
 private:
+	void initializeSpi();
+	XSpi _spi;
+
 	ImageCaptureState _imageCaptureState;
     DragsterConfig _linescanner0Config;
     DragsterConfig _linescanner1Config;
