@@ -32,7 +32,7 @@ void ImageCaptureManager::initializeSpi()
 	if(status != XST_SUCCESS)
 		xil_printf("\n XSpi_CfgInitialize Failed\n\r");
 
-	/* По умолчанию SPI является Slave, опция ниже конфигурирует его как Master
+	/* По умолчанию SPI является Slave, опция ниже конфигурирует его как Master */
 	/* status = XSpi_SetOptions(&Spi, XSP_MASTER_OPTION);
 	if(Status != XST_SUCCESS) {
 		xil_printf("\n XSpi_SetOptions Failed\n\r"); */
