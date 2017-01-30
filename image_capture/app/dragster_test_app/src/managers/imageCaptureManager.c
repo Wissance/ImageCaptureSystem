@@ -74,6 +74,7 @@ void ImageCaptureManager::initializeDragsterImpl(int dragsterSlaveSelectMask)
     int status = XSpi_SetSlaveSelect(&_spi, dragsterSlaveSelectMask);
     if(status == XST_SUCCESS)
     {
+    	// todo: umv: read from fields
         // Запись конфигурации регистров Dragster
         // CONTROL Register 2
     	sendDragsterRegisterValue(CONTROL_REGISTER_2_ADDRESS, 0x32);

@@ -8,5 +8,9 @@
 int main()
 {
 	printf("Application started\n\r");
+	ImageCaptureManager systemManager;
+	systemManager.initialize();
+	systemManager.startImageCapture();
+	while(1);
 	return 0;
 }
