@@ -85,11 +85,13 @@ module linescanner_image_capture_unit(
                   
                 SM1_SEND_RE_OF_SAMPLE:
                 begin
-                    sample <= 1'b1;
+                    if(end_adc) begin
+                        sample <= 1'b1;
                     
-                    sm1_state <= SM1_WAIT_NUM_CLOCKS;
-                    sm1_state_to_go_to_after_waiting <= SM1_SEND_FE_OF_SAMPLE;
-                    sm1_num_clocks_to_wait <= 48;
+                        sm1_state <= SM1_WAIT_NUM_CLOCKS;
+                        sm1_state_to_go_to_after_waiting <= SM1_SEND_FE_OF_SAMPLE;
+                        sm1_num_clocks_to_wait <= 48;
+                    end
                 end
                    
                 SM1_SEND_FE_OF_SAMPLE:
