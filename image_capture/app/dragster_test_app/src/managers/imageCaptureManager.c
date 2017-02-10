@@ -77,13 +77,15 @@ void ImageCaptureManager::initializeDragsterImpl(int dragsterSlaveSelectMask)
     	// todo: umv: read from fields
         // Запись конфигурации регистров Dragster
         // CONTROL Register 2
-    	sendDragsterRegisterValue(CONTROL_REGISTER_2_ADDRESS, 0x32);
+    	sendDragsterRegisterValue(CONTROL_REGISTER_2_ADDRESS, 0x33);
+    			                                             //0x32);
         // CONTROL Register 3
     	sendDragsterRegisterValue(CONTROL_REGISTER_3_ADDRESS, 0x13);
         // End of Data Register
     	sendDragsterRegisterValue(END_OF_RANGE_REGISTER_ADDRESS, 0x08);  // 8 bit pixels value
         // CONTROL Register 1
-    	sendDragsterRegisterValue(CONTROL_REGISTER_1_ADDRESS, 0xA9);
+    	sendDragsterRegisterValue(CONTROL_REGISTER_1_ADDRESS, 0xAD);
+    			                                             //0xA9);
         // 0 byte (must generate at least 3 clk before SS is disabled)
         endDragsterTransaction();
 	}
@@ -91,8 +93,10 @@ void ImageCaptureManager::initializeDragsterImpl(int dragsterSlaveSelectMask)
 
 void ImageCaptureManager::sendDragsterRegisterValue(unsigned char address, unsigned char value)
 {
-    writeBuffer[0] = convertFromMsbToLsbFirst(address);
-    writeBuffer[1] = convertFromMsbToLsbFirst(value);
+	unsigned char convertedAddress = convertFromMsbToLsbFirst(address);
+    writeBuffer[1] = convertedAddress;
+    unsigned char convertedValue = convertFromMsbToLsbFirst(value);
+    writeBuffer[0] = convertedValue;
     XSpi_Transfer(&_spi, writeBuffer, NULL, 2);
 }
 

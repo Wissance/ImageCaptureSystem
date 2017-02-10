@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="E:\oms\VideoControlIP\image_capture\image_capture.runs\impl_1\image_capture_design_wrapper.bit" key="image_capture_design_wrapper_hw_platform_1-bitFile"/>
+	<item value="Local" key="image_capture_design_wrapper_hw_platform_1-target"/>
+	<item value="Local" key="image_capture_design_wrapper_hw_platform_0-target"/>
+	<item value="" key="image_capture_design_wrapper_hw_platform_1-bmmFile"/>
+	<item value="false" key="image_capture_design_wrapper_hw_platform_1-partial_bit"/>
+	<item value="false" key="image_capture_design_wrapper_hw_platform_0-partial_bit"/>
+	<item value="image_capture_design_wrapper_hw_platform_1" key="programfpga.hwplatform"/>
+	<item value="" key="image_capture_design_wrapper_hw_platform_0-bmmFile"/>
+	<item value="Auto Detect" key="image_capture_design_wrapper_hw_platform_0-device"/>
+	<item value="Auto Detect" key="image_capture_design_wrapper_hw_platform_1-device"/>
+	<item value="E:\oms\VideoControlIP\image_capture\image_capture.runs\impl_1\image_capture_design_wrapper.bit" key="image_capture_design_wrapper_hw_platform_0-bitFile"/>
+</section>
