@@ -89,7 +89,7 @@ set_property PACKAGE_PIN A16 [get_ports LINESCANNER1_RST_CDS]
 set_property PACKAGE_PIN R15 [get_ports LINESCANNER0_RST_CVC]
 set_property PACKAGE_PIN H15 [get_ports {LINESCANNER0_TAP_A[5]}]
 set_property PACKAGE_PIN M15 [get_ports {LINESCANNER0_N_RESET[0]}]
-set_property PACKAGE_PIN P17 [get_ports LINESCANNER0_LOAD_PULSE]
+set_property PACKAGE_PIN P16 [get_ports LINESCANNER0_LOAD_PULSE]
 set_property PACKAGE_PIN H19 [get_ports {LINESCANNER1_TAP_A[7]}]
 set_property PACKAGE_PIN F18 [get_ports LINESCANNER1_RST_CVC]
 set_property PACKAGE_PIN G20 [get_ports {LINESCANNER1_TAP_A[4]}]
@@ -116,7 +116,7 @@ set_property PACKAGE_PIN M19 [get_ports LINESCANNER0_MAIN_CLOCK]
 
 set_property PACKAGE_PIN N19 [get_ports LINESCANNER_SCK]
 set_property PACKAGE_PIN G19 [get_ports {LINESCANNER_CS[1]}]
-set_property PACKAGE_PIN N22 [get_ports {LINESCANNER_CS[0]}]
+set_property PACKAGE_PIN P17 [get_ports {LINESCANNER_CS[0]}]
 set_property PACKAGE_PIN N17 [get_ports LINESCANNER_MISO]
 
 set_property PACKAGE_PIN C20 [get_ports LINESCANNER1_END_ADC]
@@ -165,3 +165,4 @@ set_property IOSTANDARD LVCMOS33 [get_ports LINESCANNER1_SAMPLE]
 
 #create_generated_clock -name data_ready_0_clock -source [get_pins image_capture_design_i/linescanner2stream_convertor_0/pixel_captured] -divide_by 4 [get_pins image_capture_design_i/linescanner2stream_convertor_0/inst/data_ready_trigger/C]
 #create_generated_clock -name data_ready_1_clock -source [get_pins image_capture_design_i/linescanner2stream_convertor_1/pixel_captured] -divide_by 4 [get_pins image_capture_design_i/linescanner2stream_convertor_1/inst/data_ready_trigger/C]
+

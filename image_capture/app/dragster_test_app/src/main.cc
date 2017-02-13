@@ -11,6 +11,7 @@ int main()
 	ImageCaptureManager systemManager;
 	systemManager.initialize();
 	systemManager.startImageCapture();
-	while(1);
+	//while(1);
+	systemManager.stopImageCapture();
 	return 0;
 }

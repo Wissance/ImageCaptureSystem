@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "clock_divider,Vivado 2016.2" *)
 (* CHECK_LICENSE_TYPE = "image_capture_design_clock_divider_1_0,clock_divider,{}" *)
-(* CORE_GENERATION_INFO = "image_capture_design_clock_divider_1_0,clock_divider,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=clock_divider,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,clock_division=2}" *)
+(* CORE_GENERATION_INFO = "image_capture_design_clock_divider_1_0,clock_divider,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=clock_divider,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,clock_division=4}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module image_capture_design_clock_divider_1_0 (
   input_clock,
@@ -65,7 +65,7 @@ input wire input_clock;
 output wire output_clock;
 
   clock_divider #(
-    .clock_division(2)
+    .clock_division(4)
   ) inst (
     .input_clock(input_clock),
     .output_clock(output_clock)
