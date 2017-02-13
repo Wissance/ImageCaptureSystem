@@ -64,7 +64,7 @@ input wire input_clock;
 output wire output_clock;
 
   clock_divider #(
-    .clock_division(2)
+    .clock_division(4)
   ) inst (
     .input_clock(input_clock),
     .output_clock(output_clock)

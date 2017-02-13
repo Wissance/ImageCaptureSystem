@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+//`timescale 1ns / 1ps
 //`include ".\src\linescanner2stream_convertor_M00_AXIS.v"
 `define PIXELS_BUFFER_SIZE 4
 `define BYTE_SIZE 8
@@ -38,7 +38,6 @@ module linescanner2stream_convertor #
     input wire enable,
     input wire [7:0] input_data,
     input wire pixel_captured,
-    // output wire data_ready,
     // User ports ends
     // Do not modify the ports beyond this line
 
@@ -51,28 +50,21 @@ module linescanner2stream_convertor #
      output wire  m00_axis_tlast,
      input wire  m00_axis_tready
 );
+    wire data_ready;
+    wire reset;
+    reg [1:0] byte_number;
+    reg[C_M00_AXIS_TDATA_WIDTH - 1 : 0] output_data;
+    supply1 vcc;
+    supply0 gnd;
 
-	// Add user logic here
-	wire data_ready_net;
-	reg log1_rised = 0;
-	reg data_ready_value = 0;
-	reg[7:0] pixel_counter = 0;
-	reg[C_M00_AXIS_TDATA_WIDTH - 1 : 0] output_data;
-	reg[7:0] pixel_data_ready_delay;
-	
-	integer int_buffer;
-	
-	initial data_ready_value = 0;
-	initial pixel_counter = 0;
-	initial output_data = 0;
-	 	
-	assign data_ready_net = data_ready_value;
-	
+    FDCE data_ready_trigger(.C(~byte_number[1]), .CE(enable), .CLR(reset), .D(vcc), .Q(data_ready));
+    FDCE data_ready_hold_trigger(.C(m00_axis_aclk), .CE(enable), .CLR(gnd), .D(data_ready), .Q(reset));
+    
     // Instantiation of Axi Bus Interface M00_AXIS
     linescanner2stream_convertor_M00_AXIS # (.C_M_AXIS_TDATA_WIDTH(C_M00_AXIS_TDATA_WIDTH), .C_M_START_COUNT(C_M00_AXIS_START_COUNT)) 
-         linescanner2stream_convertor_M00_AXIS_inst (
+        linescanner2stream_convertor_M00_AXIS_inst (
             .DATA_SOURCE(output_data),
-            .DATA_READY(data_ready_net),
+            .DATA_READY(data_ready),
             .M_AXIS_ACLK(m00_axis_aclk),
             .M_AXIS_ARESETN(m00_axis_aresetn),
             .M_AXIS_TVALID(m00_axis_tvalid),
@@ -81,44 +73,23 @@ module linescanner2stream_convertor #
             .M_AXIS_TLAST(m00_axis_tlast),
             .M_AXIS_TREADY(m00_axis_tready)
         );   
-	always @(posedge m00_axis_aclk)
-	begin
-	    if(!m00_axis_aresetn)
+    
+    always@ (negedge pixel_captured)
+    begin
+        if(!m00_axis_aresetn)
         begin
-           data_ready_value <= 0;
-           pixel_counter <= 0;
-           output_data <= 0;
-           log1_rised <= 0;
+            output_data = 0;
+            byte_number = 0;
         end
         else
         begin
-           if(enable)
-           begin
-               if(pixel_captured)
-               begin
-                   if(~log1_rised)
-                   begin
-                       log1_rised <= 1;
-                       int_buffer = input_data;
-                       output_data <= pack_pixel_data(pixel_counter, input_data);
-                       if(pixel_counter == `PIXELS_BUFFER_SIZE - 1)
-                           data_ready_value <= 1;
-                   end
-               end
-               else if(~pixel_captured)
-               begin
-                   if(log1_rised)
-                   begin
-                       log1_rised <= 0;
-                       data_ready_value <= 0;
-                       pixel_counter <= pixel_counter + 1;
-                       if(pixel_counter == `PIXELS_BUFFER_SIZE - 1)
-                          pixel_counter <= 0;
-                   end
-               end
-           end
+            if(enable)
+            begin
+                output_data = pack_pixel_data(byte_number, input_data);
+                byte_number = byte_number + 1;
+            end
         end
-	end
+    end
 	
 	function [31:0] pack_pixel_data;
 	
