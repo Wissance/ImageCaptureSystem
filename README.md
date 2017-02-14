@@ -1,4 +1,4 @@
-# VideoControlIP
+# ImageCpatureSystem
 Xilinx IP Core for Zynq 7k SoC for 2 channel image capture from CMOSIS/AWAIBA/Dragster linescanners.
 Data stored in separate RAM Area for each channel.
 
