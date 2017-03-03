@@ -8,8 +8,13 @@
 #define LINESCANNER0_SLAVE_SELECT 1
 #define LINESCANNER1_SLAVE_SELECT 2
 
+#define DRAGSTER_LINE_LENGTH 2048
+
 #define VDMA_DEVICE_1_ID XPAR_AXI_VDMA_0_DEVICE_ID
 #define VDMA_DEVICE_2_ID XPAR_AXI_VDMA_1_DEVICE_ID
+
+#define VDMA_1_BASE_ADDRESS 0x00000000
+#define VDMA_2_BASE_ADDRESS 0x01000000
 
 u8 readBuffer[2];
 u8 writeBuffer[2];
@@ -37,8 +42,8 @@ void ImageCaptureManager::stopImageCapture()
 
 void ImageCaptureManager::initializeVdmaDevices()
 {
-	initializeVdmaDevice(&_vdma1, VDMA_DEVICE_1_ID);
-	initializeVdmaDevice(&_vdma2, VDMA_DEVICE_2_ID);
+	initializeVdmaDevice(&_vdma1, VDMA_DEVICE_1_ID, VDMA_1_BASE_ADDRESS);
+	initializeVdmaDevice(&_vdma2, VDMA_DEVICE_2_ID, VDMA_2_BASE_ADDRESS);
 }
 
 /* Инициализация SPI в блокирующем режиме (polling mode)*/
@@ -115,7 +120,7 @@ void ImageCaptureManager::endDragsterTransaction()
 	XSpi_Transfer(&_spi, writeBuffer, NULL, 1);
 }
 
-void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, int deviceId)
+void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, int deviceId, int baseAddress)
 {
 	/* Acquire device configuration. */
 	XAxiVdma_Config* vdmaConfig = XAxiVdma_LookupConfig(deviceId);
@@ -132,14 +137,14 @@ void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, int deviceId)
 
     /* Width(in bytes). Set this parameter to 2048 as DR-2k-7LCC
      * has 1x2048 pixels and size of each pixel is 1 byte. */
-    writeChannelConfig.HoriSizeInput = 2048;
+    writeChannelConfig.HoriSizeInput = DRAGSTER_LINE_LENGTH;
 
     /* Height. In our case it is always 1. */
     writeChannelConfig.VertSizeInput = 1;
 
     /* Stride. Specifies the number of bytes between
      * the first pixels of each horizontal line. */
-    writeChannelConfig.Stride = writeChannelConfig.HoriSizeInput;
+    writeChannelConfig.Stride = DRAGSTER_LINE_LENGTH;
 
     /* Circular buffer mode. We most definitely want it to be enabled. */
     writeChannelConfig.EnableCircularBuf = 1;
@@ -161,6 +166,18 @@ void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, int deviceId)
     status = XAxiVdma_DmaConfig(vdma, XAXIVDMA_WRITE, &writeChannelConfig);
     if (status != XST_SUCCESS)
     	xil_printf("\n XAxiVdma_DmaConfig Failed\r\n");
+
+    /* Set start addresses for 3 buffers */
+    int address = baseAddress;
+    for(size_t i = 0; i < 3; ++i)
+    {
+    	writeChannelConfig.FrameStoreStartAddr[i] = address;
+    	address += DRAGSTER_LINE_LENGTH;
+    }
+
+    status = XAxiVdma_DmaSetBufferAddr(vdma, XAXIVDMA_WRITE, writeChannelConfig.FrameStoreStartAddr);
+    if (status != XST_SUCCESS)
+    	xil_printf("\n XAxiVdma_DmaSetBufferAddr Failed\r\n");
 }
 
 
