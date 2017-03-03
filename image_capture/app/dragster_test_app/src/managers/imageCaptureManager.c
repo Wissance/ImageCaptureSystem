@@ -37,25 +37,8 @@ void ImageCaptureManager::stopImageCapture()
 
 void ImageCaptureManager::initializeVdmaDevices()
 {
-	// Получаем конфигурацию для первого устройства
-	XAxiVdma_Config* vdma_1_config = XAxiVdma_LookupConfig(VDMA_DEVICE_1_ID);
-	if(!vdma_1_config)
-		xil_printf("\n XAxiVdma_LookupConfig(VDMA_DEVICE_1_ID) Failed\n\r");
-
-	// Получаем конфигурацию для второго устройства
-	XAxiVdma_Config* vdma_2_config = XAxiVdma_LookupConfig(VDMA_DEVICE_2_ID);
-	if(!vdma_2_config)
-		xil_printf("\n XAxiVdma_LookupConfig(VDMA_DEVICE_2_ID) Failed\n\r");
-
-	// Инициализируем первое устройство
-    int status = XAxiVdma_CfgInitialize(&_vdma1, vdma_1_config, vdma_1_config->BaseAddress);
-    if (status != XST_SUCCESS)
-    	xil_printf("XAxiVdma_CfgInitialize(vdma1, vdma_1_config, vdma_1_config->BaseAddress) Failed %d\r\n");
-
-    // Инициализируем второе устройство
-    status = XAxiVdma_CfgInitialize(&_vdma2, vdma_2_config, vdma_2_config->BaseAddress);
-    if (status != XST_SUCCESS)
-    	xil_printf("XAxiVdma_CfgInitialize(vdma2, vdma_2_config, vdma_2_config->BaseAddress) Failed %d\r\n");
+	initializeVdmaDevice(&_vdma1, VDMA_DEVICE_1_ID);
+	initializeVdmaDevice(&_vdma2, VDMA_DEVICE_2_ID);
 }
 
 /* Инициализация SPI в блокирующем режиме (polling mode)*/
@@ -131,3 +114,57 @@ void ImageCaptureManager::endDragsterTransaction()
 	writeBuffer[0] = 0;
 	XSpi_Transfer(&_spi, writeBuffer, NULL, 1);
 }
+
+void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, int deviceId)
+{
+	/* Acquire device configuration. */
+	XAxiVdma_Config* vdmaConfig = XAxiVdma_LookupConfig(deviceId);
+	if(!vdmaConfig)
+		xil_printf("\n XAxiVdma_LookupConfig Failed\n\r");
+
+	/* Initialize device. */
+    int status = XAxiVdma_CfgInitialize(vdma, vdmaConfig, vdmaConfig->BaseAddress);
+    if (status != XST_SUCCESS)
+    	xil_printf("\n XAxiVdma_CfgInitialize Failed\r\n");
+
+    /* Create channel configuration. */
+    XAxiVdma_DmaSetup writeChannelConfig;
+
+    /* Width(in bytes). Set this parameter to 2048 as DR-2k-7LCC
+     * has 1x2048 pixels and size of each pixel is 1 byte. */
+    writeChannelConfig.HoriSizeInput = 2048;
+
+    /* Height. In our case it is always 1. */
+    writeChannelConfig.VertSizeInput = 1;
+
+    /* Stride. Specifies the number of bytes between
+     * the first pixels of each horizontal line. */
+    writeChannelConfig.Stride = writeChannelConfig.HoriSizeInput;
+
+    /* Circular buffer mode. We most definitely want it to be enabled. */
+    writeChannelConfig.EnableCircularBuf = 1;
+
+    /* Frame delay. Set it to 0 for now. */
+    writeChannelConfig.FrameDelay = 0;
+
+    // Gen-Lock parameters. Set them to 0 for now.
+    writeChannelConfig.EnableSync = 0;
+    writeChannelConfig.PointNum = 0;
+
+    // Frame counter. Set it to 0 as we dont need it so far.
+    writeChannelConfig.EnableFrameCounter = 0;
+
+    // Fixed frame store address. Used for parking.
+    writeChannelConfig.FixedFrameStoreAddr = 0;
+
+    /* Configure VDMA write channel. */
+    status = XAxiVdma_DmaConfig(vdma, XAXIVDMA_WRITE, &writeChannelConfig);
+    if (status != XST_SUCCESS)
+    	xil_printf("\n XAxiVdma_DmaConfig Failed\r\n");
+}
+
+
+
+
+
+
