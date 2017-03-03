@@ -10,11 +10,11 @@
 
 #define DRAGSTER_LINE_LENGTH 2048
 
-#define VDMA_DEVICE_1_ID XPAR_AXI_VDMA_0_DEVICE_ID
-#define VDMA_DEVICE_2_ID XPAR_AXI_VDMA_1_DEVICE_ID
+#define VDMA_1_DEVICE_ID XPAR_AXI_VDMA_0_DEVICE_ID
+#define VDMA_2_DEVICE_ID XPAR_AXI_VDMA_1_DEVICE_ID
 
-#define VDMA_1_BASE_ADDRESS 0x00000000
-#define VDMA_2_BASE_ADDRESS 0x01000000
+#define VDMA_1_MEMORY_BASE_ADDRESS 0x00000000
+#define VDMA_2_MEMORY_BASE_ADDRESS 0x01000000
 
 u8 readBuffer[2];
 u8 writeBuffer[2];
@@ -42,8 +42,8 @@ void ImageCaptureManager::stopImageCapture()
 
 void ImageCaptureManager::initializeVdmaDevices()
 {
-	initializeVdmaDevice(&_vdma1, VDMA_DEVICE_1_ID, VDMA_1_BASE_ADDRESS);
-	initializeVdmaDevice(&_vdma2, VDMA_DEVICE_2_ID, VDMA_2_BASE_ADDRESS);
+	initializeVdmaDevice(&_vdma1, VDMA_1_DEVICE_ID, VDMA_1_MEMORY_BASE_ADDRESS);
+	initializeVdmaDevice(&_vdma2, VDMA_2_DEVICE_ID, VDMA_2_MEMORY_BASE_ADDRESS);
 }
 
 /* Инициализация SPI в блокирующем режиме (polling mode)*/
@@ -120,7 +120,7 @@ void ImageCaptureManager::endDragsterTransaction()
 	XSpi_Transfer(&_spi, writeBuffer, NULL, 1);
 }
 
-void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, int deviceId, int baseAddress)
+void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 baseAddress)
 {
 	/* Acquire device configuration. */
 	XAxiVdma_Config* vdmaConfig = XAxiVdma_LookupConfig(deviceId);
@@ -133,49 +133,49 @@ void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, int deviceId, int
     	xil_printf("\n XAxiVdma_CfgInitialize Failed\r\n");
 
     /* Create channel configuration. */
-    XAxiVdma_DmaSetup writeChannelConfig;
+    XAxiVdma_DmaSetup setup;
 
     /* Width(in bytes). Set this parameter to 2048 as DR-2k-7LCC
      * has 1x2048 pixels and size of each pixel is 1 byte. */
-    writeChannelConfig.HoriSizeInput = DRAGSTER_LINE_LENGTH;
+    setup.HoriSizeInput = DRAGSTER_LINE_LENGTH;
 
     /* Height. In our case it is always 1. */
-    writeChannelConfig.VertSizeInput = 1;
+    setup.VertSizeInput = 1;
 
     /* Stride. Specifies the number of bytes between
      * the first pixels of each horizontal line. */
-    writeChannelConfig.Stride = DRAGSTER_LINE_LENGTH;
+    setup.Stride = DRAGSTER_LINE_LENGTH;
 
     /* Circular buffer mode. We most definitely want it to be enabled. */
-    writeChannelConfig.EnableCircularBuf = 1;
+    setup.EnableCircularBuf = 1;
 
     /* Frame delay. Set it to 0 for now. */
-    writeChannelConfig.FrameDelay = 0;
+    setup.FrameDelay = 0;
 
     // Gen-Lock parameters. Set them to 0 for now.
-    writeChannelConfig.EnableSync = 0;
-    writeChannelConfig.PointNum = 0;
+    setup.EnableSync = 0;
+    setup.PointNum = 0;
 
     // Frame counter. Set it to 0 as we dont need it so far.
-    writeChannelConfig.EnableFrameCounter = 0;
+    setup.EnableFrameCounter = 0;
 
     // Fixed frame store address. Used for parking.
-    writeChannelConfig.FixedFrameStoreAddr = 0;
+    setup.FixedFrameStoreAddr = 0;
 
     /* Configure VDMA write channel. */
-    status = XAxiVdma_DmaConfig(vdma, XAXIVDMA_WRITE, &writeChannelConfig);
+    status = XAxiVdma_DmaConfig(vdma, XAXIVDMA_WRITE, &setup);
     if (status != XST_SUCCESS)
     	xil_printf("\n XAxiVdma_DmaConfig Failed\r\n");
 
     /* Set start addresses for 3 buffers */
-    int address = baseAddress;
+    u32 address = baseAddress;
     for(size_t i = 0; i < 3; ++i)
     {
-    	writeChannelConfig.FrameStoreStartAddr[i] = address;
+    	setup.FrameStoreStartAddr[i] = address;
     	address += DRAGSTER_LINE_LENGTH;
     }
 
-    status = XAxiVdma_DmaSetBufferAddr(vdma, XAXIVDMA_WRITE, writeChannelConfig.FrameStoreStartAddr);
+    status = XAxiVdma_DmaSetBufferAddr(vdma, XAXIVDMA_WRITE, setup.FrameStoreStartAddr);
     if (status != XST_SUCCESS)
     	xil_printf("\n XAxiVdma_DmaSetBufferAddr Failed\r\n");
 }
