@@ -8,11 +8,15 @@
 #define LINESCANNER0_SLAVE_SELECT 1
 #define LINESCANNER1_SLAVE_SELECT 2
 
+#define VDMA_DEVICE_1_ID XPAR_AXI_VDMA_0_DEVICE_ID
+#define VDMA_DEVICE_2_ID XPAR_AXI_VDMA_1_DEVICE_ID
+
 u8 readBuffer[2];
 u8 writeBuffer[2];
 
 void ImageCaptureManager::initialize()
 {
+	initializeVdmaDevices();
 	initializeSpi();
 	initializeDragsters();
 }
@@ -29,6 +33,29 @@ void ImageCaptureManager::stopImageCapture()
 	//Xil_Out32(IMAGE_CAPTURE_MANAGER_BASE_ADDRESS, 2);
 	write(IMAGE_CAPTURE_MANAGER_BASE_ADDRESS, 0, STOP_COMMAND);
 	xil_printf("\n Image Capture Manager has been stopped\n\r");
+}
+
+void ImageCaptureManager::initializeVdmaDevices()
+{
+	// Получаем конфигурацию для первого устройства
+	XAxiVdma_Config* vdma_1_config = XAxiVdma_LookupConfig(VDMA_DEVICE_1_ID);
+	if(!vdma_1_config)
+		xil_printf("\n XAxiVdma_LookupConfig(VDMA_DEVICE_1_ID) Failed\n\r");
+
+	// Получаем конфигурацию для второго устройства
+	XAxiVdma_Config* vdma_2_config = XAxiVdma_LookupConfig(VDMA_DEVICE_2_ID);
+	if(!vdma_2_config)
+		xil_printf("\n XAxiVdma_LookupConfig(VDMA_DEVICE_2_ID) Failed\n\r");
+
+	// Инициализируем первое устройство
+    int status = XAxiVdma_CfgInitialize(&_vdma1, vdma_1_config, vdma_1_config->BaseAddress);
+    if (status != XST_SUCCESS)
+    	xil_printf("XAxiVdma_CfgInitialize(vdma1, vdma_1_config, vdma_1_config->BaseAddress) Failed %d\r\n");
+
+    // Инициализируем второе устройство
+    status = XAxiVdma_CfgInitialize(&_vdma2, vdma_2_config, vdma_2_config->BaseAddress);
+    if (status != XST_SUCCESS)
+    	xil_printf("XAxiVdma_CfgInitialize(vdma2, vdma_2_config, vdma_2_config->BaseAddress) Failed %d\r\n");
 }
 
 /* Инициализация SPI в блокирующем режиме (polling mode)*/
