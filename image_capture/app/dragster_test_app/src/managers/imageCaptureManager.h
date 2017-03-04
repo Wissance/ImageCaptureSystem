@@ -5,6 +5,9 @@
 #include "dragsterConfig.h"
 #include "xaxivdma.h"
 #include "xspi.h"
+#include "xintc.h"
+#include "xil_exception.h"
+#include "xil_assert.h"
 
 struct ImageCaptureManager
 {
@@ -14,6 +17,7 @@ public:
     void stopImageCapture();
 private:
     void initializeVdmaDevices();
+    void configureAllVdmaInterrupts();
     void initializeSpi();
     void initializeDragsters();
     void initializeDragsterImpl(int dragsterSlaveSelectMask);
@@ -21,8 +25,13 @@ private:
     void endDragsterTransaction();
 private:
     void initializeVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memoryBaseAddress);
+    void connectInterruptHandlerToVdma(XAxiVdma* vdma, u16 writeChannelInterruptId);
+    void setVdmaCallbacks(XAxiVdma* vdma, XAxiVdma_CallBack writeCallback, XAxiVdma_CallBack writeErrorCallback);
+
     XAxiVdma _vdma1;
     XAxiVdma _vdma2;
+    XIntc _interruptController;
+
     XSpi _spi;
 
     ImageCaptureState _imageCaptureState;

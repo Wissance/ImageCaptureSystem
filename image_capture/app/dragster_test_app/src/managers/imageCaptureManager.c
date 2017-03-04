@@ -3,19 +3,41 @@
 
 #define SPI_DEVICE_ID XPAR_SPI_0_DEVICE_ID
 #define IMAGE_CAPTURE_MANAGER_BASE_ADDRESS 0x43C00000
+
 #define START_COMMAND 1
 #define STOP_COMMAND 2
+
 #define LINESCANNER0_SLAVE_SELECT 1
 #define LINESCANNER1_SLAVE_SELECT 2
 
 #define VDMA_1_DEVICE_ID XPAR_AXI_VDMA_0_DEVICE_ID
 #define VDMA_2_DEVICE_ID XPAR_AXI_VDMA_1_DEVICE_ID
+
 #define VDMA_1_MEMORY_BASE_ADDRESS 0x00000000
 #define VDMA_2_MEMORY_BASE_ADDRESS 0x01000000
+
 #define DRAGSTER_LINE_LENGTH 2048
 
 u8 readBuffer[2];
 u8 writeBuffer[2];
+
+/* Callbacks for first VDMA*/
+static void Vdma1WriteCallBack(void* CallbackRef, u32 Mask)
+{
+	// Do something with frame produced by first VDMA
+	u8* frameBuffer = (u8*)VDMA_1_MEMORY_BASE_ADDRESS;
+}
+
+static void Vdma1WriteErrorCallBack(void* CallbackRef, u32 Mask){}
+
+/* Callbacks for second VDMA */
+static void Vdma2WriteCallBack(void* CallbackRef, u32 Mask)
+{
+	// Do something with frame produced by second VDMA
+	u8* frameBuffer = (u8*)VDMA_2_MEMORY_BASE_ADDRESS;
+}
+
+static void Vdma2WriteErrorCallBack(void* CallbackRef, u32 Mask){}
 
 void ImageCaptureManager::initialize()
 {
@@ -42,6 +64,33 @@ void ImageCaptureManager::initializeVdmaDevices()
 {
 	initializeVdmaDevice(&_vdma1, VDMA_1_DEVICE_ID, VDMA_1_MEMORY_BASE_ADDRESS);
 	initializeVdmaDevice(&_vdma2, VDMA_2_DEVICE_ID, VDMA_2_MEMORY_BASE_ADDRESS);
+
+	configureAllVdmaInterrupts();
+}
+
+void ImageCaptureManager::configureAllVdmaInterrupts()
+{
+	/* Initialize the interrupt controller */
+	int status = XIntc_Initialize(&_interruptController, XPAR_INTC_0_DEVICE_ID);
+	if (status != XST_SUCCESS)
+		xil_printf("\n XIntc_Initialize Failed\r\n");
+
+	connectInterruptHandlerToVdma(&_vdma1, XPAR_INTC_0_AXIVDMA_0_S2MM_INTROUT_VEC_ID);
+	connectInterruptHandlerToVdma(&_vdma2, XPAR_INTC_0_AXIVDMA_1_S2MM_INTROUT_VEC_ID);
+
+	status = XIntc_Start(&_interruptController, XIN_REAL_MODE);
+	if (status != XST_SUCCESS)
+		xil_printf("\n XIntc_Start Failed\r\n");
+
+	XIntc_Enable(&_interruptController, writeChannelInterruptId);
+	Xil_ExceptionInit();
+	Xil_ExceptionRegisterHandler(
+			XIL_EXCEPTION_ID_INT(Xil_ExceptionHandler)XIntc_InterruptHandler,
+			(void*)interruptController);
+	Xil_ExceptionEnable();
+
+	setVdmaCallbacks(_vdma1, Vdma1WriteCallBack);
+	setVdmaCallbacks(_vdma2, Vdma1WriteErrorCallBack);
 }
 
 /* Инициализация SPI в блокирующем режиме (polling mode)*/
@@ -176,8 +225,27 @@ void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32
     	xil_printf("\n XAxiVdma_DmaSetBufferAddr Failed\r\n");
 }
 
+void ImageCaptureManager::connectInterruptHandlerToVdma(XAxiVdma* vdma, u16 writeChannelInterruptId)
+{
+	int status = XIntc_Connect(
+			&_interruptController,
+			writeChannelInterruptId,
+			(XInterruptHandler)XAxiVdma_WriteIntrHandler,
+			vdma);
 
+	if (status != XST_SUCCESS)
+		xil_printf("\n XIntc_Connect Failed\r\n");
+}
 
+void ImageCaptureManager::setVdmaCallbacks(
+		XAxiVdma* vdma,
+		XAxiVdma_CallBack writeCallback,
+		XAxiVdma_CallBack writeErrorCallback)
+{
+	/* Set VDMA callbacks */
+	XAxiVdma_SetCallBack(vdma, XAXIVDMA_HANDLER_GENERAL, (void*)writeCallback, (void*)vdma, XAXIVDMA_WRITE);
+	XAxiVdma_SetCallBack(vdma, XAXIVDMA_HANDLER_ERROR, (void*)writeErrorCallback, (void*)vdma, XAXIVDMA_WRITE);
+}
 
 
 
