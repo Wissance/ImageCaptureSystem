@@ -16,28 +16,32 @@
 #define VDMA_1_MEMORY_BASE_ADDRESS 0x00000000
 #define VDMA_2_MEMORY_BASE_ADDRESS 0x01000000
 
-#define DRAGSTER_LINE_LENGTH 2048
+#define INTERRUPT_CONTROLLER_DEVICE_ID XPAR_SCUGIC_SINGLE_DEVICE_ID
+
+#define VDMA_1_WRITE_INTERRUPT_ID XPAR_FABRIC_AXI_VDMA_0_S2MM_INTROUT_INTR
+#define VDMA_2_WRITE_INTERRUPT_ID XPAR_FABRIC_AXI_VDMA_1_S2MM_INTROUT_INTR
+
+#define DRAGSTER_LINE_LENGTH 1024
 
 u8 readBuffer[2];
 u8 writeBuffer[2];
 
 /* Callbacks for first VDMA*/
-static void Vdma1WriteCallBack(void* CallbackRef, u32 Mask)
+static void Vdma1WriteCallback(void* CallbackRef, u32 Mask)
 {
 	// Do something with frame produced by first VDMA
 	u8* frameBuffer = (u8*)VDMA_1_MEMORY_BASE_ADDRESS;
 }
 
-static void Vdma1WriteErrorCallBack(void* CallbackRef, u32 Mask){}
-
 /* Callbacks for second VDMA */
-static void Vdma2WriteCallBack(void* CallbackRef, u32 Mask)
+static void Vdma2WriteCallback(void* CallbackRef, u32 Mask)
 {
 	// Do something with frame produced by second VDMA
 	u8* frameBuffer = (u8*)VDMA_2_MEMORY_BASE_ADDRESS;
 }
 
-static void Vdma2WriteErrorCallBack(void* CallbackRef, u32 Mask){}
+static void Vdma1WriteErrorCallback(void* CallbackRef, u32 Mask){}
+static void Vdma2WriteErrorCallback(void* CallbackRef, u32 Mask){}
 
 void ImageCaptureManager::initialize()
 {
@@ -62,35 +66,126 @@ void ImageCaptureManager::stopImageCapture()
 
 void ImageCaptureManager::initializeVdmaDevices()
 {
-	initializeVdmaDevice(&_vdma1, VDMA_1_DEVICE_ID, VDMA_1_MEMORY_BASE_ADDRESS);
-	initializeVdmaDevice(&_vdma2, VDMA_2_DEVICE_ID, VDMA_2_MEMORY_BASE_ADDRESS);
-
-	configureAllVdmaInterrupts();
+	setupVdmaDevice(&_vdma1, VDMA_1_DEVICE_ID, VDMA_1_MEMORY_BASE_ADDRESS);
+	setupVdmaDevice(&_vdma2, VDMA_2_DEVICE_ID, VDMA_2_MEMORY_BASE_ADDRESS);
+	configureVdmaInterrupts();
 }
 
-void ImageCaptureManager::configureAllVdmaInterrupts()
+void ImageCaptureManager::setupVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memoryBaseAddress)
 {
-	/* Initialize the interrupt controller */
-	int status = XIntc_Initialize(&_interruptController, XPAR_INTC_0_DEVICE_ID);
+	/* Acquire device configuration. */
+	XAxiVdma_Config* config = XAxiVdma_LookupConfig(deviceId);
+	if(!config)
+		xil_printf("\n XAxiVdma_LookupConfig Failed\n\r");
+
+	/* Initialize device. */
+    int status = XAxiVdma_CfgInitialize(vdma, config, config->BaseAddress);
+    if (status != XST_SUCCESS)
+    	xil_printf("\n XAxiVdma_CfgInitialize Failed\r\n");
+
+    /* Create channel configuration. */
+    XAxiVdma_DmaSetup setup;
+
+    /* Width(in bytes). Set this parameter to 1024 as DR-2k-7LCC
+     * has 1x2048 pixels, we use half, and size of each pixel is 1 byte. */
+    setup.HoriSizeInput = DRAGSTER_LINE_LENGTH;
+
+    /* Height(in lines). In our case it is always 1. */
+    setup.VertSizeInput = 1;
+
+    /* Stride. Specifies the number of bytes between
+     * the first pixels of each horizontal line. */
+    setup.Stride = DRAGSTER_LINE_LENGTH;
+
+    /* Circular buffer mode. We most definitely want it to be enabled. */
+    setup.EnableCircularBuf = 1;
+
+    /* Frame delay. Set it to 0 for now. */
+    setup.FrameDelay = 0;
+
+    // Gen-Lock parameters. Set them to 0 for now.
+    setup.EnableSync = 0;
+    setup.PointNum = 0;
+
+    // Frame counter. Set it to 0 as we dont need it so far.
+    setup.EnableFrameCounter = 0;
+
+    // Fixed frame store address. Used for parking.
+    setup.FixedFrameStoreAddr = 0;
+
+    /* Configure VDMA write channel. */
+    status = XAxiVdma_DmaConfig(vdma, XAXIVDMA_WRITE, &setup);
+    if (status != XST_SUCCESS)
+    	xil_printf("\n XAxiVdma_DmaConfig Failed\r\n");
+
+    /* Set start address for 1 buffer. */
+    *setup.FrameStoreStartAddr = memoryBaseAddress;
+
+    /* Function which actually configures buffer addresses per channel.
+     * I assume it can be done earlier. I mean I believe XAxiVdma_DmaConfig
+     * can configure buffer addresses too, but unfortunately I cannot test it so far.*/
+    status = XAxiVdma_DmaSetBufferAddr(vdma, XAXIVDMA_WRITE, setup.FrameStoreStartAddr);
+    if (status != XST_SUCCESS)
+    	xil_printf("\n XAxiVdma_DmaSetBufferAddr Failed\r\n");
+}
+
+void ImageCaptureManager::configureVdmaInterrupts()
+{
+	XScuGic_Config* config = XScuGic_LookupConfig(INTERRUPT_CONTROLLER_DEVICE_ID);
+	if(!config)
+		xil_printf("\n XScuGic_LookupConfig failed \r\n");
+
+	int status = XScuGic_CfgInitialize(&_interruptController, config, config->CpuBaseAddress);
 	if (status != XST_SUCCESS)
-		xil_printf("\n XIntc_Initialize Failed\r\n");
+		xil_printf("\n XScuGic_CfgInitialize \r\n");
 
-	connectInterruptHandlerToVdma(&_vdma1, XPAR_INTC_0_AXIVDMA_0_S2MM_INTROUT_VEC_ID);
-	connectInterruptHandlerToVdma(&_vdma2, XPAR_INTC_0_AXIVDMA_1_S2MM_INTROUT_VEC_ID);
+	/* Set priority and trigger type.
+	 * Priority range: 0...248.
+	 * Trigger types:
+	 *     Software-generated Interrupts(SFI): 2(always);
+	 *     Private Peripheral Interrupt(PPI): 1(Active HIGH), 3(Rising edge);
+	 *     Shared Peripheral Interrupts(SPI): 1(Active HIGH), 3(Rising edge);*/
 
-	status = XIntc_Start(&_interruptController, XIN_REAL_MODE);
+	XScuGic_SetPriorityTriggerType(&_interruptController, VDMA_1_WRITE_INTERRUPT_ID, 0xA0, 0x3);
+	XScuGic_SetPriorityTriggerType(&_interruptController, VDMA_2_WRITE_INTERRUPT_ID, 0xA0, 0x3);
+
+	status = XScuGic_Connect(
+			&_interruptController,
+			VDMA_1_WRITE_INTERRUPT_ID,
+			(Xil_InterruptHandler)XAxiVdma_WriteIntrHandler,
+			&_vdma1);
+
 	if (status != XST_SUCCESS)
-		xil_printf("\n XIntc_Start Failed\r\n");
+		xil_printf("\n XScuGic_Connect failed (VDMA 1) \r\n");
 
-	XIntc_Enable(&_interruptController, writeChannelInterruptId);
+	status = XScuGic_Connect(
+			&_interruptController,
+			VDMA_2_WRITE_INTERRUPT_ID,
+			(Xil_InterruptHandler)XAxiVdma_WriteIntrHandler,
+			&_vdma2);
+
+	if (status != XST_SUCCESS)
+		xil_printf("\n XScuGic_Connect failed (VDMA 2) \r\n");
+
+	XScuGic_Enable(&_interruptController, VDMA_1_WRITE_INTERRUPT_ID);
+	XScuGic_Enable(&_interruptController, VDMA_2_WRITE_INTERRUPT_ID);
+
 	Xil_ExceptionInit();
 	Xil_ExceptionRegisterHandler(
-			XIL_EXCEPTION_ID_INT(Xil_ExceptionHandler)XIntc_InterruptHandler,
-			(void*)interruptController);
+			XIL_EXCEPTION_ID_IRQ_INT,
+			(Xil_ExceptionHandler)XScuGic_InterruptHandler,
+			&_interruptController);
+
 	Xil_ExceptionEnable();
 
-	setVdmaCallbacks(_vdma1, Vdma1WriteCallBack);
-	setVdmaCallbacks(_vdma2, Vdma1WriteErrorCallBack);
+	XAxiVdma_SetCallBack(&_vdma1, XAXIVDMA_HANDLER_GENERAL, (void*)Vdma1WriteCallback, (void*)&_vdma1, XAXIVDMA_WRITE);
+	XAxiVdma_SetCallBack(&_vdma2, XAXIVDMA_HANDLER_GENERAL, (void*)Vdma2WriteCallback, (void*)&_vdma2, XAXIVDMA_WRITE);
+
+	XAxiVdma_SetCallBack(&_vdma1, XAXIVDMA_HANDLER_ERROR, (void*)Vdma1WriteErrorCallback, (void*)&_vdma1, XAXIVDMA_WRITE);
+	XAxiVdma_SetCallBack(&_vdma2, XAXIVDMA_HANDLER_ERROR, (void*)Vdma2WriteErrorCallback, (void*)&_vdma2, XAXIVDMA_WRITE);
+
+	XAxiVdma_IntrEnable(&_vdma1, XAXIVDMA_IXR_ALL_MASK, XAXIVDMA_WRITE);
+	XAxiVdma_IntrEnable(&_vdma2, XAXIVDMA_IXR_ALL_MASK, XAXIVDMA_WRITE);
 }
 
 /* Инициализация SPI в блокирующем режиме (polling mode)*/
@@ -166,86 +261,5 @@ void ImageCaptureManager::endDragsterTransaction()
 	writeBuffer[0] = 0;
 	XSpi_Transfer(&_spi, writeBuffer, NULL, 1);
 }
-
-void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memoryBaseAddress)
-{
-	/* Acquire device configuration. */
-	XAxiVdma_Config* vdmaConfig = XAxiVdma_LookupConfig(deviceId);
-	if(!vdmaConfig)
-		xil_printf("\n XAxiVdma_LookupConfig Failed\n\r");
-
-	/* Initialize device. */
-    int status = XAxiVdma_CfgInitialize(vdma, vdmaConfig, vdmaConfig->BaseAddress);
-    if (status != XST_SUCCESS)
-    	xil_printf("\n XAxiVdma_CfgInitialize Failed\r\n");
-
-    /* Create channel configuration. */
-    XAxiVdma_DmaSetup setup;
-
-    /* Width(in bytes). Set this parameter to 2048 as DR-2k-7LCC
-     * has 1x2048 pixels and size of each pixel is 1 byte. */
-    setup.HoriSizeInput = DRAGSTER_LINE_LENGTH;
-
-    /* Height(in lines). In our case it is always 1. */
-    setup.VertSizeInput = 1;
-
-    /* Stride. Specifies the number of bytes between
-     * the first pixels of each horizontal line. */
-    setup.Stride = DRAGSTER_LINE_LENGTH;
-
-    /* Circular buffer mode. We most definitely want it to be enabled. */
-    setup.EnableCircularBuf = 1;
-
-    /* Frame delay. Set it to 0 for now. */
-    setup.FrameDelay = 0;
-
-    // Gen-Lock parameters. Set them to 0 for now.
-    setup.EnableSync = 0;
-    setup.PointNum = 0;
-
-    // Frame counter. Set it to 0 as we dont need it so far.
-    setup.EnableFrameCounter = 0;
-
-    // Fixed frame store address. Used for parking.
-    setup.FixedFrameStoreAddr = 0;
-
-    /* Configure VDMA write channel. */
-    status = XAxiVdma_DmaConfig(vdma, XAXIVDMA_WRITE, &setup);
-    if (status != XST_SUCCESS)
-    	xil_printf("\n XAxiVdma_DmaConfig Failed\r\n");
-
-    /* Set start address for 1 buffer. */
-    setup.FrameStoreStartAddr[0] = memoryBaseAddress;
-
-    /* Function which actually configures buffer addresses per channel.
-     * I assume it can be done earlier. I mean I believe XAxiVdma_DmaConfig
-     * can configure buffer addresses too, but unfortunately I cannot test it so far.*/
-    status = XAxiVdma_DmaSetBufferAddr(vdma, XAXIVDMA_WRITE, setup.FrameStoreStartAddr);
-    if (status != XST_SUCCESS)
-    	xil_printf("\n XAxiVdma_DmaSetBufferAddr Failed\r\n");
-}
-
-void ImageCaptureManager::connectInterruptHandlerToVdma(XAxiVdma* vdma, u16 writeChannelInterruptId)
-{
-	int status = XIntc_Connect(
-			&_interruptController,
-			writeChannelInterruptId,
-			(XInterruptHandler)XAxiVdma_WriteIntrHandler,
-			vdma);
-
-	if (status != XST_SUCCESS)
-		xil_printf("\n XIntc_Connect Failed\r\n");
-}
-
-void ImageCaptureManager::setVdmaCallbacks(
-		XAxiVdma* vdma,
-		XAxiVdma_CallBack writeCallback,
-		XAxiVdma_CallBack writeErrorCallback)
-{
-	/* Set VDMA callbacks */
-	XAxiVdma_SetCallBack(vdma, XAXIVDMA_HANDLER_GENERAL, (void*)writeCallback, (void*)vdma, XAXIVDMA_WRITE);
-	XAxiVdma_SetCallBack(vdma, XAXIVDMA_HANDLER_ERROR, (void*)writeErrorCallback, (void*)vdma, XAXIVDMA_WRITE);
-}
-
 
 

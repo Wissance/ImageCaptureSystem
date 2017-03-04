@@ -5,7 +5,7 @@
 #include "dragsterConfig.h"
 #include "xaxivdma.h"
 #include "xspi.h"
-#include "xintc.h"
+#include "xscugic.h"
 #include "xil_exception.h"
 #include "xil_assert.h"
 
@@ -17,23 +17,19 @@ public:
     void stopImageCapture();
 private:
     void initializeVdmaDevices();
-    void configureAllVdmaInterrupts();
+    void setupVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memoryBaseAddress);
+    void configureVdmaInterrupts();
     void initializeSpi();
     void initializeDragsters();
     void initializeDragsterImpl(int dragsterSlaveSelectMask);
     void sendDragsterRegisterValue(unsigned char address, unsigned char value);
     void endDragsterTransaction();
 private:
-    void initializeVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memoryBaseAddress);
-    void connectInterruptHandlerToVdma(XAxiVdma* vdma, u16 writeChannelInterruptId);
-    void setVdmaCallbacks(XAxiVdma* vdma, XAxiVdma_CallBack writeCallback, XAxiVdma_CallBack writeErrorCallback);
-
     XAxiVdma _vdma1;
     XAxiVdma _vdma2;
-    XIntc _interruptController;
+    XScuGic _interruptController;
 
     XSpi _spi;
-
     ImageCaptureState _imageCaptureState;
     DragsterConfig _linescanner0Config;
     DragsterConfig _linescanner1Config;
