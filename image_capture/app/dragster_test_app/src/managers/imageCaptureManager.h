@@ -20,7 +20,7 @@ private:
     void sendDragsterRegisterValue(unsigned char address, unsigned char value);
     void endDragsterTransaction();
 private:
-    void initializeVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 baseAddress);
+    void initializeVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memoryBaseAddress);
     XAxiVdma _vdma1;
     XAxiVdma _vdma2;
     XSpi _spi;

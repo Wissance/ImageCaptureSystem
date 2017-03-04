@@ -8,13 +8,11 @@
 #define LINESCANNER0_SLAVE_SELECT 1
 #define LINESCANNER1_SLAVE_SELECT 2
 
-#define DRAGSTER_LINE_LENGTH 2048
-
 #define VDMA_1_DEVICE_ID XPAR_AXI_VDMA_0_DEVICE_ID
 #define VDMA_2_DEVICE_ID XPAR_AXI_VDMA_1_DEVICE_ID
-
 #define VDMA_1_MEMORY_BASE_ADDRESS 0x00000000
 #define VDMA_2_MEMORY_BASE_ADDRESS 0x01000000
+#define DRAGSTER_LINE_LENGTH 2048
 
 u8 readBuffer[2];
 u8 writeBuffer[2];
@@ -120,7 +118,7 @@ void ImageCaptureManager::endDragsterTransaction()
 	XSpi_Transfer(&_spi, writeBuffer, NULL, 1);
 }
 
-void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 baseAddress)
+void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memoryBaseAddress)
 {
 	/* Acquire device configuration. */
 	XAxiVdma_Config* vdmaConfig = XAxiVdma_LookupConfig(deviceId);
@@ -139,7 +137,7 @@ void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32
      * has 1x2048 pixels and size of each pixel is 1 byte. */
     setup.HoriSizeInput = DRAGSTER_LINE_LENGTH;
 
-    /* Height. In our case it is always 1. */
+    /* Height(in lines). In our case it is always 1. */
     setup.VertSizeInput = 1;
 
     /* Stride. Specifies the number of bytes between
@@ -167,14 +165,12 @@ void ImageCaptureManager::initializeVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32
     if (status != XST_SUCCESS)
     	xil_printf("\n XAxiVdma_DmaConfig Failed\r\n");
 
-    /* Set start addresses for 3 buffers */
-    u32 address = baseAddress;
-    for(size_t i = 0; i < 3; ++i)
-    {
-    	setup.FrameStoreStartAddr[i] = address;
-    	address += DRAGSTER_LINE_LENGTH;
-    }
+    /* Set start address for 1 buffer. */
+    setup.FrameStoreStartAddr[0] = memoryBaseAddress;
 
+    /* Function which actually configures buffer addresses per channel.
+     * I assume it can be done earlier. I mean I believe XAxiVdma_DmaConfig
+     * can configure buffer addresses too, but unfortunately I cannot test it so far.*/
     status = XAxiVdma_DmaSetBufferAddr(vdma, XAXIVDMA_WRITE, setup.FrameStoreStartAddr);
     if (status != XST_SUCCESS)
     	xil_printf("\n XAxiVdma_DmaSetBufferAddr Failed\r\n");
