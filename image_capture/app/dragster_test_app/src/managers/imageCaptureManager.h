@@ -19,6 +19,7 @@ private:
     void initializeVdmaDevices();
     void setupVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memoryBaseAddress);
     void configureVdmaInterrupts();
+
     void initializeSpi();
     void initializeDragsters();
     void initializeDragsterImpl(int dragsterSlaveSelectMask);

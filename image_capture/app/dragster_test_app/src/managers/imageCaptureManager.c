@@ -26,17 +26,16 @@
 u8 readBuffer[2];
 u8 writeBuffer[2];
 
-/* Callbacks for first VDMA*/
+/* Callbacks */
 static void Vdma1WriteCallback(void* CallbackRef, u32 Mask)
 {
-	// Do something with frame produced by first VDMA
+	// Do something with a frame produced by first VDMA
 	u8* frameBuffer = (u8*)VDMA_1_MEMORY_BASE_ADDRESS;
 }
 
-/* Callbacks for second VDMA */
 static void Vdma2WriteCallback(void* CallbackRef, u32 Mask)
 {
-	// Do something with frame produced by second VDMA
+	// Do something with a frame produced by second VDMA
 	u8* frameBuffer = (u8*)VDMA_2_MEMORY_BASE_ADDRESS;
 }
 
@@ -73,21 +72,21 @@ void ImageCaptureManager::initializeVdmaDevices()
 
 void ImageCaptureManager::setupVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memoryBaseAddress)
 {
-	/* Acquire device configuration. */
+	/* Acquire a device configuration. */
 	XAxiVdma_Config* config = XAxiVdma_LookupConfig(deviceId);
 	if(!config)
 		xil_printf("\n XAxiVdma_LookupConfig Failed\n\r");
 
-	/* Initialize device. */
+	/* Initialize a device. */
     int status = XAxiVdma_CfgInitialize(vdma, config, config->BaseAddress);
     if (status != XST_SUCCESS)
     	xil_printf("\n XAxiVdma_CfgInitialize Failed\r\n");
 
-    /* Create channel configuration. */
+    /* Create a channel configuration. */
     XAxiVdma_DmaSetup setup;
 
     /* Width(in bytes). Set this parameter to 1024 as DR-2k-7LCC
-     * has 1x2048 pixels, we use half, and size of each pixel is 1 byte. */
+     * has 1x2048 pixels, we use half, and the size of each pixel is 1 byte. */
     setup.HoriSizeInput = DRAGSTER_LINE_LENGTH;
 
     /* Height(in lines). In our case it is always 1. */
