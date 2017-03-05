@@ -51,6 +51,8 @@ void ImageCaptureManager::initialize()
 
 void ImageCaptureManager::startImageCapture()
 {
+	startVdmaTransfer();
+
 	//Xil_Out32(IMAGE_CAPTURE_MANAGER_BASE_ADDRESS, 1);
 	write(IMAGE_CAPTURE_MANAGER_BASE_ADDRESS, 0, START_COMMAND);
 	xil_printf("\n Image Capture Manager has been started\n\r");
@@ -58,6 +60,8 @@ void ImageCaptureManager::startImageCapture()
 
 void ImageCaptureManager::stopImageCapture()
 {
+	stopVdmaTransfer();
+
 	//Xil_Out32(IMAGE_CAPTURE_MANAGER_BASE_ADDRESS, 2);
 	write(IMAGE_CAPTURE_MANAGER_BASE_ADDRESS, 0, STOP_COMMAND);
 	xil_printf("\n Image Capture Manager has been stopped\n\r");
@@ -75,12 +79,12 @@ void ImageCaptureManager::setupVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memo
 	/* Acquire a device configuration. */
 	XAxiVdma_Config* config = XAxiVdma_LookupConfig(deviceId);
 	if(!config)
-		xil_printf("\n XAxiVdma_LookupConfig Failed\n\r");
+		xil_printf("\n XAxiVdma_LookupConfig failed\n\r");
 
 	/* Initialize a device. */
     int status = XAxiVdma_CfgInitialize(vdma, config, config->BaseAddress);
     if (status != XST_SUCCESS)
-    	xil_printf("\n XAxiVdma_CfgInitialize Failed\r\n");
+    	xil_printf("\n XAxiVdma_CfgInitialize failed\r\n");
 
     /* Create a channel configuration. */
     XAxiVdma_DmaSetup setup;
@@ -115,7 +119,7 @@ void ImageCaptureManager::setupVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memo
     /* Configure VDMA write channel. */
     status = XAxiVdma_DmaConfig(vdma, XAXIVDMA_WRITE, &setup);
     if (status != XST_SUCCESS)
-    	xil_printf("\n XAxiVdma_DmaConfig Failed\r\n");
+    	xil_printf("\n XAxiVdma_DmaConfig failed \r\n");
 
     /* Set start address for 1 buffer. */
     *setup.FrameStoreStartAddr = memoryBaseAddress;
@@ -125,7 +129,7 @@ void ImageCaptureManager::setupVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memo
      * can configure buffer addresses too, but unfortunately I cannot test it so far.*/
     status = XAxiVdma_DmaSetBufferAddr(vdma, XAXIVDMA_WRITE, setup.FrameStoreStartAddr);
     if (status != XST_SUCCESS)
-    	xil_printf("\n XAxiVdma_DmaSetBufferAddr Failed\r\n");
+    	xil_printf("\n XAxiVdma_DmaSetBufferAddr failed \r\n");
 }
 
 void ImageCaptureManager::configureVdmaInterrupts()
@@ -185,6 +189,23 @@ void ImageCaptureManager::configureVdmaInterrupts()
 
 	XAxiVdma_IntrEnable(&_vdma1, XAXIVDMA_IXR_ALL_MASK, XAXIVDMA_WRITE);
 	XAxiVdma_IntrEnable(&_vdma2, XAXIVDMA_IXR_ALL_MASK, XAXIVDMA_WRITE);
+}
+
+void ImageCaptureManager::startVdmaTransfer()
+{
+	int status = XAxiVdma_DmaStart(&_vdma1, XAXIVDMA_WRITE);
+	if (status != XST_SUCCESS)
+		xil_printf("\n StartTransfer failed(VDMA 1) \r\n");
+
+	status = XAxiVdma_DmaStart(&_vdma2, XAXIVDMA_WRITE);
+		if (status != XST_SUCCESS)
+			xil_printf("\n StartTransfer failed(VDMA 2) \r\n");
+}
+
+void ImageCaptureManager::stopVdmaTransfer()
+{
+	XAxiVdma_DmaStop(&_vdma1, XAXIVDMA_WRITE);
+	XAxiVdma_DmaStop(&_vdma2, XAXIVDMA_WRITE);
 }
 
 /* Инициализация SPI в блокирующем режиме (polling mode)*/
@@ -260,5 +281,3 @@ void ImageCaptureManager::endDragsterTransaction()
 	writeBuffer[0] = 0;
 	XSpi_Transfer(&_spi, writeBuffer, NULL, 1);
 }
-
-

@@ -19,6 +19,8 @@ private:
     void initializeVdmaDevices();
     void setupVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memoryBaseAddress);
     void configureVdmaInterrupts();
+    void startVdmaTransfer();
+    void stopVdmaTransfer();
 
     void initializeSpi();
     void initializeDragsters();
