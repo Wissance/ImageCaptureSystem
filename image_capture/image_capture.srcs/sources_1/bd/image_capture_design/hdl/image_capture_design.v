@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Mon Feb 13 18:58:17 2017
+//Date        : Mon Mar 06 10:51:19 2017
 //Host        : XilinxDev running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target image_capture_design.bd
 //Design      : image_capture_design
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "image_capture_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=image_capture_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=28,numReposBlks=18,numNonXlnxBlks=0,numHierBlks=10,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=19,da_board_cnt=1,da_ps7_cnt=1,synth_mode=Global}" *) (* HW_HANDOFF = "image_capture_design.hwdef" *) 
+(* CORE_GENERATION_INFO = "image_capture_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=image_capture_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=29,numReposBlks=19,numNonXlnxBlks=0,numHierBlks=10,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=19,da_board_cnt=1,da_ps7_cnt=1,synth_mode=Global}" *) (* HW_HANDOFF = "image_capture_design.hwdef" *) 
 module image_capture_design
    (DDR_addr,
     DDR_ba,
@@ -166,6 +166,7 @@ module image_capture_design
   wire axi_vdma_0_M_AXI_S2MM_WREADY;
   wire [3:0]axi_vdma_0_M_AXI_S2MM_WSTRB;
   wire axi_vdma_0_M_AXI_S2MM_WVALID;
+  wire axi_vdma_0_s2mm_introut;
   wire axi_vdma_0_s_axis_s2mm_tready;
   wire [31:0]axi_vdma_1_M_AXI_S2MM_AWADDR;
   wire [1:0]axi_vdma_1_M_AXI_S2MM_AWBURST;
@@ -183,6 +184,7 @@ module image_capture_design
   wire axi_vdma_1_M_AXI_S2MM_WREADY;
   wire [3:0]axi_vdma_1_M_AXI_S2MM_WSTRB;
   wire axi_vdma_1_M_AXI_S2MM_WVALID;
+  wire axi_vdma_1_s2mm_introut;
   wire axi_vdma_1_s_axis_s2mm_tready;
   wire clock_divider_0_output_clock;
   wire clock_divider_1_output_clock;
@@ -340,6 +342,7 @@ module image_capture_design
   wire [0:0]processing_system7_0_axi_periph_M03_AXI_WVALID;
   wire [0:0]rst_processing_system7_0_50M_interconnect_aresetn;
   wire [0:0]rst_processing_system7_0_50M_peripheral_aresetn;
+  wire [1:0]xlconcat_0_dout;
 
   assign LINESCANNER0_END_ADC_1 = LINESCANNER0_END_ADC;
   assign LINESCANNER0_LOAD_PULSE = linescanner_image_capture_unit_0_load_pulse;
@@ -495,6 +498,7 @@ module image_capture_design
         .m_axi_s2mm_wstrb(axi_vdma_0_M_AXI_S2MM_WSTRB),
         .m_axi_s2mm_wvalid(axi_vdma_0_M_AXI_S2MM_WVALID),
         .s2mm_frame_ptr_in({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .s2mm_introut(axi_vdma_0_s2mm_introut),
         .s_axi_lite_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_lite_araddr(processing_system7_0_axi_periph_M02_AXI_ARADDR[8:0]),
         .s_axi_lite_arready(processing_system7_0_axi_periph_M02_AXI_ARREADY),
@@ -539,6 +543,7 @@ module image_capture_design
         .m_axi_s2mm_wstrb(axi_vdma_1_M_AXI_S2MM_WSTRB),
         .m_axi_s2mm_wvalid(axi_vdma_1_M_AXI_S2MM_WVALID),
         .s2mm_frame_ptr_in({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
+        .s2mm_introut(axi_vdma_1_s2mm_introut),
         .s_axi_lite_aclk(processing_system7_0_FCLK_CLK0),
         .s_axi_lite_araddr(processing_system7_0_axi_periph_M03_AXI_ARADDR[8:0]),
         .s_axi_lite_arready(processing_system7_0_axi_periph_M03_AXI_ARREADY),
@@ -665,6 +670,7 @@ module image_capture_design
         .FCLK_CLK0(processing_system7_0_FCLK_CLK0),
         .FCLK_RESET0_N(processing_system7_0_FCLK_RESET0_N),
         .GPIO_I({1'b0,1'b0,1'b0,1'b0}),
+        .IRQ_F2P(xlconcat_0_dout),
         .MIO(FIXED_IO_mio[53:0]),
         .M_AXI_GP0_ACLK(processing_system7_0_FCLK_CLK0),
         .M_AXI_GP0_ARADDR(processing_system7_0_M_AXI_GP0_ARADDR),
@@ -903,6 +909,10 @@ module image_capture_design
         .mb_debug_sys_rst(1'b0),
         .peripheral_aresetn(rst_processing_system7_0_50M_peripheral_aresetn),
         .slowest_sync_clk(processing_system7_0_FCLK_CLK0));
+  image_capture_design_xlconcat_0_0 xlconcat_0
+       (.In0(axi_vdma_0_s2mm_introut),
+        .In1(axi_vdma_1_s2mm_introut),
+        .dout(xlconcat_0_dout));
 endmodule
 
 module image_capture_design_axi_mem_intercon_0
