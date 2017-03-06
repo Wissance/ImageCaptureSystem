@@ -18,53 +18,53 @@ unsigned char convertFromLsbToMsbFirst(unsigned char byte);
 struct DragsterControlRegister1
 {
     union
-	{
-    	struct
-		{
-    		unsigned char _updateRequest : 1;     // bit 0
-    		unsigned char _mainClockDivider : 2;  // bit 1, 2
-    		unsigned char _dithering : 1;         // bit 3
-    		unsigned char _offsetSubtraction : 1; // bit 4
-    		unsigned char _saturationEnabled : 1; // bit 5
-    		unsigned char _adcMode : 1;           // bit 6
-    		unsigned char _vThreshold : 1;        // bit 7
-		};
-    	unsigned char _registerValue;
-	};
+    {
+        struct
+        {
+            unsigned char _updateRequest : 1;     // bit 0
+            unsigned char _mainClockDivider : 2;  // bit 1, 2
+            unsigned char _dithering : 1;         // bit 3
+            unsigned char _offsetSubtraction : 1; // bit 4
+            unsigned char _saturationEnabled : 1; // bit 5
+            unsigned char _adcMode : 1;           // bit 6
+            unsigned char _vThreshold : 1;        // bit 7
+        };
+        unsigned char _registerValue;
+    };
 };
 
 struct DragsterControlRegister2
 {
     union
-	{
-    	struct
-		{
-    		unsigned char _autoGenerateLoadPulse : 1; // bit 0
-    		unsigned char _enableControlOffset : 1;   // bit 1
-    		unsigned char _writeOffset : 1;           // bit 2
-    		unsigned char _enableAntiblooming : 1;    // bit 3
-    		unsigned char _enableWhiteClamping : 1;   // bit 4
-    		unsigned char _analogGain : 1;            // bit 5
-    		unsigned char : 2;                        // bit 6, 7
-		};
-    	unsigned char _registerValue;
-	};
+    {
+        struct
+        {
+            unsigned char _autoGenerateLoadPulse : 1; // bit 0
+            unsigned char _enableControlOffset : 1;   // bit 1
+            unsigned char _writeOffset : 1;           // bit 2
+            unsigned char _enableAntiblooming : 1;    // bit 3
+            unsigned char _enableWhiteClamping : 1;   // bit 4
+            unsigned char _analogGain : 1;            // bit 5
+            unsigned char : 2;                        // bit 6, 7
+        };
+        unsigned char _registerValue;
+    };
 };
 
 struct DragsterControlRegister3
 {
     union
-	{
-    	struct
-		{
-    		unsigned char _pixelClockEnablede : 1; // bit 0
-    		unsigned char _reLinearization : 1;    // bit 1
-    		unsigned char _enableOffsetSram : 1;   // bit 2
-    		unsigned char _bandgapSwitch : 3;      // bit 3, 4, 5
-    		unsigned char : 2;                     // bit 6, 7
-		};
-    	unsigned char _registerValue;
-	};
+    {
+        struct
+        {
+            unsigned char _pixelClockEnablede : 1; // bit 0
+            unsigned char _reLinearization : 1;    // bit 1
+            unsigned char _enableOffsetSram : 1;   // bit 2
+            unsigned char _bandgapSwitch : 3;      // bit 3, 4, 5
+            unsigned char : 2;                     // bit 6, 7
+        };
+        unsigned char _registerValue;
+    };
 };
 
 struct DragsterConfig
@@ -86,14 +86,14 @@ public:
     void setThresholdRegister2(unsigned char value) {_thresholdRegister2 = value;}
     unsigned char getThresholdRegister3() {return _thresholdRegister3;}
     void setThresholdRegister3(unsigned char value) {_thresholdRegister3 = value;}
-    unsigned char getEnfOfRangeRegister3() {return _endOfRangeRegister;}
+    unsigned char getEndOfRangeRegister() {return _endOfRangeRegister;}
     void setEndOfRangeRegister(unsigned char value) {_endOfRangeRegister = value;}
-    unsigned char getTestMultiplexorRegister3() {return _testMultiplexorRegister;}
+    unsigned char getTestMultiplexorRegister() {return _testMultiplexorRegister;}
     void setTestMultiplexorRegister(unsigned char value) {_testMultiplexorRegister = value;}
 private:
-    DragsterControlRegister1 _controlRegister1;
-    DragsterControlRegister2 _controlRegister2;
-    DragsterControlRegister3 _controlRegister3;
+    struct DragsterControlRegister1 _controlRegister1;
+    struct DragsterControlRegister2 _controlRegister2;
+    struct DragsterControlRegister3 _controlRegister3;
     unsigned char _adcGainRegister;
     unsigned char _offsetRegister;
     unsigned char _thresholdRegister1;

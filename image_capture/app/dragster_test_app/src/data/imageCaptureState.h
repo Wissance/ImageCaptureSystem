@@ -8,7 +8,7 @@ public:
     bool getState(){return _enabled;}
     void setState(bool state) {_enabled = state;}
 private:
-	bool _enabled;
+    bool _enabled;
 };
 
 

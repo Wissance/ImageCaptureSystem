@@ -24,18 +24,20 @@ private:
 
     void initializeSpi();
     void initializeDragsters();
-    void initializeDragsterImpl(int dragsterSlaveSelectMask);
+    void initializeDragsterImpl(struct DragsterConfig* config, int dragsterSlaveSelectMask);
     void sendDragsterRegisterValue(unsigned char address, unsigned char value);
-    void endDragsterTransaction();
+    void beginDragsterConfigTransaction();
+    void endDragsterConfigTransaction();
 private:
+    // vdma entities
     XAxiVdma _vdma1;
     XAxiVdma _vdma2;
     XScuGic _interruptController;
-
+    // dragster entities
     XSpi _spi;
-    ImageCaptureState _imageCaptureState;
-    DragsterConfig _linescanner0Config;
-    DragsterConfig _linescanner1Config;
+    struct ImageCaptureState _imageCaptureState;
+    struct DragsterConfig _linescanner0Config;
+    struct DragsterConfig _linescanner1Config;
 };
 
 

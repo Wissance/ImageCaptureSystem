@@ -7,11 +7,11 @@
 
 int main()
 {
-	printf("Application started\n\r");
-	ImageCaptureManager systemManager;
-	systemManager.initialize();
-	systemManager.startImageCapture();
-	//while(1);
-	systemManager.stopImageCapture();
-	return 0;
+    printf("Application started\n\r");
+    ImageCaptureManager systemManager;
+    systemManager.initialize();
+    systemManager.startImageCapture();
+
+    systemManager.stopImageCapture();
+    return 0;
 }
