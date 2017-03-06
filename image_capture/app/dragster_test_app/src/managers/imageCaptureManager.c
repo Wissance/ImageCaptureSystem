@@ -67,6 +67,20 @@ void ImageCaptureManager::stopImageCapture()
     xil_printf("\n Image Capture Manager has been stopped\n\r");
 }
 
+struct DragsterConfig ImageCaptureManager::getDragsterConfig(unsigned char linescannerIndex)
+{
+    struct DragsterConfig config;
+/*    if(linescannerIndex == LINESCANNER0)
+       readDragsterConfigImpl
+    else
+    {
+
+    }*/
+    readDragsterConfigImpl(&config, linescannerIndex == LINESCANNER0 ? LINESCANNER0_SLAVE_SELECT
+                                                                     : LINESCANNER1_SLAVE_SELECT);
+    return config;
+}
+
 void ImageCaptureManager::initializeVdmaDevices()
 {
     setupVdmaDevice(&_vdma1, VDMA_1_DEVICE_ID, VDMA_1_MEMORY_BASE_ADDRESS);
@@ -256,6 +270,17 @@ void ImageCaptureManager::initializeDragsters()
     XSpi_SetSlaveSelect(&_spi, 0);
 }
 
+void ImageCaptureManager::readDragsterConfigImpl(struct DragsterConfig* config, int dragsterSlaveSelectMask)
+{
+    int status = XSpi_SetSlaveSelect(&_spi, dragsterSlaveSelectMask);
+    if(status == XST_SUCCESS)
+    {
+        config->setControlRegister1(readDragsterRegisterValue(1));
+        config->setControlRegister2(readDragsterRegisterValue(2));
+        config->setControlRegister3(readDragsterRegisterValue(3));
+    }
+}
+
 void ImageCaptureManager::initializeDragsterImpl(struct DragsterConfig* config, int dragsterSlaveSelectMask)
 {
     int status = XSpi_SetSlaveSelect(&_spi, dragsterSlaveSelectMask);
@@ -284,6 +309,15 @@ void ImageCaptureManager::sendDragsterRegisterValue(unsigned char address, unsig
     unsigned char convertedValue = convertFromMsbToLsbFirst(value);
     writeBuffer[0] = convertedValue;
     XSpi_Transfer(&_spi, writeBuffer, NULL, 2);
+}
+
+unsigned char ImageCaptureManager::readDragsterRegisterValue(unsigned char address)
+{
+    #define READ_REGISTER_ADDRESS 0xF
+    writeBuffer[0] = convertFromMsbToLsbFirst(address);
+    writeBuffer[0] = convertFromMsbToLsbFirst(READ_REGISTER_ADDRESS);
+    XSpi_Transfer(&_spi, writeBuffer, readBuffer, 2);
+    return readBuffer[0];
 }
 
 void ImageCaptureManager::beginDragsterConfigTransaction()

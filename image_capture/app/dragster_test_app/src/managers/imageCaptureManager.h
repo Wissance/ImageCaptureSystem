@@ -1,6 +1,9 @@
 #ifndef SRC_MANAGERS_IMAGECAPTUREMANAGER_H_
 #define SRC_MANAGERS_IMAGECAPTUREMANAGER_H_
 
+#define LINESCANNER0 0
+#define LINESCANNER1 1
+
 #include "imageCaptureState.h"
 #include "dragsterConfig.h"
 #include "xaxivdma.h"
@@ -15,17 +18,21 @@ public:
     void initialize();
     void startImageCapture();
     void stopImageCapture();
+    struct DragsterConfig getDragsterConfig(unsigned char linescannerIndex);
 private:
+    // vdma
     void initializeVdmaDevices();
     void setupVdmaDevice(XAxiVdma* vdma, u16 deviceId, u32 memoryBaseAddress);
     void configureVdmaInterrupts();
     void startVdmaTransfer();
     void stopVdmaTransfer();
-
+    // dragster
     void initializeSpi();
     void initializeDragsters();
     void initializeDragsterImpl(struct DragsterConfig* config, int dragsterSlaveSelectMask);
+    void readDragsterConfigImpl(struct DragsterConfig* config, int dragsterSlaveSelectMask);
     void sendDragsterRegisterValue(unsigned char address, unsigned char value);
+    unsigned char readDragsterRegisterValue(unsigned char address);
     void beginDragsterConfigTransaction();
     void endDragsterConfigTransaction();
 private:
