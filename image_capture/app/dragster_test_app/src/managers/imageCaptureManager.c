@@ -1,8 +1,9 @@
 #include "imageCaptureManager.h"
 #include "axiIoHelper.h"
+#include "modulesMap.h"
+#include "globalDefs.h"
 
 #define SPI_DEVICE_ID XPAR_SPI_0_DEVICE_ID
-#define IMAGE_CAPTURE_MANAGER_BASE_ADDRESS 0x43C00000
 
 #define START_COMMAND 1
 #define STOP_COMMAND 2
@@ -13,15 +14,10 @@
 #define VDMA_1_DEVICE_ID XPAR_AXI_VDMA_0_DEVICE_ID
 #define VDMA_2_DEVICE_ID XPAR_AXI_VDMA_1_DEVICE_ID
 
-#define VDMA_1_MEMORY_BASE_ADDRESS 0x00000000
-#define VDMA_2_MEMORY_BASE_ADDRESS 0x01000000
-
 #define INTERRUPT_CONTROLLER_DEVICE_ID XPAR_SCUGIC_SINGLE_DEVICE_ID
 
 #define VDMA_1_WRITE_INTERRUPT_ID XPAR_FABRIC_AXI_VDMA_0_S2MM_INTROUT_INTR
 #define VDMA_2_WRITE_INTERRUPT_ID XPAR_FABRIC_AXI_VDMA_1_S2MM_INTROUT_INTR
-
-#define DRAGSTER_LINE_LENGTH 1024
 
 u8 readBuffer[2];
 u8 writeBuffer[2];
@@ -70,12 +66,6 @@ void ImageCaptureManager::stopImageCapture()
 struct DragsterConfig ImageCaptureManager::getDragsterConfig(unsigned char linescannerIndex)
 {
     struct DragsterConfig config;
-/*    if(linescannerIndex == LINESCANNER0)
-       readDragsterConfigImpl
-    else
-    {
-
-    }*/
     readDragsterConfigImpl(&config, linescannerIndex == LINESCANNER0 ? LINESCANNER0_SLAVE_SELECT
                                                                      : LINESCANNER1_SLAVE_SELECT);
     return config;

@@ -1,9 +1,6 @@
 #ifndef SRC_MANAGERS_IMAGECAPTUREMANAGER_H_
 #define SRC_MANAGERS_IMAGECAPTUREMANAGER_H_
 
-#define LINESCANNER0 0
-#define LINESCANNER1 1
-
 #include "imageCaptureState.h"
 #include "dragsterConfig.h"
 #include "xaxivdma.h"
@@ -46,7 +43,6 @@ private:
     struct DragsterConfig _linescanner0Config;
     struct DragsterConfig _linescanner1Config;
 };
-
 
 
 #endif /* SRC_MANAGERS_IMAGECAPTUREMANAGER_H_ */

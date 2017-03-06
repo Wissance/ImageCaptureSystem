@@ -4,6 +4,16 @@
 
 #include <stdio.h>
 #include "imageCaptureManager.h"
+#include "globalDefs.h"
+#include "callbacks.h"
+
+//u8 videoBuffer0 [16][1024];
+//u8 videoBuffer1 [16][1024];
+
+/*void copyVdma(u8 linescannerIndex, u8* address, u32 mask)
+{
+
+}*/
 
 int main()
 {
@@ -13,7 +23,14 @@ int main()
     // check config
     struct DragsterConfig linescanner0Config = systemManager.getDragsterConfig(LINESCANNER0);
     struct DragsterConfig linescanner1Config = systemManager.getDragsterConfig(LINESCANNER1);
-    // todo: umv: write config in file via FatFS
+    printf("Linescanner 0, Register1: 0x%02X", linescanner0Config.getControlRegister1()._registerValue);
+    printf("Linescanner 0, Register2: 0x%02X", linescanner0Config.getControlRegister2()._registerValue);
+    printf("Linescanner 0, Register3: 0x%02X", linescanner0Config.getControlRegister3()._registerValue);
+
+    printf("Linescanner 1, Register1: 0x%02X", linescanner1Config.getControlRegister1()._registerValue);
+    printf("Linescanner 1, Register2: 0x%02X", linescanner1Config.getControlRegister2()._registerValue);
+    printf("Linescanner 1, Register3: 0x%02X", linescanner1Config.getControlRegister3()._registerValue);
+    // todo: umv: write configuration in files via FatFS
     // start process ...
     systemManager.startImageCapture();
     // stop ...
