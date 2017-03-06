@@ -3,7 +3,6 @@
 	<name>dragster_test_app</name>
 	<comment>Created by SDK v2016.2. dragster_test_app_bsp - ps7_cortexa9_0</comment>
 	<projects>
-		<project>dragster_test_app_bsp</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
