@@ -317,7 +317,7 @@ unsigned char ImageCaptureManager::readDragsterRegisterValue(unsigned char addre
     writeBuffer[0] = convertFromMsbToLsbFirst(address);
     writeBuffer[0] = convertFromMsbToLsbFirst(READ_REGISTER_ADDRESS);
     XSpi_Transfer(&_spi, writeBuffer, readBuffer, 2);
-    return readBuffer[0];
+    return convertFromLsbToMsbFirst(readBuffer[0]);
 }
 
 void ImageCaptureManager::beginDragsterConfigTransaction()
