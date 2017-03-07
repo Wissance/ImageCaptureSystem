@@ -4,20 +4,49 @@
 
 #include <stdio.h>
 #include "imageCaptureManager.h"
+#include "videoBuffer.h"
 #include "globalDefs.h"
 #include "callbacks.h"
 
-//u8 videoBuffer0 [16][1024];
-//u8 videoBuffer1 [16][1024];
+struct VideoBuffer vBuffer0;
+struct VideoBuffer vBuffer1;
 
-/*void copyVdma(u8 linescannerIndex, u8* address, u32 mask)
+static void sendViaUart(u8 bufferIndex, struct VideoBuffer* buffer);
+
+void copyVdma(u8 linescannerIndex, u8* address, u32 mask)
+{
+    if(linescannerIndex == 0)
+    {
+        if(vBuffer0._writeIndex == NUMBER_OF_LINES)
+            vBuffer0._writeIndex = -1;
+        vBuffer0._writeIndex++;
+        for(int i = 0; i < DRAGSTER_LINE_LENGTH; i++)
+            vBuffer0._buffer[vBuffer0._writeIndex][i] = *(address + i);
+        sendViaUart(0, &vBuffer0);
+    }
+    else
+    {
+        if(vBuffer1._writeIndex == NUMBER_OF_LINES)
+            vBuffer1._writeIndex = -1;
+        vBuffer1._writeIndex++;
+        for(int i = 0; i < DRAGSTER_LINE_LENGTH; i++)
+            vBuffer1._buffer[vBuffer1._writeIndex][i] = *(address + i);
+        sendViaUart(1, &vBuffer1);
+    }
+}
+
+static void sendViaUart(u8 bufferIndex, struct VideoBuffer* buffer)
 {
 
-}*/
+}
 
 int main()
 {
     printf("Application started\n\r");
+    vBuffer0._sendIndex = -1;
+    vBuffer0._writeIndex = -1;
+    vBuffer1._sendIndex = -1;
+    vBuffer1._writeIndex = -1;
     ImageCaptureManager systemManager;
     systemManager.initialize();
     // check config

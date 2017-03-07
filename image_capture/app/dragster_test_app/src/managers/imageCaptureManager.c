@@ -2,6 +2,7 @@
 #include "axiIoHelper.h"
 #include "modulesMap.h"
 #include "globalDefs.h"
+#include "callbacks.h"
 
 #define SPI_DEVICE_ID XPAR_SPI_0_DEVICE_ID
 
@@ -23,20 +24,22 @@ u8 readBuffer[2];
 u8 writeBuffer[2];
 
 /* Callbacks */
-static void Vdma1WriteCallback(void* CallbackRef, u32 Mask)
+static void Vdma1WriteCallback(void* callbackRef, u32 mask)
 {
     // Do something with a frame produced by first VDMA
     u8* frameBuffer = (u8*)VDMA_1_MEMORY_BASE_ADDRESS;
+    copyVdma(0, frameBuffer, mask);
 }
 
-static void Vdma2WriteCallback(void* CallbackRef, u32 Mask)
+static void Vdma2WriteCallback(void* callbackRef, u32 mask)
 {
     // Do something with a frame produced by second VDMA
     u8* frameBuffer = (u8*)VDMA_2_MEMORY_BASE_ADDRESS;
+    copyVdma(1, frameBuffer, mask);
 }
 
-static void Vdma1WriteErrorCallback(void* CallbackRef, u32 Mask){}
-static void Vdma2WriteErrorCallback(void* CallbackRef, u32 Mask){}
+static void Vdma1WriteErrorCallback(void* callbackRef, u32 mask){}
+static void Vdma2WriteErrorCallback(void* callbackRef, u32 mask){}
 
 void ImageCaptureManager::initialize()
 {
