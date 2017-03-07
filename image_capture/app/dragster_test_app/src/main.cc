@@ -11,7 +11,7 @@
 struct VideoBuffer vBuffer0;
 struct VideoBuffer vBuffer1;
 
-static void sendViaUart(u8 bufferIndex, struct VideoBuffer* buffer);
+static void printViaUart(u8 bufferIndex, struct VideoBuffer* buffer);
 
 void copyVdma(u8 linescannerIndex, u8* address, u32 mask)
 {
@@ -22,7 +22,7 @@ void copyVdma(u8 linescannerIndex, u8* address, u32 mask)
         vBuffer0._writeIndex++;
         for(int i = 0; i < DRAGSTER_LINE_LENGTH; i++)
             vBuffer0._buffer[vBuffer0._writeIndex][i] = *(address + i);
-        sendViaUart(0, &vBuffer0);
+        printViaUart(0, &vBuffer0);
     }
     else
     {
@@ -31,13 +31,19 @@ void copyVdma(u8 linescannerIndex, u8* address, u32 mask)
         vBuffer1._writeIndex++;
         for(int i = 0; i < DRAGSTER_LINE_LENGTH; i++)
             vBuffer1._buffer[vBuffer1._writeIndex][i] = *(address + i);
-        sendViaUart(1, &vBuffer1);
+        printViaUart(1, &vBuffer1);
     }
 }
 
-static void sendViaUart(u8 bufferIndex, struct VideoBuffer* buffer)
+static void printViaUart(u8 bufferIndex, struct VideoBuffer* buffer)
 {
-
+    printf("Linescanner index: %d\n\r", bufferIndex);
+    if(buffer->_sendIndex == NUMBER_OF_LINES)
+        buffer->_sendIndex++;
+    for(int i = 0; i < DRAGSTER_LINE_LENGTH; i++)
+    {
+        printf("Index %d, value 0x%02X", i, buffer->_buffer[buffer->_sendIndex][i]);
+    }
 }
 
 int main()
