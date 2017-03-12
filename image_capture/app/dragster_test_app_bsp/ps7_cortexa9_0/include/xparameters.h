@@ -27,7 +27,7 @@
 #define XPAR_AXI_VDMA_0_DEVICE_ID 0
 #define XPAR_AXI_VDMA_0_BASEADDR 0x43000000
 #define XPAR_AXI_VDMA_0_HIGHADDR 0x4300FFFF
-#define XPAR_AXI_VDMA_0_NUM_FSTORES 3
+#define XPAR_AXI_VDMA_0_NUM_FSTORES 1
 #define XPAR_AXI_VDMA_0_INCLUDE_MM2S 0
 #define XPAR_AXI_VDMA_0_INCLUDE_MM2S_DRE 0
 #define XPAR_AXI_VDMA_0_M_AXI_MM2S_DATA_WIDTH 64
@@ -66,7 +66,7 @@
 #define XPAR_AXI_VDMA_1_DEVICE_ID 1
 #define XPAR_AXI_VDMA_1_BASEADDR 0x43010000
 #define XPAR_AXI_VDMA_1_HIGHADDR 0x4301FFFF
-#define XPAR_AXI_VDMA_1_NUM_FSTORES 3
+#define XPAR_AXI_VDMA_1_NUM_FSTORES 1
 #define XPAR_AXI_VDMA_1_INCLUDE_MM2S 0
 #define XPAR_AXI_VDMA_1_INCLUDE_MM2S_DRE 0
 #define XPAR_AXI_VDMA_1_M_AXI_MM2S_DATA_WIDTH 64
@@ -107,7 +107,7 @@
 #define XPAR_AXIVDMA_0_DEVICE_ID XPAR_AXI_VDMA_0_DEVICE_ID
 #define XPAR_AXIVDMA_0_BASEADDR 0x43000000
 #define XPAR_AXIVDMA_0_HIGHADDR 0x4300FFFF
-#define XPAR_AXIVDMA_0_NUM_FSTORES 3
+#define XPAR_AXIVDMA_0_NUM_FSTORES 1
 #define XPAR_AXIVDMA_0_INCLUDE_MM2S 0
 #define XPAR_AXIVDMA_0_INCLUDE_MM2S_DRE 0
 #define XPAR_AXIVDMA_0_M_AXI_MM2S_DATA_WIDTH 64
@@ -145,7 +145,7 @@
 #define XPAR_AXIVDMA_1_DEVICE_ID XPAR_AXI_VDMA_1_DEVICE_ID
 #define XPAR_AXIVDMA_1_BASEADDR 0x43010000
 #define XPAR_AXIVDMA_1_HIGHADDR 0x4301FFFF
-#define XPAR_AXIVDMA_1_NUM_FSTORES 3
+#define XPAR_AXIVDMA_1_NUM_FSTORES 1
 #define XPAR_AXIVDMA_1_INCLUDE_MM2S 0
 #define XPAR_AXIVDMA_1_INCLUDE_MM2S_DRE 0
 #define XPAR_AXIVDMA_1_M_AXI_MM2S_DATA_WIDTH 64
@@ -383,6 +383,16 @@
 
 /******************************************************************/
 
+/* Definitions for Fabric interrupts connected to ps7_scugic_0 */
+#define XPAR_FABRIC_AXI_VDMA_0_S2MM_INTROUT_INTR 61
+#define XPAR_FABRIC_AXI_VDMA_1_S2MM_INTROUT_INTR 62
+
+/******************************************************************/
+
+/* Canonical definitions for Fabric interrupts connected to ps7_scugic_0 */
+
+/******************************************************************/
+
 /* Definitions for driver SCUGIC */
 #define XPAR_XSCUGIC_NUM_INSTANCES 1
 
@@ -586,3 +596,5 @@
 
 /******************************************************************/
 
+/* Xilinx FAT File System Library (XilFFs) User Settings */
+#define FILE_SYSTEM_INTERFACE_SD

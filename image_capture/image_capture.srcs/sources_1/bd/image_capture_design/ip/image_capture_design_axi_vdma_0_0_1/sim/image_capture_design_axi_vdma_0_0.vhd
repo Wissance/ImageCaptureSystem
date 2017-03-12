@@ -329,7 +329,7 @@ BEGIN
       C_PRMRY_IS_ACLK_ASYNC => 0,
       C_ENABLE_VIDPRMTR_READS => 1,
       C_DYNAMIC_RESOLUTION => 1,
-      C_NUM_FSTORES => 3,
+      C_NUM_FSTORES => 1,
       C_USE_FSYNC => 1,
       C_USE_MM2S_FSYNC => 0,
       C_USE_S2MM_FSYNC => 2,
