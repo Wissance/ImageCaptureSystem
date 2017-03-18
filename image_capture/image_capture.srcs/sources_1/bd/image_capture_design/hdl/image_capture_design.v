@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Mon Mar 06 10:51:19 2017
+//Date        : Sat Mar 18 15:41:21 2017
 //Host        : XilinxDev running 64-bit Service Pack 1  (build 7601)
 //Command     : generate_target image_capture_design.bd
 //Design      : image_capture_design
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "image_capture_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=image_capture_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=29,numReposBlks=19,numNonXlnxBlks=0,numHierBlks=10,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=7,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=19,da_board_cnt=1,da_ps7_cnt=1,synth_mode=Global}" *) (* HW_HANDOFF = "image_capture_design.hwdef" *) 
+(* CORE_GENERATION_INFO = "image_capture_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=image_capture_design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=31,numReposBlks=21,numNonXlnxBlks=0,numHierBlks=10,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=9,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=19,da_board_cnt=1,da_ps7_cnt=1,synth_mode=Global}" *) (* HW_HANDOFF = "image_capture_design.hwdef" *) 
 module image_capture_design
    (DDR_addr,
     DDR_ba,
@@ -199,18 +199,18 @@ module image_capture_design
   wire linescanner2stream_convertor_1_stream_data_valid;
   wire linescanner_image_capture_unit_0_load_pulse;
   wire linescanner_image_capture_unit_0_main_clock;
-  wire linescanner_image_capture_unit_0_pixel_captured;
-  wire [7:0]linescanner_image_capture_unit_0_pixel_data;
   wire linescanner_image_capture_unit_0_rst_cds;
   wire linescanner_image_capture_unit_0_rst_cvc;
   wire linescanner_image_capture_unit_0_sample;
   wire linescanner_image_capture_unit_1_load_pulse;
   wire linescanner_image_capture_unit_1_main_clock;
-  wire linescanner_image_capture_unit_1_pixel_captured;
-  wire [7:0]linescanner_image_capture_unit_1_pixel_data;
   wire linescanner_image_capture_unit_1_rst_cds;
   wire linescanner_image_capture_unit_1_rst_cvc;
   wire linescanner_image_capture_unit_1_sample;
+  wire linescanner_image_capture_unit_mimic_0_pixel_captured;
+  wire [7:0]linescanner_image_capture_unit_mimic_0_pixel_data;
+  wire linescanner_image_capture_unit_mimic_1_pixel_captured;
+  wire [7:0]linescanner_image_capture_unit_mimic_1_pixel_data;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -599,7 +599,7 @@ module image_capture_design
         .s00_axi_wvalid(processing_system7_0_axi_periph_M01_AXI_WVALID));
   image_capture_design_linescanner2stream_convertor_0_0 linescanner2stream_convertor_0
        (.enable(image_capture_manager_v1_0_0_image_capture_enabled),
-        .input_data(linescanner_image_capture_unit_0_pixel_data),
+        .input_data(linescanner_image_capture_unit_mimic_1_pixel_data),
         .m00_axis_aclk(processing_system7_0_FCLK_CLK0),
         .m00_axis_aresetn(rst_processing_system7_0_50M_peripheral_aresetn),
         .m00_axis_tdata(linescanner2stream_convertor_0_stream_data),
@@ -607,10 +607,10 @@ module image_capture_design
         .m00_axis_tready(axi_vdma_0_s_axis_s2mm_tready),
         .m00_axis_tstrb(linescanner2stream_convertor_0_keep_data),
         .m00_axis_tvalid(linescanner2stream_convertor_0_stream_data_valid),
-        .pixel_captured(linescanner_image_capture_unit_0_pixel_captured));
+        .pixel_captured(linescanner_image_capture_unit_mimic_1_pixel_captured));
   image_capture_design_linescanner2stream_convertor_1_0 linescanner2stream_convertor_1
        (.enable(image_capture_manager_v1_0_0_image_capture_enabled),
-        .input_data(linescanner_image_capture_unit_1_pixel_data),
+        .input_data(linescanner_image_capture_unit_mimic_0_pixel_data),
         .m00_axis_aclk(processing_system7_0_FCLK_CLK0),
         .m00_axis_aresetn(rst_processing_system7_0_50M_peripheral_aresetn),
         .m00_axis_tdata(linescanner2stream_convertor_1_stream_data),
@@ -618,7 +618,7 @@ module image_capture_design
         .m00_axis_tready(axi_vdma_1_s_axis_s2mm_tready),
         .m00_axis_tstrb(linescanner2stream_convertor_1_keep_data),
         .m00_axis_tvalid(linescanner2stream_convertor_1_stream_data_valid),
-        .pixel_captured(linescanner_image_capture_unit_1_pixel_captured));
+        .pixel_captured(linescanner_image_capture_unit_mimic_0_pixel_captured));
   image_capture_design_linescanner_image_capture_unit_0_1 linescanner_image_capture_unit_0
        (.data(LINESCANNER0_TAP_A_1),
         .enable(image_capture_manager_v1_0_0_image_capture_enabled),
@@ -628,9 +628,7 @@ module image_capture_design
         .main_clock(linescanner_image_capture_unit_0_main_clock),
         .main_clock_source(clock_divider_1_output_clock),
         .n_reset(rst_processing_system7_0_50M_peripheral_aresetn),
-        .pixel_captured(linescanner_image_capture_unit_0_pixel_captured),
         .pixel_clock(LINESCANNER0_PIXEL_CLOCK_1),
-        .pixel_data(linescanner_image_capture_unit_0_pixel_data),
         .rst_cds(linescanner_image_capture_unit_0_rst_cds),
         .rst_cvc(linescanner_image_capture_unit_0_rst_cvc),
         .sample(linescanner_image_capture_unit_0_sample));
@@ -643,12 +641,22 @@ module image_capture_design
         .main_clock(linescanner_image_capture_unit_1_main_clock),
         .main_clock_source(clock_divider_1_output_clock),
         .n_reset(rst_processing_system7_0_50M_peripheral_aresetn),
-        .pixel_captured(linescanner_image_capture_unit_1_pixel_captured),
         .pixel_clock(LINESCANNER1_PIXEL_CLOCK_1),
-        .pixel_data(linescanner_image_capture_unit_1_pixel_data),
         .rst_cds(linescanner_image_capture_unit_1_rst_cds),
         .rst_cvc(linescanner_image_capture_unit_1_rst_cvc),
         .sample(linescanner_image_capture_unit_1_sample));
+  image_capture_design_linescanner_image_capture_unit_mimic_0_0 linescanner_image_capture_unit_mimic_0
+       (.enable(image_capture_manager_v1_0_0_image_capture_enabled),
+        .main_clock_source(processing_system7_0_FCLK_CLK0),
+        .n_reset(rst_processing_system7_0_50M_peripheral_aresetn),
+        .pixel_captured(linescanner_image_capture_unit_mimic_0_pixel_captured),
+        .pixel_data(linescanner_image_capture_unit_mimic_0_pixel_data));
+  image_capture_design_linescanner_image_capture_unit_mimic_1_0 linescanner_image_capture_unit_mimic_1
+       (.enable(image_capture_manager_v1_0_0_image_capture_enabled),
+        .main_clock_source(processing_system7_0_FCLK_CLK0),
+        .n_reset(rst_processing_system7_0_50M_peripheral_aresetn),
+        .pixel_captured(linescanner_image_capture_unit_mimic_1_pixel_captured),
+        .pixel_data(linescanner_image_capture_unit_mimic_1_pixel_data));
   image_capture_design_processing_system7_0_0 processing_system7_0
        (.DDR_Addr(DDR_addr[14:0]),
         .DDR_BankAddr(DDR_ba[2:0]),
