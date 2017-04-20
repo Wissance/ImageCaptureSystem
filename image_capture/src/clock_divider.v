@@ -25,14 +25,18 @@ module clock_divider #
     parameter clock_division = 2
 )
 (
+    input wire reset,
     input wire input_clock,
-    output reg output_clock = 0
+    output wire output_clock
 ); 
-    //reg[7:0] counter;
+    reg[7:0] counter;
+    reg output_clock_value;
+    
+    assign output_clock =  clock_division == 1 ? input_clock & reset : output_clock_value; 
     
     //initial counter = 8'b00000000;
     
-    integer counter = 0;
+/*    integer counter = 0;
 
     
     if (clock_division == 1)
@@ -54,5 +58,27 @@ module clock_divider #
                 counter = 0;
             end
         end
+    end*/
+    
+    always @(posedge input_clock)
+    begin
+         if(~reset)
+         begin
+             counter <= 0;
+             output_clock_value <= 0;
+         end
+         else
+         begin
+             if(counter == clock_division - 1)
+             begin
+                 output_clock_value <= ~output_clock_value;
+                 counter <= 1;
+             end
+             else
+                 counter <= counter + 1;
+         //if(counter == clock_division - 1)
+             //counter <= 0;
+         end
     end
+    
 endmodule
