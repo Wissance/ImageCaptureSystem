@@ -259,40 +259,46 @@ void ImageCaptureManager::initializeDragsters()
     _linescanner1Config.setEndOfRangeRegister(0x08);
     initializeDragsterImpl(&_linescanner0Config, LINESCANNER0_SLAVE_SELECT);
     initializeDragsterImpl(&_linescanner1Config, LINESCANNER1_SLAVE_SELECT);
-    // deselecting any slave
-    XSpi_SetSlaveSelect(&_spi, 0);
 }
 
 void ImageCaptureManager::readDragsterConfigImpl(struct DragsterConfig* config, int dragsterSlaveSelectMask)
 {
-    int status = XSpi_SetSlaveSelect(&_spi, dragsterSlaveSelectMask);
-    if(status == XST_SUCCESS)
-    {
-        config->setControlRegister1(readDragsterRegisterValue(1));
-        config->setControlRegister2(readDragsterRegisterValue(2));
-        config->setControlRegister3(readDragsterRegisterValue(3));
-    }
+	beginDragsterSpiTransaction(dragsterSlaveSelectMask);
+    config->setControlRegister1(readDragsterRegisterValue(1));
+    endDragsterSpiTransaction();
+
+    beginDragsterSpiTransaction(dragsterSlaveSelectMask);
+    config->setControlRegister2(readDragsterRegisterValue(2));
+    endDragsterSpiTransaction();
+
+    beginDragsterSpiTransaction(dragsterSlaveSelectMask);
+    config->setControlRegister3(readDragsterRegisterValue(3));
+    endDragsterSpiTransaction();
 }
 
 void ImageCaptureManager::initializeDragsterImpl(struct DragsterConfig* config, int dragsterSlaveSelectMask)
 {
-    int status = XSpi_SetSlaveSelect(&_spi, dragsterSlaveSelectMask);
-    if(status == XST_SUCCESS)
-    {
-        // todo: umv: read from fields
-        beginDragsterConfigTransaction();
-        // Запись конфигурации регистров Dragster
-        // CONTROL Register 2
-        sendDragsterRegisterValue(CONTROL_REGISTER_2_ADDRESS, config->getControlRegister2()._registerValue);
-        // CONTROL Register 3
-        sendDragsterRegisterValue(CONTROL_REGISTER_3_ADDRESS, config->getControlRegister3()._registerValue);
-        // End of Data Register
-        sendDragsterRegisterValue(END_OF_RANGE_REGISTER_ADDRESS, config->getEndOfRangeRegister());  // 8 bit pixels value
-        // CONTROL Register 1
-        sendDragsterRegisterValue(CONTROL_REGISTER_1_ADDRESS, config->getControlRegister1()._registerValue);
-        // 0 byte (must generate at least 3 clk before SS is disabled)
-        endDragsterConfigTransaction();
-    }
+    beginDragsterSpiTransaction(dragsterSlaveSelectMask);
+    // Запись конфигурации регистров Dragster
+    // CONTROL Register 2
+    sendDragsterRegisterValue(CONTROL_REGISTER_2_ADDRESS, config->getControlRegister2()._registerValue);
+    endDragsterSpiTransaction();
+
+    // CONTROL Register 3
+    beginDragsterSpiTransaction(dragsterSlaveSelectMask);
+    sendDragsterRegisterValue(CONTROL_REGISTER_3_ADDRESS, config->getControlRegister3()._registerValue);
+    endDragsterSpiTransaction();
+
+    // End of Data Register
+    beginDragsterSpiTransaction(dragsterSlaveSelectMask);
+    sendDragsterRegisterValue(END_OF_RANGE_REGISTER_ADDRESS, config->getEndOfRangeRegister());  // 8 bit pixels value
+    endDragsterSpiTransaction();
+
+    // CONTROL Register 1
+    beginDragsterSpiTransaction(dragsterSlaveSelectMask);
+    sendDragsterRegisterValue(CONTROL_REGISTER_1_ADDRESS, config->getControlRegister1()._registerValue);
+    // 0 byte (must generate at least 3 clk before SS is disabled)
+    endDragsterSpiTransaction();
 }
 
 void ImageCaptureManager::sendDragsterRegisterValue(unsigned char address, unsigned char value)
@@ -313,13 +319,13 @@ unsigned char ImageCaptureManager::readDragsterRegisterValue(unsigned char addre
     return convertFromLsbToMsbFirst(readBuffer[0]);
 }
 
-void ImageCaptureManager::beginDragsterConfigTransaction()
+void ImageCaptureManager::beginDragsterSpiTransaction(int dragsterSlaveSelectMask)
 {
-
+	XSpi_SetSlaveSelect(&_spi, dragsterSlaveSelectMask);
 }
 
-void ImageCaptureManager::endDragsterConfigTransaction()
+void ImageCaptureManager::endDragsterSpiTransaction()
 {
-    writeBuffer[0] = 0;
-    XSpi_Transfer(&_spi, writeBuffer, NULL, 1);
+    // deselecting any slave
+    XSpi_SetSlaveSelect(&_spi, 0);
 }

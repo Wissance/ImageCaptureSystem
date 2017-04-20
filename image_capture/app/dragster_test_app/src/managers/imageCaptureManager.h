@@ -9,7 +9,7 @@
 #include "xil_exception.h"
 #include "xil_assert.h"
 
-struct ImageCaptureManager
+class ImageCaptureManager
 {
 public:
     void initialize();
@@ -30,8 +30,8 @@ private:
     void readDragsterConfigImpl(struct DragsterConfig* config, int dragsterSlaveSelectMask);
     void sendDragsterRegisterValue(unsigned char address, unsigned char value);
     unsigned char readDragsterRegisterValue(unsigned char address);
-    void beginDragsterConfigTransaction();
-    void endDragsterConfigTransaction();
+    void beginDragsterSpiTransaction(int dragsterSlaveSelectMask);
+    void endDragsterSpiTransaction();
 private:
     // vdma entities
     XAxiVdma _vdma1;
