@@ -1,6 +1,6 @@
-webtalk_init -webtalk_dir E:\\oms\\VideoControlIP\\image_capture\\app\\webtalk
+webtalk_init -webtalk_dir D:\\Projects\\ImageCaptureSystem\\image_capture\\app\\webtalk
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Пн фев 6 20:07:25 2017" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Чт апр 20 11:56:31 2017" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "SDK v2016.2" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2016.2" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "amd64" -context "software_version_and_target_device"
@@ -12,9 +12,9 @@ webtalk_add_data -client project -key target_family -value "NA" -context "softwa
 webtalk_add_data -client project -key target_device -value "NA" -context "software_version_and_target_device"
 webtalk_add_data -client project -key target_package -value "NA" -context "software_version_and_target_device"
 webtalk_add_data -client project -key target_speed -value "NA" -context "software_version_and_target_device"
-webtalk_add_data -client project -key random_id -value "tb2q970idpjfi5liamhfe08eec" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_id -value "2016.2_7" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "7" -context "software_version_and_target_device"
+webtalk_add_data -client project -key random_id -value "rej7s8itebhivera2fg57km35q" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_id -value "2016.2_30" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "30" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "" -context "user_environment"
@@ -22,12 +22,12 @@ webtalk_add_data -client project -key cpu_speed -value "" -context "user_environ
 webtalk_add_data -client project -key total_processors -value "" -context "user_environment"
 webtalk_add_data -client project -key system_ram -value "" -context "user_environment"
 webtalk_register_client -client sdk
-webtalk_add_data -client sdk -key uid -value "1486400399626" -context "sdk\\\\hardware/1486400399626"
-webtalk_add_data -client sdk -key isZynq -value "true" -context "sdk\\\\hardware/1486400399626"
-webtalk_add_data -client sdk -key Processors -value "2" -context "sdk\\\\hardware/1486400399626"
-webtalk_add_data -client sdk -key VivadoVersion -value "2016.2" -context "sdk\\\\hardware/1486400399626"
-webtalk_add_data -client sdk -key Arch -value "zynq" -context "sdk\\\\hardware/1486400399626"
-webtalk_add_data -client sdk -key Device -value "7z020" -context "sdk\\\\hardware/1486400399626"
-webtalk_add_data -client sdk -key IsHandoff -value "true" -context "sdk\\\\hardware/1486400399626"
-webtalk_transmit -clientid 1753109923 -regid "" -xml E:\\oms\\VideoControlIP\\image_capture\\app\\webtalk\\usage_statistics_ext_sdk.xml -html E:\\oms\\VideoControlIP\\image_capture\\app\\webtalk\\usage_statistics_ext_sdk.html -wdm E:\\oms\\VideoControlIP\\image_capture\\app\\webtalk\\sdk_webtalk.wdm -intro "<H3>SDK Usage Report</H3><BR>"
+webtalk_add_data -client sdk -key uid -value "1492670784586" -context "sdk\\\\hardware/1492670784586"
+webtalk_add_data -client sdk -key isZynq -value "true" -context "sdk\\\\hardware/1492670784586"
+webtalk_add_data -client sdk -key Processors -value "2" -context "sdk\\\\hardware/1492670784586"
+webtalk_add_data -client sdk -key VivadoVersion -value "2016.2" -context "sdk\\\\hardware/1492670784586"
+webtalk_add_data -client sdk -key Arch -value "zynq" -context "sdk\\\\hardware/1492670784586"
+webtalk_add_data -client sdk -key Device -value "7z020" -context "sdk\\\\hardware/1492670784586"
+webtalk_add_data -client sdk -key IsHandoff -value "true" -context "sdk\\\\hardware/1492670784586"
+webtalk_transmit -clientid 746205487 -regid "" -xml D:\\Projects\\ImageCaptureSystem\\image_capture\\app\\webtalk\\usage_statistics_ext_sdk.xml -html D:\\Projects\\ImageCaptureSystem\\image_capture\\app\\webtalk\\usage_statistics_ext_sdk.html -wdm D:\\Projects\\ImageCaptureSystem\\image_capture\\app\\webtalk\\sdk_webtalk.wdm -intro "<H3>SDK Usage Report</H3><BR>"
 webtalk_terminate

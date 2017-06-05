@@ -2,6 +2,9 @@
 <section name="Workbench">
 	<item value="Default C++ source template" key="LastUsedSourceTemplate"/>
 	<item value="Default C++ header template" key="LastUsedHeaderTemplate"/>
+	<section name="CPathsPropertyPage">
+		<item value="4" key="pageIndex"/>
+	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>
 	<section name="OptionalMessageDialog.hide.">

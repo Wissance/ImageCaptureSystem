@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;dragster_test_app/src/managers/imageCaptureManager.c&apos; to &apos;imageCaptureManager.cpp&apos;" description="Rename resource &apos;imageCaptureManager.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/managers/imageCaptureManager.c" name="imageCaptureManager.cpp" stamp="1492670978041" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;dragster_test_app/src/main.cc&apos; to &apos;main.cpp&apos;" description="Rename resource &apos;main.cc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main.cc" name="main.cpp" stamp="1492671311429" updateReferences="true"/>
+</session>
