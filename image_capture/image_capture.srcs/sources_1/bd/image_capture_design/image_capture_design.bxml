@@ -22,13 +22,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\image_capture_design_axi_quad_spi_0_0\image_capture_design_axi_quad_spi_0_0.xci" Type="IP">
-        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\image_capture_design_processing_system7_0_axi_periph_1\image_capture_design_processing_system7_0_axi_periph_1.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0_axi_periph"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -70,8 +63,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\image_capture_design_clock_divider_0_1\image_capture_design_clock_divider_0_1.xci" Type="IP">
-        <Instance HierarchyPath="clock_divider_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
@@ -86,8 +78,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\image_capture_design_clock_divider_1_0\image_capture_design_clock_divider_1_0.xci" Type="IP">
-        <Instance HierarchyPath="clock_divider_1"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
