@@ -30,7 +30,7 @@ private:
     void readDragsterConfigImpl(struct DragsterConfig* config, int dragsterSlaveSelectMask);
     void sendDragsterRegisterValue(unsigned char address, unsigned char value);
     unsigned char readDragsterRegisterValue(unsigned char address);
-    void beginDragsterSpiTransaction();
+    void beginDragsterSpiTransaction(int dragsterSlaveSelectMask);
     void endDragsterSpiTransaction();
 private:
     // vdma entities

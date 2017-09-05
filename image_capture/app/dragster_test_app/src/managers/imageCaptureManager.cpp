@@ -20,9 +20,6 @@
 #define VDMA_1_WRITE_INTERRUPT_ID XPAR_FABRIC_AXI_VDMA_0_S2MM_INTROUT_INTR
 #define VDMA_2_WRITE_INTERRUPT_ID XPAR_FABRIC_AXI_VDMA_1_S2MM_INTROUT_INTR
 
-u8 readBuffer[2];
-u8 writeBuffer[2];
-
 /* Callbacks */
 static void Vdma1WriteCallback(void* callbackRef, u32 mask)
 {
@@ -44,8 +41,6 @@ static void Vdma2WriteErrorCallback(void* callbackRef, u32 mask){}
 void ImageCaptureManager::initialize()
 {
     initializeVdmaDevices();
-    initializeSpi();
-    initializeDragsters();
 }
 
 void ImageCaptureManager::startImageCapture()
@@ -64,14 +59,6 @@ void ImageCaptureManager::stopImageCapture()
     //Xil_Out32(IMAGE_CAPTURE_MANAGER_BASE_ADDRESS, 2);
     write(IMAGE_CAPTURE_MANAGER_BASE_ADDRESS, 0, STOP_COMMAND);
     xil_printf("\n Image Capture Manager has been stopped\n\r");
-}
-
-struct DragsterConfig ImageCaptureManager::getDragsterConfig(unsigned char linescannerIndex)
-{
-    struct DragsterConfig config;
-    readDragsterConfigImpl(&config, linescannerIndex == LINESCANNER0 ? LINESCANNER0_SLAVE_SELECT
-                                                                     : LINESCANNER1_SLAVE_SELECT);
-    return config;
 }
 
 void ImageCaptureManager::initializeVdmaDevices()

@@ -4,7 +4,6 @@
 #include "imageCaptureState.h"
 #include "dragsterConfig.h"
 #include "xaxivdma.h"
-#include "xspi.h"
 #include "xscugic.h"
 #include "xil_exception.h"
 #include "xil_assert.h"
@@ -15,7 +14,6 @@ public:
     void initialize();
     void startImageCapture();
     void stopImageCapture();
-    struct DragsterConfig getDragsterConfig(unsigned char linescannerIndex);
 private:
     // vdma
     void initializeVdmaDevices();
@@ -23,22 +21,12 @@ private:
     void configureVdmaInterrupts();
     void startVdmaTransfer();
     void stopVdmaTransfer();
-    // dragster
-    void initializeSpi();
-    void initializeDragsters();
-    void initializeDragsterImpl(struct DragsterConfig* config, int dragsterSlaveSelectMask);
-    void readDragsterConfigImpl(struct DragsterConfig* config, int dragsterSlaveSelectMask);
-    void sendDragsterRegisterValue(unsigned char address, unsigned char value);
-    unsigned char readDragsterRegisterValue(unsigned char address);
-    void beginDragsterSpiTransaction(int dragsterSlaveSelectMask);
-    void endDragsterSpiTransaction();
 private:
     // vdma entities
     XAxiVdma _vdma1;
     XAxiVdma _vdma2;
     XScuGic _interruptController;
-    // dragster entities
-    XSpi _spi;
+
     struct ImageCaptureState _imageCaptureState;
     struct DragsterConfig _linescanner0Config;
     struct DragsterConfig _linescanner1Config;

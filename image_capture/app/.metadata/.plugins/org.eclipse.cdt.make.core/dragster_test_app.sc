@@ -2,6 +2,12 @@
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="xilinx.gnu.armv7.exe.debug.1139307683;xilinx.gnu.armv7.exe.debug.1139307683.">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="c:\xilinx\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include/c++/4.9.2"/>
+<includePath path="c:\xilinx\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include/c++/4.9.2/arm-none-eabi"/>
+<includePath path="c:\xilinx\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include/c++/4.9.2/backward"/>
+<includePath path="c:\xilinx\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/include"/>
+<includePath path="c:\xilinx\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/include-fixed"/>
+<includePath path="c:\xilinx\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include"/>
 <includePath path="c:\xilinxtools\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include/c++/4.9.2"/>
 <includePath path="c:\xilinxtools\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include/c++/4.9.2/arm-none-eabi"/>
 <includePath path="c:\xilinxtools\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include/c++/4.9.2/backward"/>
@@ -710,6 +716,12 @@
 </instance>
 <instance id="xilinx.gnu.armv7.exe.debug.1139307683;xilinx.gnu.armv7.exe.debug.1139307683.;xilinx.gnu.armv7.cxx.toolchain.compiler.debug.877346223;xilinx.gnu.armv7.cxx.compiler.input.1767358269">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="c:\xilinx\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include/c++/4.9.2"/>
+<includePath path="c:\xilinx\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include/c++/4.9.2/arm-none-eabi"/>
+<includePath path="c:\xilinx\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include/c++/4.9.2/backward"/>
+<includePath path="c:\xilinx\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/include"/>
+<includePath path="c:\xilinx\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/include-fixed"/>
+<includePath path="c:\xilinx\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include"/>
 <includePath path="c:\xilinxtools\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include/c++/4.9.2"/>
 <includePath path="c:\xilinxtools\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include/c++/4.9.2/arm-none-eabi"/>
 <includePath path="c:\xilinxtools\sdk\2016.2\gnu\aarch32\nt\gcc-arm-none-eabi\bin\../lib/gcc/arm-none-eabi/4.9.2/../../../../arm-none-eabi/include/c++/4.9.2/backward"/>
